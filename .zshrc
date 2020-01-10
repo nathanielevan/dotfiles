@@ -1,12 +1,7 @@
-# Set up the prompt
-autoload -Uz promptinit
-promptinit
-prompt default
+autoload -Uz colors
+colors
 
 setopt histignorealldups sharehistory
-
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
@@ -17,23 +12,18 @@ HISTFILE=~/.zsh_history
 autoload -Uz compinit
 compinit
 
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select=2
 eval "$(dircolors -b)"
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-zstyle ':completion:*' menu select=long
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' verbose true
-
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*:descriptions' format "%2F%B--- %d%b%f"
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:warnings' format "%1F%B--- No matches found%b%f"
+zstyle ':completion:*:corrections' format '%214F%B--- %d%b%f'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 
 alias sudo='sudo '
 
@@ -50,13 +40,13 @@ alias clear-history='rm ~/.zsh_history'
 if [[ $EUID -ne 0 ]]; then
    PROMPT='%B%105F[%f%203F%n%f%105F@%f%120F%m%f %228F%1~%f%105F]%f%159F$%f %b'
 else
-   PROMPT='%B%3F[%n@%m %1~]# %f%b'
+   PROMPT='%B%214F[%n@%m %1~]# %f%b'
 fi
 
 # Fancy features - comment out to speed up load time
 
 ## Load zsh-autosuggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ## Load zsh-syntax-highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
