@@ -41,9 +41,9 @@ URxvt.letterSpace: 0
 URxvt.iconFile: /usr/share/icons/Papirus-Dark/24x24/apps/urxvt.svg
 URxvt.scrollBar: false
 URxvt.foreground: #c5c8c6
-URxvt.background: [85]#1d1f21
+URxvt.background: #1d1f21
 URxvt.depth: 32
-URxvt.geometry: 70x24
+URxvt.geometry: 60x20
 URxvt.internalBorder: 15
 URxvt.cursorUnderline: true
 URxvt.cursorBlink: true
@@ -62,6 +62,7 @@ URxvt.loginShell: true
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
 URxvt.url-select.launcher:  firefox
 URxvt.url-select.underline: true
+URxvt.url-select.button:    2
 URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search

@@ -10,8 +10,6 @@ HISTFILE=~/.zsh_history
 
 # Use modern completion system
 autoload -Uz compinit
-compinit
-
 eval "$(dircolors -b)"
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -24,8 +22,16 @@ zstyle ':completion:*:corrections' format '%214F%B--- %d%b%f'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+compinit
 
 alias sudo='sudo '
+
+# Load version contron information
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+zstyle ':vcs_info:git:*' formats '  %b'
 
 # Make ls display colors
 alias ls='ls --color=auto'
@@ -34,11 +40,11 @@ alias ls='ls --color=auto'
 alias clear-history='rm ~/.zsh_history'
 
 # Print neofetch for mere aesthetics
-# neofetch
+neofetch
 
-# Prompt config (no powerlevel10k, in case I ever screw up its config)
+# Prompt config
 if [[ $EUID -ne 0 ]]; then
-   PROMPT='%B%105F[%f%203F%n%f%105F@%f%120F%m%f %228F%1~%f%105F]%f%159F$%f %b'
+   PROMPT='%B%203F %n%f %120F %m%f %228F %1~%f%159F${vcs_info_msg_0_}%f %b '
 else
    PROMPT='%B%214F[%n@%m %1~]# %f%b'
 fi
@@ -46,7 +52,7 @@ fi
 # Fancy features - comment out to speed up load time
 
 ## Load zsh-autosuggestions
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ## Load zsh-syntax-highlighting
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
