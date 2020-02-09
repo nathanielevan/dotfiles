@@ -1,6 +1,6 @@
 filetype plugin indent on
 syntax on
-set nu
+set number relativenumber
 set cursorline
 set expandtab
 colorscheme molokai
