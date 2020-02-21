@@ -55,17 +55,18 @@ font-0 = Hack:size=9;1
 font-1 = Font Awesome 5 Free:style=Solid:size=9;1
 
 modules-left = i3
-modules-center = mpd
+;modules-center = mpd
 modules-right = xbacklight pulseaudio memory cpu wlan eth battery date
 
 tray-position = right
-tray-padding = 2
+tray-padding = 0
+tray-offset-x = -3
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 
-;override-redirect = true
+override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev

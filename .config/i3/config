@@ -184,7 +184,8 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id feh --bg-scale /home/nate/.config/wallpaper.png
 
 # Define gaps
-gaps inner 20
+gaps top 29
+gaps inner 18
 
 # Screenshot function
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots'
