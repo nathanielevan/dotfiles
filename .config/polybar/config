@@ -54,19 +54,19 @@ module-margin-right = 1
 font-0 = Hack:size=9;1
 font-1 = Font Awesome 5 Free:style=Solid:size=9;1
 
-modules-left = i3
-;modules-center = mpd
+modules-left = i3 mpd
+;modules-center = mpd 
 modules-right = xbacklight pulseaudio memory cpu wlan eth battery date
 
 tray-position = right
 tray-padding = 0
-tray-offset-x = -3
+tray-offset-x = 0
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-wm-restack = i3
+;wm-restack = i3
 
-override-redirect = true
+override-redirect = false
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -169,15 +169,16 @@ label-urgent-padding = 2
 
 [module/mpd]
 type = internal/mpd
+host = /home/nate/.config/mpd/socket
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
 
-label-song-maxlen = 25
+label-song-maxlen = 50
 label-song-ellipsis = true
 
 [module/xbacklight]
@@ -226,7 +227,7 @@ interval = 3.0
 format-connected = <label-connected>
 format-connected-prefix = " "
 format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = %essid% (%signal%%)
 
 ;format-disconnected = "睊 "
 ;format-disconnected-underline = ${self.format-connected-underline}
@@ -331,7 +332,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT1
 adapter = AC
-;full-at = 98
+full-at = 98
 
 format-charging = <label-charging>
 format-charging-prefix = " "
