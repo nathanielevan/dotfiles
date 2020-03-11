@@ -1,0 +1,26 @@
+IMAPStore test-remote
+Host mail.cock.li
+Port  993
+User muttwiztest@airmail.cc
+PassCmd "pass mutt-wizard-test"
+SSLType IMAPS
+AuthMech LOGIN
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore test-local
+Subfolders Verbatim
+Path ~/.local/share/mail/test/
+Inbox ~/.local/share/mail/test/INBOX
+Flatten .
+
+Channel test
+Expunge Both
+Master :test-remote:
+Slave :test-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+

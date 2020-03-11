@@ -1,0 +1,14 @@
+[database]
+path=/home/nate/.local/share/mail
+[user]
+name=Test Account
+primary_email=muttwiztest@airmail.cc
+[new]
+tags=unread;inbox;
+ignore=
+[search]
+exclude_tags=deleted;spam;
+[maildir]
+synchronize_flags=true
+[crypto]
+gpg_path=gpg
