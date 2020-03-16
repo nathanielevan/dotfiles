@@ -47,17 +47,17 @@ bindsym $mod+Return exec urxvtc
 bindsym $mod+Shift+q kill
 
 # start rofi with modi drun
-bindsym $mod+d exec "rofi  -modi drun,run,window,ssh -show drun"
+bindsym $mod+d exec "rofi -modi run,window,ssh -show run"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -77,11 +77,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
+# toggle split direction (horizontal/vertical)
+bindsym $mod+t split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -174,6 +171,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Keybinds to resize, cause why would you $mod+r first
+bindsym $mod+Shift+y exec --no-startup-id "~/.config/i3/i3resize.sh left"
+bindsym $mod+Shift+u exec --no-startup-id "~/.config/i3/i3resize.sh down"
+bindsym $mod+Shift+i exec --no-startup-id "~/.config/i3/i3resize.sh up"
+bindsym $mod+Shift+o exec --no-startup-id "~/.config/i3/i3resize.sh right"
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 # bar {
@@ -181,10 +184,10 @@ bindsym $mod+r mode "resize"
 # }
 
 # Set wallpaper
-exec --no-startup-id feh --bg-scale /home/nate/.config/wallpaper.png
+# exec --no-startup-id feh --bg-scale /home/nate/.config/wallpaper.png
 
 # Define gaps
-gaps top 29
+# gaps top 29
 gaps inner 18
 
 # Screenshot function

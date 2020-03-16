@@ -53,8 +53,23 @@ fi
 # xterm -geometry 80x50+494+51 &
 # xterm -geometry 80x20+494-0 &
 # exec xterm -geometry 80x66+0+0 -name login
+
+# UNIX socket for MPD and ncmpcpp
+export MPD_HOST=$HOME/.config/mpd/socket
+
+# Set default text editor
+export EDITOR=vim
+
+# NNN file manager config
+export NNN_BMS='h:~;m:/run/media/nate/;t:~/.local/share/Trash/files/;w:/mnt/win/Users/Nathaniel Evan/;'
+export NNN_USE_EDITOR=1
+export NNN_TRASH=1
+export NNN_OPENER=xdg-open
+
+# Startup programs
 urxvtd -q -f -o
 udiskie -s &
 dunst &
 picom -b
+nitrogen --restore &
 exec i3

@@ -1,26 +1,23 @@
-IMAPStore test-remote
-Host mail.cock.li
-Port  993
-User muttwiztest@airmail.cc
-PassCmd "pass mutt-wizard-test"
+IMAPAccount zoho
+Host imap.zoho.com
+Port 993
+User nathanielevan@zohomail.com
+PassCmd "pass zoho-mail"
 SSLType IMAPS
-AuthMech LOGIN
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-MaildirStore test-local
-Subfolders Verbatim
-Path ~/.local/share/mail/test/
-Inbox ~/.local/share/mail/test/INBOX
-Flatten .
+IMAPStore zoho-remote
+Account zoho
 
-Channel test
-Expunge Both
-Master :test-remote:
-Slave :test-local:
-Patterns * !"[Gmail]/All Mail"
+MaildirStore zoho-local
+SubFolders Verbatim
+Path ~/.local/share/mail/zoho/
+Inbox ~/.local/share/mail/zoho/Inbox
+
+Channel zoho
+Master :zoho-remote:
+Slave :zoho-local:
+Patterns *
 Create Both
+Expunge Both
 SyncState *
-MaxMessages 0
-ExpireUnread no
-# End profile
-

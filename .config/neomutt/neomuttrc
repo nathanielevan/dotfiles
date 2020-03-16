@@ -1,0 +1,61 @@
+# General account and mailbox settings
+set realname = "Nathaniel Evan"
+set from = "nathanielevan@zohomail.com"
+set sendmail = "msmtp -a zoho"
+alias me Nathaniel Evan <nathanielevan@zohomail.com>
+set folder = /home/nate/.local/share/mail/zoho
+set header_cache = /home/nate/.cache/neomutt/zoho/headers
+set message_cachedir = /home/nate/.cache/neomutt/zoho/bodies
+set tmpdir = /home/nate/.cache/neomutt/zoho/temp
+set mbox_type = Maildir
+set spoolfile = "+Inbox"
+set postponed = "+Drafts"
+set record = "+Sent"
+set trash = "+Trash"
+mailboxes "=Inbox" "=Drafts" "=NewsLetter" "=Notification" "=Sent" "=Spam" "=Templates" "=Trash"
+
+# Basic Mutt behavior options
+set delete		# automatically purge messages marked for deletion (3.79)
+set quit		# actually quit from neomutt without having to confirm (3.305)
+set thorough_search	# decode header and body of messages before searching (3.426)
+set mail_check_stats	# periodically calculate stats while polling for new mail (3.177)
+unset wait_key		# shut your trap, mutt, just do what i say, will you? (3.449)
+unset confirmappend	# don't ask for confirm when moving mails into a mailbox (3.51)
+unset mark_old		# don't mark unread messages as old if i don't read them (3.185)
+unset copy		# don't save sent emails, zoho takes care of this already (3.55)
+
+# Compose/view options
+set date_format = "%d/%m/%y %I:%M%p" 	# change date format (3.75)
+set sort=reverse-date			# sort by date in descending order (3.397)
+set include				# include original message in reply (3.167)
+set forward_quote			# include original message when forwarding (3.112)
+set forward_format = "Fwd: %s"		# format of subject when forwarding (3.111)
+set mime_forward			# forward attachments with mail (3.202)
+set fast_reply				# don't ask for recipient and subject when replying (3.94)
+set reverse_name			# reply as whomever it was originally to (3.324)
+set reply_to				# reply to address set in Reply-to: header (3.318)
+set edit_headers			# allows editing the header of outgoing message (3.86)
+set askcc				# prompt for cc recipients before editing message (3.17)
+set editor = "vim"			# set editor to vim (3.87)
+
+# Viewing those pesky HTML e-mails
+alternative_order text/plain text/enriched text/html
+auto_view text/html
+
+# E-mail headers
+ignore *					# ignore all headers... (11.2)
+unignore from: to: cc: bcc: data: subject:	# ...except these headers (11.2)
+unhdr_order *					# clear all previous header orders, if exists (11.3)
+hdr_order from: to: cc: bcc: date: subject: 	# and use this header order instead (11.3)
+
+# Sidebar
+set sidebar_visible		# show sidebar (3.356)
+set sidebar_width = 25		# sidebar width in screen columns (3.357)
+set sidebar_short_path		# only display the name of the mailbox (3.354)
+
+# Keybinds and macros
+macro index o "<shell-escape>mbsync -a<enter>" "run mbsync to sync mail"
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cj sidebar-next
+bind index,pager \Co sidebar-open
+bind index,pager B sidebar-toggle-visible
