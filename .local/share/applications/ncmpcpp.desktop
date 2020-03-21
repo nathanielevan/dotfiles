@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=ncmpcpp
+GenericName=Music player
+Comment=ncurses-based MPD client
+Type=Application
+Categories=ConsoleOnly;Audio;Player;
+Keywords=Music;Audio;Player
+Terminal=true
+Exec=ncmpcpp

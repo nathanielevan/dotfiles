@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=neomutt
+GenericName=Mail client
+Comment=Text-based mail client
+Type=Application
+Categories=ConsoleOnly;Email;
+Keywords=Email
+MimeType=message/rfc822;x-scheme-handler/mailto;
+Terminal=false
+Exec=urxvtc -e neomutt %U

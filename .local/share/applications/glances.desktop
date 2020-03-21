@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Glances
+GenericName=System monitor
+Comment=Show system processes
+Type=Application
+Categories=ConsoleOnly;System;
+Keywords=System;Process;Task
+Terminal=false
+Exec=urxvtc -e glances

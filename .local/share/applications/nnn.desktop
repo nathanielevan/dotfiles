@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=nnn
+GenericName=File manager
+Comment=Terminal file manager
+Type=Application
+Categories=ConsoleOnly;System;FileTools;FileManager;
+Keywords=File;Manager;Browser;Explorer;Launcher
+MimeType=inode/directory
+Terminal=false
+Exec=urxvtc -e nnn %U
