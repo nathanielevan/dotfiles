@@ -3,10 +3,10 @@ syntax on
 set number relativenumber
 set cursorline
 set expandtab
-colorscheme molokai
+colorscheme dracula
 set fillchars+=vert:\ 
 let g:airline_powerline_fonts=1
-let g:airline_theme='powerlineish'
+let g:airline_theme='dracula'
 set encoding=utf-8
 set mouse=a
 

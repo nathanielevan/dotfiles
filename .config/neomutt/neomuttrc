@@ -1,3 +1,4 @@
+# Inspired by Steffen Rademacker and Luke Smith, with personal modifications
 # General account and mailbox settings
 set realname = "Nathaniel Evan"
 set from = "nathanielevan@zohomail.com"
@@ -15,10 +16,11 @@ set trash = "+Trash"
 mailboxes "=Inbox" "=Drafts" "=NewsLetter" "=Notification" "=Sent" "=Spam" "=Templates" "=Trash"
 
 # Basic Mutt behavior options
-set delete		# automatically purge messages marked for deletion (3.79)
+set delete		# automatically act on messages marked for deletion (3.79)
 set quit		# actually quit from neomutt without having to confirm (3.305)
 set thorough_search	# decode header and body of messages before searching (3.426)
-set mail_check_stats	# periodically calculate stats while polling for new mail (3.177)
+set sleep_time = 0      # disable pause while displaying informational messages (3.367)
+set mail_check_stats    # calculate message stats of a mailbox while polling (3.177)
 unset wait_key		# shut your trap, mutt, just do what i say, will you? (3.449)
 unset confirmappend	# don't ask for confirm when moving mails into a mailbox (3.51)
 unset mark_old		# don't mark unread messages as old if i don't read them (3.185)
@@ -26,7 +28,7 @@ unset copy		# don't save sent emails, zoho takes care of this already (3.55)
 
 # Compose/view options
 set date_format = "%d/%m/%y %I:%M%p" 	# change date format (3.75)
-set sort=reverse-date			# sort by date in descending order (3.397)
+set sort = "reverse-date"		# sort by date in descending order (3.397)
 set include				# include original message in reply (3.167)
 set forward_quote			# include original message when forwarding (3.112)
 set forward_format = "Fwd: %s"		# format of subject when forwarding (3.111)
@@ -36,26 +38,63 @@ set reverse_name			# reply as whomever it was originally to (3.324)
 set reply_to				# reply to address set in Reply-to: header (3.318)
 set edit_headers			# allows editing the header of outgoing message (3.86)
 set askcc				# prompt for cc recipients before editing message (3.17)
+unset markers                           # don't display + at the beginning of warped lines (3.186)
 set editor = "vim"			# set editor to vim (3.87)
+set pager_context = 5                   # display last N lines from prev page into next page (3.240)
+set tilde                               # display tildes at the end of a mail (3.428)
+set pager_stop                          # don't move to next msg upon reaching end of msg (3.243)
+set menu_scroll                         # don't redraw the entire menu when scrolling (3.192) 
 
-# Viewing those pesky HTML e-mails
+# Viewing attachments + those pesky HTML e-mails
+set mailcap_path = /home/nate/.config/neomutt/mailcap
 alternative_order text/plain text/enriched text/html
 auto_view text/html
 
 # E-mail headers
-ignore *					# ignore all headers... (11.2)
-unignore from: to: cc: bcc: data: subject:	# ...except these headers (11.2)
-unhdr_order *					# clear all previous header orders, if exists (11.3)
-hdr_order from: to: cc: bcc: date: subject: 	# and use this header order instead (11.3)
+ignore *						# ignore all headers... (11.2)
+unignore from: to: cc: bcc: date: subject:		# ...except these headers (11.2)
+unhdr_order *						# clear all previous header orders, if exists (11.3)
+hdr_order from: to: cc: bcc: date: subject: 		# and use this header order instead (11.3)
 
 # Sidebar
-set sidebar_visible		# show sidebar (3.356)
-set sidebar_width = 25		# sidebar width in screen columns (3.357)
-set sidebar_short_path		# only display the name of the mailbox (3.354)
+set sidebar_visible		                	# show sidebar (3.356)
+set sidebar_width = 25		                	# sidebar width in screen columns (3.357)
+set sidebar_short_path		                	# only display the name of the mailbox (3.354)
+set sidebar_divider_char = ""
+set sidebar_format = '%B%* [%?N?%N/?%S]'	        # define sidebar format (3.348)
 
 # Keybinds and macros
-macro index o "<shell-escape>mbsync -a<enter>" "run mbsync to sync mail"
-bind index,pager \Ck sidebar-prev
-bind index,pager \Cj sidebar-next
-bind index,pager \Co sidebar-open
+bind index,pager \Cp sidebar-prev-new
+bind index,pager \Cn sidebar-next-new 
 bind index,pager B sidebar-toggle-visible
+bind index j next-entry
+bind pager j next-line
+bind index k previous-entry
+bind pager k previous-line
+bind index l display-message
+bind pager l view-attachments
+bind attach l view-mailcap
+bind attach <return> view-mailcap
+bind index,pager g noop
+bind index gg first-entry
+bind pager gg top
+bind index G last-entry
+bind pager G bottom
+bind index D delete-message
+bind pager h exit
+bind pager i display-toggle-weed
+bind index U undelete-message
+bind index <tab> sync-mailbox
+
+macro index O "<shell-escape>mbsync -a && notmuch new<enter>" "sync emails and index them"
+macro index,pager \Cj "<sidebar-next><sidebar-open>" "go to next mailbox"
+macro index,pager \Ck "<sidebar-prev><sidebar-open>" "go to previous mailbox"
+macro index,pager gi "<change-folder>=Inbox<enter>" "go to inbox"
+macro index,pager gl "<change-folder>=NewsLetter<enter>" "go to newsletter"
+macro index,pager gn "<change-folder>=Notification<enter>" "go to notification"
+macro index,pager gt "<change-folder>=Trash<enter>" "go to trash"
+macro index \Cr "<tag-pattern>~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all unread messages as read"
+macro index \Cf "<enter-command>unset wait_key<enter><shell-escape>read -p 'Search this mailbox with keyword: ' x; echo \$x >~/.cache/mutt_terms<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' | perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \`\"<enter>" "show only messages matching a notmuch pattern"
+
+# Source color config file
+source ~/.config/neomutt/dracula.muttrc
