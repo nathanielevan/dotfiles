@@ -7,6 +7,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * mpd (music player daemon), ncmpcpp (player client)
 * nnn (file manager), trash-cli (trash support)
 * neomutt, msmtp, isync, notmuch-runtime (email client)
+* gnupg, pass (for password storage)
 * udiskie (automounting USB drives)
 * vim, vim-airline (text editor)
 * zsh, zsh-syntax-highlighting, zsh-autosuggestions, [powerlevel10k](https://github.com/romkatv/powerlevel10k)
