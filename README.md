@@ -1,8 +1,8 @@
 # dotfiles
-Linux configuration files by Nathaniel Evan. Inspired from various sources.
+Linux configuration files by Nathaniel Evan. Inspired by various sources.
 
 ## Dependencies:
-* i3-gaps, i3lock-color
+* i3-gaps (window manager), i3lock-color (screen locker)
 * rxvt-unicode, urxvt-perls (terminal emulator)
 * mpd (music player daemon), ncmpcpp (player client)
 * nnn (file manager), trash-cli (trash support)
@@ -32,5 +32,7 @@ Linux configuration files by Nathaniel Evan. Inspired from various sources.
 ## WIP:
 * Personal bootstrapping script, if I ever feel like it.
 * Set up YouCompleteMe for VIM (and possibly a few other plugins).
-* Finish configuring tmux
-* ... I'll add more in the near future.
+* Finish configuring tmux.
+* Experiment with awesomewm, bspwm and/or dwm/xmonad, when I'm in the mood to break things.
+
+Suggestions and pull requests welcome, and if I accept yours, I'll credit you in this README and in the corresponding merge commit.
