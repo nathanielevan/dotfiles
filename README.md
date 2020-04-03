@@ -2,7 +2,7 @@
 Linux configuration files by Nathaniel Evan. Inspired by various sources.
 
 ## Dependencies:
-* i3-gaps (window manager), i3lock-color (screen locker), polybar (status bar)
+* i3-gaps (window manager), i3lock-color (screen locker), polybar (status bar), rofi (menu)
 * rxvt-unicode, urxvt-perls (terminal emulator)
 * mpd (music player daemon), ncmpcpp (player client)
 * nnn (file manager), trash-cli (trash support)
@@ -13,10 +13,8 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * zsh, zsh-syntax-highlighting, zsh-autosuggestions, [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 * [Nerd fonts](https://github.com/ryanoasis/nerd-fonts)
 * tmux (terminal multiplexer, useful for SSH or tiling in terminal)
-* rofi (menu)
 * picom (formerly compton, a display compositor)
-* xorg-xinit (who needs a display manager?)
-* xorg-xbacklight (screen brightness adjustment)
+* xorg-xinit (who needs a display manager?), xorg-xbacklight (screen brightness adjustment)
 * scrot (screenshot)
 * xss-lock (for screen locking)
 * dunst (notification daemon)
@@ -31,7 +29,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.
-* Does not include system-wide configurations.
+* Does not include system-wide configurations, e.g. systemd power management config (which I use in my machine)
 
 ## WIP:
 * Personal bootstrapping script, if I ever feel like it.
