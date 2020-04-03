@@ -60,6 +60,9 @@ export MPD_HOST=$HOME/.config/mpd/socket
 # Set default text editor
 export EDITOR=vim
 
+# Set default web browser
+export BROWSER=firefox
+
 # NNN file manager config
 export NNN_BMS='h:~;m:/run/media/nate/;t:~/.local/share/Trash/files/;w:/mnt/win/Users/Nathaniel Evan/;'
 export NNN_USE_EDITOR=1
