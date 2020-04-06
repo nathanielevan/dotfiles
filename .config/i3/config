@@ -47,7 +47,7 @@ bindsym $mod+Return exec urxvtc
 bindsym $mod+Shift+q kill
 
 # start rofi with modi drun
-bindsym $mod+d exec "rofi -modi run,window,ssh -show run"
+bindsym $mod+d exec "rofi -disable-history -modi drun,run,window,ssh -show drun"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
