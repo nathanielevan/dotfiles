@@ -1,0 +1,4 @@
+set selection-clipboard clipboard
+set font "Hack Nerd Font Mono 9"
+set guioptions none
+set adjust-open "best-fit"
