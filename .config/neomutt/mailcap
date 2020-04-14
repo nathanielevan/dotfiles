@@ -3,7 +3,7 @@ text/*; $EDITOR %s;
 text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput;
 
 # Other files will be opened with xdg-open
-application/*; /home/nate/.config/neomutt/openfile %s;
-audio/*; /home/nate/.config/neomutt/openfile %s;
-image/*; /home/nate/.config/neomutt/openfile %s;
-video/*; /home/nate/.config/neomutt/openfile %s;
+application/*; xdg-open %s > /dev/null 2>&1 &;
+audio/*; xdg-open %s > /dev/null 2>&1 &;
+image/*; xdg-open %s > /dev/null 2>&1 &;
+video/*; xdg-open %s > /dev/null 2>&1 &;
