@@ -55,7 +55,7 @@ font-0 = Hack:size=9;1
 font-1 = Font Awesome 5 Free:style=Solid:size=9;1
 
 modules-left = i3 mpd
-;modules-center = mpd 
+;modules-center = mpd
 modules-right = xbacklight pulseaudio memory cpu wlan eth battery date
 
 tray-position = right
@@ -221,7 +221,9 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+;Adjust the variable below depending on your machine setup
+;interface = wlp2s0
+;interface = wlp3s0
 interval = 3.0
 
 format-connected = <label-connected>
@@ -243,15 +245,17 @@ label-connected = %essid% (%signal%%)
 
 [module/eth]
 type = internal/network
-interface = enp0s25
+;Adjust the variable below depending on your machine setup
+;interface = enp0s20f0u2u4
+;interface = enp0s25
 interval = 3.0
 
-format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected = <label-connected>
+format-connected-underline = #9f78e1
+format-connected-prefix = " "
 ;format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
-format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -330,9 +334,13 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = BAT1
-adapter = AC
-full-at = 98
+;Adjust the variables below depending on your machine
+;battery = BAT1
+;adapter = AC
+;full-at = 98
+;battery = BAT0
+;adapter = ADP1
+;full-at = 100
 
 format-charging = <label-charging>
 format-charging-prefix = " "
@@ -344,7 +352,7 @@ format-discharging-underline = ${self.format-charging-underline}
 format-full-prefix = " "
 ;format-full-prefix-foreground = ${colors.foreground-alt}
 ;format-full-underline = ${self.format-charging-underline}
-format-full-underline = #00d138
+format-full-underline = #55aa55
 
 ramp-capacity-0 = ""
 ramp-capacity-1 = ""
