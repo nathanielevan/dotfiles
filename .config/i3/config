@@ -222,3 +222,6 @@ bindsym $mod+Shift+e mode "$mode_system"
 
 # Launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Moving mouse to an unfocused window should not change focus
+focus_follows_mouse no
