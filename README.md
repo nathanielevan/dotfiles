@@ -2,30 +2,30 @@
 Linux configuration files by Nathaniel Evan. Inspired by various sources.
 
 ## Dependencies:
-* i3-gaps (window manager), i3lock-color (screen locker), polybar (status bar), rofi (menu)
-* rxvt-unicode, urxvt-perls (terminal emulator)
-* mpd (music player daemon), ncmpcpp (player client)
-* nnn (file manager), trash-cli (trash support)
-* neomutt, msmtp, isync, notmuch-runtime (email client)
-* gnupg, pass (for password storage)
-* udiskie (automounting USB drives)
-* vim, vim-airline, vim-fugitive (text editor)
-* zsh, zsh-syntax-highlighting, zsh-autosuggestions, [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+* `i3-gaps` (window manager), `i3lock-color` (screen locker), polybar (status bar), rofi (menu)
+* `rxvt-unicode`, `urxvt-perls` (terminal emulator)
+* `mpd` (music player daemon), `ncmpcpp` (player client)
+* `nnn` (file manager), `trash-cli` (trash support)
+* `neomutt`, `msmtp`, `isync`, `notmuch-runtime` (email client)
+* `gnupg`, `pass` (for password storage)
+* `udiskie` (automounting USB drives)
+* `vim` (the holy grail of text editors)
+  * YouCompleteMe needs `mono` for C# support, `go` for Go support, `node` and `npm` for JS/TS, and JDK (min. version 8) for Java support.
+* `zsh`, [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting), [zsh-autosuggestions](https://github.com/zsh-users/zsh-syntax-highlighting), [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 * [Nerd fonts](https://github.com/ryanoasis/nerd-fonts)
-* tmux (terminal multiplexer, useful for SSH or tiling in terminal)
-* picom (formerly compton, a display compositor)
-* xorg-xinit (who needs a display manager?), xorg-xbacklight (screen brightness adjustment)
-* scrot (screenshot)
-* xss-lock (for screen locking)
-* dunst (notification daemon)
-* nitrogen (wallpaper setter. debating between this and feh)
-* adapta-gtk-theme, papirus-icon-theme (for GTK+ 2 and 3 applications)
-* pulseaudio (sound server. it just werks)
+* `tmux` (terminal multiplexer, useful for SSH or tiling in terminal)
+* `picom` (formerly compton, a display compositor)
+* `xorg-xinit` (who needs a display manager?), `xorg-xbacklight` (screen brightness adjustment)
+* `scrot` (screenshot)
+* `xss-lock` (for screen locking)
+* `dunst` (notification daemon)
+* `nitrogen` (wallpaper setter)
+* `adapta-gtk-theme`, `papirus-icon-theme` (for GTK+ 2 and 3 applications)
+* `pulseaudio` (sound server. it just werks)
 * General applications:
-  - firefox (web browser. contemplating switching to qutebrowser)
-  - zathura (pdf viewer)
-  - sxiv (image viewer)
-  - glances (system monitor)
+  - `firefox` (web browser)
+  - `zathura` (pdf viewer)
+  - `sxiv` (image viewer)
 
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.
@@ -33,7 +33,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 
 ## WIP:
 * Personal bootstrapping script, if I ever feel like it.
-* Set up YouCompleteMe for VIM (and possibly a few other plugins).
+* ~~Set up YouCompleteMe for VIM (and possibly a few other plugins).~~ (done, refer to commit 8226377)
 * Finish configuring tmux.
 * Experiment with awesomewm, bspwm and/or dwm/xmonad, when I'm in the mood to break things.
 
