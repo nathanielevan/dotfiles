@@ -4,10 +4,29 @@ set number relativenumber
 set splitbelow splitright
 set cursorline
 set expandtab
-colorscheme molokai
 set fillchars+=vert:\ 
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+
+Plug 'vim-airline/vim-airline'
+Plug 'arcticicestudio/nord-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'preservim/nerdtree'
+Plug 'ervandew/supertab'
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --all' }
+
+call plug#end()
+
+colorscheme nord
 let g:airline_powerline_fonts=1
-let g:airline_theme='powerlineish'
+let g:airline_theme='nord'
+
 set encoding=utf-8
 
 map <C-h> <C-w>h
@@ -15,6 +34,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+autocmd VimEnter * NERDTree
 let g:NERDTreeWinSize=25
 map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
@@ -25,6 +45,4 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " Exit Vim if the only window open is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-let g:SuperTabDefaultCompletionType="context"
-let g:SuperTabContextDefaultCompletionType="<C-p>"
-set wildmode=longest,list:longest
+set completeopt-=preview
