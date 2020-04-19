@@ -37,7 +37,6 @@ map <C-l> <C-w>l
 
 nnoremap <leader>l :ls<CR>:b<space>
 
-autocmd VimEnter * NERDTree
 let g:NERDTreeWinSize=25
 let g:NERDTreeShowHidden=1
 map <C-n> :NERDTreeToggle<CR>
