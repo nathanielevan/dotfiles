@@ -5,6 +5,7 @@ set splitbelow splitright
 set cursorline
 set expandtab
 set fillchars+=vert:\ 
+set hidden
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -34,8 +35,11 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+nnoremap <leader>l :ls<CR>:b<space>
+
 autocmd VimEnter * NERDTree
 let g:NERDTreeWinSize=25
+let g:NERDTreeShowHidden=1
 map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 " Start nerdtree if no files specified
