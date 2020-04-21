@@ -1,9 +1,12 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block, everything else may go below.
+# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+# Use directory colors from ~/.dir_colors
+test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
 
 autoload -Uz colors
 colors
@@ -17,7 +20,6 @@ HISTFILE=~/.zsh_history
 
 # Use modern completion system
 autoload -Uz compinit
-eval "$(dircolors -b)"
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' verbose true
@@ -40,8 +42,8 @@ alias sudo='sudo '
 # setopt prompt_subst
 # zstyle ':vcs_info:git:*' formats '  %b'
 
-# Make ls display colors
-alias ls='ls --color=auto'
+# Add colors to ls
+alias ls='ls --color'
 
 # Clear .zsh_history
 alias clear-history='rm ~/.zsh_history'
@@ -56,6 +58,7 @@ alias neofetch='echo "" && neofetch'
 # if [[ $EUID -ne 0 ]]; then
 #   PROMPT='%B%210F %n%f %120F %m%f %228F %1~%f%081F${vcs_info_msg_0_}%f %b '
 #   PROMPT='%B%210F %1~%f%159F${vcs_info_msg_0_}%f %b '
+#   PROMPT='%B%210F %n%f %120F %m%f %228F %1~%f %b '
 # else
 #   PROMPT='%B%214F[%n@%m %1~]# %f%b'
 # fi
