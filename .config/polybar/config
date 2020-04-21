@@ -145,7 +145,7 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-underline = #8fbcbb
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
@@ -208,7 +208,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 ;format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = #81a1c1
 label = %percentage%%
 
 [module/memory]
@@ -216,19 +216,17 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 ;format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = #5e81ac
 label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-;Adjust the variable below depending on your machine setup
-;interface = wlp2s0
-;interface = wlp3s0
+interface = wlp2s0
 interval = 3.0
 
 format-connected = <label-connected>
 format-connected-prefix = " "
-format-connected-underline = #9f78e1
+format-connected-underline = #88c0d0
 label-connected = %essid% (%signal%%)
 
 ;format-disconnected = "睊 "
@@ -245,13 +243,11 @@ label-connected = %essid% (%signal%%)
 
 [module/eth]
 type = internal/network
-;Adjust the variable below depending on your machine setup
-;interface = enp0s20f0u2u4
-;interface = enp0s25
+interface = enp0s20f0u2u4
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = #88c0d0
 format-connected-prefix = " "
 ;format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -273,7 +269,7 @@ time-alt = %H:%M:%S
 
 format-prefix = ""
 ;format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #5e81ac
 
 label = %date% %time%
 
@@ -334,17 +330,13 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-;Adjust the variables below depending on your machine
-;battery = BAT1
-;adapter = AC
-;full-at = 98
-;battery = BAT0
-;adapter = ADP1
-;full-at = 100
+battery = BAT0
+adapter = ADP1
+full-at = 100
 
 format-charging = <label-charging>
 format-charging-prefix = " "
-format-charging-underline = #ffb52a
+format-charging-underline = #81a1c1
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -352,7 +344,7 @@ format-discharging-underline = ${self.format-charging-underline}
 format-full-prefix = " "
 ;format-full-prefix-foreground = ${colors.foreground-alt}
 ;format-full-underline = ${self.format-charging-underline}
-format-full-underline = #55aa55
+format-full-underline = #81a1c1
 
 ramp-capacity-0 = ""
 ramp-capacity-1 = ""
