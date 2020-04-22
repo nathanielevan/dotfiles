@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Use directory colors from ~/.dir_colors
 test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
 
@@ -24,8 +17,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*:descriptions' format "%2F%B--- %d%b%f"
-zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:descriptions' format "%2F%B--- %d%b%f" zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:warnings' format "%1F%B--- No matches found%b%f"
 zstyle ':completion:*:corrections' format '%214F%B--- %d%b%f'
 zstyle ':completion:*' group-name ''
@@ -36,11 +28,50 @@ compinit
 alias sudo='sudo '
 
 # Load version control information
-# autoload -Uz vcs_info
-# precmd_vcs_info() { vcs_info }
-# precmd_functions+=( precmd_vcs_info )
-# setopt prompt_subst
-# zstyle ':vcs_info:git:*' formats '  %b'
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr '+'
+zstyle ':vcs_info:*' unstagedstr '!'
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked git-stash git-st
++vi-git-st() {
+    local ahead behind remote
+    local -a gitstatus
+    # Are we on a remote-tracking branch?
+    remote=${$(git rev-parse --verify ${hook_com[branch]}@{upstream} \
+        --symbolic-full-name 2>/dev/null)/refs\/remotes\/}
+
+    if [[ -n ${remote} ]] ; then
+        # for git prior to 1.7
+        # ahead=$(git rev-list origin/${hook_com[branch]}..HEAD | wc -l)
+        ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
+        (( $ahead )) && gitstatus+=( "${c3}⇡${ahead}${c2}" )
+
+        # for git prior to 1.7
+        # behind=$(git rev-list HEAD..origin/${hook_com[branch]} | wc -l)
+        behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l)
+        (( $behind )) && gitstatus+=( "${c4}⇣${behind}${c2}" )
+
+        hook_com[misc]+="${(j::)gitstatus}"
+    fi
+}
++vi-git-untracked() {
+    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+        git status --porcelain | grep -m 1 '^??' &>/dev/null
+    then
+        hook_com[misc]+='?'
+    fi
+}
++vi-git-stash() {
+    local -a stashes
+    if [[ -s ${hook_com[base]}/.git/refs/stash ]] ; then
+        hook_com[misc]+="*"
+    fi
+}
+zstyle ':vcs_info:git:*' formats " %b%m%u%c"
 
 # Add colors to ls
 alias ls='ls --color'
@@ -55,13 +86,11 @@ alias clear-history='rm ~/.zsh_history'
 alias neofetch='echo "" && neofetch'
 
 # Prompt config
-# if [[ $EUID -ne 0 ]]; then
-#   PROMPT='%B%210F %n%f %120F %m%f %228F %1~%f%081F${vcs_info_msg_0_}%f %b '
-#   PROMPT='%B%210F %1~%f%159F${vcs_info_msg_0_}%f %b '
-#   PROMPT='%B%210F %n%f %120F %m%f %228F %1~%f %b '
-# else
-#   PROMPT='%B%214F[%n@%m %1~]# %f%b'
-# fi
+if [[ $EUID -ne 0 ]]; then
+    PROMPT='%B%1F[%f%3F%n%f%2F@%f%6F%m%f %4F%1~%f%5F${vcs_info_msg_0_}%f%1F]%f%7F$%f %b'
+else
+    PROMPT='%B%3F[%n@%m %1~]# %f%b'
+fi
 
 # Fancy features - comment out to speed up load time
 
@@ -70,9 +99,3 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ## Load zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-## Load powerlevel10k
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
