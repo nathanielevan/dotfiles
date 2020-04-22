@@ -198,7 +198,7 @@ bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'm
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
-# Remove title bar
+# Remove title bar, give windows a 2px border
 default_border pixel 2
 default_floating_border pixel 2
 
@@ -225,3 +225,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Moving mouse to an unfocused window should not change focus
 focus_follows_mouse no
+
+# Do not wrap around focus
+focus_wrapping no
