@@ -20,8 +20,8 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `xss-lock` (for screen locking)
 * `dunst` (notification daemon)
 * `nitrogen` (wallpaper setter)
-* `adapta-gtk-theme`, `papirus-icon-theme` (for GTK+ 2 and 3 applications)
 * `pulseaudio` (sound server. it just werks)
+* Optional: Adwaita-dark theme (`gnome-themes-extra` on Arch) (for GTK+ 2 and 3 applications)
 * General applications:
   - `firefox` (web browser)
   - `zathura` (pdf viewer)
