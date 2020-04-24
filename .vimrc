@@ -19,6 +19,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
+" Refer to https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions for
+" how to install COC plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
