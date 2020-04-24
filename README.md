@@ -2,7 +2,7 @@
 Linux configuration files by Nathaniel Evan. Inspired by various sources.
 
 ## Dependencies:
-* `i3-gaps` (window manager), `i3lock-color` (screen locker), polybar (status bar), rofi (menu)
+* `i3-gaps` (window manager), `i3lock-color` (screen locker), `polybar` (status bar), `rofi` (menu)
 * `rxvt-unicode`, `urxvt-perls` (terminal emulator)
 * `mpd` (music player daemon), `ncmpcpp` (player client)
 * `nnn` (file manager), `trash-cli` (trash support)
@@ -10,7 +10,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `gnupg`, `pass` (for password storage)
 * `udiskie` (automounting USB drives)
 * `vim` (the holy grail of text editors)
-  * YouCompleteMe needs `mono` for C# support, `go` for Go support, `node` and `npm` for JS/TS, and JDK (min. version 8) for Java support.
+  * CoC plugin requires `nodejs` to run
 * `zsh`, [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting), [zsh-autosuggestions](https://github.com/zsh-users/zsh-syntax-highlighting), [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 * [Nerd fonts](https://github.com/ryanoasis/nerd-fonts)
 * `tmux` (terminal multiplexer, useful for SSH or tiling in terminal)
@@ -21,11 +21,8 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `dunst` (notification daemon)
 * `nitrogen` (wallpaper setter)
 * `pulseaudio` (sound server. it just werks)
+* `zathura` (pdf viewer)
 * Optional: Adwaita-dark theme (`gnome-themes-extra` on Arch) (for GTK+ 2 and 3 applications)
-* General applications:
-  - `firefox` (web browser)
-  - `zathura` (pdf viewer)
-  - `sxiv` (image viewer)
 
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.
@@ -33,7 +30,6 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 
 ## WIP:
 * Personal bootstrapping script, if I ever feel like it.
-* ~~Set up YouCompleteMe for VIM (and possibly a few other plugins).~~ (done, refer to commit 8226377)
 * Finish configuring tmux.
 * Experiment with awesomewm, bspwm and/or dwm/xmonad, when I'm in the mood to break things.
 
