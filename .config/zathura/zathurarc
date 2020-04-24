@@ -1,4 +1,5 @@
 set font "Hack Nerd Font Mono 9"
-set guioptions none
-set adjust-open "best-fit"
+# Use Ctrl-N to toggle status bar
+set adjust-open "width"
 set pages-per-row 1
+set scroll-page-aware "true"
