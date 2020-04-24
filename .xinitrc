@@ -57,6 +57,9 @@ fi
 # UNIX socket for MPD and ncmpcpp
 export MPD_HOST=$HOME/.config/mpd/socket
 
+# Set default terminal emulator
+export TERMINAL=urxvtc
+
 # Set default text editor
 export EDITOR=vim
 
