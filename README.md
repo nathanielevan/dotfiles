@@ -12,6 +12,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `vim` (the holy grail of text editors)
   * CoC plugin requires `nodejs` to run
 * `zsh`, [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting), [zsh-autosuggestions](https://github.com/zsh-users/zsh-syntax-highlighting), [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+* `fzf` (fuzzy finder, used in zsh and vim)
 * [Nerd fonts](https://github.com/ryanoasis/nerd-fonts)
 * `tmux` (terminal multiplexer, useful for SSH or tiling in terminal)
 * `picom` (formerly compton, a display compositor)
