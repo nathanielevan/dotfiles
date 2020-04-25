@@ -1,6 +1,12 @@
 # Use directory colors from ~/.dir_colors
 test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
 
+# Use vim keybinds
+bindkey -v
+
+# Export to PATH variable
+export PATH=/home/nate/.local/bin:$PATH
+
 autoload -Uz colors
 colors
 
@@ -89,6 +95,7 @@ alias neofetch='echo "" && neofetch'
 # Prompt config
 if [[ $EUID -ne 0 ]]; then
     PROMPT='%B%1F[%f%3F%n%f%2F@%f%6F%m%f %4F%1~%f%5F${vcs_info_msg_0_}%f%1F]%f%7F$%f %b'
+#   PROMPT='%B%1F[%f%3F%n%f%2F@%f%6F%m%f %4F%1~%f%1F]%f%7F$%f %b'
 else
     PROMPT='%B%3F[%n@%m %1~]# %f%b'
 fi
@@ -100,3 +107,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ## Load zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+## Source fzf files
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
