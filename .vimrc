@@ -22,6 +22,7 @@ Plug 'ervandew/supertab'
 " Refer to https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions for
 " how to install COC plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -31,12 +32,18 @@ let g:airline_theme='nord'
 
 set encoding=utf-8
 
+" Insert newline without entering insert mode
+map <Enter> o<ESC>
+map <S-Enter> O<ESC>
+
+" Keybinds for window navigation
+" use :redraw! to force redraw the screen instead
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-" use :redraw! to force redraw the screen instead
 
+" Keybind to access buffer list and switch buffers
 nnoremap <leader>l :ls<CR>:b<space>
 
 nmap <F8> :set paste<CR>i
