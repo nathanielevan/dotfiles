@@ -4,6 +4,12 @@ test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
 # Use vim keybinds
 bindkey -v
 
+# Makes fzf use rg for speed
+export FZF_DEFAULT_OPTS="
+--no-unicode
+"
+export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*'"
+
 # Export to PATH variable
 export PATH=/home/nate/.local/bin:$PATH
 
