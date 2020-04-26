@@ -49,7 +49,7 @@ map <C-l> <C-w>l
 " Keybind to access buffer list and switch buffers
 " nnoremap <leader>l :ls<CR>:b<space>
 
-let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/*'"
+let $FZF_DEFAULT_COMMAND = "rg --files --hidden --no-ignore --glob '!.git/*'"
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--no-unicode']}), <bang>0)
 " fzf.vim keybinds

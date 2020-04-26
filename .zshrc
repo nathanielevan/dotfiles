@@ -8,7 +8,7 @@ bindkey -v
 export FZF_DEFAULT_OPTS="
 --no-unicode
 "
-export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*'"
+export FZF_DEFAULT_COMMAND="rg --files --hidden --no-ignore --glob '!.git/*'"
 
 # Export to PATH variable
 export PATH=/home/nate/.local/bin:$PATH
