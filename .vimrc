@@ -3,7 +3,10 @@ syntax on
 set number relativenumber
 set splitbelow splitright
 set cursorline
+set nostartofline
 set expandtab
+set incsearch
+set hlsearch
 set fillchars+=vert:\│
 set hidden
 
@@ -44,7 +47,14 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Keybind to access buffer list and switch buffers
-nnoremap <leader>l :ls<CR>:b<space>
+" nnoremap <leader>l :ls<CR>:b<space>
+
+let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/*'"
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--no-unicode']}), <bang>0)
+" fzf.vim keybinds
+nnoremap <leader>l :Buffers<CR>
+nnoremap <leader>p :Files<CR>
 
 nmap <F8> :set paste<CR>i
 imap <F8> <ESC>:set paste<CR>i<Right>
