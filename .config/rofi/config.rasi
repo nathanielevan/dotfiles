@@ -8,14 +8,14 @@
     background-color:      Black;
     border-color:          White;
     text-color:           White;
-    font:            	"Iosevka Term Semibold 10";
+    font:            	"Iosevka Term Semibold 11";
 }
 
 #window {
     anchor:     north;
     location:   north;
     width:      100%;
-    padding:    5px;
+    padding:    4px;
     children:   [ horibox ];
 }
 
@@ -29,7 +29,7 @@
 }
 
 #entry {
-    margin: 0 0.4em 0 0; 
+    margin: 0 0.4em 0 0;
 }
 
 #listview {
