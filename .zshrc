@@ -1,17 +1,23 @@
 # Use directory colors from ~/.dir_colors
-test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
+test -r ~/.config/dir_colors && eval $(dircolors ~/.config/dir_colors)
 
-# Use vim keybinds
+# Use Vim keybinds
 bindkey -v
 
-# Makes fzf use rg for speed
-export FZF_DEFAULT_OPTS="
---no-unicode
-"
+# Displays file previews in fzf
+# export FZF_DEFAULT_OPTS="
+# --preview 'bat --style=numbers --color=always {} | head -19'
+# "
 export FZF_DEFAULT_COMMAND="rg --files --hidden --no-ignore --glob '!.git/*'"
+
+# Set bat highlighting color theme
+export BAT_THEME="Nord"
 
 # Export to PATH variable
 export PATH=/home/nate/.local/bin:$PATH
+
+# Disable less history
+export LESSHISTFILE=/dev/null
 
 autoload -Uz colors
 colors
@@ -109,10 +115,10 @@ fi
 # Fancy features - comment out to speed up load time
 
 ## Load zsh-autosuggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ## Load zsh-syntax-highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## Source fzf files
 source /usr/share/fzf/key-bindings.zsh

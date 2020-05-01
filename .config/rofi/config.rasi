@@ -8,7 +8,7 @@
     background-color:      Black;
     border-color:          White;
     text-color:           White;
-    font:            	"Hack 10";
+    font:            	"Iosevka Term Semibold 10";
 }
 
 #window {

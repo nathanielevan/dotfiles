@@ -1,0 +1,6 @@
+[submodule ".local/share/zsh/plugins/zsh-autosuggestions"]
+	path = .local/share/zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".local/share/zsh/plugins/zsh-syntax-highlighting"]
+	path = .local/share/zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting

@@ -43,19 +43,16 @@ URxvt.background: [90]nord0
 
 !! urxvt config
 
-URxvt.font: xft:Hack:size=11, \
-            xft:DejaVu Sans:size=11, \
-            xft:Noto Sans Mono CJK JP:size=11, \
-URxvt.boldFont: xft:Hack:size=11:bold, \
-                xft:DejaVu Sans:size=11:bold, \
-                xft:Noto Sans Mono CJK JP:size=11:bold, \
-URxvt.italicFont: xft:Hack:size=11:italic, \
-                  xft:DejaVu Sans:size=11:italic, \
-                  xft:Noto Sans Mono CJK JP:size=11:italic, \
-URxvt.boldItalicFont: xft:Hack:size=11:bold:italic, \
-                      xft:DejaVu Sans:size=11:bold:italic, \
-                      xft:Noto Sans Mono CJK JP:size=11:bold:italic, \
+URxvt.font: xft:Iosevka Term Medium:size=12, \
+            xft:Noto Sans Mono CJK JP:size=12
+URxvt.boldFont: xft:Iosevka Term Extrabold:size=12, \
+                xft:Noto Sans Mono CJK JP:size=12:bold
+URxvt.italicFont: xft:Iosevka Term Medium Oblique:size=12, \
+                  xft:Noto Sans Mono CJK JP:size=12
+URxvt.boldItalicFont: xft:Iosevka Term Extrabold Oblique:size=12, \
+                      xft: Noto Sans Mono CJK JP:size=12:bold
 URxvt.letterSpace: 0
+URxvt.skipBuiltinGlyphs: 1
 URxvt.scrollBar: false
 URxvt.depth: 32
 URxvt.internalBorder: 15
@@ -83,3 +80,7 @@ URxvt.url-select.button:    2
 URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
+
+! sxiv config
+
+Sxiv.font: Iosevka Term Medium:size=10

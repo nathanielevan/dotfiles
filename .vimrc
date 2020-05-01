@@ -49,12 +49,16 @@ map <C-l> <C-w>l
 " Keybind to access buffer list and switch buffers
 " nnoremap <leader>l :ls<CR>:b<space>
 
+" fzf configuration
+let $BAT_THEME = "Nord"
 let $FZF_DEFAULT_COMMAND = "rg --files --hidden --no-ignore --glob '!.git/*'"
 command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--no-unicode']}), <bang>0)
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+" Put {'options': ['--no-unicode']} in with_preview() to disable unicode
 " fzf.vim keybinds
 nnoremap <leader>l :Buffers<CR>
 nnoremap <leader>p :Files<CR>
+" tip: use :cd to change directory
 
 nmap <F8> :set paste<CR>i
 imap <F8> <ESC>:set paste<CR>i<Right>

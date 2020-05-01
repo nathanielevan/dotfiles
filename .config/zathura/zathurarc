@@ -1,4 +1,4 @@
-set font "Hack Nerd Font Mono 9"
+set font "Iosevka Term 10"
 # Use Ctrl-N to toggle status bar
 set adjust-open "width"
 set pages-per-row 1
