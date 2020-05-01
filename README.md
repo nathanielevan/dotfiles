@@ -14,7 +14,6 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `zsh`, [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting), [zsh-autosuggestions](https://github.com/zsh-users/zsh-syntax-highlighting), [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 * `fzf` (fuzzy finder, used in zsh and vim)
   * Uses `ripgrep` to find files
-* [Nerd fonts](https://github.com/ryanoasis/nerd-fonts)
 * `tmux` (terminal multiplexer, useful for SSH or tiling in terminal)
 * `picom` (formerly compton, a display compositor)
 * `xorg-xinit` (who needs a display manager?), `xorg-xbacklight` (screen brightness adjustment)
@@ -24,7 +23,8 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `nitrogen` (wallpaper setter)
 * `pulseaudio` (sound server. it just werks)
 * `zathura` (pdf viewer)
-* Optional: Adwaita-dark theme (`gnome-themes-extra` on Arch) (for GTK+ 2 and 3 applications)
+* Arc-Dark theme (`arc-gtk-theme` on Arch) (for GTK+ 2 and 3 applications)
+* Iosevka Term font (`ttf-iosevka-term` on AUR)
 
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.
