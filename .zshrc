@@ -3,6 +3,7 @@ test -r ~/.config/dir_colors && eval $(dircolors ~/.config/dir_colors)
 
 # Use Vim keybinds
 bindkey -v
+export KEYTIMEOUT=1
 
 # Displays file previews in fzf
 # export FZF_DEFAULT_OPTS="
@@ -23,6 +24,7 @@ autoload -Uz colors
 colors
 
 setopt histignorealldups sharehistory
+setopt prompt_subst
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
@@ -46,67 +48,67 @@ compinit
 
 alias sudo='sudo '
 
-# Load version control information
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr '+'
-zstyle ':vcs_info:*' unstagedstr '!'
-zstyle ':vcs_info:git*+set-message:*' hooks git-untracked git-stash git-st
-+vi-git-st() {
-    local ahead behind remote
-    local -a gitstatus
-    # Are we on a remote-tracking branch?
-    remote=${$(git rev-parse --verify ${hook_com[branch]}@{upstream} \
-        --symbolic-full-name 2>/dev/null)/refs\/remotes\/}
+# Displays information about Git repository status
+git_info() {
 
-    if [[ -n ${remote} ]] ; then
-        # for git prior to 1.7
-        # ahead=$(git rev-list origin/${hook_com[branch]}..HEAD | wc -l)
-        ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
-        (( $ahead )) && gitstatus+=( "${c3}⇡${ahead}${c2}" )
+    # Exit if not inside a Git repository
+    ! git rev-parse --is-inside-work-tree > /dev/null 2>&1 && return
 
-        # for git prior to 1.7
-        # behind=$(git rev-list HEAD..origin/${hook_com[branch]} | wc -l)
-        behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l)
-        (( $behind )) && gitstatus+=( "${c4}⇣${behind}${c2}" )
+    # Display git branch/tag, or name-rev if on detached head
+    local GIT_LOCATION=${$(git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD)#(refs/heads/|tags/)}
 
-        hook_com[misc]+="${(j::)gitstatus}"
+    local AHEAD="⇡NUM"
+    local BEHIND="⇣NUM"
+    local STASHED="*"
+    local UNTRACKED="?"
+    local MODIFIED="!"
+    local STAGED="+"
+
+    local -a DIVERGENCES
+    local -a FLAGS
+
+    local NUM_AHEAD="$(git log --oneline @{u}.. 2> /dev/null | wc -l | tr -d ' ')"
+    if [ "$NUM_AHEAD" -gt 0 ]; then
+        DIVERGENCES+=( "${AHEAD//NUM/$NUM_AHEAD}" )
     fi
-}
-+vi-git-untracked() {
-    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
-        git status --porcelain | grep -m 1 '^??' &>/dev/null
-    then
-        hook_com[misc]+='?'
-    fi
-}
-+vi-git-stash() {
-    local -a stashes
-    if [[ -s ${hook_com[base]}/.git/refs/stash ]] ; then
-        hook_com[misc]+="*"
-    fi
-}
-zstyle ':vcs_info:git:*' formats " %b%m%u%c"
 
+    local NUM_BEHIND="$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')"
+    if [ "$NUM_BEHIND" -gt 0 ]; then
+        DIVERGENCES+=( "${BEHIND//NUM/$NUM_BEHIND}" )
+    fi
+
+    if [[ -n $(git rev-parse --verify refs/stash 2> /dev/null) ]]; then
+        FLAGS+=( "$STASHED" )
+    fi
+
+    if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+        FLAGS+=( "$UNTRACKED" )
+    fi
+
+    if ! git diff --quiet 2> /dev/null; then
+        FLAGS+=( "$MODIFIED" )
+    fi
+
+    if ! git diff --cached --quiet 2> /dev/null; then
+        FLAGS+=( "$STAGED" )
+    fi
+
+    local -a GIT_INFO
+    GIT_INFO+=( " $GIT_LOCATION" )
+    [[ ${#DIVERGENCES[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)DIVERGENCES}" )
+    [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)FLAGS}" )
+    echo "${(j: :)GIT_INFO}"
+
+}
 # Add colors to ls
 alias ls='ls --color'
 
 # Clear .zsh_history
 alias clear-history='rm ~/.zsh_history'
 
-# Execute neofetch before first prompt for aesthetics
-# neofetch
-
-# Add newline before neofetch output
-alias neofetch='echo "" && neofetch'
-
 # Prompt config
 if [[ $EUID -ne 0 ]]; then
-    PROMPT='%B%1F[%f%3F%n%f%2F@%f%6F%m%f %4F%1~%f%5F${vcs_info_msg_0_}%f%1F]%f%7F$%f %b'
+    PROMPT="%B%1F[%f%3F%n%f%2F@%f%6F%m%f %4F%1~%f%5F\$(git_info)%f%1F]%f%7F$%f %b"
 #   PROMPT='%B%1F[%f%3F%n%f%2F@%f%6F%m%f %4F%1~%f%1F]%f%7F$%f %b'
 else
     PROMPT='%B%3F[%n@%m %1~]# %f%b'
