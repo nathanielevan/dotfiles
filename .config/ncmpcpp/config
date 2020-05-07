@@ -11,18 +11,18 @@
 ## ncmpcpp.
 ##
 #
-#ncmpcpp_directory = ~/.ncmpcpp
+ncmpcpp_directory = "~/.config/ncmpcpp"
 #
 ##
 ## Directory for storing downloaded lyrics. It defaults to ~/.lyrics since other
 ## MPD clients (eg. ncmpc) also use that location.
 ##
 #
-#lyrics_directory = ~/.lyrics
+lyrics_directory = "~/.local/share/lyrics"
 #
 ##### connection settings #####
 #
-mpd_host = /home/nate/.config/mpd/socket
+mpd_host = "~/.local/share/mpd/socket"
 #
 #mpd_port = 6600
 #

@@ -5,31 +5,11 @@ test -r ~/.config/dir_colors && eval $(dircolors ~/.config/dir_colors)
 bindkey -v
 export KEYTIMEOUT=1
 
-# Displays file previews in fzf
-# export FZF_DEFAULT_OPTS="
-# --preview 'bat --style=numbers --color=always {} | head -19'
-# "
-export FZF_DEFAULT_COMMAND="rg --files --hidden --no-ignore --glob '!.git/*'"
-
-# Set bat highlighting color theme
-export BAT_THEME="Nord"
-
-# Export to PATH variable
-export PATH=/home/nate/.local/bin:$PATH
-
-# Disable less history
-export LESSHISTFILE=/dev/null
-
 autoload -Uz colors
 colors
 
 setopt histignorealldups sharehistory
 setopt prompt_subst
-
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=~/.zsh_history
 
 # Use modern completion system
 autoload -Uz compinit
@@ -44,7 +24,7 @@ zstyle ':completion:*:corrections' format '%214F%B--- %d%b%f'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-compinit
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 alias sudo='sudo '
 
@@ -103,15 +83,12 @@ git_info() {
 # Add colors to ls
 alias ls='ls --color'
 
-# Clear .zsh_history
-alias clear-history='rm ~/.zsh_history'
-
 # Prompt config
 if [[ $EUID -ne 0 ]]; then
     PROMPT="%B%1F[%f%3F%n%f%2F@%f%6F%m%f %4F%1~%f%5F\$(git_info)%f%1F]%f%7F$%f %b"
-#   PROMPT='%B%1F[%f%3F%n%f%2F@%f%6F%m%f %4F%1~%f%1F]%f%7F$%f %b'
+#   PROMPT="%B%1F[%f%3F%n%f%2F@%f%6F%m%f %4F%1~%f%1F]%f%7F$%f %b"
 else
-    PROMPT='%B%3F[%n@%m %1~]# %f%b'
+    PROMPT="%B%3F[%n@%m %1~]# %f%b"
 fi
 
 # Fancy features - comment out to speed up load time

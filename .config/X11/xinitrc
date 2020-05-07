@@ -1,7 +1,7 @@
 #!/bin/sh
 
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
+userresources=$XDG_CONFIG_HOME/X11/Xresources
+usermodmap=$XDG_CONFIG_HOME/X11/Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
@@ -53,24 +53,6 @@ fi
 # xterm -geometry 80x50+494+51 &
 # xterm -geometry 80x20+494-0 &
 # exec xterm -geometry 80x66+0+0 -name login
-
-# UNIX socket for MPD and ncmpcpp
-export MPD_HOST=$HOME/.config/mpd/socket
-
-# Set default terminal emulator
-export TERMINAL=urxvtc
-
-# Set default text editor
-export EDITOR=vim
-
-# Set default web browser
-export BROWSER=firefox
-
-# NNN file manager config
-export NNN_BMS='h:~;m:/run/media/nate/;t:~/.local/share/Trash/files/;w:/mnt/win/Users/Nathaniel Evan/;'
-export NNN_USE_EDITOR=1
-export NNN_TRASH=1
-export NNN_OPENER=xdg-open
 
 # Startup programs
 urxvtd -q -f -o
