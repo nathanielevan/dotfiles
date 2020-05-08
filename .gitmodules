@@ -4,3 +4,6 @@
 [submodule ".local/share/zsh/plugins/zsh-syntax-highlighting"]
 	path = .local/share/zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule ".local/share/zsh/plugins/zsh-theme-powerlevel10k"]
+	path = .local/share/zsh/plugins/zsh-theme-powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
