@@ -32,7 +32,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
 " Refer to https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions for
 " how to install COC plugins
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
+Plug 'junegunn/fzf', { 'do' : { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 call plug#end()

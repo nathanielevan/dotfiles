@@ -40,16 +40,8 @@ export NNN_USE_EDITOR=1
 export NNN_TRASH=1
 export NNN_OPENER=xdg-open
 
-# Defines fzf's default command
-export FZF_DEFAULT_COMMAND="rg --files --hidden --no-ignore --glob '!.git/*'"
-
 # Set bat highlighting colour theme
 export BAT_THEME="Nord"
-
-# Displays file previews in fzf
-# export FZF_DEFAULT_OPTS="
-# --preview 'bat --style=numbers --color=always {} | head -19'
-# "
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && "$(tty)" = "/dev/tty1" ]]; then
 	exec startx "$XINITRC"

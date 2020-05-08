@@ -98,7 +98,3 @@ source ~/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ## Load zsh-syntax-highlighting
 source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-## Source fzf files
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
