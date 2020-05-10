@@ -21,8 +21,8 @@
 background = #00222222
 background-alt = #00444444
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #999
+foreground = #2E3440
+foreground-alt = #2E3440
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -145,7 +145,7 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline = #8fbcbb
+label-focused-underline = #306489
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
@@ -189,11 +189,11 @@ label = 
 
 bar-width = 10
 bar-indicator = |
-bar-indicator-foreground = #fff
+;bar-indicator-foreground = #fff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = #001964
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -208,7 +208,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 ;format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #81a1c1
+format-underline = #306489
 label = %percentage%%
 
 [module/memory]
@@ -216,7 +216,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 ;format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #5e81ac
+format-underline = #222B4C
 label = %percentage_used%%
 
 [module/wlan]
@@ -226,7 +226,7 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-prefix = " "
-format-connected-underline = #88c0d0
+format-connected-underline = #4F93B8
 label-connected = %essid% (%signal%%)
 
 ;format-disconnected = "睊 "
@@ -269,7 +269,7 @@ time-alt = %H:%M:%S
 
 format-prefix = ""
 ;format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #5e81ac
+format-underline = #222B4C
 
 label = %date% %time%
 
@@ -284,13 +284,13 @@ label-muted =  muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = #001964
+bar-volume-foreground-1 = #001964
+bar-volume-foreground-2 = #001964
+bar-volume-foreground-3 = #001964
+bar-volume-foreground-4 = #001964
+bar-volume-foreground-5 = #D97800
+bar-volume-foreground-6 = #AF1900
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
@@ -312,13 +312,13 @@ format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = #001964
+bar-volume-foreground-1 = #001964
+bar-volume-foreground-2 = #001964
+bar-volume-foreground-3 = #001964
+bar-volume-foreground-4 = #001964
+bar-volume-foreground-5 = #D97800
+bar-volume-foreground-6 = #AF1900
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
@@ -336,7 +336,7 @@ full-at = 100
 
 format-charging = <label-charging>
 format-charging-prefix = " "
-format-charging-underline = #81a1c1
+format-charging-underline = #306489
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -344,7 +344,7 @@ format-discharging-underline = ${self.format-charging-underline}
 format-full-prefix = " "
 ;format-full-prefix-foreground = ${colors.foreground-alt}
 ;format-full-underline = ${self.format-charging-underline}
-format-full-underline = #81a1c1
+format-full-underline = #306489
 
 ramp-capacity-0 = ""
 ramp-capacity-1 = ""
