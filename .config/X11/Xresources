@@ -19,10 +19,8 @@
 
 *.foreground:   nord4
 *.background:   nord0
-URxvt.background: [90]nord0
+URxvt.background: nord0
 *.cursorColor:  nord4
-*fading: 35
-*fadeColor: nord3
 
 *.color0: nord1
 *.color1: nord11
@@ -50,7 +48,7 @@ URxvt.boldFont: xft:Iosevka Term Extrabold:size=12, \
 URxvt.italicFont: xft:Iosevka Term Medium Oblique:size=12, \
                   xft:Noto Sans Mono CJK JP:size=12
 URxvt.boldItalicFont: xft:Iosevka Term Extrabold Oblique:size=12, \
-                      xft: Noto Sans Mono CJK JP:size=12:bold
+                      xft:Noto Sans Mono CJK JP:size=12:bold
 URxvt.letterSpace: 0
 URxvt.skipBuiltinGlyphs: 1
 URxvt.scrollBar: false
