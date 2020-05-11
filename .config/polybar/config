@@ -169,7 +169,7 @@ label-urgent-padding = 2
 
 [module/mpd]
 type = internal/mpd
-host = /home/nate/.config/mpd/socket
+host = /home/nate/.local/share/mpd/socket
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
 icon-prev = 
