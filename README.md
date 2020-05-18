@@ -17,7 +17,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `tmux` (terminal multiplexer, useful for SSH or tiling in terminal)
 * `picom` (formerly compton, a display compositor)
 * `xorg-xinit` (who needs a display manager?), `xorg-xbacklight` (screen brightness adjustment)
-* `scrot` (screenshot)
+* `maim` (screenshot)
 * `xss-lock` (for screen locking)
 * `dunst` (notification daemon)
 * `nitrogen` (wallpaper setter)
