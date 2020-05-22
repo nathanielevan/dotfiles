@@ -27,6 +27,7 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export RXVT_SOCKET="$XDG_RUNTIME_DIR/urxvtd"
+export URXVT_PERL_LIB="$XDG_DATA_HOME/urxvt/perl"
 
 # Defines location for mpd socket
 export MPD_HOST="$XDG_DATA_HOME/mpd/socket"
