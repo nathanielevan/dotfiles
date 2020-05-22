@@ -3,7 +3,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 
 ## Dependencies:
 * `i3-gaps` (window manager), `i3lock-color` (screen locker), `polybar` (status bar), `rofi` (menu)
-* `rxvt-unicode`, `urxvt-perls` (terminal emulator)
+* `rxvt-unicode` (terminal emulator)
 * `mpd` (music player daemon), `ncmpcpp` (player client)
 * `nnn` (file manager), `trash-cli` (trash support)
 * `neomutt`, `msmtp`, `isync`, `notmuch-runtime` (email client)
