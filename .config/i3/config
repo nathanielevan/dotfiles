@@ -191,8 +191,8 @@ bindsym $mod+Shift+o exec --no-startup-id "~/.config/i3/i3resize.sh right"
 gaps inner 18
 
 # Screenshot function
-bindsym --release Print exec maim -u ~/Pictures/screenshots/$(date +%s).png
-bindsym --release Shift+Print exec maim -s -u ~/Pictures/screenshots/$(date +%s).png
+bindsym --release Print exec "maim -u ~/Pictures/screenshots/$(date +%s).png | xclip -selection c -t image/png"
+bindsym --release Shift+Print exec "maim -s -u ~/Pictures/screenshots/$(date +%s).png | xclip -selection c -t image/png"
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
