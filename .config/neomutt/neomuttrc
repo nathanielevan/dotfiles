@@ -65,6 +65,7 @@ set sidebar_format = '%B%* [%?N?%N/?%S]'	        # define sidebar format (3.348)
 
 # Keybinds and macros
 # Additional note: Ctrl-G will quit most prompts (Getting Started 4.1)
+# <save-message> (s) moves a mail from one folder to another
 # In pager: after searching with "/", press \ to toggle highlighting of search matches (Getting Started 5.2)
 bind index,pager \Cp sidebar-prev-new
 bind index,pager \Cn sidebar-next-new
