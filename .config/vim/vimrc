@@ -55,6 +55,9 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Clear last search with Ctrl+/
+noremap <silent> <C-_> :let @/ = ""<CR>
+
 " Keybind to access buffer list and switch buffers
 " nnoremap <leader>l :ls<CR>:b<space>
 
