@@ -243,11 +243,11 @@ label-connected = %essid% (%signal%%)
 
 [module/eth]
 type = internal/network
-interface = enp0s20f0u2u4
+interface = enp0s20f0u2
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-underline = #88c0d0
+format-connected-underline = #4F93B8
 format-connected-prefix = " "
 ;format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
