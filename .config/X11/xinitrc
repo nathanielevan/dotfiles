@@ -58,6 +58,7 @@ fi
 urxvtd -q -f -o
 udiskie -s &
 dunst &
+sxhkd &
 picom -b
-nitrogen --restore &
-exec i3
+betterlockscreen -w &
+exec bspwm

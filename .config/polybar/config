@@ -54,7 +54,8 @@ module-margin-right = 1
 font-0 = Iosevka Term Semibold:size=10;1
 font-1 = Font Awesome 5 Free:style=Solid:size=10;1
 
-modules-left = i3 mpd
+;modules-left = i3 mpd
+modules-left = bspwm mpd
 ;modules-center = mpd
 modules-right = xbacklight pulseaudio memory cpu wlan eth battery date
 
@@ -112,19 +113,17 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-underline= #306489
+label-focused-padding = 1
 
 label-occupied = %index%
-label-occupied-padding = 2
+label-occupied-padding = 1
 
-label-urgent = %index%!
+label-urgent = %index%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty = 
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -221,7 +220,8 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+;interface = wlp2s0
+interface = wlp3s0
 interval = 3.0
 
 format-connected = <label-connected>
@@ -243,7 +243,8 @@ label-connected = %essid% (%signal%%)
 
 [module/eth]
 type = internal/network
-interface = enp0s20f0u2
+;interface = enp0s20f0u2
+interface = enp0s25
 interval = 3.0
 
 format-connected = <label-connected>
@@ -330,8 +331,10 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = BAT0
-adapter = ADP1
+;battery = BAT0
+battery = BAT1
+;adapter = ADP1
+adapter = AC
 full-at = 100
 
 format-charging = <label-charging>
