@@ -2,7 +2,7 @@
 Linux configuration files by Nathaniel Evan. Inspired by various sources.
 
 ## Dependencies:
-* `i3-gaps` (window manager), `i3lock-color` (screen locker), `polybar` (status bar), `rofi` (menu)
+* `bspwm` (window manager), `betterlockscreen` (screen locker), `sxhkd` (hotkey daemon), `polybar` (status bar), `rofi` (menu)
 * `rxvt-unicode` (terminal emulator)
 * `mpd` (music player daemon), `ncmpcpp` (player client)
 * `nnn` (file manager), `trash-cli` (trash support)
@@ -21,7 +21,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `xss-lock` (for screen locking)
 * `dunst` (notification daemon)
 * `nitrogen` (wallpaper setter)
-* `pulseaudio` (sound server. it just werks)
+* `pulseaudio` (sound server)
 * `zathura` (pdf viewer)
 * Arc-Dark theme (`arc-gtk-theme` on Arch) (for GTK+ 2 and 3 applications)
 * Iosevka Term font (`ttf-iosevka-term` on AUR)
