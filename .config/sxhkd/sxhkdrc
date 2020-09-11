@@ -18,6 +18,26 @@ super + Escape
 super + shift + e
 	$HOME/.config/bspwm/powermenu.sh
 
+# volume adjustment
+XF86AudioRaiseVolume
+        pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+XF86AudioLowerVolume
+        pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+XF86AudioMute
+        pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86AudioMicMute
+        pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# screen brightness controls
+XF86MonBrightnessUp
+        xbacklight -inc 10
+
+XF86MonBrightnessDown
+        xbacklight -dec 10
+
 #
 # bspwm hotkeys
 #
