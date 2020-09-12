@@ -23,6 +23,8 @@ export XAUTHORITY="$XDG_DATA_HOME/Xauthority"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch/config"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
