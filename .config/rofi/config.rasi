@@ -15,7 +15,7 @@
     anchor:     north;
     location:   north;
     width:      100%;
-    padding:    4px;
+    padding:    0px 0px 0px 0px;
     children:   [ horibox ];
 }
 
@@ -25,11 +25,11 @@
 }
 
 #prompt {
-    margin: 0 0.4em 0 0;
+    margin: 0.3em;
 }
 
 #entry {
-    margin: 0 0.4em 0 0;
+    margin: 0.3em;
 }
 
 #listview {
@@ -44,7 +44,7 @@
 }
 
 #element {
-    padding: 2px 2px;
+    padding: 0.3em;
 }
 #element selected {
     background-color: SteelBlue;
