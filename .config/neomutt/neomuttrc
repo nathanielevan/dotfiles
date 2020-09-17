@@ -107,7 +107,6 @@ macro index,pager gt "<change-folder>=Trash<enter>" "go to trash"
 macro browser h "<change-dir><kill-line>..<enter>" "go to parent folder"
 macro index \Cr "<tag-pattern>~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all unread messages as read"
 macro index \Ca "<limit>all\n" "undo limit and show all messages"
-macro index \Cf "<enter-command>unset wait_key<enter><shell-escape>read x?'Enter a search term to find with notmuch: '; echo \$x >~/.cache/mutt_terms<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' | perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \`\"<enter>" "show only messages matching a notmuch pattern"
 
 # Color configuration
 
