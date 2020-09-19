@@ -55,7 +55,7 @@ font-0 = Iosevka Term Semibold:size=10;1
 font-1 = Font Awesome 5 Free:style=Solid:size=10;1
 
 ;modules-left = i3 mpd
-modules-left = bspwm mpd
+modules-left = bspwm
 ;modules-center = mpd
 modules-right = xbacklight pulseaudio memory cpu wlan eth battery date
 
@@ -335,14 +335,15 @@ type = internal/battery
 battery = BAT1
 ;adapter = ADP1
 adapter = AC
-full-at = 100
 
 format-charging = <label-charging>
 format-charging-prefix = " "
 format-charging-underline = #306489
 
+time-format = %H:%M
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
+label-discharging = %percentage%% (%time%)
 
 format-full-prefix = " "
 ;format-full-prefix-foreground = ${colors.foreground-alt}
