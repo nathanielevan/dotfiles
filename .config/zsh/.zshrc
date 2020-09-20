@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
 # Use directory colors from ~/.dir_colors
 test -r ~/.config/dir_colors && eval $(dircolors ~/.config/dir_colors)
 
@@ -36,65 +29,65 @@ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 alias sudo='sudo '
 
 # Displays information about Git repository status
-git_info() {
-
-    # Exit if not inside a Git repository
-    ! git rev-parse --is-inside-work-tree > /dev/null 2>&1 && return
-
-    # Display git branch/tag, or name-rev if on detached head
-    local GIT_LOCATION=${$(git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD)#(refs/heads/|tags/)}
-
-    local AHEAD="⇡NUM"
-    local BEHIND="⇣NUM"
-    local STASHED="*"
-    local UNTRACKED="?"
-    local MODIFIED="!"
-    local STAGED="+"
-
-    local -a DIVERGENCES
-    local -a FLAGS
-
-    local NUM_AHEAD="$(git log --oneline @{u}.. 2> /dev/null | wc -l | tr -d ' ')"
-    if [ "$NUM_AHEAD" -gt 0 ]; then
-        DIVERGENCES+=( "${AHEAD//NUM/$NUM_AHEAD}" )
-    fi
-
-    local NUM_BEHIND="$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')"
-    if [ "$NUM_BEHIND" -gt 0 ]; then
-        DIVERGENCES+=( "${BEHIND//NUM/$NUM_BEHIND}" )
-    fi
-
-    if [[ -n $(git rev-parse --verify refs/stash 2> /dev/null) ]]; then
-        FLAGS+=( "$STASHED" )
-    fi
-
-    if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-        FLAGS+=( "$UNTRACKED" )
-    fi
-
-    if ! git diff --quiet 2> /dev/null; then
-        FLAGS+=( "$MODIFIED" )
-    fi
-
-    if ! git diff --cached --quiet 2> /dev/null; then
-        FLAGS+=( "$STAGED" )
-    fi
-
-    local -a GIT_INFO
-    GIT_INFO+=( " $GIT_LOCATION" )
-    [[ ${#DIVERGENCES[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)DIVERGENCES}" )
-    [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)FLAGS}" )
-    echo "${(j: :)GIT_INFO}"
-
-}
+# git_info() {
+# 
+#     # Exit if not inside a Git repository
+#     ! git rev-parse --is-inside-work-tree > /dev/null 2>&1 && return
+# 
+#     # Display git branch/tag, or name-rev if on detached head
+#     local GIT_LOCATION=${$(git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD)#(refs/heads/|tags/)}
+# 
+#     local AHEAD="⇡NUM"
+#     local BEHIND="⇣NUM"
+#     local STASHED="*"
+#     local UNTRACKED="?"
+#     local MODIFIED="!"
+#     local STAGED="+"
+# 
+#     local -a DIVERGENCES
+#     local -a FLAGS
+# 
+#     local NUM_AHEAD="$(git log --oneline @{u}.. 2> /dev/null | wc -l | tr -d ' ')"
+#     if [ "$NUM_AHEAD" -gt 0 ]; then
+#         DIVERGENCES+=( "${AHEAD//NUM/$NUM_AHEAD}" )
+#     fi
+# 
+#     local NUM_BEHIND="$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')"
+#     if [ "$NUM_BEHIND" -gt 0 ]; then
+#         DIVERGENCES+=( "${BEHIND//NUM/$NUM_BEHIND}" )
+#     fi
+# 
+#     if [[ -n $(git rev-parse --verify refs/stash 2> /dev/null) ]]; then
+#         FLAGS+=( "$STASHED" )
+#     fi
+# 
+#     if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+#         FLAGS+=( "$UNTRACKED" )
+#     fi
+# 
+#     if ! git diff --quiet 2> /dev/null; then
+#         FLAGS+=( "$MODIFIED" )
+#     fi
+# 
+#     if ! git diff --cached --quiet 2> /dev/null; then
+#         FLAGS+=( "$STAGED" )
+#     fi
+# 
+#     local -a GIT_INFO
+#     GIT_INFO+=( " $GIT_LOCATION" )
+#     [[ ${#DIVERGENCES[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)DIVERGENCES}" )
+#     [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)FLAGS}" )
+#     echo "${(j: :)GIT_INFO}"
+# 
+# }
 
 # Add colors to ls
 alias ls='ls --color'
 
 # Prompt config
 if [[ $EUID -ne 0 ]]; then
-    PROMPT="%B%1F[%f%3F%n%f%2F@%f%6F%m%f %4F%1~%f%5F\$(git_info)%f%1F]%f%7F$%f %b"
-#     PROMPT="%B%1F[%f%3F%n%f%2F@%f%6F%m%f %4F%1~%f%1F]%f%7F$%f %b"
+#     PROMPT="%B%1F[%f%3F%n%f%2F@%f%6F%m%f %4F%1~%f%5F\$(git_info)%f%1F]%f%7F$%f %b"
+    PROMPT="%B%1F[%f%3F%n%f%2F@%f%6F%m%f %4F%1~%f%1F]%f%7F$%f %b"
 else
     PROMPT="%B%3F[%n@%m %1~]# %f%b"
 fi
@@ -109,6 +102,3 @@ fi
 
 ## Load powerlevel10k
 # source $XDG_DATA_HOME/zsh/plugins/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-# [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
