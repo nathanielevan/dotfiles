@@ -55,7 +55,7 @@ fi
 # exec xterm -geometry 80x66+0+0 -name login
 
 # Startup programs
-urxvtd -q -f -o
+# urxvtd -q -f -o
 udiskie -s &
 dunst &
 sxhkd &

@@ -4,7 +4,8 @@
 
 # terminal emulator
 super + Return
-	urxvtc
+#	urxvtc
+	urxvt
 
 # program launcher
 super + d
