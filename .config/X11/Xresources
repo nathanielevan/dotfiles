@@ -71,17 +71,17 @@ URxvt.loginShell: true
 ! keyboard-select uses vim keybindings
 ! by default urxvt supports Ctrl-Alt-c/v for copy/pasting to clipboard respectively
 
-# URxvt.perl-ext-common:      default,url-select,keyboard-select,resize-font
-# URxvt.url-select.launcher:  firefox
-# URxvt.url-select.underline: true
-# URxvt.url-select.button:    2
-# URxvt.keysym.M-u:           perl:url-select:select_next
-# URxvt.keysym.M-Escape:      perl:keyboard-select:activate
-# URxvt.keysym.M-s:           perl:keyboard-select:search
-# URxvt.keysym.C-minus:       resize-font:smaller
-# URxvt.keysym.C-plus:        resize-font:bigger
-# URxvt.keysym.C-equal:       resize-font:reset
-# URxvt.keysym.C-question:    resize-font:show
+! URxvt.perl-ext-common:      default,url-select,keyboard-select,resize-font
+! URxvt.url-select.launcher:  firefox
+! URxvt.url-select.underline: true
+! URxvt.url-select.button:    2
+! URxvt.keysym.M-u:           perl:url-select:select_next
+! URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+! URxvt.keysym.M-s:           perl:keyboard-select:search
+! URxvt.keysym.C-minus:       resize-font:smaller
+! URxvt.keysym.C-plus:        resize-font:bigger
+! URxvt.keysym.C-equal:       resize-font:reset
+! URxvt.keysym.C-question:    resize-font:show
 
 ! sxiv config
 
