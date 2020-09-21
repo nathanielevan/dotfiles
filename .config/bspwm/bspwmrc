@@ -13,7 +13,6 @@ bspc config gapless_monocle      true
 bspc config top_monocle_padding  -34
 
 bspc rule -a Gimp state=floating follow=on
-bspc rule -a Chromium
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
