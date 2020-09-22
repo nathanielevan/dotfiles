@@ -4,7 +4,7 @@ set number relativenumber
 set splitbelow splitright
 set cursorline
 set nostartofline
-set expandtab
+set tabstop=4 expandtab
 set incsearch
 set hlsearch
 set ignorecase
