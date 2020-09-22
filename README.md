@@ -40,4 +40,4 @@ Suggestions and pull requests welcome, and if I accept yours, I'll credit you in
 
 ## Screenshot
 
-![Nate's desktop](./screenshot.png?raw=true "Nate's desktop")
+TBD
