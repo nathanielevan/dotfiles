@@ -1,28 +1,29 @@
 # dotfiles
 Linux configuration files by Nathaniel Evan. Inspired by various sources.
 
-## Dependencies:
+## Contains configurations for the following:
 * `bspwm` (window manager), `betterlockscreen` (screen locker), `sxhkd` (hotkey daemon), `polybar` (status bar), `rofi` (menu)
 * `rxvt-unicode` (terminal emulator)
+* `zsh` (shell)
 * `mpd` (music player daemon), `ncmpcpp` (player client)
-* `nnn` (file manager), `trash-cli` (trash support)
+* `spotifyd` (Spotify daemon)
+* `ranger` (file manager)
 * `neomutt`, `msmtp`, `isync`, `notmuch-runtime` (email client)
-* `gnupg`, `pass` (for password storage)
-* `udiskie` (automounting USB drives)
-* `vim` (the holy grail of text editors)
-  * CoC plugin requires `nodejs` to run
-* `zsh`, [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting), [zsh-autosuggestions](https://github.com/zsh-users/zsh-syntax-highlighting), [powerlevel10k](https://github.com/romkatv/powerlevel10k)
-* `fzf` (fuzzy finder, used in zsh and vim)
-  * Uses `ripgrep` to find files
-* `tmux` (terminal multiplexer, useful for SSH or tiling in terminal)
+* `vim` (text editor)
+* `tmux` (terminal multiplexer)
 * `picom` (formerly compton, a display compositor)
-* `xorg-xinit` (who needs a display manager?), `xorg-xbacklight` (screen brightness adjustment)
+* `xorg-xinit` (who needs a display manager?)
+* `dunst` (notification daemon)
+* `zathura` (pdf viewer)
+
+## Dependencies:
+* [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting), [zsh-autosuggestions](https://github.com/zsh-users/zsh-syntax-highlighting), [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+* `nodejs` (for running coc.nvim), `ripgrep` (for fzf.vim)
 * `maim` (screenshot)
 * `xss-lock` (for screen locking)
-* `dunst` (notification daemon)
-* `nitrogen` (wallpaper setter)
+* `xorg-xbacklight` (screen brightness adjustment)
+* `udiskie` (automounting USB drives)
 * `pulseaudio` (sound server)
-* `zathura` (pdf viewer)
 * Arc-Dark theme (`arc-gtk-theme` on Arch) (for GTK+ 2 and 3 applications)
 * Iosevka Term font (`ttf-iosevka-term` on AUR)
 
@@ -33,7 +34,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 ## WIP:
 * Personal bootstrapping script, if I ever feel like it.
 * Finish configuring tmux.
-* Experiment with awesomewm, bspwm and/or dwm/xmonad, when I'm in the mood to break things.
+* Experiment with awesomewm, ~~bspwm~~ and/or dwm/xmonad, when I'm in the mood to break things.
 
 Suggestions and pull requests welcome, and if I accept yours, I'll credit you in this README and in the corresponding merge commit.
 
