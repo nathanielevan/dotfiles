@@ -2,10 +2,13 @@
 export PATH="$HOME/.local/bin:$PATH"
 
 # Define default applications
-export TERMINAL="urxvtc"
+export TERMINAL="urxvt"
 export EDITOR="vim"
 export BROWSER="firefox"
 export READER="zathura"
+
+# Prevent ranger from loading default configuration
+export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # Set no. of lines in history
 export HISTSIZE=1000
@@ -18,7 +21,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_RUNTIME_DIR="/run/user/$(id -u)"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE="$XDG_CACHE_HOME/zsh/history"
-# export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export XAUTHORITY="$XDG_DATA_HOME/Xauthority"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
@@ -38,10 +41,10 @@ export MPD_HOST="$XDG_DATA_HOME/mpd/socket"
 export LESSHISTFILE=/dev/null
 
 # nnn configuration
-export NNN_BMS='h:~;m:/run/media/nate/;t:~/.local/share/Trash/files/;w:/mnt/win/Users/Nathaniel Evan/;'
-export NNN_USE_EDITOR=1
-export NNN_TRASH=1
-export NNN_OPENER=xdg-open
+# export NNN_BMS='h:~;m:/run/media/nate/;t:~/.local/share/Trash/files/;w:/mnt/win/Users/Nathaniel Evan/;'
+# export NNN_USE_EDITOR=1
+# export NNN_TRASH=1
+# export NNN_OPENER=xdg-open
 
 # Set bat highlighting colour theme
 export BAT_THEME="Nord"
