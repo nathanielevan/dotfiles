@@ -18,7 +18,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 
 ## Dependencies:
 * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting), [zsh-autosuggestions](https://github.com/zsh-users/zsh-syntax-highlighting), [powerlevel10k](https://github.com/romkatv/powerlevel10k)
-* `nodejs` (for running coc.nvim), `ripgrep` (for fzf.vim)
+* `nodejs` (for running coc.nvim), `ripgrep`, `bat` (for fzf.vim)
 * `maim` (screenshot)
 * `xss-lock` (for screen locking)
 * `xorg-xbacklight` (screen brightness adjustment)
