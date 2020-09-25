@@ -23,6 +23,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `xss-lock` (for screen locking)
 * `xorg-xbacklight` (screen brightness adjustment)
 * `udiskie` (automounting USB drives)
+* `atool` (used by ranger to extract archive file)
 * `trash-cli` (optional, for ranger trash function)
 * `pulseaudio` (sound server)
 * Arc-Dark theme (`arc-gtk-theme` on Arch) (for GTK+ 2 and 3 applications)
