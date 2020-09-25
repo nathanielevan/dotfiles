@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Glances
+GenericName=System monitor
+Exec=urxvt -e glances
+Terminal=false
+Categories=System;Monitor;
+Keywords=Glances;system;task;

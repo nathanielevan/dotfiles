@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=spotify-tui
+GenericName=Music Player
+TryExec=spt
+Exec=urxvt -e spt
+Terminal=false
+Categories=Audio;Music;Player;
+Keywords=Music;Spotify;
