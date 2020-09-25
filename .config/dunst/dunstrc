@@ -163,10 +163,10 @@
     icon_position = left
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 16
+    max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Adwaita/32x32/legacy
 
     ### History ###
 
