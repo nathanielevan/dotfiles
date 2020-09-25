@@ -84,6 +84,12 @@ alias sudo='sudo '
 # Add colors to ls
 alias ls='ls --color'
 
+# Clear history
+alias ch='rm ~/.cache/zsh/history'
+
+# Clear primary clipboard
+alias clpc='xclip -i /dev/null'
+
 # Prompt config
 if [[ $EUID -ne 0 ]]; then
 #     PROMPT="%B%1F[%f%3F%n%f%2F@%f%6F%m%f %4F%1~%f%5F\$(git_info)%f%1F]%f%7F$%f %b"
