@@ -2,7 +2,7 @@
 Type=Application
 Name=Glances
 GenericName=System monitor
-Exec=urxvt -e glances
-Terminal=false
+Exec=glances
+Terminal=true
 Categories=System;Monitor;
 Keywords=Glances;system;task;
