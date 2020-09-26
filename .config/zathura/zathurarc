@@ -1,5 +1,5 @@
 set font "Iosevka Term 10"
 # Use Ctrl-N to toggle status bar
-set adjust-open "width"
+# set adjust-open "width"
 set pages-per-row 1
 set scroll-page-aware "true"
