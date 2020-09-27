@@ -5,7 +5,7 @@
 # terminal emulator
 super + Return
 #	urxvtc
-	urxvt
+	termite
 
 # program launcher
 super + d

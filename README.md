@@ -3,7 +3,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 
 ## Contains configurations for the following:
 * `bspwm` (window manager), `betterlockscreen` (screen locker), `sxhkd` (hotkey daemon), `polybar` (status bar), `rofi` (menu)
-* `rxvt-unicode` (terminal emulator)
+* `termite` (terminal emulator)
 * `zsh` (shell)
 * `mpd` (music player daemon), `ncmpcpp` (player client)
 * `spotifyd` (Spotify daemon)
