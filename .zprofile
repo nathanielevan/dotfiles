@@ -2,11 +2,10 @@
 export PATH="$HOME/.local/bin:$PATH"
 
 # Define default applications
-export TERMINAL="termite"
+export TERMINAL="urxvt"
 export EDITOR="vim"
 export BROWSER="firefox"
 export READER="zathura"
-export PAGER="less"
 
 # Prevent ranger from loading default configuration
 export RANGER_LOAD_DEFAULT_RC=FALSE

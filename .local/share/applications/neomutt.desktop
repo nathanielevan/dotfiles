@@ -7,4 +7,4 @@ Categories=ConsoleOnly;Email;
 Keywords=Email
 MimeType=message/rfc822;x-scheme-handler/mailto;
 Terminal=false
-Exec=termite -e neomutt %U
+Exec=urxvt -e neomutt %U

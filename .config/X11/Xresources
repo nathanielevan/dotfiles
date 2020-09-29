@@ -19,7 +19,7 @@
 
 *.foreground:   nord4
 *.background:   nord0
-! URxvt.background: nord0
+URxvt.background: nord0
 *.cursorColor:  nord4
 
 *.color0: nord1
@@ -41,35 +41,35 @@
 
 !! urxvt config
 
-! URxvt.font: xft:Iosevka Term Medium:size=12, \
-!             xft:Noto Sans Mono CJK JP:size=12
-! URxvt.boldFont: xft:Iosevka Term Extrabold:size=12, \
-!                 xft:Noto Sans Mono CJK JP:size=12:bold
-! URxvt.italicFont: xft:Iosevka Term Medium Oblique:size=12, \
-!                   xft:Noto Sans Mono CJK JP:size=12
-! URxvt.boldItalicFont: xft:Iosevka Term Extrabold Oblique:size=12, \
-!                       xft:Noto Sans Mono CJK JP:size=12:bold
-! URxvt.letterSpace: 0
-! URxvt.skipBuiltinGlyphs: 1
-! URxvt.scrollBar: false
-! URxvt.depth: 32
-! URxvt.internalBorder: 15
-! URxvt.cursorUnderline: true
-! URxvt.cursorBlink: true
-! URxvt.iso14755: false
+URxvt.font: xft:Iosevka Term Medium:size=12, \
+            xft:Noto Sans Mono CJK JP:size=12
+URxvt.boldFont: xft:Iosevka Term Extrabold:size=12, \
+                xft:Noto Sans Mono CJK JP:size=12:bold
+URxvt.italicFont: xft:Iosevka Term Medium Oblique:size=12, \
+                  xft:Noto Sans Mono CJK JP:size=12
+URxvt.boldItalicFont: xft:Iosevka Term Extrabold Oblique:size=12, \
+                      xft:Noto Sans Mono CJK JP:size=12:bold
+URxvt.letterSpace: 0
+URxvt.skipBuiltinGlyphs: 1
+URxvt.scrollBar: false
+URxvt.depth: 32
+URxvt.internalBorder: 15
+URxvt.cursorUnderline: true
+URxvt.cursorBlink: true
+URxvt.iso14755: false
 
 ! see arch linux wiki on urxvt
 
-! URxvt.scrollTtyOutput: false
-! URxvt.scrollWithBuffer: true
-! URxvt.scrollTtyKeypress: true
-! URxvt.secondaryScreen: 1
-! URxvt.secondaryScroll: 0
-! URxvt.loginShell: true
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress: true
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.loginShell: true
 
 ! plugins
 ! keyboard-select uses vim keybindings
-! by default urxvt supports Ctrl-Alt-c/v for copying to/pasting from primary clipboard respectively
+! by default urxvt supports Ctrl-Alt-c/v for copy/pasting to clipboard respectively
 
 ! URxvt.perl-ext-common:      default,url-select,keyboard-select,resize-font
 ! URxvt.url-select.launcher:  firefox
