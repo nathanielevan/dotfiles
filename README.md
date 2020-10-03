@@ -8,6 +8,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `mpd` (music player daemon), `ncmpcpp` (player client)
 * `spotifyd` (Spotify daemon), `spotify-tui` (frontend for `spotifyd`)
 * `playerctl` (controls music, compatible with spotifyd)
+* `cava` (audio visualiser)
 * `ranger` (file manager)
 * `neomutt`, `msmtp`, `isync`, `notmuch-runtime` (email client)
 * `vim` (text editor)
