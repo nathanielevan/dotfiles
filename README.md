@@ -6,15 +6,17 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `rxvt-unicode` (terminal emulator)
 * `zsh` (shell)
 * `mpd` (music player daemon), `ncmpcpp` (player client)
-* `spotifyd` (Spotify daemon)
+* `spotifyd` (Spotify daemon), `spotify-tui` (frontend for `spotifyd`)
+* `playerctl` (controls music, compatible with spotifyd)
 * `ranger` (file manager)
 * `neomutt`, `msmtp`, `isync`, `notmuch-runtime` (email client)
 * `vim` (text editor)
 * `tmux` (terminal multiplexer)
 * `picom` (formerly compton, a display compositor)
 * `xorg-xinit` (who needs a display manager?)
-* `dunst` (notification daemon)
+* `dunst` (notification daemon), `libnotify` (library for sending notifications)
 * `zathura` (pdf viewer)
+* `gotop` (system monitor)
 
 ## Dependencies:
 * `nodejs` (for running coc.nvim), `ripgrep`, `bat` (for fzf.vim)
@@ -26,7 +28,8 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `ueberzug` (ranger image previews)
 * `trash-cli` (optional, for ranger trash function)
 * `pulseaudio` (sound server)
-* Arc-Dark theme (`arc-gtk-theme` on Arch) (for GTK+ 2 and 3 applications)
+* Arc-Dark GTK theme (`arc-gtk-theme` on Arch) (for GTK+ 2 and 3 applications)
+* Arc icon theme (`arc-icon-theme` on Arch)
 * Iosevka Term font (`ttf-iosevka-term` on AUR)
 
 ## Notes
