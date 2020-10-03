@@ -166,7 +166,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Adwaita/32x32/legacy
+    icon_path = /usr/share/icons/Arc/status/24/:/usr/share/icons/Arc/actions/24/:/usr/share/icons/Arc/devices/24/:/usr/share/icons/Arc/places/24/:/usr/share/icons/Adwaita/24x24/status/:/usr/share/icons/Adwaita/24x24/devices/:/usr/share/icons/Adwaita/24x24/legacy
 
     ### History ###
 
@@ -290,7 +290,7 @@
 
 [urgency_critical]
     background = "#bf616a"
-    foreground = "#ffffff"
+    foreground = "#d8dee9"
     frame_color = "#ff0000"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
