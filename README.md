@@ -45,4 +45,4 @@ Suggestions and pull requests welcome, and if I accept yours, I'll credit you in
 
 ## Screenshot
 
-TBD
+![Desktop screenshot](./screenshot.png)
