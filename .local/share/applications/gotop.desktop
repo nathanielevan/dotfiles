@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=Glances
+Name=gotop
 GenericName=System monitor
-Exec=glances
+Exec=gotop
 Terminal=true
 Categories=System;Monitor;
-Keywords=Glances;system;task;
+Keywords=gotop;system;task;
