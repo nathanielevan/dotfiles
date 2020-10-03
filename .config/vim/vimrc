@@ -11,6 +11,7 @@ set ignorecase
 set smartcase
 set fillchars+=vert:\│
 set hidden
+set showcmd
 
 set directory=$XDG_CACHE_HOME/vim,~/,/tmp
 set backupdir=$XDG_CACHE_HOME/vim,~/,/tmp
