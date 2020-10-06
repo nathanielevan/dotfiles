@@ -2,8 +2,11 @@
 
 if [ "$PLAYER_EVENT" = "start" ] || [ "$PLAYER_EVENT" = "change" ];
 then
-        trackName=$(playerctl metadata title)
-        artistAndAlbumName=$(playerctl metadata --format "{{ artist }} ({{ album }})")
+        trackData=$(playerctl metadata --format "{{ title }}
+{{ artist }}
+{{ album }}")
 
-        notify-send -u low "$trackName" "$artistAndAlbumName " --icon=library-music
+        trackTitle=`echo "${trackData}" | head -1`
+        trackArtistAlbum=`echo "${trackData}" | tail -2`
+        notify-send -u low "$trackTitle" "$trackArtistAlbum" --icon=library-music
 fi
