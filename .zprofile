@@ -29,6 +29,10 @@ export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch/config"
 export GOPATH="$XDG_DATA_HOME/go"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
+export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
+export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
+export PSQL_HISTORY="$XDG_CACHE_HOME/pg/psql_history"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
@@ -41,12 +45,6 @@ export MPD_HOST="$XDG_DATA_HOME/mpd/socket"
 
 # Disables less history file
 export LESSHISTFILE=/dev/null
-
-# nnn configuration
-# export NNN_BMS='h:~;m:/run/media/nate/;t:~/.local/share/Trash/files/;w:/mnt/win/Users/Nathaniel Evan/;'
-# export NNN_USE_EDITOR=1
-# export NNN_TRASH=1
-# export NNN_OPENER=xdg-open
 
 # Set bat highlighting colour theme
 export BAT_THEME="Nord"
