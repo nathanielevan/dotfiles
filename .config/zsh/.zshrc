@@ -28,57 +28,74 @@ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 alias sudo='sudo '
 
+autoload -Uz add-zsh-hook
+
+function xterm_title_precmd () {
+	print -Pn -- '\e]2;%n@%m %~\a'
+	[[ "$TERM" == 'screen'* ]] && print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-}\e\\'
+}
+
+function xterm_title_preexec () {
+	print -Pn -- '\e]2;%n@%m %~ %# ' && print -n -- "${(q)1}\a"
+	[[ "$TERM" == 'screen'* ]] && { print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-} %# ' && print -n -- "${(q)1}\e\\"; }
+}
+
+if [[ "$TERM" == (alacritty*|gnome*|konsole*|putty*|rxvt*|screen*|tmux*|xterm*) ]]; then
+	add-zsh-hook -Uz precmd xterm_title_precmd
+	add-zsh-hook -Uz preexec xterm_title_preexec
+fi
+
 # Displays information about Git repository status
 # git_info() {
-# 
+#
 #     # Exit if not inside a Git repository
 #     ! git rev-parse --is-inside-work-tree > /dev/null 2>&1 && return
-# 
+#
 #     # Display git branch/tag, or name-rev if on detached head
 #     local GIT_LOCATION=${$(git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD)#(refs/heads/|tags/)}
-# 
+#
 #     local AHEAD="⇡NUM"
 #     local BEHIND="⇣NUM"
 #     local STASHED="*"
 #     local UNTRACKED="?"
 #     local MODIFIED="!"
 #     local STAGED="+"
-# 
+#
 #     local -a DIVERGENCES
 #     local -a FLAGS
-# 
+#
 #     local NUM_AHEAD="$(git log --oneline @{u}.. 2> /dev/null | wc -l | tr -d ' ')"
 #     if [ "$NUM_AHEAD" -gt 0 ]; then
 #         DIVERGENCES+=( "${AHEAD//NUM/$NUM_AHEAD}" )
 #     fi
-# 
+#
 #     local NUM_BEHIND="$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')"
 #     if [ "$NUM_BEHIND" -gt 0 ]; then
 #         DIVERGENCES+=( "${BEHIND//NUM/$NUM_BEHIND}" )
 #     fi
-# 
+#
 #     if [[ -n $(git rev-parse --verify refs/stash 2> /dev/null) ]]; then
 #         FLAGS+=( "$STASHED" )
 #     fi
-# 
+#
 #     if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
 #         FLAGS+=( "$UNTRACKED" )
 #     fi
-# 
+#
 #     if ! git diff --quiet 2> /dev/null; then
 #         FLAGS+=( "$MODIFIED" )
 #     fi
-# 
+#
 #     if ! git diff --cached --quiet 2> /dev/null; then
 #         FLAGS+=( "$STAGED" )
 #     fi
-# 
+#
 #     local -a GIT_INFO
 #     GIT_INFO+=( " $GIT_LOCATION" )
 #     [[ ${#DIVERGENCES[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)DIVERGENCES}" )
 #     [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)FLAGS}" )
 #     echo "${(j: :)GIT_INFO}"
-# 
+#
 # }
 
 # Add colors to ls
