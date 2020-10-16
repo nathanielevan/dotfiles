@@ -9,4 +9,4 @@ host smtp.zoho.com
 port 587
 from nathanielevan@zohomail.com
 user nathanielevan@zohomail.com
-passwordeval "pass zoho-mail"
+passwordeval "pass zoho.com/nathanielevan@zohomail.com/neomutt"

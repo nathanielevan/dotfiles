@@ -2,7 +2,7 @@ IMAPAccount zoho
 Host imap.zoho.com
 Port 993
 User nathanielevan@zohomail.com
-PassCmd "pass zoho-mail"
+PassCmd "pass zoho.com/nathanielevan@zohomail.com/neomutt"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
