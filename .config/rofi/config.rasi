@@ -5,9 +5,9 @@
  * Slight modifications: Nathaniel Evan
  */
 * {
-    background-color:      Black;
-    border-color:          White;
-    text-color:           White;
+    background-color:      #2E3440;
+    border-color:          #E5E9F0;
+    text-color:           #E5E9F0;
     font:            	"Iosevka Term Semibold 11";
 }
 
@@ -47,5 +47,5 @@
     padding: 0.3em;
 }
 #element selected {
-    background-color: SteelBlue;
+    background-color: #5E81AC;
 }
