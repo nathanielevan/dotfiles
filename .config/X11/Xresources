@@ -19,7 +19,7 @@
 
 *.foreground:   nord4
 *.background:   nord0
-URxvt.background: nord0
+! URxvt.background: [90]nord0
 *.cursorColor:  nord4
 
 *.color0: nord1
@@ -41,13 +41,13 @@ URxvt.background: nord0
 
 !! urxvt config
 
-URxvt.font: xft:Iosevka Term Medium:size=12, \
+URxvt.font: xft:Iosevka Term:style=Regular:size=12, \
             xft:WenQuanYi Micro Hei Mono:size=12
-URxvt.boldFont: xft:Iosevka Term Extrabold:size=12, \
+URxvt.boldFont: xft:Iosevka Term:style=Bold:size=12, \
                 xft:WenQuanYi Micro Hei Mono:size=12
-URxvt.italicFont: xft:Iosevka Term Medium Oblique:size=12, \
+URxvt.italicFont: xft:Iosevka Term:style=Italic:size=12, \
                   xft:WenQuanYi Micro Hei Mono:size=12
-URxvt.boldItalicFont: xft:Iosevka Term Extrabold Oblique:size=12, \
+URxvt.boldItalicFont: xft:Iosevka Term:style=Bold Italic:size=12, \
                       xft:WenQuanYi Micro Hei Mono:size=12
 URxvt.letterSpace: 0
 URxvt.skipBuiltinGlyphs: 1
