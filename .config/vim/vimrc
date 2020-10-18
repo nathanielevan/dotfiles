@@ -13,6 +13,9 @@ set fillchars+=vert:\│
 set hidden
 set showcmd
 
+set title
+set titlestring=VIM:\ %-25.55F\%a%r%m titlelen=70
+
 set directory=$XDG_CACHE_HOME/vim,~/,/tmp
 set backupdir=$XDG_CACHE_HOME/vim,~/,/tmp
 set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
@@ -42,6 +45,7 @@ call plug#end()
 colorscheme nord
 let g:airline_powerline_fonts=1
 let g:airline_theme='nord'
+" let g:airline#extensions#tabline#enabled = 1
 
 set encoding=utf-8
 
@@ -68,6 +72,7 @@ let $FZF_DEFAULT_COMMAND = "rg --files --hidden --no-ignore --glob '!.git/*'"
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 " Put {'options': ['--no-unicode']} in with_preview() to disable unicode
+let g:fzf_layout = { 'down': '~30%' }
 " fzf.vim keybinds
 nnoremap <leader>l :Buffers<CR>
 nnoremap <leader>p :Files<CR>
