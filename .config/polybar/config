@@ -105,14 +105,14 @@ bottom = true
 separator =
 
 modules-left = xwindow
-modules-center = 
-modules-right = bluetooth wlan eth backlight-acpi pulseaudio memory cpu battery
+modules-center =
+modules-right = bluetooth wlan eth pulseaudio memory cpu battery
 
 tray-position = none
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:60:...%
+label = %title:0:40:...%
 format-foreground = ${colors.foreground-alt}
 
 [module/xkeyboard]
@@ -241,7 +241,7 @@ type = custom/script
 exec = ~/.local/bin/polybar_bluetooth.sh
 interval = 3.0
 format-prefix = " "
-format-background = ${colors.nord13}
+format-background = ${colors.nord10}
 format-padding = 1
 
 [module/backlight-acpi]
@@ -254,7 +254,7 @@ type = internal/cpu
 interval = 2
 format = <label>
 format-prefix = " "
-format-background = ${colors.nord8}
+format-background = ${colors.nord9}
 format-padding = 1
 label = %percentage%%
 
@@ -264,7 +264,7 @@ interval = 2
 format = <label>
 format-prefix = " "
 format-padding = 1
-format-background = ${colors.nord9}
+format-background = ${colors.nord8}
 label = %percentage_used%%
 
 [module/wlan]
@@ -275,13 +275,13 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-prefix = " "
-format-connected-background = ${colors.nord12}
+format-connected-background = ${colors.nord9}
 format-connected-padding = 1
-label-connected = %essid% (%signal%%)
+label-connected = 
 
 format-disconnected = <label-disconnected>
 format-disconnected-prefix = " "
-format-disconnected-background = ${colors.nord12}
+format-disconnected-background = ${colors.nord9}
 format-disconnected-padding = 1
 label-disconnected = 
 
@@ -305,13 +305,13 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-prefix = " "
-format-connected-background = ${colors.nord11}
+format-connected-background = ${colors.nord8}
 format-connected-padding = 1
-label-connected = %local_ip%
+label-connected = 
 
 format-disconnected = <label-disconnected>
 format-disconnected-prefix = " "
-format-disconnected-background = ${colors.nord11}
+format-disconnected-background = ${colors.nord8}
 format-disconnected-padding = 1
 label-disconnected = 
 ;label-disconnected = %ifname% disconnected
@@ -335,11 +335,11 @@ type = internal/pulseaudio
 
 format-volume = <label-volume>
 label-volume = "  %percentage%% "
-label-volume-background = ${colors.nord10}
+label-volume-background = ${colors.nord4}
 
 format-muted = <label-muted>
 label-muted = "   "
-label-muted-background = ${colors.nord10}
+label-muted-background = ${colors.nord4}
 
 ;bar-volume-width = 10
 ;bar-volume-foreground-0 = #001964
@@ -396,19 +396,19 @@ adapter = AC
 format-charging = <label-charging>
 format-charging-padding = 1
 label-charging =  %percentage%%
-format-charging-background = ${colors.nord14}
+format-charging-background = ${colors.nord10}
 
 time-format = %H:%M
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %percentage%%
 format-discharging-padding = 1
-format-discharging-background = ${colors.nord14}
+format-discharging-background = ${colors.nord10}
 
 format-full = <label-full>
 label-full =  Full
 ;format-full-prefix-foreground = ${colors.foreground-alt}
 ;format-full-underline = ${self.format-charging-underline}
-format-full-background = ${colors.nord14}
+format-full-background = ${colors.nord10}
 format-full-padding = 1
 
 ramp-capacity-0 = ""
