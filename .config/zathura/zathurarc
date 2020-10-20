@@ -1,5 +1,5 @@
 set font "Iosevka Term 10"
-set pages-per-row 1
+set first-page-column "1:1"
 set guioptions ""
 set window-title-basename "true"
 set window-title-page "true"

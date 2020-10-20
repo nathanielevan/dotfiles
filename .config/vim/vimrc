@@ -14,7 +14,7 @@ set hidden
 set showcmd
 
 set title
-set titlestring=VIM:\ %-25.55F\%a%r%m titlelen=70
+set titlestring=VIM:\ %-0.30F\%a%r%m
 
 set directory=$XDG_CACHE_HOME/vim,~/,/tmp
 set backupdir=$XDG_CACHE_HOME/vim,~/,/tmp
