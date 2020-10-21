@@ -10,8 +10,10 @@ bspc config window_gap          12
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
-bspc config top_monocle_padding  -34
-bspc config focused_border_color  '#ECEFF4'
+bspc config top_monocle_padding  -29
+bspc config bottom_monocle_padding -29
+bspc config normal_border_color   '#2E3440'
+bspc config focused_border_color  '#E5E9F0'
 bspc config urgent_border_color   '#BF616A'
 
 bspc config external_rules_command ~/.config/bspwm/external_rules.sh
