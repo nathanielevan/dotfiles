@@ -9,6 +9,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `spotifyd` (Spotify daemon), `spotify-tui` (frontend for `spotifyd`)
 * `playerctl` (controls music, compatible with spotifyd)
 * `cava` (audio visualiser)
+* `sxiv` (image viewer)
 * `ranger` (file manager)
 * `neomutt`, `msmtp`, `isync`, `notmuch-runtime` (email client)
 * `vim` (text editor)
@@ -17,6 +18,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `xorg-xinit` (who needs a display manager?)
 * `dunst` (notification daemon), `libnotify` (library for sending notifications)
 * `zathura` (pdf viewer)
+* `weechat` (IRC client)
 * `gotop` (system monitor)
 
 ## Dependencies:
