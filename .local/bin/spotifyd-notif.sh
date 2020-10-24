@@ -2,7 +2,7 @@
 
 if [ "$PLAYER_EVENT" = "start" ] || [ "$PLAYER_EVENT" = "change" ];
 then
-        trackData=$(playerctl metadata --format "{{ title }}
+        trackData=$(playerctl -p spotifyd metadata --format "{{ title }}
 {{ artist }}
 {{ album }}")
 
