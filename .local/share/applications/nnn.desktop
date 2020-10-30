@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=nnn
+GenericName=File manager
+Comment=Terminal file manager
+Exec=urxvtc -e nnn %U
+Terminal=false
+Icon=nnn
+MimeType=inode/directory
+Categories=System;FileTools;FileManager;ConsoleOnly
+Keywords=File;Manager;Management;Explorer;Launcher

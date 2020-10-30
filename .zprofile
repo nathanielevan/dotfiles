@@ -2,13 +2,10 @@
 export PATH="$HOME/.local/bin:$PATH"
 
 # Define default applications
-export TERMINAL="urxvt"
+export TERMINAL="urxvtc"
 export EDITOR="vim"
 export BROWSER="firefox"
 export READER="zathura"
-
-# Prevent ranger from loading default configuration
-export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # Set no. of lines in history
 export HISTSIZE=1000
@@ -46,8 +43,15 @@ export MPD_HOST="$XDG_DATA_HOME/mpd/socket"
 # Disables less history file
 export LESSHISTFILE=/dev/null
 
+# nnn configuration
+export NNN_OPTS=eo
+export NNN_FCOLORS='030304020000060801050501'
+export NNN_BMS='h:~;m:/run/media/nate/;t:~/.local/share/Trash/files/;'
+export NNN_OPENER=xdg-open
+export NNN_TRASH=1
+
 # Set bat highlighting colour theme
-export BAT_THEME="Nord"
+export BAT_THEME="base16"
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && "$(tty)" = "/dev/tty1" ]]; then
 	exec startx "$XINITRC"
