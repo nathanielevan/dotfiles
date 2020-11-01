@@ -26,8 +26,6 @@ zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
-alias sudo='sudo '
-
 autoload -Uz add-zsh-hook
 
 function xterm_title_precmd () {
@@ -98,8 +96,15 @@ fi
 #
 # }
 
+# Make sudo not ignore aliases
+alias sudo='sudo '
+
 # Add colors to ls
 alias ls='ls --color'
+
+# Alias vim to nvim because I'm braindead
+alias vim='nvim'
+alias vimdiff='nvim -d'
 
 # Clear history
 alias ch='rm ~/.cache/zsh/history'
