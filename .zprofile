@@ -2,10 +2,13 @@
 export PATH="$HOME/.local/bin:$PATH"
 
 # Define default applications
-export TERMINAL="urxvtc"
-export EDITOR="vim"
+export TERMINAL="urxvt"
+export EDITOR="nvim"
 export BROWSER="firefox"
 export READER="zathura"
+
+# Prevent ranger from loading default configuration
+export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # Set no. of lines in history
 export HISTSIZE=1000
@@ -33,7 +36,6 @@ export PSQL_HISTORY="$XDG_CACHE_HOME/pg/psql_history"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export RXVT_SOCKET="$XDG_RUNTIME_DIR/urxvtd"
 export URXVT_PERL_LIB="$XDG_DATA_HOME/urxvt/perl"
 
@@ -44,11 +46,11 @@ export MPD_HOST="$XDG_DATA_HOME/mpd/socket"
 export LESSHISTFILE=/dev/null
 
 # nnn configuration
-export NNN_OPTS=eo
-export NNN_FCOLORS='030304020000060801050501'
-export NNN_BMS='h:~;m:/run/media/nate/;t:~/.local/share/Trash/files/;'
-export NNN_OPENER=xdg-open
-export NNN_TRASH=1
+# export NNN_OPTS=eo
+# export NNN_FCOLORS='030304020006060801050501'
+# export NNN_BMS='h:~;m:/run/media/nate/;t:~/.local/share/Trash/files/;'
+# export NNN_OPENER=xdg-open
+# export NNN_TRASH=1
 
 # Set bat highlighting colour theme
 export BAT_THEME="base16"
