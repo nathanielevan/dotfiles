@@ -16,10 +16,6 @@ set mouse=a
 set encoding=utf-8
 set guicursor=
 
-set title
-set titlestring=VIM:\ %-0.30F\%a%r%m
-set titleold=
-
 " Insert newline without entering insert mode
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
@@ -38,6 +34,9 @@ noremap <silent> <C-_> :let @/ = ""<CR>
 nmap <F8> :set paste<CR>i
 imap <F8> <ESC>:set paste<CR>i<Right>
 au InsertLeave * set nopaste
+
+" Keybind to delete buffer without closing the window
+nnoremap <silent> <leader>d :bp\|bd #<CR>
 
 " Automatically download vim-plug if it doesn't exist
 let autoload_plug_path = stdpath('data') . '/site/autoload/plug.vim'
@@ -61,7 +60,6 @@ Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
 Plug 'junegunn/fzf', { 'do' : { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/fern-git-status.vim'
 Plug 'vimwiki/vimwiki'
 
 call plug#end()
@@ -98,8 +96,21 @@ let g:fern#disable_default_mappings = 1
 noremap <silent> <A-f> :Fern . -drawer -toggle<CR>
 
 function! FernInit() abort
-        nmap <buffer> <2-LeftMouse> <Plug>(fern-my-open-expand-collapse)
-        nmap <buffer> <CR> <Plug>(fern-action-enter)
+        nmap <buffer><expr>
+                \ <Plug>(fern-cr-open-enter)
+                \ fern#smart#leaf(
+                \   "\<Plug>(fern-action-open:select)",
+                \   "\<Plug>(fern-action-enter)",
+                \ )
+        nmap <buffer><expr>
+                \ <Plug>(fern-mouse-open-expand-collapse)
+                \ fern#smart#leaf(
+                \   "\<Plug>(fern-action-open:select)",
+                \   "\<Plug>(fern-action-expand)",
+                \   "\<Plug>(fern-action-collapse)",
+                \ )
+        nmap <buffer> <2-LeftMouse> <Plug>(fern-mouse-open-expand-collapse)
+        nmap <buffer> <CR> <Plug>(fern-cr-open-enter)
         nmap <buffer> l <Plug>(fern-action-expand)
         nmap <buffer> h <Plug>(fern-action-collapse)
         nmap <buffer> <Backspace> <Plug>(fern-action-leave)
