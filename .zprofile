@@ -7,9 +7,6 @@ export EDITOR="nvim"
 export BROWSER="firefox"
 export READER="zathura"
 
-# Prevent ranger from loading default configuration
-export RANGER_LOAD_DEFAULT_RC=FALSE
-
 # Set no. of lines in history
 export HISTSIZE=1000
 export SAVEHIST=1000
@@ -46,11 +43,11 @@ export MPD_HOST="$XDG_DATA_HOME/mpd/socket"
 export LESSHISTFILE=/dev/null
 
 # nnn configuration
-# export NNN_OPTS=eo
-# export NNN_FCOLORS='030304020006060801050501'
-# export NNN_BMS='h:~;m:/run/media/nate/;t:~/.local/share/Trash/files/;'
-# export NNN_OPENER=xdg-open
-# export NNN_TRASH=1
+export NNN_OPTS=eo
+export NNN_FCOLORS='030304020006060801050501'
+export NNN_BMS='h:~;m:/run/media/nate/;t:~/.local/share/Trash/files/;'
+export NNN_OPENER=xdg-open
+export NNN_TRASH=1
 
 # Set bat highlighting colour theme
 export BAT_THEME="base16"
