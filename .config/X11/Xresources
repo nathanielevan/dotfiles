@@ -86,4 +86,4 @@ URxvt.keysym.C-question:    resize-font:show
 
 ! sxiv config
 
-Sxiv.font: Iosevka Term Medium:size=10
+Sxiv.font: Iosevka Nerd Font Mono:size=10
