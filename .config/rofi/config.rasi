@@ -8,7 +8,7 @@
     background-color:      #2E3440;
     border-color:          #E5E9F0;
     text-color:           #E5E9F0;
-    font:            	"Iosevka Term Semibold 11";
+    font:            	"Iosevka Nerd Font Mono Bold 11";
 }
 
 #window {
