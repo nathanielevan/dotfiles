@@ -45,9 +45,9 @@ URxvt.font: xft:Iosevka Nerd Font Mono:style=Regular:size=12, \
             xft:WenQuanYi Micro Hei Mono:size=12
 URxvt.boldFont: xft:Iosevka Nerd Font Mono:style=Bold:size=12, \
                 xft:WenQuanYi Micro Hei Mono:size=12
-URxvt.italicFont: xft:Iosevka Nerd Font Mono:style=Italic:size=12, \
+URxvt.italicFont: xft:Iosevka Nerd Font Mono:style=Oblique:size=12, \
                   xft:WenQuanYi Micro Hei Mono:size=12
-URxvt.boldItalicFont: xft:Iosevka Nerd Font Mono:style=Bold Italic:size=12, \
+URxvt.boldItalicFont: xft:Iosevka Nerd Font Mono:style=Bold Oblique:size=12, \
                       xft:WenQuanYi Micro Hei Mono:size=12
 
 URxvt.letterSpace: 0
