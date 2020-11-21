@@ -16,6 +16,9 @@ set mouse=a
 set encoding=utf-8
 set guicursor=
 
+set title
+set titlestring=NVIM:\ %-0.30F\%a%r%m
+
 " Insert newline without entering insert mode
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
@@ -37,6 +40,9 @@ au InsertLeave * set nopaste
 
 " Keybind to delete buffer without closing the window
 nnoremap <silent> <leader>d :bp\|bd #<CR>
+
+" Workaround for resize bug on alacritty if launced as initial command
+autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
 
 " Automatically download vim-plug if it doesn't exist
 let autoload_plug_path = stdpath('data') . '/site/autoload/plug.vim'
