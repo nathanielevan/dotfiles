@@ -4,8 +4,7 @@
 
 # terminal emulator
 super + Return
-#	urxvtc
-	urxvt
+	alacritty
 
 # program launcher
 super + d
@@ -34,10 +33,10 @@ XF86AudioMicMute
 
 # screen brightness controls
 XF86MonBrightnessUp
-	xbacklight -inc 10
+	xbacklight -inc 5
 
 XF86MonBrightnessDown
-	xbacklight -dec 10
+	xbacklight -dec 5
 
 # screenshot keybinds
 Print
@@ -74,9 +73,9 @@ super + g
 # state/flags
 #
 
-# set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+# toggle the window state
+super + {t,shift + t,space,f}
+	bspc node -t '~{tiled,pseudo_tiled,floating,fullscreen}'
 
 # set the node flags
 super + ctrl + {m,x,y,z}
