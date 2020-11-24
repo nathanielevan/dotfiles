@@ -2,14 +2,14 @@
 Linux configuration files by Nathaniel Evan. Inspired by various sources.
 
 ## Contains configurations for the following:
-* `bspwm` (window manager), `betterlockscreen` (screen locker), `sxhkd` (hotkey daemon), `polybar` (status bar), `rofi` (menu)
-* `rxvt-unicode` (terminal emulator)
+* `bspwm` (window manager), `betterlockscreen` (screen locker), `sxhkd` (hotkey daemon), `polybar` (status bar), `dmenu` (menu)
+* `st` (terminal emulator)
 * `zsh` (shell)
 * `mpd` (music player daemon), `ncmpcpp` (player client)
 * `spotifyd` (Spotify daemon), `spotify-tui` (frontend for `spotifyd`)
 * `cava` (audio visualiser)
 * `sxiv` (image viewer)
-* `ranger` (file manager)
+* `nnn`, `ranger` (file managers)
 * `neomutt`, `msmtp`, `isync`, `notmuch-runtime` (email client)
 * `nvim` (text editor)
 * `tmux` (terminal multiplexer)
@@ -27,13 +27,12 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `xorg-xbacklight` (screen brightness adjustment)
 * `udiskie` (automounting USB drives)
 * `playerctl` (here used for spotifyd notifications)
-* `atool` (used by ranger to extract archive file)
-* `ueberzug` (ranger image previews)
+* `atool` (extract archive files)
 * `trash-cli` (optional, for trash function in nnn and fern.vim)
 * `pulseaudio` (sound server)
 * Arc-Dark GTK theme (`arc-gtk-theme` on Arch) (for GTK+ 2 and 3 applications)
 * Arc icon theme (`arc-icon-theme` on Arch)
-* Iosevka Term font (`ttf-iosevka-term` on AUR)
+* Iosevka Nerd Font Mono font
 
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.
@@ -48,4 +47,4 @@ Suggestions and pull requests welcome, and if I accept yours, I'll credit you in
 
 ## Screenshot
 
-![Desktop screenshot](./screenshot.png)
+To be updated
