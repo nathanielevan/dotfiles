@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-	alacritty
+	st
 
 # program launcher
 super + d
-	rofi -disable-history -modi drun,run,window,ssh -show drun
+	dmenu_run -i -h 29
 
 # make sxhkd reload its configuration files:
 super + Escape
