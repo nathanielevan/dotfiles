@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + d
-	dmenu_run -i -h 29
+	dmenu_run -i -h 29 -p "run:"
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -16,7 +16,7 @@ super + Escape
 
 # launch power menu
 super + shift + e
-	$HOME/.local/bin/powermenu.sh
+	$HOME/.local/bin/powermenu
 
 # volume adjustment
 XF86AudioRaiseVolume
@@ -40,10 +40,10 @@ XF86MonBrightnessDown
 
 # screenshot keybinds
 Print
-	$HOME/.local/bin/screenshot_full.sh
+	$HOME/.local/bin/screenshot-full
 
 shift + Print
-	$HOME/.local/bin/screenshot_sel.sh
+	$HOME/.local/bin/screenshot-sel
 
 #
 # bspwm hotkeys

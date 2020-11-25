@@ -2,7 +2,7 @@
 
 # Script to call custom rofi menu for power-related functions
 
-option=$(echo -e "lock\nlogout\nsuspend\nreboot\nshutdown" | dmenu -h 29 -p "power option")
+option=$(echo -e "lock\nlogout\nsuspend\nreboot\nshutdown" | dmenu -h 29 -p "power option:")
 
 case "$option" in
         lock) betterlockscreen -l blur 0.5 ;;

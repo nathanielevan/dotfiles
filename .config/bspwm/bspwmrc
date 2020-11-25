@@ -16,12 +16,12 @@ bspc config normal_border_color   '#2E3440'
 bspc config focused_border_color  '#E5E9F0'
 bspc config urgent_border_color   '#BF616A'
 
-bspc config external_rules_command ~/.config/bspwm/external_rules.sh
+bspc config external_rules_command ~/.config/bspwm/external-rules
 bspc rule -a Gimp state=floating follow=on
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-wmname LG3D
+#wmname LG3D
 
-$HOME/.local/bin/polybar_launch.sh
+$HOME/.local/bin/polybar-launch
