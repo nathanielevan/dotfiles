@@ -36,10 +36,10 @@ nord15 = #B48EAD
 
 ;background = ${xrdb:color0:#222}
 background = ${colors.nord0}
-background-alt = ${colors.nord5}
+background-alt = ${colors.nord4}
 ;foreground = ${xrdb:color7:#222}
 foreground = ${colors.nord0}
-foreground-alt = ${colors.nord5}
+foreground-alt = ${colors.nord4}
 ;primary = #ffb52a
 ;secondary = #e60053
 alert = ${colors.nord11}
@@ -146,7 +146,7 @@ type = internal/bspwm
 
 format-padding = 0
 label-focused = %index%
-label-focused-background = ${colors.nord7}
+label-focused-background = ${colors.nord8}
 label-focused-padding = 1
 
 label-occupied = %index%
@@ -238,7 +238,7 @@ label = %percentage%%
 [module/bluetooth]
 type = custom/script
 
-exec = ~/.local/bin/polybar_bluetooth.sh
+exec = polybar-bluetooth
 interval = 3.0
 format-prefix = " "
 format-background = ${colors.nord10}
