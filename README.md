@@ -47,4 +47,4 @@ Suggestions and pull requests welcome, and if I accept yours, I'll credit you in
 
 ## Screenshot
 
-To be updated
+![Screenshot](screenshot.png?raw=true)
