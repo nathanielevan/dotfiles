@@ -57,7 +57,7 @@
     padding = 8
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 10
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
@@ -412,3 +412,11 @@
 #    set_stack_tag = "volume"
 #
 # vim: ft=cfg
+
+[spotifyd]
+    summary = spotifyd
+    background = "#d8dee9"
+    foreground = "#4c566a"
+    timeout = 10
+    format = "%b"
+    new_icon = "~/.config/dunst/spotify.png"

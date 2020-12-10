@@ -7,6 +7,7 @@ then
 {{ album }}")
 
         trackTitle=`echo "${trackData}" | head -1`
-        trackArtistAlbum=`echo "${trackData}" | tail -2`
-        notify-send -u low "$trackTitle" "$trackArtistAlbum" --icon=library-music
+        trackArtist=`echo "${trackData}" | tail -2 | head -1`
+        trackAlbum=`echo "${trackData}" | tail -1`
+        notify-send "spotifyd" " <b>$trackTitle</b>"'\n'" $trackArtist"'\n'"﫭 $trackAlbum"
 fi
