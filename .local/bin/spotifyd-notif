@@ -4,10 +4,10 @@ if [ "$PLAYER_EVENT" = "start" ] || [ "$PLAYER_EVENT" = "change" ];
 then
         trackData=$(playerctl -p spotifyd metadata --format "{{ title }}
 {{ artist }}
-{{ album }}")
+{{ album }}" | sed 's/\&/\&amp;/g; s/</\&lt;/g')
 
-        trackTitle=`echo "${trackData}" | head -1`
-        trackArtist=`echo "${trackData}" | tail -2 | head -1`
-        trackAlbum=`echo "${trackData}" | tail -1`
-        notify-send "spotifyd" "  <b>$trackTitle</b>"'\n'"  $trackArtist"'\n'"  $trackAlbum"
+        trackTitle=$(echo "${trackData}" | head -1)
+        trackArtist=$(echo "${trackData}" | tail -2 | head -1)
+        trackAlbum=$(echo "${trackData}" | tail -1)
+        notify-send " $trackTitle" " $trackArtist\n ${trackAlbum}" --category=spotifyd
 fi
