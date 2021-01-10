@@ -414,9 +414,7 @@
 # vim: ft=cfg
 
 [spotifyd]
-    summary = spotifyd
+    category = "spotifyd"
     background = "#d8dee9"
     foreground = "#4c566a"
-    timeout = 10
-    format = "%b"
     new_icon = "~/.config/dunst/spotify.png"
