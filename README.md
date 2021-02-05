@@ -14,6 +14,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 * `nvim` (text editor)
 * `tmux` (terminal multiplexer)
 * `picom` (formerly compton, a display compositor)
+  - Dual kawase blur requires `picom-git` for now
 * `xorg-xinit` (who needs a display manager?)
 * `dunst` (notification daemon), `libnotify` (library for sending notifications)
 * `zathura` (pdf viewer)
