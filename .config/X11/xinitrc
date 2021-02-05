@@ -59,7 +59,7 @@ fi
 udiskie -s &
 dunst &
 sxhkd &
-picom -b
+picom --experimental-backends -b
 xsetroot -cursor_name left_ptr &
 # betterlockscreen -w &
 # xss-lock --transfer-sleep-lock -- betterlockscreen -l blur 0.5 &
