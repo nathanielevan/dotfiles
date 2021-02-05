@@ -1,4 +1,5 @@
 set font "Iosevka Nerd Font Mono 10"
+set sandbox none
 set first-page-column "1:1"
 set guioptions "s"
 set window-title-basename "true"
