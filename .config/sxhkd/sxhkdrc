@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + d
-	dmenu_run -i -h 29 -p "run:"
+	dmenu_run -i -p "run:"
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -33,10 +33,10 @@ XF86AudioMicMute
 
 # screen brightness controls
 XF86MonBrightnessUp
-	xbacklight -inc 5
+	light -A 5
 
 XF86MonBrightnessDown
-	xbacklight -dec 5
+	light -U 5
 
 # screenshot keybinds
 Print
