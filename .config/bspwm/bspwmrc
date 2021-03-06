@@ -6,12 +6,15 @@ bspc monitor -d $(seq 1 10)
 
 bspc config border_width         2
 bspc config window_gap          12
+bspc config top_padding         29
+bspc config bottom_padding      29
 
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config top_monocle_padding  -29
 bspc config bottom_monocle_padding -29
+
 bspc config normal_border_color   '#2E3440'
 bspc config focused_border_color  '#E5E9F0'
 bspc config urgent_border_color   '#BF616A'
@@ -22,6 +25,10 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-#wmname LG3D
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
+bspc config merge_overlapping_monitors true
+
+# wmname LG3D
 
 $HOME/.local/bin/polybar-launch
