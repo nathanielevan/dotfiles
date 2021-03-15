@@ -2,7 +2,7 @@
 Linux configuration files by Nathaniel Evan. Inspired by various sources.
 
 ## Contains configurations for the following:
-* `bspwm` (window manager), `betterlockscreen` (screen locker), `sxhkd` (hotkey daemon), `polybar` (status bar), `dmenu` (menu)
+* `bspwm` (window manager), `slock` (screen locker), `sxhkd` (hotkey daemon), `polybar` (status bar), `dmenu` (menu)
 * `st` (terminal emulator)
 * `zsh` (shell)
 * `mpd` (music player daemon), `ncmpcpp` (player client)
