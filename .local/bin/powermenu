@@ -5,7 +5,7 @@
 option=$(echo -e "lock\nlogout\nsuspend\nreboot\nshutdown" | dmenu -r -p "power option:")
 
 case "$option" in
-        lock) slock -m "Locked at $(date "+%a %d, %H:%M:%S")";;
+        lock) slock -m "Locked at $(date "+%a %d, %H:%M:%S")" ;;
         logout) bspc quit ;;
         suspend) systemctl suspend ;;
         reboot) systemctl reboot ;;

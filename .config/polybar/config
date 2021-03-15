@@ -56,8 +56,8 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-separator = |
-separator-foreground = ${colors.background}
+;separator = |
+;separator-foreground = ${colors.background}
 
 line-size = 3
 line-color = ${colors.background}
@@ -332,6 +332,8 @@ label = %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
+
+handle-events = false
 
 format-volume = <label-volume>
 label-volume = "  %percentage%% "
