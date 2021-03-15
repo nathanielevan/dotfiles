@@ -24,6 +24,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 ## Dependencies:
 * `nodejs` (for running coc.nvim), `ripgrep`, `bat` (for fzf.vim)
 * `maim` (screenshot)
+* `feh` (wallpaper setter)
 * `xss-lock` (for screen locking)
 * `xorg-xbacklight` (screen brightness adjustment)
 * `udiskie` (automounting USB drives)

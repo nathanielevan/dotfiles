@@ -59,8 +59,8 @@ fi
 udiskie -s &
 dunst &
 sxhkd &
-picom --experimental-backends -b
+picom -b
 xsetroot -cursor_name left_ptr &
-# betterlockscreen -w &
-# xss-lock --transfer-sleep-lock -- betterlockscreen -l blur 0.5 &
+feh --bg-fill --no-fehbg ~/.config/wallpapers/wallpapers.jpg
+xss-lock --transfer-sleep-lock -- slock -m "Locked at $(date "+%a %d, %H:%M:%S")" &
 exec bspwm
