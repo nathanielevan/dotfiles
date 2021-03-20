@@ -58,9 +58,9 @@ fi
 # urxvtd -q -f -o
 udiskie -s &
 dunst &
-sxhkd &
+# sxhkd &
 picom -b
 xsetroot -cursor_name left_ptr &
 feh --bg-fill --no-fehbg ~/.config/wallpapers/wallpaper.jpg
-xss-lock --transfer-sleep-lock -- slock -m "Locked at $(date "+%a %d, %H:%M:%S")" &
-exec bspwm
+xss-lock --transfer-sleep-lock -- slock &
+exec dwm
