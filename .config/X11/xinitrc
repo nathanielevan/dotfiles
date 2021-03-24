@@ -56,9 +56,9 @@ fi
 
 # Startup programs
 # urxvtd -q -f -o
-udiskie -s &
 dunst &
 # sxhkd &
+udiskie -s &
 picom -b
 xsetroot -cursor_name left_ptr &
 feh --bg-fill --no-fehbg ~/.config/wallpapers/wallpaper.jpg
