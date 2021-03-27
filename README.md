@@ -2,7 +2,7 @@
 Linux configuration files by Nathaniel Evan. Inspired by various sources.
 
 ## Contains configurations for the following:
-* `bspwm` (window manager), `slock` (screen locker), `sxhkd` (hotkey daemon), `polybar` (status bar), `dmenu` (menu)
+* `dwm` (window manager), `slock` (screen locker), `sxhkd` (hotkey daemon), `polybar` (status bar), `dmenu` (menu)
 * `st` (terminal emulator)
 * `zsh` (shell)
 * `mpd` (music player daemon), `ncmpcpp` (player client)
@@ -43,7 +43,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 ## WIP:
 * Personal bootstrapping script, if I ever feel like it.
 * Finish configuring tmux.
-* Experiment with awesomewm, ~~bspwm~~ and/or dwm/xmonad, when I'm in the mood to break things.
+* Experiment with awesomewm, ~~bspwm~~ and/or ~~dwm~~/xmonad, when I'm in the mood to break things.
 
 Suggestions and pull requests welcome, and if I accept yours, I'll credit you in this README and in the corresponding merge commit.
 
