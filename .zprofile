@@ -1,5 +1,5 @@
 # Define PATH
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin/dwmblocks:$HOME/.local/bin:$PATH"
 
 # Define default applications
 export TERMINAL="st"
@@ -31,10 +31,13 @@ export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
 export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
 export PSQL_HISTORY="$XDG_CACHE_HOME/pg/psql_history"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
-export RXVT_SOCKET="$XDG_RUNTIME_DIR/urxvtd"
-export URXVT_PERL_LIB="$XDG_DATA_HOME/urxvt/perl"
+# export RXVT_SOCKET="$XDG_RUNTIME_DIR/urxvtd"
+# export URXVT_PERL_LIB="$XDG_DATA_HOME/urxvt/perl"
 
 # Defines location for mpd socket
 export MPD_HOST="$XDG_DATA_HOME/mpd/socket"
