@@ -1,1 +1,3 @@
+#!/bin/sh
+
 free | awk 'NR == 2 {printf "%d%%\n", $3/$2*100}'

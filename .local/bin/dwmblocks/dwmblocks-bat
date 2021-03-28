@@ -1,5 +1,7 @@
+#!/bin/sh
+
 # Loop through all attached batteries and format the info
-for battery in /sys/class/power_supply/BAT?*; do
+for battery in $(ls -d /sys/class/power_supply/* | grep BAT); do
 	# If non-first battery, print a space separator.
 	[ -n "${capacity+x}" ] && printf " "
 	# Sets up the status and capacity
