@@ -1,0 +1,6 @@
+#!/bin/sh
+
+grep -h up /sys/class/net/e*/operstate > /dev/null && lanicon=" " || lanicon=" "
+grep -h up /sys/class/net/w*/operstate > /dev/null && wlanicon="直  " || wlanicon="睊  "
+
+printf "%s%s" "$wlanicon" "$lanicon"
