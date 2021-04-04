@@ -6,7 +6,7 @@ option=$(echo -e "lock\nlogout\nsuspend\nreboot\nshutdown" | dmenu -r -p "power 
 
 case "$option" in
         lock) loginctl lock-session ;;
-        logout) bspc quit ;;
+        logout) xsetroot -name "fsignal:1" ;; # signal 1 to fsignal for quitting dwm
         suspend) systemctl suspend ;;
         reboot) systemctl reboot ;;
         shutdown) systemctl poweroff ;;
