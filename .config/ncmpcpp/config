@@ -1,7 +1,8 @@
-##############################################################################
-## This is the example configuration file. Copy it to $HOME/.ncmpcpp/config ##
-## or $XDG_CONFIG_HOME/ncmpcpp/config and set up your preferences.          ##
-##############################################################################
+##############################################################
+## This is an example configuration file. Copy it to        ##
+## $XDG_CONFIG_HOME/ncmpcpp/config or $HOME/.ncmpcpp/config ##
+## and set up your preferences.                             ##
+##############################################################
 #
 ##### directories ######
 ##
@@ -30,16 +31,20 @@ mpd_host = "~/.local/share/mpd/socket"
 #
 ## Needed for tag editor and file operations to work.
 ##
-#mpd_music_dir = ~/music
+mpd_music_dir = "~/Music"
 #
 #mpd_crossfade_time = 5
 #
+# Exclude pattern for random song action
+# http://www.boost.org/doc/libs/1_46_1/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html
+#random_exclude_pattern = "^(temp|midi_songs).*"
+#
 ##### music visualizer #####
 ##
-## Note: In order to make music visualizer work you'll need to use mpd fifo
-## output, whose format parameter has to be set to 44100:16:1 for mono
-## visualization or 44100:16:2 for stereo visualization. Example configuration
-## (it has to be put into mpd.conf):
+## In order to make music visualizer work with MPD you need to use the fifo
+## output. Its format parameter has to be set to 44100:16:1 for mono
+## visualization or 44100:16:2 for stereo visualization. As an example here is
+## the relevant section for mpd.conf:
 ##
 ## audio_output {
 ##        type            "fifo"
@@ -48,16 +53,31 @@ mpd_host = "~/.local/share/mpd/socket"
 ##        format          "44100:16:2"
 ## }
 ##
+## If the visualization on occasion diverges from the audio output, please set
+## 'buffer_time' parameter of your audio output in mpd.conf to '100000' (100ms)
+## or less to prevent that from happening.
+##
+## Note: If you're using Mopidy, an address of a udpsink gstreamer's output is
+## also accepted. For example, the following section in mopidy.conf:
+##
+## [audio]
+## output = tee name=t ! queue ! autoaudiosink t.
+##        ! queue ! audio/x-raw,rate=44100,channels=2,format=S16LE
+##        ! udpsink host=localhost port=5555
+##
+## will make localhost:5555 available as a source of data for the stereo
+## visualizer.
+##
 #
-visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_data_source = "/tmp/mpd.fifo"
 #
 ##
 ## Note: Below parameter is needed for ncmpcpp to determine which output
-## provides data for visualizer and thus allow syncing between visualization and
-## sound as currently there are some problems with it.
+## provides data for visualizer and reset it at the beginning of visualization
+## to synchronize with audio.
 ##
 #
-visualizer_output_name = "visualizer_feed"
+visualizer_output_name = "Visualizer feed"
 #
 ##
 ## If you set format to 44100:16:2, make it 'yes'.
@@ -65,13 +85,11 @@ visualizer_output_name = "visualizer_feed"
 visualizer_in_stereo = "yes"
 #
 ##
-## Note: Below parameter defines how often ncmpcpp has to "synchronize"
-## visualizer and audio outputs.  30 seconds is optimal value, but if you
-## experience synchronization problems, set it to lower value.  Keep in mind
-## that sane values start with >=10.
+## Note: set below to >=10 only if you have synchronization issues with
+## visualization and audio.
 ##
 #
-visualizer_sync_interval = "30"
+#visualizer_sync_interval = 0
 #
 ##
 ## Note: To enable spectrum frequency visualization you need to compile ncmpcpp
@@ -82,13 +100,44 @@ visualizer_sync_interval = "30"
 ##
 visualizer_type = "spectrum"
 #
-visualizer_look = "●▮"
+visualizer_fps = 60
 #
-#visualizer_color = blue, cyan, green, yellow, magenta, red
+#visualizer_autoscale = no
+#
+#visualizer_look = ●▮
+#
+visualizer_color = 5, 7, 15, 8
 #
 ## Alternative subset of 256 colors for terminals that support it.
 ##
-#visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
+#visualizer_color = 47, 83, 119, 155, 191, 227, 221, 215, 209, 203, 197, 161
+#
+##
+## Note: The next few visualization options apply to the spectrum visualizer.
+##
+#
+## Use unicode block characters for a smoother, more continuous look.
+## This will override the visualizer_look option. With transparent terminals
+## and visualizer_in_stereo set, artifacts may be visible on the bottom half of
+## the visualization.
+#
+visualizer_spectrum_smooth_look = no
+#
+## A value between 1 and 5 inclusive. Specifying a larger value makes the
+## visualizer look at a larger slice of time, which results in less jumpy
+## visualizer output.
+#
+#visualizer_spectrum_dft_size = 2
+#
+#visualizer_spectrum_gain = 10
+#
+## Left-most frequency of visualizer in Hz, must be less than HZ MAX
+#
+#visualizer_spectrum_hz_min = 20
+#
+## Right-most frequency of visualizer in Hz, must be greater than HZ MIN
+#
+#visualizer_spectrum_hz_max = 20000
 #
 ##### system encoding #####
 ##
@@ -182,23 +231,23 @@ visualizer_look = "●▮"
 ## Note: colors can be nested.
 ##
 #
-#song_list_format = {%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
+song_list_format = {$5%a$9$3 - $9}$8{%t}|{%f}$R$9{$6%l$9}
 #
 #song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
 #
-#song_library_format = {%n - }{%t}|{%f}
+song_library_format = {$3%n $9}{%t}|{%f}
 #
-#alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
+alternative_header_first_line_format = $b{%t}|{%f}$/b
 #
-#alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
+alternative_header_second_line_format = {{$5$b%a$/b$9}{ - $b$7%b$9$/b}{ ($(15)%y$9)}}|{%D}
 #
-#current_item_prefix = $(yellow)$r
+current_item_prefix = $(cyan)$r
 #
-#current_item_suffix = $/r$(end)
+current_item_suffix = $/r$(end)
 #
-#current_item_inactive_column_prefix = $(white)$r
+current_item_inactive_column_prefix = $(default)
 #
-#current_item_inactive_column_suffix = $/r$(end)
+current_item_inactive_column_suffix = $(end)
 #
 #now_playing_prefix = $b
 #
@@ -220,12 +269,12 @@ visualizer_look = "●▮"
 ## Note: Below variables are used for sorting songs in browser.  The sort mode
 ## determines how songs are sorted, and can be used in combination with a sort
 ## format to specify a custom sorting format.  Available values for
-## browser_sort_mode are "name", "mtime", "format" and "noop".
+## browser_sort_mode are "type", "name", "mtime", "format" and "none".
 ##
 #
-#browser_sort_mode = name
+#browser_sort_mode = type
 #
-#browser_sort_format = {%a - }{%t}|{%f} {(%l)}
+#browser_sort_format = {%a - }{%t}|{%f} {%l}
 #
 ##### columns settings #####
 ##
@@ -262,7 +311,7 @@ visualizer_look = "●▮"
 ##   available.
 ##
 #
-#song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+song_columns_list_format = (20)[blue]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
 #
 ##### various settings #####
 #
@@ -317,7 +366,7 @@ visualizer_look = "●▮"
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
 ##
-#progressbar_look = =>
+progressbar_look = ─|
 #
 ## Available values: database, playlist.
 ##
@@ -325,7 +374,7 @@ visualizer_look = "●▮"
 #
 ## Available values: classic, alternative.
 ##
-user_interface = alternative
+user_interface = "classic"
 #
 #data_fetching_delay = yes
 #
@@ -334,6 +383,8 @@ user_interface = alternative
 #media_library_primary_tag = artist
 #
 #media_library_albums_split_by_date = yes
+#
+media_library_hide_album_dates = yes
 #
 ## Available values: wrapped, normal.
 ##
@@ -345,15 +396,16 @@ user_interface = alternative
 #
 #statusbar_visibility = yes
 #
+## Show the "Connected to ..." message on startup
+#connected_message_on_startup = yes
+#
 #titles_visibility = yes
 #
 #header_text_scrolling = yes
 #
 #cyclic_scrolling = no
 #
-#lines_scrolled = 2
-#
-#lyrics_fetchers = lyricwiki, azlyrics, genius, sing365, lyricsmania, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
+#lyrics_fetchers = azlyrics, genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
 #
 #follow_now_playing_lyrics = no
 #
@@ -444,7 +496,9 @@ user_interface = alternative
 #
 #mouse_support = yes
 #
-#mouse_list_scroll_whole_page = yes
+#mouse_list_scroll_whole_page = no
+#
+#lines_scrolled = 5
 #
 #empty_tag_marker = <empty>
 #
@@ -472,7 +526,7 @@ user_interface = alternative
 #
 #search_engine_default_search_mode = 1
 #
-#external_editor = nano
+external_editor = "nvim"
 #
 ## Note: set to yes if external editor is a console application.
 ##
@@ -520,15 +574,15 @@ user_interface = alternative
 #
 #state_flags_color = default:b
 #
-#main_window_color = yellow
+main_window_color = white
 #
 #color1 = white
 #
 #color2 = green
 #
-#progressbar_color = black:b
+progressbar_color = black:b
 #
-#progressbar_elapsed_color = green:b
+progressbar_elapsed_color = cyan:b
 #
 #statusbar_color = default
 #
