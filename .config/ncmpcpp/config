@@ -104,7 +104,7 @@ visualizer_fps = 60
 #
 #visualizer_autoscale = no
 #
-#visualizer_look = ●▮
+visualizer_look = ●▋
 #
 visualizer_color = 5, 7, 15, 8
 #
@@ -231,9 +231,9 @@ visualizer_spectrum_smooth_look = no
 ## Note: colors can be nested.
 ##
 #
-song_list_format = {$5%a$9$3 - $9}$8{%t}|{%f}$R$9{$6%l$9}
+song_list_format = {$5%a $9}$8{%t}|{%f}$R$9{$6%l$9}
 #
-#song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
+song_status_format = {$3$b{%t}|{%f}$/b$9{ by $5$b%a$/b$9}{ on $7$b%b$/b$9}{ ($(15)%y$9)}}
 #
 song_library_format = {$3%n $9}{%t}|{%f}
 #
@@ -255,9 +255,9 @@ current_item_inactive_column_suffix = $(end)
 #
 #browser_playlist_prefix = "$2playlist$9 "
 #
-#selected_item_prefix = $6
+selected_item_prefix = $4
 #
-#selected_item_suffix = $9
+selected_item_suffix = $9
 #
 #modified_item_prefix = $3> $9
 #
