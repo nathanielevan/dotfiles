@@ -366,7 +366,7 @@ song_columns_list_format = (20)[blue]{a} (6f)[green]{NE} (50)[white]{t|f:Title} 
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
 ##
-progressbar_look = ─|
+progressbar_look = ━━─
 #
 ## Available values: database, playlist.
 ##
