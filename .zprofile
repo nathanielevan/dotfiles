@@ -1,6 +1,3 @@
-# Define PATH
-export PATH="$HOME/.local/bin/dwmblocks:$HOME/.local/bin:$PATH"
-
 # Define default applications
 export TERMINAL="st"
 export EDITOR="nvim"
@@ -37,6 +34,8 @@ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+export N_PREFIX="$HOME/.local/n"
+export N_PRESERVE_NPM=1
 # export RXVT_SOCKET="$XDG_RUNTIME_DIR/urxvtd"
 # export URXVT_PERL_LIB="$XDG_DATA_HOME/urxvt/perl"
 
@@ -55,6 +54,9 @@ export NNN_TRASH=1
 
 # Set bat highlighting colour theme
 export BAT_THEME="base16"
+
+# Define PATH
+export PATH="$N_PREFIX/bin:$HOME/.local/bin/dwmblocks:$HOME/.local/bin:$PATH"
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && "$(tty)" = "/dev/tty1" ]]; then
 	exec startx "$XINITRC"
