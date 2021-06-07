@@ -76,5 +76,5 @@ case "$option" in
         fallback)
                 monitorfallback ;;
         *)
-                [ ! -z "$option" ] && echo "Argument not recognized" 1>&2 ; exit 1 ;;
+                [ -n "$option" ] && echo "Argument not recognized" 1>&2 ; exit 1 ;;
 esac
