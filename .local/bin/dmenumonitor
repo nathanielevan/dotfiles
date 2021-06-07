@@ -1,0 +1,78 @@
+#!/bin/sh
+
+dmenuopts="single\nextend\nduplicate\nauto\nmanual"
+wallpaperloc="/home/nate/.config/wallpapers/wallpaper.jpg"
+
+processxrandr() {
+        xrandroutput=$(xrandr -q)
+        monitors=$(echo "$xrandroutput" | awk '/connected/{print $1}')
+        connmonitors=$(echo "$xrandroutput" | awk '/ connected /{print $1}')
+        numofconnmonitors=$(echo "$connmonitors" | wc -l)
+}
+
+monitorsingle() {
+        processxrandr &&
+        monitorto=$(echo "$connmonitors" | dmenu -r -p "select monitor:") &&
+        chooseres=$(echo "$xrandroutput" | awk -v monitor="$monitorto" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | dmenu -r -p "select resolution:") &&
+        xrandr --output "$monitorto" --primary --mode "$chooseres" $(echo "$monitors" | grep -v "$monitorto" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
+        feh --bg-fill --no-fehbg "$wallpaperloc"
+}
+
+monitorduplicate() {
+        processxrandr &&
+        [ "$numofconnmonitors" -eq 1 ] &&
+        notify-send "Only one display is detected" "If this shouldn't be the case, please check your cable connections and try again." && return ||
+        monitorone=$(echo "$connmonitors" | dmenu -r -p "select 1st monitor:") &&
+        monitortwo=$(echo "$connmonitors" | grep -v "$monitorone" | dmenu -r -p "select 2nd monitor:") &&
+        oneres=$(echo "$xrandroutput" | awk -v monitor="$monitorone" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}') &&
+        twores=$(echo "$xrandroutput" | awk -v monitor="$monitortwo" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}') &&
+        chooseres=$(echo "$twores" | grep -F -x "$oneres" | dmenu -r -p "select resolution:") &&
+        xrandr --output "$monitorone" --primary --mode "$chooseres" --output "$monitortwo" --mode "$chooseres" --same-as "$monitorone" $(echo "$monitors" | grep -v -e "$monitorone" -e "$monitortwo" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
+        feh --bg-fill --no-fehbg "$wallpaperloc"
+}
+
+monitorextend() {
+        processxrandr &&
+        [ "$numofconnmonitors" -eq 1 ] &&
+        notify-send "Only one display is detected" "If this shouldn't be the case, please check your cable connections and try again." && return ||
+        monitorone=$(echo "$connmonitors" | dmenu -r -p "select 1st monitor:") &&
+        oneres=$(echo "$xrandroutput" | awk -v monitor="$monitorone" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | dmenu -r -p "select 1st monitor resolution:") &&
+        monitortwo=$(echo "$connmonitors" | grep -v "$monitorone" | dmenu -r -p "select 2nd monitor:") &&
+        twores=$(echo "$xrandroutput" | awk -v monitor="$monitortwo" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | dmenu -r -p "select 2nd monitor resolution:") &&
+        dir=$(echo -e "left\nright\nabove\nbelow" | dmenu -r -p "position to 1st monitor:") &&
+        xrandr --output "$monitorone" --primary --mode "$oneres" --output "$monitortwo" --mode "$twores" --"$dir"$([ "$dir" = "left" ] || [ "$dir" = "right" ] && echo "-of") "$monitorone" $(echo "$monitors" | grep -v -e "$monitorone" -e "$monitortwo" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
+        feh --bg-fill --no-fehbg "$wallpaperloc"
+}
+
+monitorauto() {
+        xrandr --auto &&
+        feh --bg-fill --no-fehbg "$wallpaperloc"
+}
+
+monitorfallback() {
+        processxrandr &&
+        numofactivedisplays=$(echo "$xrandroutput" | grep '*' | wc -l) &&
+        [ "$numofactivedisplays" -gt 0 ] && return ||
+        fallbackmonitor=$(echo "$connmonitors" | head -n 1) &&
+        xrandr --output "$fallbackmonitor" --primary --auto $(echo "$monitors" | grep -v "$fallbackmonitor" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
+        feh --bg-fill --no-fehbg "$wallpaperloc"
+}
+
+option=$1
+[ -z "$option" ] && option=$(echo -e "$dmenuopts" | dmenu -r -p "display mode:")
+case "$option" in
+        single)
+                monitorsingle ;;
+        extend)
+                monitorextend ;;
+        duplicate)
+                monitorduplicate ;;
+        auto)
+                monitorauto ;;
+        manual)
+                arandr ; exit ;;
+        fallback)
+                monitorfallback ;;
+        *)
+                [ ! -z "$option" ] && echo "Argument not recognized" 1>&2 ; exit 1 ;;
+esac
