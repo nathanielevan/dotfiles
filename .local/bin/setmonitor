@@ -13,7 +13,6 @@ processxrandr() {
 
 monitorsingle() {
         processxrandr &&
-        echo "Now running dmenu for monitorto..." &&
         monitorto=$(echo "$connmonitors" | dmenu -r -p "select monitor:") &&
         chooseres=$(echo "$xrandroutput" | awk -v monitor="$monitorto" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | dmenu -r -p "select resolution:") &&
         xrandr --output "$monitorto" --primary --mode "$chooseres" $(echo "$monitors" | grep -v "$monitorto" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
@@ -21,29 +20,29 @@ monitorsingle() {
 }
 
 monitorduplicate() {
-        processxrandr &&
-        [ "$numofconnmonitors" -ge 2 ] &&
+        processxrandr || return 1 &&
+        [ "$numofconnmonitors" -lt 2 ] &&
+        notify-send "Not enough displays detected" "If this shouldn't be the case, please check your cable connections and try again." && return 1 ||
         monitorone=$(echo "$connmonitors" | dmenu -r -p "select 1st monitor:") &&
         monitortwo=$(echo "$connmonitors" | grep -v "$monitorone" | dmenu -r -p "select 2nd monitor:") &&
         oneres=$(echo "$xrandroutput" | awk -v monitor="$monitorone" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}') &&
         twores=$(echo "$xrandroutput" | awk -v monitor="$monitortwo" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}') &&
         chooseres=$(echo "$twores" | grep -F -x "$oneres" | dmenu -r -p "select resolution:") &&
         xrandr --output "$monitorone" --primary --mode "$chooseres" --output "$monitortwo" --mode "$chooseres" --same-as "$monitorone" $(echo "$monitors" | grep -v -e "$monitorone" -e "$monitortwo" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
-        feh --bg-fill --no-fehbg "$wallpaperloc" ||
-        notify-send "Not enough displays detected" "If this shouldn't be the case, please check your cable connections and try again." && return 1
+        feh --bg-fill --no-fehbg "$wallpaperloc"
 }
 
 monitorextend() {
-        processxrandr &&
-        [ "$numofconnmonitors" -ge 2 ] &&
+        processxrandr || return 1 &&
+        [ "$numofconnmonitors" -lt 2 ] &&
+        notify-send "Not enough displays detected" "If this shouldn't be the case, please check your cable connections and try again." && return 1 ||
         monitorone=$(echo "$connmonitors" | dmenu -r -p "select 1st monitor:") &&
         oneres=$(echo "$xrandroutput" | awk -v monitor="$monitorone" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | dmenu -r -p "select 1st monitor resolution:") &&
         monitortwo=$(echo "$connmonitors" | grep -v "$monitorone" | dmenu -r -p "select 2nd monitor:") &&
         twores=$(echo "$xrandroutput" | awk -v monitor="$monitortwo" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | dmenu -r -p "select 2nd monitor resolution:") &&
         dir=$(echo -e "left\nright\nabove\nbelow" | dmenu -r -p "position to 1st monitor:") &&
         xrandr --output "$monitorone" --primary --mode "$oneres" --output "$monitortwo" --mode "$twores" --"$dir"$([ "$dir" = "left" ] || [ "$dir" = "right" ] && echo "-of") "$monitorone" $(echo "$monitors" | grep -v -e "$monitorone" -e "$monitortwo" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
-        feh --bg-fill --no-fehbg "$wallpaperloc" &&
-        notify-send "Not enough displays detected" "If this shouldn't be the case, please check your cable connections and try again." && return 1
+        feh --bg-fill --no-fehbg "$wallpaperloc"
 }
 
 monitorauto() {
