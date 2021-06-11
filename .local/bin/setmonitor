@@ -60,6 +60,13 @@ monitorfallback() {
 }
 
 option=$1
+SRANDRD_EVENT=$(echo "$SRANDRD_ACTION" | awk '{print $2}')
+
+case "$SRANDRD_EVENT" in
+        "connected") exit ;;
+        "disconnected") option="fallback" ;;
+esac
+
 [ -z "$option" ] && option=$(echo -e "$dmenuopts" | dmenu -r -p "display mode:")
 case "$option" in
         single)
