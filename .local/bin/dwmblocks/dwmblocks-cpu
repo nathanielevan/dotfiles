@@ -14,6 +14,6 @@ printcpupct() {
         echo "$old" | awk -v currtotal="$currtotal" -v curridle="$curridle" '{printf "%d%%\n", (1 - (curridle - $2) / (currtotal - $1)) * 100}'
 }
         
-[ ! -f $cache ] && printf "" || printcpupct;
+[ ! -f $cache ] && printf " " || printcpupct;
 
 echo "$current" > "$cache"
