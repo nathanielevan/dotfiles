@@ -2,7 +2,7 @@
 
 # Script to call custom rofi menu for power-related functions
 
-option=$(echo -e "lock\nlogout\nsuspend\nreboot\nshutdown" | dmenu -r -p "power option:")
+option=$(printf "lock\nlogout\nsuspend\nreboot\nshutdown" | dmenu -r -p "power option:")
 
 case "$option" in
         lock) loginctl lock-session ;;
