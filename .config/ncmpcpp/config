@@ -241,7 +241,7 @@ alternative_header_first_line_format = $b{%t}|{%f}$/b
 #
 alternative_header_second_line_format = {{$5$b%a$/b$9}{ - $b$7%b$9$/b}{ ($(15)%y$9)}}|{%D}
 #
-current_item_prefix = $(cyan)$r
+current_item_prefix = $5$r
 #
 current_item_suffix = $/r$(end)
 #
@@ -564,7 +564,7 @@ external_editor = "nvim"
 #
 #colors_enabled = yes
 #
-#empty_tag_color = cyan
+empty_tag_color = blue
 #
 #header_window_color = default
 #
