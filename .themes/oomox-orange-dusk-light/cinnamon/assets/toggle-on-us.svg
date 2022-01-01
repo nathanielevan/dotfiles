@@ -1381,11 +1381,11 @@
        id="linearGradient3990-9-4-5">
       <stop
          id="stop3992-5-7-1"
-         style="stop-color:#0b1724;stop-opacity:1"
+         style="stop-color:#0b1726;stop-opacity:1"
          offset="0" />
       <stop
          id="stop3994-0-8-2"
-         style="stop-color:#0b1724;stop-opacity:0"
+         style="stop-color:#0b1726;stop-opacity:0"
          offset="1" />
     </linearGradient>
     <linearGradient
@@ -1486,7 +1486,7 @@
          height="10"
          width="3"
          id="rect4195"
-         style="color:#000000;fill:#192e40;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+         style="color:#000000;fill:#0b1726;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
     </g>
   </g>
   <g

@@ -1,0 +1,1 @@
+Run `gtk-update-icon-cache .` in each icon directory to generate cache for faster loading
