@@ -16,34 +16,35 @@ set trash = "+Trash"
 mailboxes "=Inbox" "=Drafts" "=NewsLetter" "=Notification" "=Sent" "=Spam" "=Templates" "=Trash"
 
 # Basic Mutt behavior options
-set delete		# automatically act on messages marked for deletion (3.79)
-set quit		# actually quit from neomutt without having to confirm (3.305)
-set thorough_search	# decode header and body of messages before searching (3.426)
-set sleep_time = 0      # disable pause while displaying informational messages (3.367)
-set mail_check_stats    # calculate message stats of a mailbox while polling (3.177)
-unset wait_key		# shut your trap, mutt, just do what i say, will you? (3.449)
-unset confirmappend	# don't ask for confirm when moving mails into a mailbox (3.51)
-unset mark_old		# don't mark unread messages as old if i don't read them (3.185)
-unset copy		# don't save sent emails, zoho takes care of this already (3.55)
+set delete					# automatically act on messages marked for deletion (3.79)
+set quit					# actually quit from neomutt without having to confirm (3.305)
+set thorough_search			# decode header and body of messages before searching (3.426)
+set sleep_time = 0      	# disable pause while displaying informational messages (3.367)
+set mail_check_stats    	# calculate message stats of a mailbox while polling (3.177)
+unset wait_key				# shut your trap, mutt, just do what i say, will you? (3.449)
+unset confirmappend			# don't ask for confirm when moving mails into a mailbox (3.51)
+unset mark_old				# don't mark unread messages as old if i don't read them (3.185)
+unset copy					# don't save sent emails, zoho takes care of this already (3.55)
 
 # Compose/view options
-set date_format = "%d/%m/%y %I:%M%p" 	# change date format (3.75)
-set sort = "reverse-date"		# sort by date in descending order (3.397)
-set include				# include original message in reply (3.167)
-set forward_quote			# include original message when forwarding (3.112)
-set forward_format = "Fwd: %s"		# format of subject when forwarding (3.111)
-set mime_forward			# forward attachments with mail (3.202)
-set fast_reply				# don't ask for recipient and subject when replying (3.94)
-set reverse_name			# reply as whomever it was originally to (3.324)
-set reply_to				# reply to address set in Reply-to: header (3.318)
-set edit_headers			# allows editing the header of outgoing message (3.86)
-set askcc				# prompt for cc recipients before editing message (3.17)
-unset markers                           # don't display + at the beginning of warped lines (3.186)
-set editor = "vim"			# set editor to vim (3.87)
-set pager_context = 5                   # display last N lines from prev page into next page (3.240)
-set tilde                               # display tildes at the end of a mail (3.428)
-set pager_stop                          # don't move to next msg upon reaching end of msg (3.243)
-set menu_scroll                         # don't redraw the entire menu when scrolling (3.192)
+set date_format = "%d-%b-%y" 							# change date format (3.75)
+set index_format="%4C %Z %?X?A& ? %D %-15.15F %s (%c)"	# define index format (3.170)
+set sort = "reverse-date"								# sort by date in descending order (3.397)
+set include												# include original message in reply (3.167)
+set forward_quote										# include original message when forwarding (3.112)
+set forward_format = "Fwd: %s"							# format of subject when forwarding (3.111)
+set mime_forward										# forward attachments with mail (3.202)
+set fast_reply											# don't ask for recipient and subject when replying (3.94)
+set reverse_name										# reply as whomever it was originally to (3.324)
+set reply_to											# reply to address set in Reply-to: header (3.318)
+set edit_headers										# allows editing the header of outgoing message (3.86)
+set askcc												# prompt for cc recipients before editing message (3.17)
+unset markers											# don't display + at the beginning of warped lines (3.186)
+set editor = "nvim"										# set editor to nvim (3.87)
+set pager_context = 5									# display last N lines from prev page into next page (3.240)
+set tilde												# display tildes at the end of a mail (3.428)
+set pager_stop											# don't move to next msg upon reaching end of msg (3.243)
+set menu_scroll											# don't redraw the entire menu when scrolling (3.192)
 
 # Viewing attachments + those pesky HTML e-mails
 set mailcap_path = /home/nate/.config/neomutt/mailcap
@@ -51,17 +52,17 @@ alternative_order text/plain text/enriched text/html
 auto_view text/html
 
 # E-mail headers
-ignore *						# ignore all headers... (11.2)
+ignore *										# ignore all headers... (11.2)
 unignore from: to: cc: bcc: date: subject:		# ...except these headers (11.2)
-unhdr_order *						# clear all previous header orders, if exists (11.3)
-hdr_order from: to: cc: bcc: date: subject: 		# and use this header order instead (11.3)
+unhdr_order *									# clear all previous header orders, if exists (11.3)
+hdr_order from: to: cc: bcc: date: subject: 	# and use this header order instead (11.3)
 
 # Sidebar
-set sidebar_visible		                	# show sidebar (3.356)
-set sidebar_width = 25		                	# sidebar width in screen columns (3.357)
-set sidebar_short_path		                	# only display the name of the mailbox (3.354)
-set sidebar_divider_char = ""
-set sidebar_format = '%B%* [%?N?%N/?%S]'	        # define sidebar format (3.348)
+set sidebar_visible							# show sidebar (3.356)
+set sidebar_width = 22						# sidebar width in screen columns (3.357)
+set sidebar_short_path						# only display the name of the mailbox (3.354)
+set sidebar_divider_char = ""				# define divider character for sidebar (3.347)
+set sidebar_format = '%B%* [%?N?%N/?%S]'	# define sidebar format (3.348)
 
 # Keybinds and macros
 # Additional note: Ctrl-G will quit most prompts (Getting Started 4.1)
@@ -112,13 +113,13 @@ macro index \Ca "<limit>all\n" "undo limit and show all messages"
 
 # Default index colors:
 color index blue default '.*'
-color index_author magenta default '.*'
-color index_subject cyan default '.*'
+color index_author yellow default '.*'
+color index_subject magenta default '.*'
 
 # New mail is boldened:
 color index brightblue default "~N"
-color index_author brightmagenta default "~N"
-color index_subject brightcyan default "~N"
+color index_author brightyellow default "~N"
+color index_subject brightmagenta default "~N"
 
 # Tagged mails will appear yellow:
 color index brightyellow default "~T"
@@ -143,27 +144,28 @@ color sidebar_flagged yellow default
 color sidebar_new green default
 color error red default
 color tilde black default
-color message green default
+color message yellow default
 color markers red white
 color attachment white default
 color search brightmagenta default
 color status brightwhite default
 color hdrdefault brightgreen default
-color quoted green default
-color quoted1 cyan default
-color quoted2 blue default
-color quoted3 magenta default
-color quoted4 red default
-color quoted5 yellow default
+color quoted yellow default
+color quoted1 green default
+color quoted2 cyan default
+color quoted3 blue default
+color quoted4 magenta default
+color quoted5 red default
 color signature brightgreen default
 color bold black default
 color underline black default
 color normal default default
 
 # Regex highlighting:
-color header blue default ".*"
-color header brightmagenta default "^(From)"
-color header brightcyan default "^(Subject)"
+color header white default ".*"
+color header brightyellow default "^(From)"
+color header brightblue default "^(Date)"
+color header brightmagenta default "^(Subject)"
 color header brightwhite default "^(CC|BCC)"
 color body brightmagenta default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" # Email addresses
 color body brightblue default "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" # URL
