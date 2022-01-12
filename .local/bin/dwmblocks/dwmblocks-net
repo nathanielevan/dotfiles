@@ -1,7 +1,0 @@
-#!/bin/sh
-
-signalstrength=$(awk 'NR==3 {printf("%.0f%%", $3*10/7)}' /proc/net/wireless)
-[ -z "$signalstrength" ] && signalstrength=""
-grep -h up /sys/class/net/e*/operstate > /dev/null && lanstat="" || lanstat=""
-
-printf "說  %s    %s" "$signalstrength" "$lanstat"
