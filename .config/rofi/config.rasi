@@ -1,51 +1,93 @@
-/**
- * ROFI Color theme
- * User: Qball
- * Copyright: Dave Davenport
- * Slight modifications: Nathaniel Evan
- */
+configuration {
+/*	modi: "window,run,ssh";*/
+	font: "Iosevka Nerd Font 11";
+	disable-history: true;
+	scroll-method: 1;
+	m: "-5";
+	cycle: false;
+	display-drun: "";
+	display-run: "";
+	display-window: "缾";
+	display-ssh: "ﯴ";
+	cache-dir: ".cache/rofi";
+/*	window-format: "{w}    {c}   {t}";*/
+/*	theme: ;*/
+/*	max-history-size: 25;*/
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+
 * {
-    background-color:      #2E3440;
-    border-color:          #E5E9F0;
-    text-color:           #E5E9F0;
-    font:            	"Iosevka Nerd Font Mono Bold 11";
+    black0: #192e40;
+    black1: #284259;
+    red: #c20f47;
+    green: #25a37e;
+    yellow: #e9986d;
+    blue: #5d92bf;
+    magenta: #6768bf;
+    cyan: #5accc5;
+    white1: #fff6e6;
+    white2: #fffef8;
+
+	background: #0b1726;
+	alternate: var(black0);
+	selected: var(yellow);
+	active: var(blue);
+	foreground: var(white1);
+	urgent: var(red);
 }
 
-#window {
-    anchor:     north;
-    location:   north;
-    width:      100%;
-    padding:    0px 0px 0px 0px;
-    children:   [ horibox ];
+element normal.normal {
+	background-color: var(background);
+	text-color: var(foreground);
 }
 
-#horibox {
-    orientation: horizontal;
-    children:   [ prompt, entry, listview ];
+element normal.urgent {
+	background-color: var(background);
+	text-color: var(urgent);
 }
 
-#prompt {
-    margin: 0.3em;
+element normal.active {
+	background-color: var(background);
+	text-color: var(active);
 }
 
-#entry {
-    margin: 0.3em;
+element selected.normal {
+	background-color: var(selected);
+	text-color: var(background);
 }
 
-#listview {
-    layout:     horizontal;
-    spacing:    5px;
-    lines:      100;
+element selected.urgent {
+	background-color: var(urgent);
+	text-color: var(background);
 }
 
-#entry {
-    expand:     false;
-    width:      10em;
+element selected.active {
+	background-color: var(active);
+	text-color: var(background);
 }
 
-#element {
-    padding: 0.3em;
+element alternate.normal {
+	background-color: var(alternate);
+	text-color: var(foreground);
 }
-#element selected {
-    background-color: #5E81AC;
+
+element alternate.urgent {
+	background-color: var(alternate);
+	text-color: var(urgent);
+}
+
+element alternate.active {
+	background-color: var(alternate);
+	text-color: var(active);
+}
+
+textbox-prompt-colon {
+	str: " ";
 }
