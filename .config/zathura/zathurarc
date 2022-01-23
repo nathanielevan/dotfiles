@@ -1,10 +1,11 @@
-set font "Iosevka Nerd Font Mono 10"
+set font "FantasqueSansMono Nerd Font Mono 10"
 set sandbox none
 set first-page-column "1:1"
 set guioptions "s"
 set window-title-basename "true"
 set window-title-page "true"
 set scroll-page-aware "true"
+set statusbar-v-padding 2
 
 set default-bg "#0b1726"
 set default-fg "#fff6e6"
