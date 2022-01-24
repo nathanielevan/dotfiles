@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="root-menu" label="Openbox 3">
+  <item label="Terminal Emulator">
+    <action name="Execute">
+      <command>st</command>
+    </action>
+  </item>
+  <item label="Web Browser">
+    <action name="Execute">
+      <command>chromium</command>
+    </action>
+  </item>
+  <separator />
+  <menu id="applications" label="Applications" execute="~/.local/bin/openbox-menu-st" />
+  <menu id="client-list-menu" />
+  <menu id="system-menu" label="System">
+    <item label="Openbox Configuration Manager">
+      <action name="Execute">
+        <command>obconf</command>
+        <startupnotify><enabled>yes</enabled></startupnotify>
+      </action>
+    </item>
+    <item label="Tint2 Settings">
+      <action name="Execute">
+        <command>tint2conf</command>
+        <startupnotify><enabled>yes</enabled></startupnotify>
+      </action>
+    </item>
+    <item label="Manage Cups Printers">
+      <action name="Execute">
+        <command>xdg-open http://localhost:631/</command>
+        <startupnotify>
+          <enabled>no</enabled>
+          <icon>cups</icon>
+        </startupnotify>
+      </action>
+    </item>
+    <separator />
+    <item label="Reconfigure Openbox">
+      <action name="Reconfigure" />
+    </item>
+    <item label="Restart Openbox">
+      <action name="Restart" />
+    </item>
+  </menu>
+  <separator />
+  <menu id="exit-menu" label="Exit">
+    <item label="Lock">
+      <action name="Execute">
+        <execute>loginctl lock-session</execute>
+      </action>
+    </item>
+    <item label="Log out">
+      <action name="Exit">
+        <prompt>yes</prompt>
+      </action>
+    </item>
+    <item label="Suspend">
+      <action name="Execute">
+        <execute>systemctl suspend</execute>
+      </action>
+    </item>
+    <item label="Reboot">
+      <action name="Execute">
+        <execute>systemctl suspend</execute>
+      </action>
+    </item>
+    <item label="Shut down">
+      <action name="Execute">
+        <execute>systemctl suspend</execute>
+      </action>
+    </item>
+  </menu>
+</menu>
+
+</openbox_menu>
