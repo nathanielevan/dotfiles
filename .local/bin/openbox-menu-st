@@ -1,0 +1,3 @@
+#!/bin/sh
+
+xdg_menu --format openbox3-pipe --root-menu /etc/xdg/menus/arch-applications.menu | sed "s/xterm -e/st -e/g"
