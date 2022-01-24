@@ -3,10 +3,11 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources.
 ~~As seen on [this r/unixporn dwm post](https://www.reddit.com/r/unixporn/comments/mewpsp/dwm_still_lovin_nord/)~~ Switched to openbox
 
 Check out my personal suckless builds:
-* [dwm](https://github.com/nathanielevan/dwm)
+* [dwm](https://github.com/nathanielevan/dwm) + [dwmblocks](https://github.com/nathanielevan/dwmblocks)
 * [dmenu](https://github.com/nathanielevan/dmenu)
 * [st](https://github.com/nathanielevan/st)
 * [slock](https://github.com/nathanielevan/slock)
+* [tabbed](https://github.com/nathanielevan/tabbed)
 
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.
