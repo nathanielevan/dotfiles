@@ -17,6 +17,8 @@
 ;==========================================================
 
 [colors]
+bg0 = "#0b1726"
+bg1 = "#132841"
 black0 = "#192e40"
 black1 = "#284259"
 red = "#c20f47"
@@ -25,19 +27,19 @@ yellow = "#e9986d"
 blue = "#5d92bf"
 magenta = "#6768bf"
 cyan = "#5accc5"
-white1 = "#fff6e6"
-white2 = "#fffef8"
+white0 = "#fff6e6"
+white1 = "#fffef8"
 
-background = "#0b1726"
-background-alt = ${colors.black0}
-foreground = ${colors.white1}
+background = ${colors.bg0}
+background-alt = ${colors.bg1}
+foreground = ${colors.white0}
 foreground-alt = ${colors.background}
 alert = ${colors.red}
 
 [bar/top-bar]
-monitor = ${env:MONITOR:eDP-1}
+monitor = ${env:MONITOR}
 width = 100%
-height = 30
+height = 26
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
@@ -47,33 +49,33 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-;separator = |
+separator = " "
 ;separator-foreground = ${colors.background}
 
-line-size = 4
+line-size = 0
 line-color = ${colors.background}
 
-border-size = 0
-border-color = #00000000
+border-size = 5
+border-color = #0b1726
 
-padding-left = 1
-padding-right = 1
+padding-left = 0
+padding-right = 0
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 0
 
-font-0 = Iosevka Nerd Font:size=10;3
+font-0 = FantasqueSansMono Nerd Font:style=Regular:pixelsize=12;3
 
-modules-left = bspwm
+modules-left = launcher openbox
 modules-center = date
-modules-right = wlan eth pulseaudio memory cpu battery
+modules-right = eth wlan pulseaudio memory cpu battery exit
 
-tray-position = ${env:TRAY_POS:right}
-;tray-padding = 0
+tray-position = none
+tray-padding = 0
 ;tray-offset-x = 0
 ;tray-background = ${colors.green}
 
-wm-restack = bspwm
+;wm-restack = bspwm
 ;wm-restack = i3
 
 override-redirect = false
@@ -119,6 +121,48 @@ label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
+[module/launcher]
+type = custom/text
+content = " Launch"
+
+content-background = ${colors.green}
+content-foreground = ${colors.foreground-alt}
+content-padding = 1
+click-left = rofi -show drun -modi drun,run
+
+[module/exit]
+type = custom/text
+content = "襤 Exit"
+
+content-background = ${colors.red}
+content-foreground = ${colors.foreground}
+content-padding = 1
+click-left = ~/.local/bin/powermenu
+
+[module/openbox]
+type = internal/xworkspaces
+pin-workspaces = true
+enable-click = true
+
+label-active = %index%
+label-active-foreground = ${colors.foreground-alt}
+label-active-background = ${colors.yellow}
+label-active-padding = 1
+
+label-occupied = %index%
+label-occupied-foreground = ${colors.yellow}
+label-occupied-background = ${colors.background-alt}
+label-occupied-padding = 1
+
+label-urgent = %index%
+label-urgent-foreground = ${colors.foreground-alt}
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %index%
+label-empty-background = ${colors.background-alt}
+label-empty-padding = 1
+
 [module/bspwm]
 type = internal/bspwm
 format = <label-state> <label-mode>
@@ -130,7 +174,7 @@ label-focused-background = ${colors.yellow}
 label-focused-padding = 1
 
 label-occupied = %name%
-;label-occupied-foreground = ${colors.nord8}
+label-occupied-foreground = ${colors.yellow}
 label-occupied-background = ${colors.background-alt}
 label-occupied-padding = 1
 
@@ -139,10 +183,9 @@ label-urgent-foreground = ${colors.foreground-alt}
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
-label-empty = 
-;label-empty-foreground = ${colors.nord3}
-;label-empty-background = ${colors.background-alt}
-;label-empty-padding = 1
+label-empty = %name%
+label-empty-background = ${colors.background-alt}
+label-empty-padding = 1
 
 label-locked = " "
 label-floating = " "
@@ -238,9 +281,9 @@ type = internal/cpu
 interval = 2.0
 format = <label>
 format-prefix = "﬙ "
-;format-padding = 1
-;format-background = ${colors.nord7}
-;format-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.blue}
+format-padding = 1
+format-background = ${colors.background-alt}
 label = %percentage%%
 
 [module/memory]
@@ -248,23 +291,29 @@ type = internal/memory
 interval = 2.0
 format = <label>
 format-prefix = " "
-;format-background = ${colors.nord9}
-;format-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.cyan}
+format-padding = 1
+format-background = ${colors.background-alt}
 label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-;interface = wlp2s0
 interface = wlp3s0
 interval = 2.0
 
 format-connected = <label-connected>
 format-connected-prefix = "說 "
+format-connected-prefix-foreground = ${colors.yellow}
+format-connected-padding = 1
+format-connected-background = ${colors.background-alt}
 label-connected = %signal%%
 
 format-disconnected = <label-disconnected>
-format-disconnected-prefix = "說 "
-label-disconnected = 
+format-disconnected-prefix = "ﲁ "
+format-disconnected-prefix-foreground = ${colors.yellow}
+format-disconnected-padding = 1
+format-disconnected-background = ${colors.background-alt}
+label-disconnected = DCT
 
 ;ramp-signal-0 = 
 ;ramp-signal-1 = 
@@ -275,17 +324,22 @@ label-disconnected = 
 
 [module/eth]
 type = internal/network
-;interface = enp0s20f0u2
 interface = enp0s25
 interval = 2.0
 
 format-connected = <label-connected>
-format-connected-prefix = " "
-label-connected = ""
+format-connected-prefix = "ﯱ "
+format-connected-prefix-foreground = ${colors.red}
+format-connected-background = ${colors.background-alt}
+format-connected-padding = 1
+label-connected = "CON"
 
 format-disconnected = <label-disconnected>
-format-disconnected-prefix = " "
-label-disconnected = ""
+format-disconnected-prefix = " "
+format-disconnected-prefix-foreground = ${colors.red}
+format-disconnected-background = ${colors.background-alt}
+format-disconnected-padding = 1
+label-disconnected = "DCT"
 
 [module/date]
 type = internal/date
@@ -301,15 +355,19 @@ label = %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
+format-volume-prefix = "墳 "
+format-volume-prefix-foreground = ${colors.green}
 format-volume = <label-volume>
-;format-volume-background = ${colors.nord8}
-;format-volume-foreground = ${colors.background}
-label-volume = "墳 %percentage%%"
+format-volume-padding = 1
+format-volume-background = ${colors.background-alt}
+label-volume = %percentage%%
 
+format-muted-prefix = "婢 "
+format-muted-prefix-foreground = ${colors.green}
 format-muted = <label-muted>
-;format-muted-background = ${colors.nord8}
-;format-muted-foreground = ${colors.background}
-label-muted = "墳 "
+format-muted-padding = 1
+format-muted-background = ${colors.background-alt}
+label-muted = MUTE
 
 ;bar-volume-width = 10
 ;bar-volume-foreground-0 = #001964
@@ -358,34 +416,46 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-;battery = BAT0
 battery = BAT1
-;adapter = ADP1
 adapter = AC
 
 format-charging = <label-charging>
-;format-charging-background = ${colors.nord8}
-;format-charging-foreground = ${colors.foreground-alt}
-label-charging =  %percentage%%
+format-charging-prefix = " "
+format-charging-prefix-foreground = ${colors.magenta}
+format-charging-background = ${colors.background-alt}
+format-charging-padding = 1
+label-charging = %percentage%%
 
 time-format = %H:%M
-format-discharging = <ramp-capacity> <label-discharging>
+format-discharging = <ramp-capacity><label-discharging>
+format-discharging-background = ${colors.background-alt}
+format-discharging-padding = 1
 label-discharging = %percentage%%
 
-format-full = <ramp-capacity> <label-full>
-label-full = Full
+format-full = <ramp-capacity><label-full>
+format-full-background = ${colors.background-alt}
+format-full-padding = 1
+label-full = %percentage%%
 
+;ramp-capacity-0 = " " 
 ramp-capacity-0 = " "
-;ramp-capacity-0-foreground = ${colors.nord13}
 ramp-capacity-1 = " "
 ramp-capacity-2 = " "
 ramp-capacity-3 = " "
-;ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = " "
-animation-charging-1 = " "
-animation-charging-2 = " "
-animation-charging-3 = " "
+; This feature is unreleased
+;ramp-capacity-0-weight = 1
+;ramp-capacity-1-weight = 3
+;ramp-capacity-2-weight = 3
+;ramp-capacity-3-weight = 2
+;ramp-capacity-4-weight = 1
+
+ramp-capacity-foreground = ${colors.magenta}
+
+;animation-charging-0 = " "
+;animation-charging-1 = " "
+;animation-charging-2 = " "
+;animation-charging-3 = " "
 ;animation-charging-foreground = ${colors.foreground-alt}
 ;animation-charging-framerate = 750
 
