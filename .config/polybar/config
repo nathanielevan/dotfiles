@@ -306,7 +306,7 @@ format-connected-prefix = "說 "
 format-connected-prefix-foreground = ${colors.yellow}
 format-connected-padding = 1
 format-connected-background = ${colors.background-alt}
-label-connected = %signal%%
+label-connected = %essid:0:15:...% (%signal%%)
 
 format-disconnected = <label-disconnected>
 format-disconnected-prefix = "ﲁ "
