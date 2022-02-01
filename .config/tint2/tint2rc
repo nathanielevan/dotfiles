@@ -159,34 +159,38 @@ launcher_item_app = chromium-browser.desktop
 launcher_item_app = google-chrome.desktop
 
 #-------------------------------------
-# Clock (ignored because I don't use it)
-time1_format = %H:%M
-time2_format = %A %d %B
+# Clock
+time1_format = %I:%M %p
+time2_format =
 time1_timezone = 
 time2_timezone = 
-clock_font_color = #ffffff 100
-clock_padding = 2 0
+time1_font = FantasqueSansMono Nerd Font 10
+time2_font =
+clock_font_color = #fff6e6 100
+clock_padding = 4 0
 clock_background_id = 0
-clock_tooltip = 
+clock_tooltip = %a, %d %b %Y %I:%M:%S %p
 clock_tooltip_timezone = 
-clock_lclick_command = 
-clock_rclick_command = orage
+clock_lclick_command = st -e calcurse
+clock_rclick_command = st -e calcurse
 clock_mclick_command = 
 clock_uwheel_command = 
 clock_dwheel_command = 
 
 #-------------------------------------
-# Battery (Ignored because I don't use it)
+# Battery
 battery_tooltip = 1
 battery_low_status = 10
-battery_low_cmd = xmessage 'tint2: Battery low!'
+battery_low_cmd = notify-send "Low battery" "Plug in to AC power or save your work and shut your PC down" --urgency=critical --icon=battery-empty
 battery_full_cmd = 
-battery_font_color = #ffffff 100
-bat1_format = 
+bat1_font = FantasqueSansMono Nerd Font 10
+bat2_font =
+battery_font_color = #fff6e6 100
+bat1_format = %s %p
 bat2_format = 
-battery_padding = 1 0
+battery_padding = 4 0
 battery_background_id = 0
-battery_hide = 101
+battery_hide = never
 battery_lclick_command = 
 battery_rclick_command = 
 battery_mclick_command = 
