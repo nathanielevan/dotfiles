@@ -65,7 +65,7 @@ border_color_pressed = #fff6e6 100
 panel_items = TS
 panel_size = 100% 36
 panel_margin = 0 0
-panel_padding = 0 5 0
+panel_padding = 5 5 0
 panel_background_id = 1
 wm_menu = 0
 panel_dock = 0
@@ -89,7 +89,7 @@ mouse_pressed_icon_asb = 100 0 0
 # Taskbar
 taskbar_mode = single_desktop
 taskbar_hide_if_empty = 1
-taskbar_padding = 5 0 5
+taskbar_padding = 0 0 5
 taskbar_background_id = 0
 taskbar_active_background_id = 0
 taskbar_name = 0
@@ -134,7 +134,7 @@ mouse_scroll_down = iconify
 
 #-------------------------------------
 # System tray (notification area)
-systray_padding = 8 4 4
+systray_padding = 4 4 4
 systray_background_id = 0
 systray_sort = ascending
 systray_icon_size = 16
