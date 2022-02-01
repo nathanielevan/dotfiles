@@ -196,7 +196,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /home/nate/.icons/oomox-orange-dusk-dark/24x24/status/:/home/nate/.icons/oomox-orange-dusk-dark/24x24/devices/:/home/nate/.icons/oomox-orange-dusk-dark/24x24/legacy/
+    icon_path = /home/nate/.icons/oomox-orange-dusk-dark/48x48/status/:/home/nate/.icons/oomox-orange-dusk-dark/48x48/devices/:/home/nate/.icons/oomox-orange-dusk-dark/48x48/legacy/
 
     ### History ###
 
