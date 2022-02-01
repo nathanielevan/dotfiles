@@ -281,7 +281,7 @@ type = internal/cpu
 interval = 2.0
 format = <label>
 format-prefix = "﬙ "
-format-prefix-foreground = ${colors.blue}
+format-prefix-foreground = ${colors.yellow}
 format-padding = 1
 format-background = ${colors.background-alt}
 label = %percentage%%
@@ -291,7 +291,7 @@ type = internal/memory
 interval = 2.0
 format = <label>
 format-prefix = " "
-format-prefix-foreground = ${colors.cyan}
+format-prefix-foreground = ${colors.yellow}
 format-padding = 1
 format-background = ${colors.background-alt}
 label = %percentage_used%%
@@ -310,7 +310,7 @@ label-connected = %signal%%
 
 format-disconnected = <label-disconnected>
 format-disconnected-prefix = "ﲁ "
-format-disconnected-prefix-foreground = ${colors.yellow}
+format-disconnected-prefix-foreground = ${colors.red}
 format-disconnected-padding = 1
 format-disconnected-background = ${colors.background-alt}
 label-disconnected = DCT
@@ -328,42 +328,49 @@ interface = enp0s25
 interval = 2.0
 
 format-connected = <label-connected>
-format-connected-prefix = "ﯱ "
-format-connected-prefix-foreground = ${colors.red}
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.yellow}
 format-connected-background = ${colors.background-alt}
 format-connected-padding = 1
-label-connected = "CON"
+label-connected = CON
 
 format-disconnected = <label-disconnected>
-format-disconnected-prefix = " "
+format-disconnected-prefix = " "
 format-disconnected-prefix-foreground = ${colors.red}
 format-disconnected-background = ${colors.background-alt}
 format-disconnected-padding = 1
-label-disconnected = "DCT"
+label-disconnected = DCT
 
 [module/date]
 type = internal/date
 interval = 1.0
 
-time = %a, %d %b %Y %I:%M:%S %p
+date = %a, %d %b %Y
+time = %H:%M:%S
+
+;date-alt = %a, %d %b %Y
+;time-alt = %H:%M:%S
 
 format = <label>
+;format-prefix = " "
+;format-prefix-foreground = ${colors.yellow}
+;format-background = ${colors.background-alt}
 format-padding = 1
 
-label = %time%
+label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume-prefix = "墳 "
-format-volume-prefix-foreground = ${colors.green}
+format-volume-prefix-foreground = ${colors.yellow}
 format-volume = <label-volume>
 format-volume-padding = 1
 format-volume-background = ${colors.background-alt}
 label-volume = %percentage%%
 
 format-muted-prefix = "婢 "
-format-muted-prefix-foreground = ${colors.green}
+format-muted-prefix-foreground = ${colors.red}
 format-muted = <label-muted>
 format-muted-padding = 1
 format-muted-background = ${colors.background-alt}
@@ -421,7 +428,7 @@ adapter = AC
 
 format-charging = <label-charging>
 format-charging-prefix = " "
-format-charging-prefix-foreground = ${colors.magenta}
+format-charging-prefix-foreground = ${colors.yellow}
 format-charging-background = ${colors.background-alt}
 format-charging-padding = 1
 label-charging = %percentage%%
@@ -450,7 +457,10 @@ ramp-capacity-3 = " "
 ;ramp-capacity-3-weight = 2
 ;ramp-capacity-4-weight = 1
 
-ramp-capacity-foreground = ${colors.magenta}
+ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-1-foreground = ${colors.yellow}
+ramp-capacity-2-foreground = ${colors.yellow}
+ramp-capacity-3-foreground = ${colors.yellow}
 
 ;animation-charging-0 = " "
 ;animation-charging-1 = " "
