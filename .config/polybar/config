@@ -66,9 +66,9 @@ module-margin-right = 0
 
 font-0 = FantasqueSansMono Nerd Font:style=Regular:pixelsize=12;3
 
-modules-left = launcher openbox
+modules-left = launcher openbox eth wlan
 modules-center = date
-modules-right = eth wlan pulseaudio memory cpu battery exit
+modules-right = battery pulseaudio memory cpu exit
 
 tray-position = none
 tray-padding = 0
