@@ -36,14 +36,14 @@
 
 !! urxvt config
 
-URxvt.font: xft:Iosevka Nerd Font Mono:style=Regular:size=12, \
-            xft:WenQuanYi Micro Hei Mono:size=12
-URxvt.boldFont: xft:Iosevka Nerd Font Mono:style=Bold:size=12, \
-                xft:WenQuanYi Micro Hei Mono:size=12
-URxvt.italicFont: xft:Iosevka Nerd Font Mono:style=Oblique:size=12, \
-                  xft:WenQuanYi Micro Hei Mono:size=12
-URxvt.boldItalicFont: xft:Iosevka Nerd Font Mono:style=Bold Oblique:size=12, \
-                      xft:WenQuanYi Micro Hei Mono:size=12
+URxvt.font: xft:FantasqueSansMono Nerd Font Mono:style=Regular:pixelsize=15, \
+            xft:Noto Sans CJK JP:style=Regular:pixelsize=15
+URxvt.boldFont: xft:FantasqueSansMono Nerd Font Mono:style=Bold:pixelsize=15, \
+                xft:Noto Sans CJK JP:style=Bold:pixelsize=15
+URxvt.italicFont: xft:FantasqueSansMono Nerd Font Mono:style=Italic:pixelsize=15, \
+                  xft:Noto Sans CJK JP:style=Regular:pixelsize=15
+URxvt.boldItalicFont: xft:FantasqueSansMono Nerd Font Mono:style=Bold Italic:pixelsize=15, \
+                      xft:Noto Sans CJK JP:style=Bold:pixelsize=15
 
 URxvt.letterSpace: 0
 URxvt.skipBuiltinGlyphs: 1
