@@ -1,43 +1,38 @@
 ! Nord color theme
 
-#define nord0 #2E3440
-#define nord1 #3B4252
-#define nord2 #434C5E
-#define nord3 #4C566A
-#define nord4 #D8DEE9
-#define nord5 #E5E9F0
-#define nord6 #ECEFF4
-#define nord7 #8FBCBB
-#define nord8 #88C0D0
-#define nord9 #81A1C1
-#define nord10 #5E81AC
-#define nord11 #BF616A
-#define nord12 #D08770
-#define nord13 #EBCB8B
-#define nord14 #A3BE8C
-#define nord15 #B48EAD
+#define bg #0b1726
+#define black0 #192e40
+#define black1 #284259
+#define red #c20f47
+#define green #25a37e
+#define yellow #e9986d
+#define blue #5d92bf
+#define magenta #6768bf
+#define cyan #5accc5
+#define white0 #fff6e6
+#define white1 #fffef8
 
-*.foreground:   nord4
-*.background:   nord0
-! URxvt.background: [90]nord0
-*.cursorColor:  nord4
+*.foreground:   white0
+*.background:   bg
+! URxvt.background: [90]bg
+*.cursorColor:  white0
 
-*.color0: nord1
-*.color1: nord11
-*.color2: nord14
-*.color3: nord13
-*.color4: nord9
-*.color5: nord15
-*.color6: nord8
-*.color7: nord5
-*.color8: nord3
-*.color9: nord11
-*.color10: nord14
-*.color11: nord13
-*.color12: nord9
-*.color13: nord15
-*.color14: nord7
-*.color15: nord6
+*.color0: black0
+*.color1: red
+*.color2: green
+*.color3: yellow
+*.color4: blue
+*.color5: magenta
+*.color6: cyan
+*.color7: white0
+*.color8: black1
+*.color9: red
+*.color10: green
+*.color11: yellow
+*.color12: blue
+*.color13: magenta
+*.color14: cyan
+*.color15: white1
 
 !! urxvt config
 
