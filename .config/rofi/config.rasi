@@ -1,6 +1,6 @@
 configuration {
 /*	modi: "window,run,ssh";*/
-	font: "Iosevka Nerd Font 11";
+	font: "FantasqueSansMono Nerd Font 10";
 	disable-history: true;
 	scroll-method: 1;
 	m: "-5";
@@ -8,7 +8,7 @@ configuration {
 	display-drun: "";
 	display-run: "";
 	display-window: "缾";
-	display-ssh: "ﯴ";
+	display-ssh: "歷";
 	cache-dir: ".cache/rofi";
 /*	window-format: "{w}    {c}   {t}";*/
 /*	theme: ;*/
@@ -32,15 +32,77 @@ configuration {
     blue: #5d92bf;
     magenta: #6768bf;
     cyan: #5accc5;
-    white1: #fff6e6;
-    white2: #fffef8;
+    white0: #fff6e6;
+    white1: #fffef8;
+    grey0: #484f59;
+    grey1: #c3c0b8;
 
-	background: #0b1726;
-	alternate: var(black0);
+	background: #12212f;
+	alt-background: var(black0);
 	selected: var(yellow);
-	active: var(blue);
-	foreground: var(white1);
+	active: var(green);
+	foreground: var(white0);
+	alt-foreground: #0b1726;
 	urgent: var(red);
+}
+
+window {
+    border: 0px;
+    padding: 8px;
+    location: center;
+    width: 30%;
+}
+
+mainbox {
+    children: [ inputbar, message, listview, mode-switcher ];
+}
+
+inputbar {
+    padding: 6px;
+    background-color: var(alt-background);
+    text-color: var(foreground);
+    children: [ prompt, textbox-prompt-colon, entry, num-filtered-rows, textbox-num-sep, num-rows ];
+}
+
+prompt {
+    padding: 0px 4px 0px 2px;
+    text-color: var(foreground);
+}
+
+textbox-prompt-colon {
+	str: "";
+}
+
+entry {
+    placeholder-color: var(grey0);
+    text-color: var(foreground);
+}
+
+num-rows, num-filtered-rows, textbox-num-sep {
+    text-color: var(yellow);
+}
+
+message {
+    margin: 4px 0px 0px 0px;
+    padding: 4px;
+    border: 1px 0px;
+    border-color: var(black0);
+}
+
+listview {
+    border: 4px 0px;
+    border-color: var(background);
+    lines: 10;
+}
+
+scrollbar {
+    padding: 0px 0px 0px 4px;
+    handle-color: var(foreground);
+    handle-width: 8px;
+}
+
+element {
+    padding: 3px;
 }
 
 element normal.normal {
@@ -60,34 +122,40 @@ element normal.active {
 
 element selected.normal {
 	background-color: var(selected);
-	text-color: var(background);
+	text-color: var(alt-foreground);
 }
 
 element selected.urgent {
 	background-color: var(urgent);
-	text-color: var(background);
+	text-color: var(alt-foreground);
 }
 
 element selected.active {
 	background-color: var(active);
-	text-color: var(background);
+	text-color: var(alt-foreground);
 }
 
 element alternate.normal {
-	background-color: var(alternate);
+	background-color: var(background);
 	text-color: var(foreground);
 }
 
 element alternate.urgent {
-	background-color: var(alternate);
+	background-color: var(background);
 	text-color: var(urgent);
 }
 
 element alternate.active {
-	background-color: var(alternate);
+	background-color: var(background);
 	text-color: var(active);
 }
 
-textbox-prompt-colon {
-	str: " ";
+button {
+    text-color: var(foreground);
+    padding: 3px;
+}
+
+button selected {
+    background-color: var(blue);
+    text-color: var(alt-foreground);
 }
