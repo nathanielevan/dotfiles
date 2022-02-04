@@ -141,7 +141,7 @@ click-left = ~/.local/bin/powermenu
 
 [module/openbox]
 type = internal/xworkspaces
-pin-workspaces = true
+pin-workspaces = false
 enable-click = true
 
 label-active = %index%
