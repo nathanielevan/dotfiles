@@ -35,7 +35,7 @@ background_color = #e9986d 100
 border_color = #0b1726 100
 background_color_hover = #eeae8c 100
 border_color_hover = #0b1726 100
-background_color_pressed = #cd886c 100
+background_color_pressed = #cf8761 100
 border_color_pressed = #0b1726 100
 
 # Background 4: Urgent task
@@ -65,7 +65,7 @@ border_color_pressed = #fff6e6 100
 panel_items = TS
 panel_size = 100% 36
 panel_margin = 0 0
-panel_padding = 5 5 0
+panel_padding = 5 5 5
 panel_background_id = 1
 wm_menu = 0
 panel_dock = 0
@@ -96,13 +96,13 @@ taskbar_name = 0
 taskbar_hide_inactive_tasks = 0
 taskbar_hide_different_monitor = 0
 taskbar_hide_different_desktop = 0
-taskbar_always_show_all_desktop_tasks = 0
+taskbar_always_show_all_desktop_tasks = 1
 taskbar_name_padding = 4 2
 taskbar_name_background_id = 0
 taskbar_name_active_background_id = 0
 taskbar_name_font = FantasqueSansMono Nerd Font 10
 taskbar_name_font_color = #fff6e6 100
-taskbar_name_active_font_color = #e9986d 100
+taskbar_name_active_font_color = #f2905e 100
 taskbar_distribute_size = 0
 taskbar_sort_order = none
 task_align = left
@@ -134,7 +134,7 @@ mouse_scroll_down = iconify
 
 #-------------------------------------
 # System tray (notification area)
-systray_padding = 4 4 4
+systray_padding = 0 4 4
 systray_background_id = 0
 systray_sort = ascending
 systray_icon_size = 16
@@ -207,4 +207,3 @@ tooltip_padding = 4 4
 tooltip_background_id = 5
 tooltip_font = FantasqueSansMono Nerd Font 10
 tooltip_font_color = #fff6e6 100
-
