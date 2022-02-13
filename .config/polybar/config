@@ -19,16 +19,14 @@
 [colors]
 bg0 = "#0b1726"
 bg1 = "#12212f"
-black0 = "#192e40"
-black1 = "#284259"
+black = "#192e40"
 red = "#c20f47"
 green = "#25a37e"
 yellow = "#e9986d"
 blue = "#5d92bf"
 magenta = "#6768bf"
-cyan = "#5accc5"
-white0 = "#fff6e6"
-white1 = "#fffef8"
+cyan = "#54bfb8"
+white = "#fff6e6"
 
 background = ${colors.bg0}
 background-alt = ${colors.bg1}
