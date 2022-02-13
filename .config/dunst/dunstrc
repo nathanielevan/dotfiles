@@ -196,7 +196,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /home/nate/.icons/oomox-orange-dusk-dark/48x48/status/:/home/nate/.icons/oomox-orange-dusk-dark/48x48/devices/:/home/nate/.icons/oomox-orange-dusk-dark/48x48/legacy/
+    icon_path = /home/nate/.icons/oomox-orange-dusk-dark/48x48/status/:/home/nate/.icons/oomox-orange-dusk-dark/48x48/devices/:/home/nate/.icons/oomox-orange-dusk-dark/48x48/places/:/home/nate/.icons/oomox-orange-dusk-dark/48x48/actions/
 
     ### History ###
 
@@ -440,3 +440,9 @@
     urgency = normal
     format = "%b"
     new_icon = "~/.config/dunst/spotify.png"
+
+[ncmpcpp]
+    summary = "ncmpcpp"
+    urgency = normal
+    format = "%b"
+    new_icon = "folder-music"

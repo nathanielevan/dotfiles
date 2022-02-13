@@ -319,7 +319,7 @@ song_columns_list_format = (20)[green]{a} (6f)[yellow]{NE} (50)[white]{t|f:Title
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-#execute_on_song_change = ""
+execute_on_song_change = "~/.local/bin/mpc-notif"
 #
 ##
 ## Note: Custom command that will be executed each time player state
