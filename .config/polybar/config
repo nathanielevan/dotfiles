@@ -126,7 +126,7 @@ content = " Launch"
 content-background = ${colors.green}
 content-foreground = ${colors.foreground-alt}
 content-padding = 1
-click-left = rofi -show drun -modi drun,run
+click-left = rofi -show drun -modi drun,run,window,ssh
 
 [module/exit]
 type = custom/text
