@@ -240,7 +240,94 @@
   <keybind key="A-F4">
     <action name="Close"/>
   </keybind>
-  <keybind key="W-space">
+  <keybind key="W-m">
+    <action name="ToggleMaximize" />
+  </keybind>
+  <keybind key="W-f">
+    <action name="ToggleFullscreen" />
+  </keybind>
+  <keybind key="W-S-h">
+    <action name="Unmaximize" />
+    <action name="MoveResizeTo">
+      <x>0</x>
+      <y>0</y>
+      <width>50%</width>
+      <height>100%</height>
+    </action>
+  </keybind>
+  <keybind key="W-S-j">
+    <action name="Unmaximize" />
+    <action name="MoveResizeTo">
+      <x>0</x>
+      <y>-0</y>
+      <width>100%</width>
+      <height>50%</height>
+    </action>
+  </keybind>
+  <keybind key="W-S-k">
+    <action name="Unmaximize" />
+    <action name="MoveResizeTo">
+      <x>0</x>
+      <y>0</y>
+      <width>100%</width>
+      <height>50%</height>
+    </action>
+  </keybind>
+  <keybind key="W-S-l">
+    <action name="Unmaximize" />
+    <action name="MoveResizeTo">
+      <x>-0</x>
+      <y>-0</y>
+      <width>50%</width>
+      <height>100%</height>
+    </action>
+  </keybind>
+  <keybind key="W-S-a">
+    <action name="Unmaximize" />
+    <action name="MoveResizeTo">
+      <x>0</x>
+      <y>0</y>
+      <width>50%</width>
+      <height>50%</height>
+    </action>
+  </keybind>
+  <keybind key="W-S-z">
+    <action name="Unmaximize" />
+    <action name="MoveResizeTo">
+      <x>0</x>
+      <y>-0</y>
+      <width>50%</width>
+      <height>50%</height>
+    </action>
+  </keybind>
+  <keybind key="W-S-s">
+    <action name="Unmaximize" />
+    <action name="MoveResizeTo">
+      <x>-0</x>
+      <y>0</y>
+      <width>50%</width>
+      <height>50%</height>
+    </action>
+  </keybind>
+  <keybind key="W-S-x">
+    <action name="Unmaximize" />
+    <action name="MoveResizeTo">
+      <x>-0</x>
+      <y>-0</y>
+      <width>50%</width>
+      <height>50%</height>
+    </action>
+  </keybind>
+  <keybind key="W-S-c">
+    <action name="Unmaximize" />
+    <action name="MoveResizeTo">
+      <x>center</x>
+      <y>center</y>
+      <width>48%</width>
+      <height>64%</height>
+    </action>
+  </keybind>
+  <keybind key="W-Menu">
     <action name="ShowMenu"><menu>client-menu</menu></action>
   </keybind>
 
