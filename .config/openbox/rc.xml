@@ -854,9 +854,11 @@
 
   # end of the example
 -->
+<!--
   <application class="Polybar">
     <layer>below</layer>
   </application>
+-->
 </applications>
 
 </openbox_config>
