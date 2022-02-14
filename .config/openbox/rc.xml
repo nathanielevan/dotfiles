@@ -371,22 +371,22 @@
 
   <!-- Keybindings for window switching with the arrow keys -->
   <keybind key="W-l">
-    <action name="DirectionalCycleWindows">
+    <action name="DirectionalTargetWindow">
       <direction>right</direction>
     </action>
   </keybind>
   <keybind key="W-h">
-    <action name="DirectionalCycleWindows">
+    <action name="DirectionalTargetWindow">
       <direction>left</direction>
     </action>
   </keybind>
   <keybind key="W-k">
-    <action name="DirectionalCycleWindows">
+    <action name="DirectionalTargetWindow">
       <direction>up</direction>
     </action>
   </keybind>
   <keybind key="W-j">
-    <action name="DirectionalCycleWindows">
+    <action name="DirectionalTargetWindow">
       <direction>down</direction>
     </action>
   </keybind>
