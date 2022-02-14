@@ -370,7 +370,7 @@
       <command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>
     </action>
   </keybind>
-  <keybind key="XF86AudioMicVolume">
+  <keybind key="XF86AudioMicMute">
     <action name="Execute">
       <command>pactl set-source-mute @DEFAULT_SOURCE@ toggle</command>
     </action>
