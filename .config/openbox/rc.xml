@@ -399,17 +399,17 @@
   </keybind>
   <keybind key="W-d">
     <action name="Execute">
-      <command>rofi -show drun -modi drun,run</command>
+      <command>rofi -show drun -modi drun,run,window,ssh</command>
     </action>
   </keybind>
   <keybind key="W-S-d">
     <action name="Execute">
-      <command>rofi -show run -modi drun,run</command>
+      <command>rofi -show run -modi drun,run,window,ssh</command>
     </action>
   </keybind>
   <keybind key="W-Escape">
     <action name="Execute">
-      <command>rofi -show window -modi window</command>
+      <command>rofi -show window -modi drun,run,window,ssh</command>
     </action>
   </keybind>
   <keybind key="W-S-e">
