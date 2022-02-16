@@ -2,11 +2,12 @@
 
 # Script to call custom rofi menu for power-related functions
 
-option=$(printf "lock\nlogout\nsuspend\nreboot\nshutdown" | dmenu -r -p "power option:")
+option=$(printf "lock\nlogout\nsuspend\nreboot\nshutdown" | rofi -dmenu -p "襤" -no-custom)
 
 case "$option" in
         lock) loginctl lock-session ;;
-        logout) xsetroot -name "fsignal:1" ;; # signal 1 to fsignal for quitting dwm
+#        logout) xsetroot -name "fsignal:1" ;; # signal 1 to fsignal for quitting dwm
+        logout) openbox --exit ;;
         suspend) systemctl suspend ;;
         reboot) systemctl reboot ;;
         shutdown) systemctl poweroff ;;
