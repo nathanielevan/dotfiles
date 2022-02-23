@@ -109,8 +109,20 @@ alias vimdiff='nvim -d'
 # Clear history
 alias ch='rm ~/.cache/zsh/history'
 
-# Clear primary clipboard
-alias clpc='xclip -i /dev/null'
+# Clear primary selection
+alias clp='xclip -sel primary -i /dev/null'
+
+# Clear clipboard selection
+alias clc='xclip -sel clipboard -i /dev/null'
+
+# Screen recording at 30fps without audio
+alias screenrec='ffmpeg -framerate 30 -f x11grab -i :0.0 -pix_fmt yuv420p $HOME/screc-`date +%d%m%y-%H%M%S`.mp4'
+
+# Record audio from microphone
+alias micrec='ffmpeg -f pulse -i 1 -ac 1 $HOME/audio-`date +%d%m%y-%H%M%S`.m4a'
+
+# Record screen with audio from mic
+alias screenmicrec='ffmpeg -framerate 30 -f x11grab -i :0.0 -pix_fmt yuv420p -f pulse -i 1 -ac 1 $HOME/screc-`date +%d%m%y-%H%M%S`.mp4'
 
 # Prompt config
 if [[ $EUID -ne 0 ]]; then
