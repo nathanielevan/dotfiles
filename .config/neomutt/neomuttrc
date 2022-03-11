@@ -89,6 +89,7 @@ bind browser l select-entry
 bind index,pager \Cu half-up
 bind index,pager \Cd half-down
 bind index D delete-message
+bind index U undelete-message
 bind index,pager g noop
 bind index gg first-entry
 bind pager gg top
@@ -96,7 +97,6 @@ bind index G last-entry
 bind pager G bottom
 bind index h noop
 bind pager,attach h exit
-bind index U undelete-message
 bind index <tab> sync-mailbox
 bind index,pager @ compose-to-sender
 
