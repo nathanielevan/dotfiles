@@ -49,7 +49,7 @@
 </placement>
 
 <theme>
-  <name>oomox-orange-dusk-dark</name>
+  <name>gruvbox-material-dark</name>
   <titleLayout>LIMC</titleLayout>
   <!--
       available characters are NDSLIMC, each can occur at most once.
