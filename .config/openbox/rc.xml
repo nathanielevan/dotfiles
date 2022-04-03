@@ -135,6 +135,10 @@
     <name>desktop 1</name>
     <name>desktop 2</name>
     -->
+    <name>desktop 1</name>
+    <name>desktop 2</name>
+    <name>desktop 3</name>
+    <name>desktop 4</name>
   </names>
   <popupTime>875</popupTime>
   <!-- The number of milliseconds to show the popup for when switching
