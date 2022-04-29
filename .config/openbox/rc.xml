@@ -327,8 +327,8 @@
     <action name="MoveResizeTo">
       <x>center</x>
       <y>center</y>
-      <width>48%</width>
-      <height>64%</height>
+      <width>64%</width>
+      <height>80%</height>
     </action>
   </keybind>
   <keybind key="W-Menu">
