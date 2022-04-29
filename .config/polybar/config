@@ -17,20 +17,20 @@
 ;==========================================================
 
 [colors]
-bg0 = "#0b1726"
-bg1 = "#12212f"
-black = "#192e40"
-red = "#c20f47"
-green = "#25a37e"
-yellow = "#e9986d"
-blue = "#5d92bf"
-magenta = "#6768bf"
-cyan = "#54bfb8"
-white = "#fff6e6"
+black0 = "#282828"
+black1 = "#32302f"
+red = "#ea6962"
+green = "#a9b665"
+yellow = "#d8a657"
+blue = "#7daea3"
+purple = "#d3869b"
+aqua = "#89b482"
+fg = "#e2d3ba"
+grey = "#928374"
 
-background = ${colors.bg0}
-background-alt = ${colors.bg1}
-foreground = ${colors.white0}
+background = ${colors.black0}
+background-alt = ${colors.black1}
+foreground = ${colors.fg}
 foreground-alt = ${colors.background}
 alert = ${colors.red}
 
@@ -54,7 +54,7 @@ line-size = 0
 line-color = ${colors.background}
 
 border-size = 5
-border-color = #0b1726
+border-color = ${colors.background}
 
 padding-left = 0
 padding-right = 0
@@ -62,7 +62,7 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = FantasqueSansMono Nerd Font:style=Regular:pixelsize=12;3
+font-0 = FantasqueSansMono Nerd Font:style=Regular:size=11;3
 
 modules-left = launcher openbox eth wlan
 modules-center = date
@@ -133,7 +133,7 @@ type = custom/text
 content = "襤 Exit"
 
 content-background = ${colors.red}
-content-foreground = ${colors.foreground}
+content-foreground = ${colors.foreground-alt}
 content-padding = 1
 click-left = ~/.local/bin/powermenu
 
@@ -159,6 +159,7 @@ label-urgent-padding = 1
 
 label-empty = %index%
 label-empty-background = ${colors.background-alt}
+label-empty-foreground = ${colors.grey}
 label-empty-padding = 1
 
 [module/bspwm]
@@ -278,21 +279,21 @@ card = intel_backlight
 type = internal/cpu
 interval = 2.0
 format = <label>
-format-prefix = "﬙ "
+format-prefix = "%{A1:$TERMINAL -e htop:} ﬙ "
 format-prefix-foreground = ${colors.yellow}
-format-padding = 1
+format-padding = 0
 format-background = ${colors.background-alt}
-label = %percentage%%
+label = "%percentage%% %{A}"
 
 [module/memory]
 type = internal/memory
 interval = 2.0
 format = <label>
-format-prefix = " "
+format-prefix = "%{A1:$TERMINAL -e htop:}  "
 format-prefix-foreground = ${colors.yellow}
-format-padding = 1
+format-padding = 0
 format-background = ${colors.background-alt}
-label = %percentage_used%%
+label = "%percentage_used%% %{A}"
 
 [module/wlan]
 type = internal/network
@@ -300,18 +301,18 @@ interface = wlp3s0
 interval = 2.0
 
 format-connected = <label-connected>
-format-connected-prefix = "說 "
+format-connected-prefix = "%{A1:$TERMINAL -e nmtui:} 說 "
 format-connected-prefix-foreground = ${colors.yellow}
-format-connected-padding = 1
+format-connected-padding = 0
 format-connected-background = ${colors.background-alt}
-label-connected = %signal%%
+label-connected = "%signal%% %{A}"
 
 format-disconnected = <label-disconnected>
-format-disconnected-prefix = "ﲁ "
+format-disconnected-prefix = "%{A1:$TERMINAL -e nmtui:} ﲁ "
 format-disconnected-prefix-foreground = ${colors.red}
-format-disconnected-padding = 1
+format-disconnected-padding = 0
 format-disconnected-background = ${colors.background-alt}
-label-disconnected = DCT
+label-disconnected = "DCT %{A}"
 
 ;ramp-signal-0 = 
 ;ramp-signal-1 = 
@@ -326,18 +327,18 @@ interface = enp0s25
 interval = 2.0
 
 format-connected = <label-connected>
-format-connected-prefix = " "
+format-connected-prefix = "%{A1:$TERMINAL -e nmtui:}  "
 format-connected-prefix-foreground = ${colors.yellow}
 format-connected-background = ${colors.background-alt}
-format-connected-padding = 1
-label-connected = CON
+format-connected-padding = 0
+label-connected = "CON %{A}"
 
 format-disconnected = <label-disconnected>
-format-disconnected-prefix = " "
+format-disconnected-prefix = "%{A1:$TERMINAL -e nmtui:}  "
 format-disconnected-prefix-foreground = ${colors.red}
 format-disconnected-background = ${colors.background-alt}
-format-disconnected-padding = 1
-label-disconnected = DCT
+format-disconnected-padding = 0
+label-disconnected = "DCT %{A}"
 
 [module/date]
 type = internal/date
@@ -353,26 +354,28 @@ format = <label>
 ;format-prefix = " "
 ;format-prefix-foreground = ${colors.yellow}
 ;format-background = ${colors.background-alt}
-format-padding = 1
+format-padding = 0
 
-label = %date% %time%
+label = %{A1:gsimplecal:} %date% %time% %{A}
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume-prefix = "墳 "
+format-volume-prefix = " 墳 "
 format-volume-prefix-foreground = ${colors.yellow}
-format-volume = <label-volume>
-format-volume-padding = 1
+format-volume = "<label-volume> "
+format-volume-padding = 0
 format-volume-background = ${colors.background-alt}
 label-volume = %percentage%%
 
-format-muted-prefix = "婢 "
+format-muted-prefix = " 婢 "
 format-muted-prefix-foreground = ${colors.red}
-format-muted = <label-muted>
-format-muted-padding = 1
+format-muted = "<label-muted> "
+format-muted-padding = 0
 format-muted-background = ${colors.background-alt}
 label-muted = MUTE
+
+click-right = $TERMINAL -e pulsemixer
 
 ;bar-volume-width = 10
 ;bar-volume-foreground-0 = #001964
@@ -423,42 +426,42 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT1
 adapter = AC
+low-at = 10
+full-at = 90
 
 format-charging = <label-charging>
 format-charging-prefix = " "
 format-charging-prefix-foreground = ${colors.yellow}
 format-charging-background = ${colors.background-alt}
 format-charging-padding = 1
-label-charging = %percentage%%
+label-charging = %percentage_raw%%
 
 time-format = %H:%M
 format-discharging = <ramp-capacity><label-discharging>
 format-discharging-background = ${colors.background-alt}
 format-discharging-padding = 1
-label-discharging = %percentage%%
+label-discharging = %percentage_raw%%
 
 format-full = <ramp-capacity><label-full>
 format-full-background = ${colors.background-alt}
 format-full-padding = 1
-label-full = %percentage%%
+label-full = %percentage_raw%%
 
-;ramp-capacity-0 = " " 
-ramp-capacity-0 = " "
-ramp-capacity-1 = " "
-ramp-capacity-2 = " "
-ramp-capacity-3 = " "
-
-; This feature is unreleased
-;ramp-capacity-0-weight = 1
-;ramp-capacity-1-weight = 3
-;ramp-capacity-2-weight = 3
-;ramp-capacity-3-weight = 2
-;ramp-capacity-4-weight = 1
+; Since version 3.6.0, ramp calculation works as follows:
+; Ramp 0 covers everything <= low-at
+; Final ramp covers everything >= full-at
+; Range between low-at and full-at is divided between the remaining ramps
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
 
 ramp-capacity-0-foreground = ${colors.red}
 ramp-capacity-1-foreground = ${colors.yellow}
 ramp-capacity-2-foreground = ${colors.yellow}
 ramp-capacity-3-foreground = ${colors.yellow}
+ramp-capacity-4-foreground = ${colors.yellow}
 
 ;animation-charging-0 = " "
 ;animation-charging-1 = " "
