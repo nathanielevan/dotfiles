@@ -9,56 +9,67 @@
 rounded = 0
 border_width = 0
 border_sides = TBLR
-background_color = #0b1726 100
-border_color = #0b1726 100
-background_color_hover = #0b1726 100
-border_color_hover = #0b1726 100
-background_color_pressed = #0b1726 100
-border_color_pressed = #0b1726 100
+background_color = #282828 100
+border_color = #282828 100
+background_color_hover = #282828 100
+border_color_hover = #282828 100
+background_color_pressed = #282828 100
+border_color_pressed = #282828 100
 
 # Background 2: Default task, Iconified task
 rounded = 0
 border_width = 0
 border_sides = TBLR
-background_color = #12212f 100
-border_color = #0b1726 100
-background_color_hover = #17293a 100
-border_color_hover = #0b1726 100
-background_color_pressed = #12212f 100
-border_color_pressed = #0b1726 100
+background_color = #32302f 100
+border_color = #282828 100
+background_color_hover = #3c3836 100
+border_color_hover = #282828 100
+background_color_pressed = #1d2021 100
+border_color_pressed = #282828 100
 
 # Background 3: Active task
 rounded = 0
-border_width = 0
+border_width = 1
 border_sides = TBLR
-background_color = #e9986d 100
-border_color = #0b1726 100
-background_color_hover = #eeae8c 100
-border_color_hover = #0b1726 100
-background_color_pressed = #cf8761 100
-border_color_pressed = #0b1726 100
+background_color = #282828 100
+border_color = #d4be98 100
+background_color_hover = #32302f 100
+border_color_hover = #e2d3ba 100
+background_color_pressed = #1d2021 100
+border_color_pressed = #a89984 100
 
-# Background 4: Urgent task
+# Background 4: Active desktop
 rounded = 0
 border_width = 0
 border_sides = TBLR
-background_color = #c20f47 100
-border_color = #0b1726 100
-background_color_hover = #d6104f 100
-border_color_hover = #0b1726 100
-background_color_pressed = #c20f47 100
-border_color_pressed = #0b1726 100
+background_color = #d8a657 100
+border_color = #d8a657 100
+background_color_hover = #d8a657 100
+border_color_hover = #d8a657 100
+background_color_pressed = #d8a657 100
+border_color_pressed = #d8a657 100
 
-# Background 5: Tooltip
+# Background 5: Urgent task
 rounded = 0
 border_width = 0
 border_sides = TBLR
-background_color = #0b1726 80
-border_color = #fff6e6 100
-background_color_hover = #0b1726 80
-border_color_hover = #fff6e6 100
-background_color_pressed = #0b1726 80
-border_color_pressed = #fff6e6 100
+background_color = #ea6962 100
+border_color = #282828 100
+background_color_hover = #ef938e 100
+border_color_hover = #282828 100
+background_color_pressed = #c14a4a 100
+border_color_pressed = #282828 100
+
+# Background 6: Tooltip
+rounded = 0
+border_width = 0
+border_sides = TBLR
+background_color = #282828 90
+border_color = #e2d3ba 100
+background_color_hover = #282828 90
+border_color_hover = #e2d3ba 100
+background_color_pressed = #282828 90
+border_color_pressed = #e2d3ba 100
 
 #-------------------------------------
 # Panel
@@ -88,7 +99,7 @@ mouse_pressed_icon_asb = 100 0 0
 #-------------------------------------
 # Taskbar
 taskbar_mode = single_desktop
-taskbar_hide_if_empty = 1
+taskbar_hide_if_empty = 0
 taskbar_padding = 0 0 5
 taskbar_background_id = 0
 taskbar_active_background_id = 0
@@ -96,13 +107,13 @@ taskbar_name = 0
 taskbar_hide_inactive_tasks = 0
 taskbar_hide_different_monitor = 0
 taskbar_hide_different_desktop = 0
-taskbar_always_show_all_desktop_tasks = 1
-taskbar_name_padding = 4 2
+taskbar_always_show_all_desktop_tasks = 0
+taskbar_name_padding = 8 2
 taskbar_name_background_id = 0
-taskbar_name_active_background_id = 0
+taskbar_name_active_background_id = 4
 taskbar_name_font = FantasqueSansMono Nerd Font 10
-taskbar_name_font_color = #fff6e6 100
-taskbar_name_active_font_color = #f2905e 100
+taskbar_name_font_color = #d8a657 100
+taskbar_name_active_font_color = #282828 100
 taskbar_distribute_size = 0
 taskbar_sort_order = none
 task_align = left
@@ -119,12 +130,12 @@ task_tooltip = 1
 task_thumbnail = 0
 task_thumbnail_size = 210
 task_font = FantasqueSansMono Nerd Font 10
-task_font_color = #fff6e6 100
-task_active_font_color = #0b1726 100
-task_urgent_font_color = #fff6e6 100
+task_font_color = #928374 100
+task_active_font_color = #e2d3ba 100
+task_urgent_font_color = #282828 100
 task_background_id = 2
 task_active_background_id = 3
-task_urgent_background_id = 4
+task_urgent_background_id = 5
 task_iconified_background_id = 2
 mouse_left = toggle_iconify
 mouse_middle = none
@@ -166,13 +177,13 @@ time1_timezone =
 time2_timezone = 
 time1_font = FantasqueSansMono Nerd Font 10
 time2_font =
-clock_font_color = #fff6e6 100
+clock_font_color = #e2d3ba 100
 clock_padding = 4 0
 clock_background_id = 0
 clock_tooltip = %a, %d %b %Y %I:%M:%S %p
 clock_tooltip_timezone = 
-clock_lclick_command = st -e calcurse
-clock_rclick_command = st -e calcurse
+clock_lclick_command = gsimplecal
+clock_rclick_command = gsimplecal
 clock_mclick_command = 
 clock_uwheel_command = 
 clock_dwheel_command = 
@@ -185,7 +196,7 @@ battery_low_cmd = notify-send "Low battery" "Plug in to AC power or save your wo
 battery_full_cmd = 
 bat1_font = FantasqueSansMono Nerd Font 10
 bat2_font =
-battery_font_color = #fff6e6 100
+battery_font_color = #e2d3ba 100
 bat1_format = %s %p
 bat2_format = 
 battery_padding = 4 0
@@ -204,6 +215,6 @@ ac_disconnected_cmd =
 tooltip_show_timeout = 0.5
 tooltip_hide_timeout = 0.1
 tooltip_padding = 4 4
-tooltip_background_id = 5
+tooltip_background_id = 6
 tooltip_font = FantasqueSansMono Nerd Font 10
-tooltip_font_color = #fff6e6 100
+tooltip_font_color = #e2d3ba 100
