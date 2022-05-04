@@ -119,10 +119,10 @@ alias clc='xclip -sel clipboard -i /dev/null'
 alias screenrec='ffmpeg -framerate 30 -f x11grab -i :0.0 -pix_fmt yuv420p $HOME/screc-`date +%d%m%y-%H%M%S`.mp4'
 
 # Record audio from microphone
-alias micrec='ffmpeg -f pulse -i 1 -ac 1 $HOME/audio-`date +%d%m%y-%H%M%S`.m4a'
+alias micrec='ffmpeg -f pulse -i default -ac 1 $HOME/audio-`date +%d%m%y-%H%M%S`.m4a'
 
 # Record screen with audio from mic
-alias screenmicrec='ffmpeg -framerate 30 -f x11grab -i :0.0 -pix_fmt yuv420p -f pulse -i 1 -ac 1 $HOME/screc-`date +%d%m%y-%H%M%S`.mp4'
+alias screenmicrec='ffmpeg -framerate 30 -f x11grab -i :0.0 -pix_fmt yuv420p -f pulse -i default -ac 1 $HOME/screc-`date +%d%m%y-%H%M%S`.mp4'
 
 # Prompt config
 if [[ $EUID -ne 0 ]]; then
