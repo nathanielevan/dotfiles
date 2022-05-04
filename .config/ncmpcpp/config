@@ -311,7 +311,7 @@ selected_item_suffix = $9
 ##   available.
 ##
 #
-song_columns_list_format = (20)[green]{a} (6f)[yellow]{NE} (50)[white]{t|f:Title} (20)[blue]{b} (7f)[magenta]{l}
+song_columns_list_format = (20)[green]{a} (6f)[yellow]{NE} (50)[]{t|f:Title} (20)[blue]{b} (7f)[magenta]{l}
 #
 ##### various settings #####
 #
@@ -574,7 +574,7 @@ empty_tag_color = yellow
 #
 #state_flags_color = default:b
 #
-main_window_color = white
+main_window_color = default
 #
 #color1 = white
 #
@@ -592,7 +592,7 @@ progressbar_elapsed_color = yellow:b
 #
 #alternative_ui_separator_color = black:b
 #
-window_border_color = white
+window_border_color = default
 #
 active_window_border = yellow
 #
