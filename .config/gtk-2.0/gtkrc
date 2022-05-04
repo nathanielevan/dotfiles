@@ -1,2 +1,3 @@
-gtk-icon-theme-name = "oomox-orange-dusk-dark"
-gtk-theme-name = "oomox-orange-dusk-dark"
+gtk-icon-theme-name = "oomox-gruvbox-material-dark"
+gtk-theme-name = "oomox-gruvbox-material-dark"
+gtk-font-name = "Cantarell 10"
