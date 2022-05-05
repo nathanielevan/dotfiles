@@ -17,7 +17,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*:descriptions' format "%B--- %d%b"
+zstyle ':completion:*:descriptions' format "%2F%B--- %d%b%f"
 zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:warnings' format "%1F%B--- No matches found%b%f"
 zstyle ':completion:*:corrections' format '%214F%B--- %d%b%f'
