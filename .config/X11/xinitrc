@@ -55,11 +55,10 @@ fi
 # exec xterm -geometry 80x66+0+0 -name login
 
 # Startup programs
-dunst &
-udiskie -s &
-picom -b
-xsetroot -cursor_name left_ptr &
-feh --bg-fill --no-fehbg ~/.config/wallpapers/wallpaper.jpg
-xss-lock --transfer-sleep-lock -- slock &
-srandrd setmonitor
-exec dwm
+# Source from .config/X11/xprofile
+
+. "${HOME}/.xprofile"
+
+exec openbox-session
+# exec bspwm
+# exec dwm
