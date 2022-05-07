@@ -108,7 +108,7 @@ super + {_,shift + }{h,j,k,l}
 # 	bspc node -f @{parent,brother,first,second}
 
 # circulate leaves forward/backward
-super + {comma,period}
+super + {less,greater}
 	bspc node @focused:/ -R {270,90}
 
 # focus the next/previous window in the current desktop
