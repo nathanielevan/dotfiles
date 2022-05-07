@@ -17,7 +17,7 @@ Check out my personal suckless builds:
 ## WIP:
 * Personal bootstrapping script, if I ever feel like it.
 * Finish configuring tmux.
-* Experiment with awesomewm, ~~bspwm~~ and/or ~~dwm~~/xmonad, when I'm in the mood to break things.
+* Experiment with awesomewm, ~~bspwm~~, ~~dwm~~/xmonad, and/or ~~openbox~~ when I'm in the mood to break things.
 
 Suggestions and pull requests welcome, and if I accept yours, I'll credit you in this README and in the corresponding merge commit.
 
