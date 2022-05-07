@@ -11,24 +11,36 @@ processxrandr() {
         numofconnmonitors=$(echo "$connmonitors" | wc -l)
 }
 
+relaunchpolybar() {
+        polybar-msg cmd quit
+        for monitors in "$@"; do
+            [ "$monitors" = "$1" ] && traypos=right || traypos=none
+            MONITOR="$monitors" TRAY_POS="$traypos" polybar --reload top-bar 2>&1 | tee -a /tmp/polybar.log & disown
+        done
+}
+
 monitorsingle() {
         processxrandr &&
-        monitorto=$(echo "$connmonitors" | dmenu -r -p "select monitor:") &&
-        chooseres=$(echo "$xrandroutput" | awk -v monitor="$monitorto" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | dmenu -r -p "select resolution:") &&
+        monitorto=$(echo "$connmonitors" | rofi -dmenu -p "" -no-custom -mesg "Select a monitor.") &&
+        chooseres=$(echo "$xrandroutput" | awk -v monitor="$monitorto" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | rofi -dmenu -p "ﬕ" -no-custom -mesg "Select your preferred resolution.") &&
         xrandr --output "$monitorto" --primary --mode "$chooseres" $(echo "$monitors" | grep -v "$monitorto" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
+#        bspc monitor "$monitorto" -d $(seq 1 5) &&
+        relaunchpolybar "$monitorto" &&
         feh --bg-fill --no-fehbg "$wallpaperloc"
 }
 
 monitorduplicate() {
         processxrandr || return 1 &&
         [ "$numofconnmonitors" -lt 2 ] &&
-        notify-send "Not enough displays detected" "If this shouldn't be the case, please check your cable connections and try again." && return 1 ||
-        monitorone=$(echo "$connmonitors" | dmenu -r -p "select 1st monitor:") &&
-        monitortwo=$(echo "$connmonitors" | grep -v "$monitorone" | dmenu -r -p "select 2nd monitor:") &&
+        notify-send "Not enough displays connected" "If this isn't the case, please check your cable connections and try again." && return 1 ||
+        monitorone=$(echo "$connmonitors" | rofi -dmenu -p " 1" -no-custom -mesg "Select the 1st monitor.") &&
+        monitortwo=$(echo "$connmonitors" | grep -v "$monitorone" | rofi -dmenu -p " 2" -no-custom -mesg "Select the 2nd monitor.") &&
         oneres=$(echo "$xrandroutput" | awk -v monitor="$monitorone" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}') &&
         twores=$(echo "$xrandroutput" | awk -v monitor="$monitortwo" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}') &&
-        chooseres=$(echo "$twores" | grep -F -x "$oneres" | dmenu -r -p "select resolution:") &&
+        chooseres=$(echo "$twores" | grep -F -x "$oneres" | rofi -dmenu -p "ﬕ" -no-custom -mesg "Select your preferred resolution.") &&
         xrandr --output "$monitorone" --primary --mode "$chooseres" --output "$monitortwo" --mode "$chooseres" --same-as "$monitorone" $(echo "$monitors" | grep -v -e "$monitorone" -e "$monitortwo" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
+#        bspc monitor "$monitorone" -d $(seq 1 5) &&
+        relaunchpolybar "$monitorone" &&
         feh --bg-fill --no-fehbg "$wallpaperloc"
 }
 
@@ -36,18 +48,23 @@ monitorextend() {
         processxrandr || return 1 &&
         [ "$numofconnmonitors" -lt 2 ] &&
         notify-send "Not enough displays detected" "If this shouldn't be the case, please check your cable connections and try again." && return 1 ||
-        monitorone=$(echo "$connmonitors" | dmenu -r -p "select 1st monitor:") &&
-        oneres=$(echo "$xrandroutput" | awk -v monitor="$monitorone" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | dmenu -r -p "select 1st monitor resolution:") &&
-        monitortwo=$(echo "$connmonitors" | grep -v "$monitorone" | dmenu -r -p "select 2nd monitor:") &&
-        twores=$(echo "$xrandroutput" | awk -v monitor="$monitortwo" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | dmenu -r -p "select 2nd monitor resolution:") &&
-        dir=$(echo -e "left\nright\nabove\nbelow" | dmenu -r -p "position to 1st monitor:") &&
+        monitorone=$(echo "$connmonitors" | rofi -dmenu -p " 1" -no-custom -mesg "Select the 1st monitor.") &&
+        oneres=$(echo "$xrandroutput" | awk -v monitor="$monitorone" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | rofi -dmenu -p "ﬕ 1" -no-custom -mesg "Select the resolution of the 1st monitor.") &&
+        monitortwo=$(echo "$connmonitors" | grep -v "$monitorone" | rofi -dmenu -p " 2" -no-custom -mesg "Select the 2nd monitor.") &&
+        twores=$(echo "$xrandroutput" | awk -v monitor="$monitortwo" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | rofi -dmenu -p "ﬕ 2" -no-custom -mesg "Select the resolution of the 2nd monitor.") &&
+        dir=$(echo -e "left\nright\nabove\nbelow" | rofi -dmenu -p " 2" -no-custom -mesg "Select the position of the 2nd monitor relative to the 1st monitor.") &&
         xrandr --output "$monitorone" --primary --mode "$oneres" --output "$monitortwo" --mode "$twores" --"$dir"$([ "$dir" = "left" ] || [ "$dir" = "right" ] && echo "-of") "$monitorone" $(echo "$monitors" | grep -v -e "$monitorone" -e "$monitortwo" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
+#        bspc monitor "$monitorone" -d $(seq 1 5) &&
+#        bspc monitor "$monitortwo" -d $(seq 6 10) &&
+        relaunchpolybar "$monitorone" "$monitortwo" &&
         feh --bg-fill --no-fehbg "$wallpaperloc"
 }
 
 monitorauto() {
         xrandr --auto &&
         feh --bg-fill --no-fehbg "$wallpaperloc"
+#        feh --bg-fill --no-fehbg "$wallpaperloc" &&
+#        polybar-msg cmd restart
 }
 
 monitorfallback() {
@@ -56,6 +73,8 @@ monitorfallback() {
         [ "$numofactivedisplays" -eq 0 ] &&
         fallbackmonitor=$(echo "$connmonitors" | head -n 1) &&
         xrandr --output "$fallbackmonitor" --primary --auto $(echo "$monitors" | grep -v "$fallbackmonitor" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
+#        bspc monitor "$fallbackmonitor" -d $(seq 1 5) &&
+        relaunchpolybar "$fallbackmonitor" &&
         feh --bg-fill --no-fehbg "$wallpaperloc"
 }
 
@@ -67,7 +86,7 @@ case "$SRANDRD_EVENT" in
         "disconnected") option="fallback" ;;
 esac
 
-[ -z "$option" ] && option=$(echo -e "$dmenuopts" | dmenu -r -p "display mode:")
+[ -z "$option" ] && option=$(echo -e "$dmenuopts" | rofi -dmenu -p "" -no-custom -mesg "Select a display mode.")
 case "$option" in
         single)
                 monitorsingle ;;
