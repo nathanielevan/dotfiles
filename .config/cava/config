@@ -89,8 +89,8 @@ method = ncurses
 # 'stereo' mirrors both channels with low frequencies in center.
 # 'mono' outputs left to right lowest to highest frequencies.
 # 'mono_option' set mono to either take input from 'left', 'right' or 'average'.
-channels = mono
-mono_option = average
+channels = stereo
+; mono_option = average
 
 # Raw output target. A fifo will be created if target does not exist.
 ; raw_target = /dev/stdout
@@ -125,13 +125,15 @@ mono_option = average
 # background must also be defined in hex  or remain commented out. 1 = on, 0 = off.
 # You can define as many as 8 different colors. They range from bottom to top of screen
 gradient = 1
-gradient_count = 4
-gradient_color_1 = '#5e81ac'
-gradient_color_2 = '#81a1c1'
-gradient_color_3 = '#88c0d0'
-gradient_color_4 = '#8fbcbb'
-; gradient_color_5 = '#cca633'
-; gradient_color_6 = '#cc8033'
+gradient_count = 2
+gradient_color_1 = '#d8a657'
+gradient_color_2 = '#e2d3ba'
+; gradient_color_1 = '#76707f'
+; gradient_color_2 = '#998794'
+; gradient_color_3 = '#a69099'
+; gradient_color_4 = '#d0a29e'
+; gradient_color_5 = '#cc5933'
+; gradient_color_6 = '#cc5933'
 ; gradient_color_7 = '#cc5933'
 ; gradient_color_8 = '#cc3333'
 
