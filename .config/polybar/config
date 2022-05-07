@@ -69,6 +69,7 @@ modules-center = date
 modules-right = battery pulseaudio memory cpu exit
 
 tray-position = none
+;tray-position = ${env:TRAY_POS:none}
 tray-padding = 0
 ;tray-offset-x = 0
 ;tray-background = ${colors.green}
@@ -183,6 +184,7 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
 label-empty = %name%
+label-empty-foreground = ${colors.grey}
 label-empty-background = ${colors.background-alt}
 label-empty-padding = 1
 
