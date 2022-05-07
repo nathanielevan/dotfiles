@@ -14,9 +14,9 @@ bspc config gapless_monocle      true
 bspc config top_monocle_padding  0
 bspc config bottom_monocle_padding 0
 
-bspc config normal_border_color   '#2E3440'
-bspc config focused_border_color  '#E5E9F0'
-bspc config urgent_border_color   '#BF616A'
+bspc config normal_border_color   '#45403d'
+bspc config active_border_color   '#1d2021'
+bspc config focused_border_color  '#d8a657'
 
 bspc config external_rules_command ~/.config/bspwm/external-rules
 bspc rule -a Gimp state=floating follow=on
