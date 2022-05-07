@@ -16,13 +16,21 @@ super + d
 	rofi -show drun -modi drun,run,window,ssh
 	# j4-dmenu-desktop --dmenu "dmenu -i -r -p \"drun:\"" --no-generic
 
-# make sxhkd reload its configuration files:
+# window switcher
 super + Escape
+	rofi -show window -modi drun,run,window,ssh
+
+# make sxhkd reload its configuration files:
+super + s
 	pkill -USR1 -x sxhkd
 
 # launch power menu
 super + shift + e
 	$HOME/.local/bin/powermenu
+
+# launch monitor switching menu
+super + shift + m
+	$HOME/.local/bin/setmonitor
 
 # volume adjustment
 XF86AudioRaiseVolume
