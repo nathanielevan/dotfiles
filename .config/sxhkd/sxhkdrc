@@ -6,9 +6,15 @@
 super + shift + Return
 	st
 
-# program launcher
+# program launcher (run)
+super + shift + d
+	rofi -show run -modi drun,run,window,ssh
+	# dmenu_run -i -p "run:"
+
+# program launcher (drun)
 super + d
-	dmenu_run -i -p "run:"
+	rofi -show drun -modi drun,run,window,ssh
+	# j4-dmenu-desktop --dmenu "dmenu -i -r -p \"drun:\"" --no-generic
 
 # make sxhkd reload its configuration files:
 super + Escape
