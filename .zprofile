@@ -39,6 +39,10 @@ export N_PRESERVE_NPM=1
 # export RXVT_SOCKET="$XDG_RUNTIME_DIR/urxvtd"
 # export URXVT_PERL_LIB="$XDG_DATA_HOME/urxvt/perl"
 
+# Flutter/Android default directories
+export FLUTTER_ROOT="$HOME/.flutter"
+export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
+
 # Defines location for mpd socket
 export MPD_HOST="$XDG_DATA_HOME/mpd/socket"
 
@@ -55,8 +59,18 @@ export NNN_TRASH=1
 # Set bat highlighting colour theme
 export BAT_THEME="base16"
 
+# Define Chromium executable
+export CHROME_EXECUTABLE="/usr/bin/chromium"
+
 # Define PATH
-export PATH="$N_PREFIX/bin:$HOME/.local/bin/dwmblocks:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin/dwmblocks:$PATH"
+export PATH="$N_PREFIX/bin:$PATH"
+export PATH="$FLUTTER_ROOT/bin:$PATH"
+export PATH="$ANDROID_SDK_ROOT/platform-tools:$PATH"
+export PATH="$ANDROID_SDK_ROOT/tools:$PATH"
+export PATH="$ANDROID_SDK_ROOT/tools/bin:$PATH"
+export PATH="$ANDROID_SDK_ROOT/emulator:$PATH"
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && "$(tty)" = "/dev/tty1" ]]; then
 	exec startx "$XINITRC"
