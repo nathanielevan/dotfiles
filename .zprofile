@@ -50,8 +50,9 @@ export MPD_HOST="$XDG_DATA_HOME/mpd/socket"
 export LESSHISTFILE=/dev/null
 
 # nnn configuration
-export NNN_OPTS=eo
-export NNN_FCOLORS='030304020006060801050501'
+export NNN_OPTS=eox
+export NNN_COLORS='3333'
+export NNN_FCOLORS='050503040006060801020201'
 export NNN_BMS='h:~;m:/run/media/nate/;t:~/.local/share/Trash/files/;'
 export NNN_OPENER=xdg-open
 export NNN_TRASH=1
