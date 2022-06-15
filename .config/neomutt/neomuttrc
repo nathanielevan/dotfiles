@@ -146,7 +146,7 @@ color error red default
 color tilde black default
 color message yellow default
 color markers red white
-color attachment white default
+color attachment green default
 color search brightmagenta default
 color status brightwhite default
 color hdrdefault brightgreen default
@@ -156,13 +156,13 @@ color quoted2 cyan default
 color quoted3 blue default
 color quoted4 magenta default
 color quoted5 red default
-color signature brightgreen default
+color signature brightyellow default
 color bold black default
 color underline black default
 color normal default default
 
 # Regex highlighting:
-color header white default ".*"
+color header brightwhite default ".*"
 color header brightyellow default "^(From)"
 color header brightblue default "^(Date)"
 color header brightmagenta default "^(Subject)"
