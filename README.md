@@ -27,7 +27,7 @@ Other relevant links:
 Suggestions and pull requests welcome, and if I accept yours, I'll credit you in this README and in the corresponding merge commit.
 
 ## Contributions:
-* Thanks to [@Zish1805](https://github.com/Zish1805) for fixing the battery charging animation foreground colour on Polybar!
+* Thanks to [@Zish1805](https://github.com/Z-8Bit) for fixing the battery charging animation foreground colour on Polybar!
 
 ## Screenshot
 
