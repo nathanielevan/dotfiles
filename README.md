@@ -10,6 +10,11 @@ Check out my personal suckless builds:
 * [slock](https://github.com/nathanielevan/slock)
 * [tabbed](https://github.com/nathanielevan/tabbed)
 
+Other relevant links:
+* [Gruvbox Material Theme for Openbox](https://github.com/nathanielevan/gruvbox-material-openbox)
+* [Gruvbox Material Theme for Telegram](https://github.com/nathanielevan/gruvbox-material-telegram)
+* [Homepage](https://github.com/nathanielevan/homepage)
+
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.
 * Does not include system-wide configurations, e.g. systemd power management config (which I use in my machine)
@@ -23,4 +28,4 @@ Suggestions and pull requests welcome, and if I accept yours, I'll credit you in
 
 ## Screenshot
 
-![Screenshot](screenshot.png?raw=true)
+![Screenshot](https://user-images.githubusercontent.com/9361126/183266591-7964a467-2c4b-442d-87c0-4e69fcb75fb4.png)
