@@ -201,8 +201,59 @@ settings:
     global: '#e2d3ba'
   colors.webpage.preferred_color_scheme:
     global: dark
+  content.default_encoding:
+    global: utf-8
+  content.pdfjs:
+    global: true
   content.private_browsing:
     global: true
+  editor.command:
+    global:
+    - st
+    - -e
+    - nvim
+    - '{file}'
+    - -c
+    - normal {line}G{column0}l
+  fileselect.folder.command:
+    global:
+    - st
+    - -e
+    - nnn
+    - -p
+    - '{}'
+  fileselect.multiple_files.command:
+    global:
+    - st
+    - -e
+    - nnn
+    - -p
+    - '{}'
+  fileselect.single_file.command:
+    global:
+    - st
+    - -e
+    - nnn
+    - -p
+    - '{}'
+  fonts.default_family:
+    global: FantasqueSansMono Nerd Font
+  fonts.default_size:
+    global: 10.5pt
+  hints.border:
+    global: '1px solid #b47109'
+  statusbar.padding:
+    global:
+      bottom: 1
+      left: 0
+      right: 0
+      top: 1
+  tabs.padding:
+    global:
+      bottom: 3
+      left: 5
+      right: 5
+      top: 3
   url.default_page:
     global: file:///home/nate/.config/homepage/index.html
   url.searchengines:
