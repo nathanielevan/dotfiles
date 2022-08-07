@@ -16,6 +16,12 @@ Other relevant links:
 * [Gruvbox Material Theme for Telegram](https://github.com/nathanielevan/gruvbox-material-telegram)
 * [Homepage](https://github.com/nathanielevan/homepage)
 
+## Directory
+* `.config` is where my configuration files reside.
+    + You can find my wallpaper in `.config/wallpapers`.
+* `.local/bin` is where I store miscellaneous shell scripts for e.g. dwmblocks, power menu, monitor switching menu etc.
+* `.local/share` contains miscellaneous files e.g. desktop files, zsh plugins etc.
+
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.
 * Does not include system-wide configurations, e.g. systemd power management config (which I use in my machine)
