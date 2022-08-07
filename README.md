@@ -1,5 +1,6 @@
 # dotfiles
-Linux configuration files by Nathaniel Evan. Inspired by various sources. As seen on [this r/unixporn dwm post](https://www.reddit.com/r/unixporn/comments/mewpsp/dwm_still_lovin_nord/)
+Linux configuration files by Nathaniel Evan. Inspired by various sources. As seen on [this r/unixporn post](https://www.reddit.com/r/unixporn/comments/wijdko/openbox_grooooooovboks_material_edition)
+Previous dwm rice is [here](https://www.reddit.com/r/unixporn/comments/mewpsp/dwm_still_lovin_nord/)
 
 **Update (24 Jan 2022)**: Switched to openbox
 
