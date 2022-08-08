@@ -78,7 +78,7 @@ settings:
   colors.hints.fg:
     global: '#282828'
   colors.hints.match.fg:
-    global: '#e78a4e'
+    global: '#c14a4a'
   colors.keyhint.bg:
     global: rgba(40, 40, 40, 0.9)
   colors.keyhint.fg:
@@ -160,7 +160,7 @@ settings:
   colors.statusbar.url.warn.fg:
     global: '#d8a657'
   colors.tabs.bar.bg:
-    global: '#3c3836'
+    global: '#e2d3ba'
   colors.tabs.even.bg:
     global: '#5a524c'
   colors.tabs.even.fg:
