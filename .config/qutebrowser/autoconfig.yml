@@ -240,6 +240,8 @@ settings:
     global: 10.5pt
   hints.border:
     global: '1px solid #b47109'
+  input.insert_mode.auto_load:
+    global: true
   statusbar.padding:
     global:
       bottom: 1
