@@ -203,8 +203,6 @@ settings:
     global: dark
   content.default_encoding:
     global: utf-8
-  content.pdfjs:
-    global: true
   content.private_browsing:
     global: true
   editor.command:
