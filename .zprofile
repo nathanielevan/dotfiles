@@ -68,11 +68,11 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin/dwmblocks:$PATH"
 export PATH="$N_PREFIX/bin:$PATH"
 export PATH="$FLUTTER_ROOT/bin:$PATH"
-export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/:$PATH"
 export PATH="$ANDROID_SDK_ROOT/platform-tools:$PATH"
 export PATH="$ANDROID_SDK_ROOT/tools:$PATH"
 export PATH="$ANDROID_SDK_ROOT/tools/bin:$PATH"
 export PATH="$ANDROID_SDK_ROOT/emulator:$PATH"
+export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/:$PATH"
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && "$(tty)" = "/dev/tty1" ]]; then
 	exec startx "$XINITRC"
