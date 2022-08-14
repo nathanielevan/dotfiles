@@ -66,6 +66,10 @@
   <font place="ActiveWindow">
     <name>FantasqueSansMono Nerd Font</name>
     <size>10</size>
+    <!--
+    <name>CaskaydiaCove Nerd Font</name>
+    <size>9</size>
+    -->
     <!-- font size in points -->
     <weight>normal</weight>
     <!-- 'bold' or 'normal' -->
@@ -75,6 +79,10 @@
   <font place="InactiveWindow">
     <name>FantasqueSansMono Nerd Font</name>
     <size>10</size>
+    <!--
+    <name>CaskaydiaCove Nerd Font</name>
+    <size>9</size>
+    -->
     <!-- font size in points -->
     <weight>normal</weight>
     <!-- 'bold' or 'normal' -->
@@ -84,6 +92,10 @@
   <font place="MenuHeader">
     <name>FantasqueSansMono Nerd Font</name>
     <size>10</size>
+    <!--
+    <name>CaskaydiaCove Nerd Font</name>
+    <size>9</size>
+    -->
     <!-- font size in points -->
     <weight>normal</weight>
     <!-- 'bold' or 'normal' -->
@@ -93,6 +105,10 @@
   <font place="MenuItem">
     <name>FantasqueSansMono Nerd Font</name>
     <size>10</size>
+    <!--
+    <name>CaskaydiaCove Nerd Font</name>
+    <size>9</size>
+    -->
     <!-- font size in points -->
     <weight>normal</weight>
     <!-- 'bold' or 'normal' -->
@@ -102,6 +118,10 @@
   <font place="ActiveOnScreenDisplay">
     <name>FantasqueSansMono Nerd Font</name>
     <size>10</size>
+    <!--
+    <name>CaskaydiaCove Nerd Font</name>
+    <size>9</size>
+    -->
     <!-- font size in points -->
     <weight>normal</weight>
     <!-- 'bold' or 'normal' -->
@@ -111,6 +131,10 @@
   <font place="InactiveOnScreenDisplay">
     <name>FantasqueSansMono Nerd Font</name>
     <size>10</size>
+    <!--
+    <name>CaskaydiaCove Nerd Font</name>
+    <size>9</size>
+    -->
     <!-- font size in points -->
     <weight>normal</weight>
     <!-- 'bold' or 'normal' -->
