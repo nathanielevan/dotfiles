@@ -63,6 +63,8 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = FantasqueSansMono Nerd Font:style=Regular:size=11;3
+;font-0 = CaskaydiaCove Nerd Font:style=Regular:pixelsize=11;3
+;font-0 = Iosevka Nerd Font:style=Medium:size=11;4
 
 modules-left = launcher openbox eth wlan
 modules-center = date
@@ -346,7 +348,7 @@ label-disconnected = "DCT %{A}"
 type = internal/date
 interval = 1.0
 
-date = %a, %d %b %Y
+date = %a, %d %b
 time = %H:%M:%S
 
 ;date-alt = %a, %d %b %Y
@@ -358,7 +360,7 @@ format = <label>
 ;format-background = ${colors.background-alt}
 format-padding = 0
 
-label = %{A1:gsimplecal:} %date% %time% %{A}
+label = %{A1:gsimplecal:} %date%  %time% %{A}
 
 [module/pulseaudio]
 type = internal/pulseaudio
