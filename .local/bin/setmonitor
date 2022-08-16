@@ -32,7 +32,7 @@ monitorsingle() {
 monitorduplicate() {
         processxrandr || return 1 &&
         [ "$numofconnmonitors" -lt 2 ] &&
-        notify-send "Not enough displays connected" "If this isn't the case, please check your cable connections and try again." && return 1 ||
+        notify-send "Not enough displays connected" "Please check your cable connections and try again." && return 1 ||
         monitorone=$(echo "$connmonitors" | rofi -dmenu -p " 1" -no-custom -mesg "Select the 1st monitor.") &&
         monitortwo=$(echo "$connmonitors" | grep -v "$monitorone" | rofi -dmenu -p " 2" -no-custom -mesg "Select the 2nd monitor.") &&
         oneres=$(echo "$xrandroutput" | awk -v monitor="$monitorone" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}') &&
@@ -47,7 +47,7 @@ monitorduplicate() {
 monitorextend() {
         processxrandr || return 1 &&
         [ "$numofconnmonitors" -lt 2 ] &&
-        notify-send "Not enough displays detected" "If this shouldn't be the case, please check your cable connections and try again." && return 1 ||
+        notify-send "Not enough displays detected" "Please check your cable connections and try again." && return 1 ||
         monitorone=$(echo "$connmonitors" | rofi -dmenu -p " 1" -no-custom -mesg "Select the 1st monitor.") &&
         oneres=$(echo "$xrandroutput" | awk -v monitor="$monitorone" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | rofi -dmenu -p "ﬕ 1" -no-custom -mesg "Select the resolution of the 1st monitor.") &&
         monitortwo=$(echo "$connmonitors" | grep -v "$monitorone" | rofi -dmenu -p " 2" -no-custom -mesg "Select the 2nd monitor.") &&
