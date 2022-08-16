@@ -8,7 +8,7 @@ set guioptions "s"
 set window-title-basename "true"
 set window-title-page "true"
 set scroll-page-aware "true"
-set statusbar-v-padding 2
+set statusbar-v-padding 1
 
 set default-bg "#282828"
 set default-fg "#e2d3ba"
