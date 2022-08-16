@@ -1,37 +1,43 @@
-! Nord color theme
+! Gruvbox material color theme
 
-#define bg #0b1726
-#define black0 #192e40
-#define black1 #284259
-#define red #c20f47
-#define green #25a37e
-#define yellow #e9986d
-#define blue #5d92bf
-#define magenta #6768bf
-#define cyan #5accc5
-#define white0 #fff6e6
-#define white1 #fffef8
+#define bg #282828
+#define black0 #32302f
+#define black1 #928374
+#define red0 #ea6962
+#define red1 #ef938e
+#define green0 #a9b665
+#define green1 #bbc585
+#define yellow0 #d8a657
+#define yellow1 #e1bb7e
+#define blue0 #7daea3
+#define blue1 #9dc2ba
+#define magenta0 #d3869b
+#define magenta1 #e1acbb
+#define cyan0 #89b482
+#define cyan1 #a7c7a2
+#define white0 #d4be98
+#define white1 #e2d3ba
 
-*.foreground:   white0
+*.foreground:   white1
 *.background:   bg
 ! URxvt.background: [90]bg
-*.cursorColor:  white0
+*.cursorColor:  white1
 
 *.color0: black0
-*.color1: red
-*.color2: green
-*.color3: yellow
-*.color4: blue
-*.color5: magenta
-*.color6: cyan
+*.color1: red0
+*.color2: green0
+*.color3: yellow0
+*.color4: blue0
+*.color5: magenta0
+*.color6: cyan0
 *.color7: white0
 *.color8: black1
-*.color9: red
-*.color10: green
-*.color11: yellow
-*.color12: blue
-*.color13: magenta
-*.color14: cyan
+*.color9: red1
+*.color10: green1
+*.color11: yellow1
+*.color12: blue1
+*.color13: magenta1
+*.color14: cyan1
 *.color15: white1
 
 !! urxvt config
@@ -81,4 +87,4 @@ URxvt.keysym.C-question:    resize-font:show
 
 ! sxiv config
 
-Sxiv.font: FantasqueSansMono Nerd Font:size=10
+Sxiv.font: MesloLGM Nerd Font:size=9
