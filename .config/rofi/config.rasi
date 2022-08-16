@@ -1,12 +1,17 @@
 configuration {
 /*	modi: "window,run,ssh";*/
-	font: "FantasqueSansMono Nerd Font 10";
+/*	font: "FantasqueSansMono Nerd Font 10";*/
+/*	font: "CaskaydiaCove Nerd Font 9";*/
+/*	font: "VictorMono Nerd Font SemiBold 10";*/
+/*	font: "Iosevka Nerd Font Medium 11";*/
+/*	font: "FuraMono Nerd Font Medium 9";*/
+	font: "MesloLGM Nerd Font 9";
 	disable-history: true;
 	scroll-method: 1;
 	m: "-5";
 	cycle: false;
 	display-drun: "";
-	display-run: "";
+	display-run: "";
 	display-window: "缾";
 	display-ssh: "歷";
 	cache-dir: ".cache/rofi";
@@ -24,25 +29,26 @@ configuration {
 }
 
 * {
-    black0: #192e40;
-    black1: #284259;
-    red: #c20f47;
-    green: #25a37e;
-    yellow: #e9986d;
-    blue: #5d92bf;
-    magenta: #6768bf;
-    cyan: #5accc5;
-    white0: #fff6e6;
-    white1: #fffef8;
-    grey0: #484f59;
-    grey1: #c3c0b8;
+    black0: #282828;
+    black1: #32302f;
+    black2: #45403d;
+    red: #ea6962;
+    green: #a9b665;
+    yellow: #d8a657;
+    blue: #7daea3;
+    magenta: #d3869b;
+    cyan: #89b482;
+    white0: #d4be98;
+    white1: #e2d3ba;
+    grey0: #a89984;
+    grey1: #928374;
 
-	background: #12212f;
-	alt-background: var(black0);
+	background: var(black0);
+	alt-background: var(black1);
 	selected: var(yellow);
 	active: var(green);
-	foreground: var(white0);
-	alt-foreground: #0b1726;
+	foreground: var(white1);
+	alt-foreground: var(background);
 	urgent: var(red);
 }
 
@@ -74,7 +80,7 @@ textbox-prompt-colon {
 }
 
 entry {
-    placeholder-color: var(grey0);
+    placeholder-color: var(grey1);
     text-color: var(foreground);
 }
 
@@ -86,7 +92,7 @@ message {
     margin: 4px 0px 0px 0px;
     padding: 4px;
     border: 1px 0px;
-    border-color: var(black0);
+    border-color: var(black2);
 }
 
 listview {
@@ -97,12 +103,12 @@ listview {
 
 scrollbar {
     padding: 0px 0px 0px 4px;
-    handle-color: var(foreground);
+    handle-color: var(grey1);
     handle-width: 8px;
 }
 
 element {
-    padding: 3px;
+    padding: 2px 4px;
 }
 
 element normal.normal {
@@ -152,10 +158,10 @@ element alternate.active {
 
 button {
     text-color: var(foreground);
-    padding: 3px;
+    padding: 2px;
 }
 
 button selected {
-    background-color: var(blue);
+    background-color: var(grey0);
     text-color: var(alt-foreground);
 }

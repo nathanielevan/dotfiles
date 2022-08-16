@@ -235,9 +235,9 @@ settings:
     - -p
     - '{}'
   fonts.default_family:
-    global: FantasqueSansMono Nerd Font
+    global: MesloLGM Nerd Font
   fonts.default_size:
-    global: 10.5pt
+    global: 9pt
   hints.border:
     global: '1px solid #b47109'
   input.insert_mode.auto_load:

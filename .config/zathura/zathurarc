@@ -1,4 +1,7 @@
-set font "FantasqueSansMono Nerd Font Mono 10"
+# set font "FantasqueSansMono Nerd Font Mono 10"
+# set font "VictorMono Nerd Font Mono 10"
+# set font "FuraMono Nerd Font Mono 9"
+set font "MesloLGM Nerd Font Mono 9"
 set sandbox none
 set first-page-column "1:1"
 set guioptions "s"
