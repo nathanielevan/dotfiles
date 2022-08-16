@@ -1,5 +1,3 @@
 #!/bin/sh
 
-grep -h up /sys/class/net/e*/operstate > /dev/null && lanstat="" || lanstat=""
-
-printf "  %s" "$lanstat"
+grep -h up /sys/class/net/e*/operstate > /dev/null && printf " CON" || printf " DCT"
