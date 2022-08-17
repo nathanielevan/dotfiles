@@ -22,7 +22,9 @@ relaunchpolybar() {
 monitorsingle() {
         processxrandr &&
         monitorto=$(echo "$connmonitors" | rofi -dmenu -p "" -no-custom -mesg "Select a monitor.") &&
+        # monitorto=$(echo "$connmonitors" | dmenu -r -p "select monitor:") &&
         chooseres=$(echo "$xrandroutput" | awk -v monitor="$monitorto" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | rofi -dmenu -p "ﬕ" -no-custom -mesg "Select your preferred resolution.") &&
+        # chooseres=$(echo "$xrandroutput" | awk -v monitor="$monitorto" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | dmenu -r -p "select resolution:") &&
         xrandr --output "$monitorto" --primary --mode "$chooseres" $(echo "$monitors" | grep -v "$monitorto" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
 #        bspc monitor "$monitorto" -d $(seq 1 5) &&
         relaunchpolybar "$monitorto" &&
@@ -34,10 +36,13 @@ monitorduplicate() {
         [ "$numofconnmonitors" -lt 2 ] &&
         notify-send "Not enough displays connected" "Please check your cable connections and try again." && return 1 ||
         monitorone=$(echo "$connmonitors" | rofi -dmenu -p " 1" -no-custom -mesg "Select the 1st monitor.") &&
+        # monitorone=$(echo "$connmonitors" | dmenu -r -p "select 1st monitor:") &&
         monitortwo=$(echo "$connmonitors" | grep -v "$monitorone" | rofi -dmenu -p " 2" -no-custom -mesg "Select the 2nd monitor.") &&
+        # monitortwo=$(echo "$connmonitors" | grep -v "$monitorone" | dmenu -r -p "select 2nd monitor:") &&
         oneres=$(echo "$xrandroutput" | awk -v monitor="$monitorone" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}') &&
         twores=$(echo "$xrandroutput" | awk -v monitor="$monitortwo" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}') &&
         chooseres=$(echo "$twores" | grep -F -x "$oneres" | rofi -dmenu -p "ﬕ" -no-custom -mesg "Select your preferred resolution.") &&
+        # chooseres=$(echo "$twores" | grep -F -x "$oneres" | dmenu -r -p "select resolution:") &&
         xrandr --output "$monitorone" --primary --mode "$chooseres" --output "$monitortwo" --mode "$chooseres" --same-as "$monitorone" $(echo "$monitors" | grep -v -e "$monitorone" -e "$monitortwo" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
 #        bspc monitor "$monitorone" -d $(seq 1 5) &&
         relaunchpolybar "$monitorone" &&
@@ -49,10 +54,15 @@ monitorextend() {
         [ "$numofconnmonitors" -lt 2 ] &&
         notify-send "Not enough displays detected" "Please check your cable connections and try again." && return 1 ||
         monitorone=$(echo "$connmonitors" | rofi -dmenu -p " 1" -no-custom -mesg "Select the 1st monitor.") &&
+        # monitorone=$(echo "$connmonitors" | dmenu -r -p "select 1st monitor:") &&
         oneres=$(echo "$xrandroutput" | awk -v monitor="$monitorone" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | rofi -dmenu -p "ﬕ 1" -no-custom -mesg "Select the resolution of the 1st monitor.") &&
+        # oneres=$(echo "$xrandroutput" | awk -v monitor="$monitorone" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | dmenu -r -p "select 1st monitor resolution:") &&
         monitortwo=$(echo "$connmonitors" | grep -v "$monitorone" | rofi -dmenu -p " 2" -no-custom -mesg "Select the 2nd monitor.") &&
+        # monitortwo=$(echo "$connmonitors" | grep -v "$monitorone" | dmenu -r -p "select 2nd monitor:") &&
         twores=$(echo "$xrandroutput" | awk -v monitor="$monitortwo" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | rofi -dmenu -p "ﬕ 2" -no-custom -mesg "Select the resolution of the 2nd monitor.") &&
+        # twores=$(echo "$xrandroutput" | awk -v monitor="$monitortwo" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | dmenu -r -p "select 2nd monitor resolution:") &&
         dir=$(echo -e "left\nright\nabove\nbelow" | rofi -dmenu -p " 2" -no-custom -mesg "Select the position of the 2nd monitor relative to the 1st monitor.") &&
+        # dir=$(echo -e "left\nright\nabove\nbelow" | dmenu -r -p "position to 1st monitor:") &&
         xrandr --output "$monitorone" --primary --mode "$oneres" --output "$monitortwo" --mode "$twores" --"$dir"$([ "$dir" = "left" ] || [ "$dir" = "right" ] && echo "-of") "$monitorone" $(echo "$monitors" | grep -v -e "$monitorone" -e "$monitortwo" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
 #        bspc monitor "$monitorone" -d $(seq 1 5) &&
 #        bspc monitor "$monitortwo" -d $(seq 6 10) &&
@@ -87,6 +97,7 @@ case "$SRANDRD_EVENT" in
 esac
 
 [ -z "$option" ] && option=$(echo -e "$dmenuopts" | rofi -dmenu -p "" -no-custom -mesg "Select a display mode.")
+# [ -z "$option" ] && option=$(echo -e "$dmenuopts" | dmenu -r -p "display mode:")
 case "$option" in
         single)
                 monitorsingle ;;
