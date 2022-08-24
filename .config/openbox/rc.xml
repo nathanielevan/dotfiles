@@ -416,7 +416,7 @@
     </action>
   </keybind>
   <keybind key="W-Menu">
-    <action name="ShowMenu"><menu>client-send-to-menu</menu></action>
+    <action name="ShowMenu"><menu>client-menu</menu></action>
   </keybind>
 
   <!-- Keybindings for window switching -->
