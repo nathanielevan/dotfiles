@@ -87,4 +87,4 @@ URxvt.keysym.C-question:    resize-font:show
 
 ! sxiv config
 
-Sxiv.font: MesloLGM Nerd Font:size=9
+Sxiv.font: Iosevka Nerd Font:size=10

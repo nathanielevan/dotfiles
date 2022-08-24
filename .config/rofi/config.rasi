@@ -3,9 +3,9 @@ configuration {
 /*	font: "FantasqueSansMono Nerd Font 10";*/
 /*	font: "CaskaydiaCove Nerd Font 9";*/
 /*	font: "VictorMono Nerd Font SemiBold 10";*/
-/*	font: "Iosevka Nerd Font Medium 11";*/
+	font: "Iosevka Nerd Font 10";
 /*	font: "FuraMono Nerd Font Medium 9";*/
-	font: "MesloLGM Nerd Font 9";
+/*	font: "MesloLGM Nerd Font 9";*/
 	disable-history: true;
 	scroll-method: 1;
 	m: "-5";
@@ -108,7 +108,7 @@ scrollbar {
 }
 
 element {
-    padding: 2px 4px;
+    padding: 3px 4px;
 }
 
 element normal.normal {

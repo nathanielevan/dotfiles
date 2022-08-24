@@ -62,13 +62,13 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = MesloLGM Nerd Font:pixelsize=11;3
+;font-0 = MesloLGM Nerd Font:pixelsize=11;3
 ;font-0 = FuraMono Nerd Font:style=Regular:pixelsize=11;2
 ;font-0 = JetBrainsMono Nerd Font:style=Regular:size=10;3
 ;font-0 = FantasqueSansMono Nerd Font:style=Regular:size=11;3
 ;font-0 = VictorMono Nerd Font:style=SemiBold:pixelsize=11;3
 ;font-0 = CaskaydiaCove Nerd Font:style=Regular:pixelsize=11;3
-;font-0 = Iosevka Nerd Font:style=Medium:pixelsize=12;4
+font-0 = Iosevka Nerd Font:style=Regular:pixelsize=12;4
 
 modules-left = launcher openbox eth wlan
 modules-center = date

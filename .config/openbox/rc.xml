@@ -64,15 +64,15 @@
   <keepBorder>yes</keepBorder>
   <animateIconify>no</animateIconify>
   <font place="ActiveWindow">
-    <name>MesloLGM Nerd Font</name>
-    <size>9</size>
+    <name>Iosevka Nerd Font</name>
+    <size>10</size>
     <!--
     <name>CaskaydiaCove Nerd Font</name>
     <size>9</size>
-    <name>Iosevka Nerd Font</name>
-    <size>10</size>
     <name>FantasqueSansMono Nerd Font</name>
     <size>10</size>
+    <name>MesloLGM Nerd Font</name>
+    <size>9</size>
     <name>VictorMono Nerd Font</name>
     <size>10</size>
     <name>InconsolataLGC Nerd Font</name>
@@ -87,15 +87,15 @@
     <!-- 'italic' or 'normal' -->
   </font>
   <font place="InactiveWindow">
-    <name>MesloLGM Nerd Font</name>
-    <size>9</size>
+    <name>Iosevka Nerd Font</name>
+    <size>10</size>
     <!--
     <name>CaskaydiaCove Nerd Font</name>
     <size>9</size>
-    <name>Iosevka Nerd Font</name>
-    <size>10</size>
     <name>FantasqueSansMono Nerd Font</name>
     <size>10</size>
+    <name>MesloLGM Nerd Font</name>
+    <size>9</size>
     <name>VictorMono Nerd Font</name>
     <size>10</size>
     <name>InconsolataLGC Nerd Font</name>
@@ -110,15 +110,15 @@
     <!-- 'italic' or 'normal' -->
   </font>
   <font place="MenuHeader">
-    <name>MesloLGM Nerd Font</name>
-    <size>9</size>
+    <name>Iosevka Nerd Font</name>
+    <size>10</size>
     <!--
     <name>CaskaydiaCove Nerd Font</name>
     <size>9</size>
-    <name>Iosevka Nerd Font</name>
-    <size>10</size>
     <name>FantasqueSansMono Nerd Font</name>
     <size>10</size>
+    <name>MesloLGM Nerd Font</name>
+    <size>9</size>
     <name>VictorMono Nerd Font</name>
     <size>10</size>
     <name>InconsolataLGC Nerd Font</name>
@@ -133,15 +133,15 @@
     <!-- 'italic' or 'normal' -->
   </font>
   <font place="MenuItem">
-    <name>MesloLGM Nerd Font</name>
-    <size>9</size>
+    <name>Iosevka Nerd Font</name>
+    <size>10</size>
     <!--
     <name>CaskaydiaCove Nerd Font</name>
     <size>9</size>
-    <name>Iosevka Nerd Font</name>
-    <size>10</size>
     <name>FantasqueSansMono Nerd Font</name>
     <size>10</size>
+    <name>MesloLGM Nerd Font</name>
+    <size>9</size>
     <name>VictorMono Nerd Font</name>
     <size>10</size>
     <name>InconsolataLGC Nerd Font</name>
@@ -156,15 +156,15 @@
     <!-- 'italic' or 'normal' -->
   </font>
   <font place="ActiveOnScreenDisplay">
-    <name>MesloLGM Nerd Font</name>
-    <size>9</size>
+    <name>Iosevka Nerd Font</name>
+    <size>10</size>
     <!--
     <name>CaskaydiaCove Nerd Font</name>
     <size>9</size>
-    <name>Iosevka Nerd Font</name>
-    <size>10</size>
     <name>FantasqueSansMono Nerd Font</name>
     <size>10</size>
+    <name>MesloLGM Nerd Font</name>
+    <size>9</size>
     <name>VictorMono Nerd Font</name>
     <size>10</size>
     <name>InconsolataLGC Nerd Font</name>
@@ -179,15 +179,15 @@
     <!-- 'italic' or 'normal' -->
   </font>
   <font place="InactiveOnScreenDisplay">
-    <name>MesloLGM Nerd Font</name>
-    <size>9</size>
+    <name>Iosevka Nerd Font</name>
+    <size>10</size>
     <!--
     <name>CaskaydiaCove Nerd Font</name>
     <size>9</size>
-    <name>Iosevka Nerd Font</name>
-    <size>10</size>
     <name>FantasqueSansMono Nerd Font</name>
     <size>10</size>
+    <name>MesloLGM Nerd Font</name>
+    <size>9</size>
     <name>VictorMono Nerd Font</name>
     <size>10</size>
     <name>InconsolataLGC Nerd Font</name>

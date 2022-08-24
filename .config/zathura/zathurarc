@@ -1,14 +1,15 @@
 # set font "FantasqueSansMono Nerd Font Mono 10"
 # set font "VictorMono Nerd Font Mono 10"
 # set font "FuraMono Nerd Font Mono 9"
-set font "MesloLGM Nerd Font Mono 9"
+# set font "MesloLGM Nerd Font Mono 9"
+set font "Iosevka Nerd Font Mono 10"
 set sandbox none
 set first-page-column "1:1"
 set guioptions "s"
 set window-title-basename "true"
 set window-title-page "true"
 set scroll-page-aware "true"
-set statusbar-v-padding 1
+set statusbar-v-padding 2
 
 set default-bg "#282828"
 set default-fg "#e2d3ba"

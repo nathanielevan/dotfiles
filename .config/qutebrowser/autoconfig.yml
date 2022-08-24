@@ -235,9 +235,9 @@ settings:
     - -p
     - '{}'
   fonts.default_family:
-    global: MesloLGM Nerd Font
+    global: Iosevka Nerd Font
   fonts.default_size:
-    global: 9pt
+    global: 10pt
   hints.border:
     global: '1px solid #b47109'
   input.insert_mode.auto_load:
