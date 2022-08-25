@@ -21,7 +21,7 @@ Other relevant links:
 * `.config` is where my configuration files reside.
     + You can find my wallpaper in `.config/wallpapers`.
 * `.local/bin` is where I store miscellaneous shell scripts for e.g. dwmblocks, power menu, monitor switching menu etc.
-* `.local/share` contains miscellaneous files e.g. desktop files, zsh plugins etc.
+* `.local/share` contains miscellaneous files e.g. desktop files, zsh plugins, custom font builds etc.
 
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.
