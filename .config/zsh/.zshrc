@@ -10,7 +10,6 @@ colors
 
 setopt histignorealldups sharehistory
 setopt prompt_subst
-setopt transient_rprompt
 
 # Use modern completion system
 autoload -Uz compinit
@@ -74,10 +73,25 @@ zle -N zle-line-finish
 
 # Fix a bug when you C-c in CMD mode and you'd be prompted with CMD mode indicator, while in fact you would be in INS mode
 # Fixed by catching SIGINT (C-c), set vim_mode to INS and then repropagate the SIGINT, so if anything else depends on it, we will not break it
-function TRAPINT() {
-  vim_mode=$vim_ins_mode
-  return $(( 128 + $1 ))
+# This will also set the vim mode text to red [abort]
+function TRAPINT () {
+    vim_mode=" %1F[abort]%f"
+    zle reset-prompt
+    vim_mode=$vim_ins_mode
+    return $(( 128 + $1 ))
 }
+
+# Erase vim mode text when entering
+function erase_mode_accept_line () {
+    vim_mode=""
+    zle reset-prompt
+    vim_mode=$vim_ins_mode
+    zle accept-line
+}
+
+zle -N erase_mode_accept_line
+bindkey "^M" erase_mode_accept_line
+bindkey -M vicmd "^M" erase_mode_accept_line
 
 # Do ls -a after every cd
 function do-ls () {
@@ -128,9 +142,8 @@ alias screenmicrec='ffmpeg -framerate 30 -f x11grab -i :0.0 -pix_fmt yuv420p -f 
 
 # Prompt config
 if [[ $EUID -ne 0 ]]; then
-    # PROMPT="%B%1F[%f%3F%n%f%2F@%f%6F%m%f %4F%1~%f%5F\${vcs_info_msg_0_}%f%1F]%f%7F$%f %b"
-    PROMPT="%B%3F%n%f%b %1Fat%f %B%2F%m%f%b %1Fin%f %B%4F%(5~|%-1~/…/%3~|%4~)%f%b\${vcs_info_msg_0_}"$'\n'"%7F> %f"
-    RPROMPT="\${vim_mode}"
+    PROMPT="%B%3F%n%f%b at %B%2F%m%f%b in %B%4F%(5~|%-1~/…/%3~|%4~)%f%b\${vcs_info_msg_0_}\${vim_mode}"$'\n'"%7F>>%f "
+    # PROMPT="%B%3F%n%f%b at %B%2F%m%f%b in %B%4F%(5~|%-1~/…/%3~|%4~)%f%b\${vim_mode}"$'\n'">> "
 else
     PROMPT="%B%3F[%n@%m %1~]# %f%b"
 fi
