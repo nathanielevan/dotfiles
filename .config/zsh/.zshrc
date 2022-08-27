@@ -10,6 +10,7 @@ colors
 
 setopt histignorealldups sharehistory
 setopt prompt_subst
+setopt transient_rprompt
 
 # Use modern completion system
 autoload -Uz compinit
@@ -51,6 +52,31 @@ zstyle ':vcs_info:*' unstagedstr '*'
 zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:git:*' formats ' %1Fon branch%f %B%5F%b%u%c%f%%b'
 zstyle ':vcs_info:git:*' actionformats ' %1Fon branch%f %B%5F%b|%a%u%c%f%%b'
+
+# Display vim mode text -- thanks to Paweł Gościcki for this bit!
+vim_ins_mode="%{$fg[cyan]%}(INS)%{$reset_color%}"
+vim_cmd_mode="%{$fg[green]%}(CMD)%{$reset_color%}"
+vim_mode=$vim_ins_mode
+
+function zle-keymap-select {
+    vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
+    zle reset-prompt
+}
+
+zle -N zle-keymap-select
+
+function zle-line-finish {
+    vim_mode=$vim_ins_mode
+}
+
+zle -N zle-line-finish
+
+# Fix a bug when you C-c in CMD mode and you'd be prompted with CMD mode indicator, while in fact you would be in INS mode
+# Fixed by catching SIGINT (C-c), set vim_mode to INS and then repropagate the SIGINT, so if anything else depends on it, we will not break it
+function TRAPINT() {
+  vim_mode=$vim_ins_mode
+  return $(( 128 + $1 ))
+}
 
 # Expand aliases after sudo
 alias sudo='sudo '
