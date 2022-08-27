@@ -86,6 +86,17 @@ function do-ls () {
 
 add-zsh-hook -Uz chpwd do-ls
 
+# Print a newline between prompts
+function newline_between_prompts () {
+    if [ -z "$NEW_LINE_BEFORE_PROMPT" ]; then
+        NEW_LINE_BEFORE_PROMPT=1
+    elif [ "$NEW_LINE_BEFORE_PROMPT" -eq 1 ]; then
+        print ""
+    fi
+}
+
+add-zsh-hook -Uz precmd newline_between_prompts
+
 # Expand aliases after sudo
 alias sudo='sudo '
 
