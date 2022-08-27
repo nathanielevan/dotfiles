@@ -20,7 +20,7 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*:descriptions' format "%2F%B--- %d%b%f"
 zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:warnings' format "%1F%B--- No matches found%b%f"
-zstyle ':completion:*:corrections' format '%214F%B--- %d%b%f'
+zstyle ':completion:*:corrections' format '%3F%B--- %d%b%f'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
