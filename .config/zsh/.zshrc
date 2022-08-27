@@ -50,12 +50,12 @@ add-zsh-hook -Uz precmd vcs_info
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '*'
 zstyle ':vcs_info:*' stagedstr '+'
-zstyle ':vcs_info:git:*' formats ' %1Fon branch%f %B%5F%b%u%c%f%%b'
-zstyle ':vcs_info:git:*' actionformats ' %1Fon branch%f %B%5F%b|%a%u%c%f%%b'
+zstyle ':vcs_info:git:*' formats ' on branch %B%5F%b%u%c%f%%b'
+zstyle ':vcs_info:git:*' actionformats ' on branch %B%5F%b|%a%u%c%f%%b'
 
 # Display vim mode text -- thanks to Paweł Gościcki for this bit!
-vim_ins_mode="%{$fg[cyan]%}(INS)%{$reset_color%}"
-vim_cmd_mode="%{$fg[green]%}(CMD)%{$reset_color%}"
+vim_ins_mode=" %6F[ins]%f"
+vim_cmd_mode=" %8F[cmd]%f"
 vim_mode=$vim_ins_mode
 
 function zle-keymap-select {
