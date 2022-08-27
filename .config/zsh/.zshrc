@@ -43,58 +43,14 @@ if [[ "$TERM" == (alacritty*|gnome*|konsole*|putty*|rxvt*|screen*|st*|tmux*|xter
 	add-zsh-hook -Uz preexec xterm_title_preexec
 fi
 
-# Displays information about Git repository status
-# git_info() {
-#
-#     # Exit if not inside a Git repository
-#     ! git rev-parse --is-inside-work-tree > /dev/null 2>&1 && return
-#
-#     # Display git branch/tag, or name-rev if on detached head
-#     local GIT_LOCATION=${$(git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD)#(refs/heads/|tags/)}
-#
-#     local AHEAD="⇡NUM"
-#     local BEHIND="⇣NUM"
-#     local STASHED="*"
-#     local UNTRACKED="?"
-#     local MODIFIED="!"
-#     local STAGED="+"
-#
-#     local -a DIVERGENCES
-#     local -a FLAGS
-#
-#     local NUM_AHEAD="$(git log --oneline @{u}.. 2> /dev/null | wc -l | tr -d ' ')"
-#     if [ "$NUM_AHEAD" -gt 0 ]; then
-#         DIVERGENCES+=( "${AHEAD//NUM/$NUM_AHEAD}" )
-#     fi
-#
-#     local NUM_BEHIND="$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')"
-#     if [ "$NUM_BEHIND" -gt 0 ]; then
-#         DIVERGENCES+=( "${BEHIND//NUM/$NUM_BEHIND}" )
-#     fi
-#
-#     if [[ -n $(git rev-parse --verify refs/stash 2> /dev/null) ]]; then
-#         FLAGS+=( "$STASHED" )
-#     fi
-#
-#     if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-#         FLAGS+=( "$UNTRACKED" )
-#     fi
-#
-#     if ! git diff --quiet 2> /dev/null; then
-#         FLAGS+=( "$MODIFIED" )
-#     fi
-#
-#     if ! git diff --cached --quiet 2> /dev/null; then
-#         FLAGS+=( "$STAGED" )
-#     fi
-#
-#     local -a GIT_INFO
-#     GIT_INFO+=( " $GIT_LOCATION" )
-#     [[ ${#DIVERGENCES[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)DIVERGENCES}" )
-#     [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)FLAGS}" )
-#     echo "${(j: :)GIT_INFO}"
-#
-# }
+# Git information on prompt
+autoload -Uz vcs_info
+add-zsh-hook -Uz precmd vcs_info
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr '*'
+zstyle ':vcs_info:*' stagedstr '+'
+zstyle ':vcs_info:git:*' formats ' %1Fon branch%f %B%5F%b%u%c%f%%b'
+zstyle ':vcs_info:git:*' actionformats ' %1Fon branch%f %B%5F%b|%a%u%c%f%%b'
 
 # Expand aliases after sudo
 alias sudo='sudo '
