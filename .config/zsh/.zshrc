@@ -142,7 +142,7 @@ alias screenmicrec='ffmpeg -framerate 30 -f x11grab -i :0.0 -pix_fmt yuv420p -f 
 
 # Prompt config
 if [[ $EUID -ne 0 ]]; then
-    PROMPT="%B%3F%n%f%b at %B%2F%m%f%b in %B%4F%(5~|%-1~/…/%3~|%4~)%f%b\${vcs_info_msg_0_}\${vim_mode}"$'\n'"%7F>>%f "
+    PROMPT="%B%3F%n%f%b at %B%2F%m%f%b in %B%4F%(5~|%-1~/…/%3~|%4~)%f%b\${vcs_info_msg_0_}\${vim_mode}%(?.. %1F(exit: %?%)%f)"$'\n'"%7F>>%f "
     # PROMPT="%B%3F%n%f%b at %B%2F%m%f%b in %B%4F%(5~|%-1~/…/%3~|%4~)%f%b\${vim_mode}"$'\n'">> "
 else
     PROMPT="%B%3F[%n@%m %1~]# %f%b"
