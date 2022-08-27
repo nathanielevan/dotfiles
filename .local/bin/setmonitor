@@ -32,7 +32,7 @@ monitorsingle() {
 }
 
 monitorduplicate() {
-        processxrandr || return 1 &&
+        processxrandr &&
         [ "$numofconnmonitors" -lt 2 ] &&
         notify-send "Not enough displays connected" "Please check your cable connections and try again." && return 1 ||
         monitorone=$(echo "$connmonitors" | rofi -dmenu -p " 1" -no-custom -mesg "Select the 1st monitor.") &&
@@ -50,7 +50,7 @@ monitorduplicate() {
 }
 
 monitorextend() {
-        processxrandr || return 1 &&
+        processxrandr &&
         [ "$numofconnmonitors" -lt 2 ] &&
         notify-send "Not enough displays detected" "Please check your cable connections and try again." && return 1 ||
         monitorone=$(echo "$connmonitors" | rofi -dmenu -p " 1" -no-custom -mesg "Select the 1st monitor.") &&
