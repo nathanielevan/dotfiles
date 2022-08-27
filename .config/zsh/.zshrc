@@ -78,6 +78,14 @@ function TRAPINT() {
   return $(( 128 + $1 ))
 }
 
+# Do ls -a after every cd
+function do-ls () {
+    emulate -L zsh;
+    ls --color -a;
+}
+
+add-zsh-hook -Uz chpwd do-ls
+
 # Expand aliases after sudo
 alias sudo='sudo '
 
