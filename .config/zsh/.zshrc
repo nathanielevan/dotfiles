@@ -56,20 +56,14 @@ zstyle ':vcs_info:git:*' actionformats ' on branch %B%5F%b|%a%u%c%f%%b'
 # Display vim mode text -- thanks to Paweł Gościcki for this bit!
 vim_ins_mode=" %6F[ins]%f"
 vim_cmd_mode=" %8F[cmd]%f"
-vim_mode=$vim_ins_mode
 
-function zle-keymap-select {
+function zle-line-init zle-keymap-select {
     vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
     zle reset-prompt
 }
 
+zle -N zle-line-init
 zle -N zle-keymap-select
-
-function zle-line-finish {
-    vim_mode=$vim_ins_mode
-}
-
-zle -N zle-line-finish
 
 # Fix a bug when you C-c in CMD mode and you'd be prompted with CMD mode indicator, while in fact you would be in INS mode
 # Fixed by catching SIGINT (C-c), set vim_mode to INS and then repropagate the SIGINT, so if anything else depends on it, we will not break it
