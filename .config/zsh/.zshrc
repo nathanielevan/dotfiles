@@ -46,12 +46,59 @@ fi
 
 # Git information on prompt
 autoload -Uz vcs_info
+# Comment out the line below if using async Git prompt!
 add-zsh-hook -Uz precmd vcs_info
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '*'
 zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:git:*' formats ' on branch %B%5F%b%u%c%f%%b'
 zstyle ':vcs_info:git:*' actionformats ' on branch %B%5F%b|%a%u%c%f%%b'
+
+## Load zsh-async
+#source $XDG_DATA_HOME/zsh/plugins/zsh-async/async.zsh
+#
+## Make Git prompt asynchronous -- thanks Vincent Bernat!
+#function _vbe_vcs_async_start () {
+#    async_start_worker vcs_info
+#    async_register_callback vcs_info _vbe_vcs_info_done
+#}
+#
+#function _vbe_vcs_info () {
+#    cd -q $1
+#    vcs_info
+#    print ${vcs_info_msg_0_}
+#}
+#
+#function _vbe_vcs_info_done () {
+#    local job=$1
+#    local return_code=$2
+#    local stdout=$3
+#    local more=$6
+#    if [[ $job == '[async]' ]]; then
+#        if [[ $return_code -eq 2 ]]; then
+#            _vbe_vcs_async_start
+#            return
+#        fi
+#    fi
+#    vcs_info_msg_0_=$stdout
+#    # $more == 1 means another async job has finished and is pending in buffer; delay prompt update until buffer is empty
+#    (( $more )) || zle reset-prompt
+#}
+#
+#function _vbe_vcs_chpwd () {
+#    # Clear Git/VCS prompt info when changing directory
+#    vcs_info_msg_0_=
+#}
+#
+#function _vbe_vcs_precmd () {
+#    async_flush_jobs vcs_info
+#    async_job vcs_info _vbe_vcs_info $PWD
+#}
+#
+#async_init
+#_vbe_vcs_async_start
+#add-zsh-hook precmd _vbe_vcs_precmd
+#add-zsh-hook chpwd _vbe_vcs_chpwd
 
 # Display vim mode text -- thanks to Paweł Gościcki for this bit!
 vim_ins_mode=" %6F[ins]%f"

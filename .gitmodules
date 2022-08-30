@@ -10,3 +10,7 @@
 	path = .local/share/zsh/plugins/zsh-theme-powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 	branch = master
+[submodule "zsh-async"]
+	path = .local/share/zsh/plugins/zsh-async
+	url = https://github.com/mafredri/zsh-async
+	branch = master
