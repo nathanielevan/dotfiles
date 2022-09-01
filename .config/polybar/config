@@ -75,7 +75,6 @@ modules-center = date
 modules-right = battery pulseaudio memory cpu exit
 
 tray-position = none
-;tray-position = ${env:TRAY_POS:none}
 tray-padding = 0
 ;tray-offset-x = 0
 ;tray-background = ${colors.green}
@@ -95,6 +94,17 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 enable-ipc = true
+
+[bar/bottom-bar]
+inherit = bar/top-bar
+bottom = true
+
+modules-left = xwindow
+modules-center =
+modules-right =
+
+padding-left = 1
+tray-position = ${env:TRAY_POS:right}
 
 [module/xwindow]
 type = internal/xwindow
@@ -194,14 +204,14 @@ label-empty-foreground = ${colors.grey}
 label-empty-background = ${colors.background-alt}
 label-empty-padding = 1
 
-label-locked = " "
-label-floating = " "
-label-fullscreen = " "
-label-marked = " "
-label-monocle = "ﱡ "
-label-private = " "
-label-pseudotiled = "ﬔ "
-label-sticky = " "
+label-locked = ""
+label-floating = ""
+label-fullscreen = ""
+label-marked = ""
+label-monocle = "ﱡ"
+label-private = ""
+label-pseudotiled = "ﬔ"
+label-sticky = ""
 
 ; Separator in between workspaces
 ; label-separator = |
