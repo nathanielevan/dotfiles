@@ -1,7 +1,8 @@
 #!/bin/sh
 
 if [ -z "$(pgrep -x polybar)" ]; then
-    polybar --reload top-bar 2>&1 | tee -a /tmp/polybar.log & disown
+    polybar --reload top-bar 2>&1 | tee -a /tmp/polybar-top.log & disown
+    # polybar --reload bottom-bar 2>&1 | tee -a /tmp/polybar-bottom.log & disown
 else
     polybar-msg cmd restart
 fi

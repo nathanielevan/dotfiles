@@ -15,7 +15,8 @@ relaunchpolybar() {
         polybar-msg cmd quit
         for monitors in "$@"; do
             [ "$monitors" = "$1" ] && traypos=right || traypos=none
-            MONITOR="$monitors" TRAY_POS="$traypos" polybar --reload top-bar 2>&1 | tee -a /tmp/polybar.log & disown
+            MONITOR="$monitors" polybar --reload top-bar 2>&1 | tee -a /tmp/polybar-top.log & disown
+            # MONITOR="$monitors" TRAY_POS="$traypos" polybar --reload bottom-bar 2>&1 | tee -a /tmp/polybar-bottom.log & disown
         done
 }
 
