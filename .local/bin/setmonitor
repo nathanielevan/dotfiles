@@ -27,7 +27,7 @@ monitorsingle() {
         chooseres=$(echo "$xrandroutput" | awk -v monitor="$monitorto" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | rofi -dmenu -p "ﬕ" -no-custom -mesg "Select your preferred resolution.") &&
         # chooseres=$(echo "$xrandroutput" | awk -v monitor="$monitorto" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | dmenu -r -p "select resolution:") &&
         xrandr --output "$monitorto" --primary --mode "$chooseres" $(echo "$monitors" | grep -v "$monitorto" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
-        # bspc monitor "$monitorto" -d $(seq 1 5) &&
+        # bspc monitor "$monitorto" -d $(seq 1 10) &&
         relaunchpolybar "$monitorto" &&
         feh --bg-fill --no-fehbg "$wallpaperloc"
 }
@@ -45,7 +45,7 @@ monitorduplicate() {
         chooseres=$(echo "$twores" | grep -F -x "$oneres" | rofi -dmenu -p "ﬕ" -no-custom -mesg "Select your preferred resolution.") &&
         # chooseres=$(echo "$twores" | grep -F -x "$oneres" | dmenu -r -p "select resolution:") &&
         xrandr --output "$monitorone" --primary --mode "$chooseres" --output "$monitortwo" --mode "$chooseres" --same-as "$monitorone" $(echo "$monitors" | grep -v -e "$monitorone" -e "$monitortwo" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
-        # bspc monitor "$monitorone" -d $(seq 1 5) &&
+        # bspc monitor "$monitorone" -d $(seq 1 10) &&
         relaunchpolybar "$monitorone" &&
         feh --bg-fill --no-fehbg "$wallpaperloc"
 }
@@ -84,7 +84,7 @@ monitorfallback() {
         [ "$numofactivedisplays" -eq 0 ] &&
         fallbackmonitor=$(echo "$connmonitors" | head -n 1) &&
         xrandr --output "$fallbackmonitor" --primary --auto $(echo "$monitors" | grep -v "$fallbackmonitor" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
-        # bspc monitor "$fallbackmonitor" -d $(seq 1 5) &&
+        # bspc monitor "$fallbackmonitor" -d $(seq 1 10) &&
         relaunchpolybar "$fallbackmonitor" &&
         feh --bg-fill --no-fehbg "$wallpaperloc"
 }
