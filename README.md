@@ -3,15 +3,6 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources. As see
 
 Previous dwm rice is [here](https://www.reddit.com/r/unixporn/comments/mewpsp/dwm_still_lovin_nord/).
 
-**Update (24 Jan 2022)**: Switched to openbox
-
-Check out my personal suckless builds:
-* [dwm](https://github.com/nathanielevan/dwm) + [dwmblocks](https://github.com/nathanielevan/dwmblocks)
-* [dmenu](https://github.com/nathanielevan/dmenu)
-* [st](https://github.com/nathanielevan/st)
-* [slock](https://github.com/nathanielevan/slock)
-* [tabbed](https://github.com/nathanielevan/tabbed)
-
 Other relevant links:
 * [Gruvbox Material Theme for Openbox](https://github.com/nathanielevan/gruvbox-material-openbox)
 * [Gruvbox Material Theme for Telegram](https://github.com/nathanielevan/gruvbox-material-telegram)
@@ -39,4 +30,18 @@ Suggestions and pull requests welcome, and if I accept yours, I'll credit you in
 
 ## Screenshot
 
-![Screenshot](https://user-images.githubusercontent.com/9361126/183266591-7964a467-2c4b-442d-87c0-4e69fcb75fb4.png)
+### openbox
+![openbox](https://user-images.githubusercontent.com/9361126/188029780-2834e471-e583-48c6-ae59-eaddec256e60.png)
+
+### bspwm
+![bspwm](https://user-images.githubusercontent.com/9361126/188029820-f421f7c7-dc6f-410e-848f-c02ace679876.png)
+
+### dwm
+![dwm](https://user-images.githubusercontent.com/9361126/188029836-dfdc0eb1-a2f4-4018-aaaa-2b093dcd7f9f.png)
+
+Check out my suckless builds here:
+* [dwm](https://github.com/nathanielevan/dwm) + [dwmblocks](https://github.com/nathanielevan/dwmblocks)
+* [dmenu](https://github.com/nathanielevan/dmenu)
+* [st](https://github.com/nathanielevan/st)
+* [slock](https://github.com/nathanielevan/slock)
+* [tabbed](https://github.com/nathanielevan/tabbed)
