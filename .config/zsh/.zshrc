@@ -101,8 +101,8 @@ zstyle ':vcs_info:git:*' actionformats ' on branch %B%5F%b|%a%u%c%f%%b'
 #add-zsh-hook chpwd _vbe_vcs_chpwd
 
 # Display vim mode text -- thanks to Paweł Gościcki for this bit!
-vim_ins_mode=" %6F[ins]%f"
-vim_cmd_mode=" %8F[cmd]%f"
+vim_ins_mode=" %6F[ins]%f"$'\n'"%7F>>%f"
+vim_cmd_mode=" %8F[cmd]%f"$'\n'"%7F<<%f"
 
 function zle-line-init zle-keymap-select {
     vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
@@ -116,7 +116,7 @@ zle -N zle-keymap-select
 # Fixed by catching SIGINT (C-c), set vim_mode to INS and then repropagate the SIGINT, so if anything else depends on it, we will not break it
 function TRAPINT () {
     if [ -n "${KEYMAP}" ]; then
-        vim_mode=""
+        vim_mode=$'\n'"%7F>>%f"
         zle reset-prompt
     fi
     vim_mode=$vim_ins_mode
@@ -125,7 +125,7 @@ function TRAPINT () {
 
 # Erase vim mode text when entering
 function erase_mode_accept_line () {
-    vim_mode=""
+    vim_mode=$'\n'"%7F>>%f"
     zle reset-prompt
     vim_mode=$vim_ins_mode
     zle accept-line
@@ -184,7 +184,7 @@ alias screenmicrec='ffmpeg -framerate 30 -f x11grab -i :0.0 -pix_fmt yuv420p -f 
 
 # Prompt config
 if [[ $EUID -ne 0 ]]; then
-    PROMPT="%B%3F%n%f%b at %B%2F%m%f%b in %B%4F%(5~|%-1~/…/%3~|%4~)%f%b\${vcs_info_msg_0_}%(?.. %1F(exit: %?%)%f)\${vim_mode}"$'\n'"%7F>>%f "
+    PROMPT="%B%3F%n%f%b at %B%2F%m%f%b in %B%4F%(5~|%-1~/…/%3~|%4~)%f%b\${vcs_info_msg_0_}%(?.. %1F(exit: %?%)%f)\${vim_mode} "
     # PROMPT="%B%3F%n%f%b at %B%2F%m%f%b in %B%4F%(5~|%-1~/…/%3~|%4~)%f%b\${vim_mode}"$'\n'">> "
 else
     PROMPT="%B%3F[%n@%m %1~]# %f%b"
