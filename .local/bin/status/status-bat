@@ -16,11 +16,10 @@ for battery in $(ls -d /sys/class/power_supply/* | grep BAT); do
             baticon=""
     fi
 	case "$(cat "$battery/status")" in
-		"Full" | "Charging") staticon="" ;;
-		"Not charging") staticon="!" ;;
-		"Unknown") staticon="?" ;;
+		"Full" | "Charging") baticon="" ;;
+		"Unknown") baticon="?" ;;
 	esac
 	# Prints the info
-	printf "%s  %s %d%%" "$baticon" "$staticon" "$capacity"
+	printf "%s %d%%" "$baticon" "$capacity"
 done
 

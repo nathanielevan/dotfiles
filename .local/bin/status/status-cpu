@@ -11,9 +11,9 @@ printcpupct() {
         old=$(cat "$cache")
         currtotal=${current%% *} # exclude everything after first space in $current
         curridle=${current##* } # exclude everything up to first space
-        echo "$old" | awk -v currtotal="$currtotal" -v curridle="$curridle" '{printf "﬙  %d%%\n", (1 - (curridle - $2) / (currtotal - $1)) * 100}'
+        echo "$old" | awk -v currtotal="$currtotal" -v curridle="$curridle" '{printf "﬙ %d%%\n", (1 - (curridle - $2) / (currtotal - $1)) * 100}'
 }
         
-[ ! -f $cache ] && printf "﬙   " || printcpupct;
+[ ! -f $cache ] && printf "﬙ 勒" || printcpupct;
 
 echo "$current" > "$cache"
