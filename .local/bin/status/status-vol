@@ -3,4 +3,4 @@
 vol="$(pamixer --get-volume)"
 [ $(pamixer --get-mute) = "true" ] && icon="婢 " || icon="墳 "
 
-echo "$icon$vol%"
+[ -z "$vol" ] && echo "墳 勒"|| echo "$icon$vol%"
