@@ -71,9 +71,36 @@ border_color_hover = #e2d3ba 100
 background_color_pressed = #282828 90
 border_color_pressed = #e2d3ba 100
 
+# Background 7: Launch button
+rounded = 0
+border_width = 0
+border_sides = TBLR
+background_color = #a9b665 100
+background_color_hover = #bbc585 100
+background_color_pressed = #6f8352 100
+
+# Background 8: Exit button
+rounded = 0
+border_width = 0
+border_sides = TBLR
+background_color = #ea6962 100
+background_color_hover = #ef938e 100
+background_color_pressed = #ae5858 100
+
+# Background 9: System info
+rounded = 0
+border_width = 1
+border_sides = B
+background_color = #282828 100
+background_color_hover = #282828 100
+background_color_pressed = #282828 100
+border_color = #928374 100
+border_color_hover = #928374 100
+border_color_pressed = #928374 100
+
 #-------------------------------------
 # Panel
-panel_items = TS
+panel_items = PTBCSP
 panel_size = 100% 36
 panel_margin = 0 0
 panel_padding = 5 5 5
@@ -103,7 +130,7 @@ taskbar_hide_if_empty = 0
 taskbar_padding = 0 0 5
 taskbar_background_id = 0
 taskbar_active_background_id = 0
-taskbar_name = 0
+taskbar_name = 1
 taskbar_hide_inactive_tasks = 0
 taskbar_hide_different_monitor = 0
 taskbar_hide_different_desktop = 0
@@ -187,8 +214,8 @@ time1_font = Iosevka Nerd Font 10
 # time1_font = FantasqueSansMono Nerd Font 10
 time2_font =
 clock_font_color = #e2d3ba 100
-clock_padding = 4 0
-clock_background_id = 0
+clock_padding = 8 0
+clock_background_id = 9
 clock_tooltip = %a, %d %b %Y %I:%M:%S %p
 clock_tooltip_timezone = 
 clock_lclick_command = gsimplecal
@@ -211,8 +238,8 @@ bat2_font =
 battery_font_color = #e2d3ba 100
 bat1_format = %s %p
 bat2_format = 
-battery_padding = 4 0
-battery_background_id = 0
+battery_padding = 8 0
+battery_background_id = 9
 battery_hide = never
 battery_lclick_command = 
 battery_rclick_command = 
@@ -233,3 +260,27 @@ tooltip_font = Iosevka Nerd Font 10
 # tooltip_font = FuraMono Nerd Font 9
 # tooltip_font = FantasqueSansMono Nerd Font 10
 tooltip_font_color = #e2d3ba 100
+
+#-------------------------------------
+# Launch button
+button = new
+button_text =  Launch
+button_tooltip = Application launcher
+button_padding = 8 2 6
+button_font = Iosevka Nerd Font 10
+button_font_color = #282828 100
+button_centered = 1
+button_background_id = 7
+button_lclick_command = rofi -show drun -modi drun,run,window,ssh
+
+#-------------------------------------
+# Exit button
+button = new
+button_text = 襤 Exit
+button_tooltip = Power menu
+button_padding = 8 2 6
+button_font = Iosevka Nerd Font 10
+button_font_color = #282828 100
+button_centered = 1
+button_background_id = 8
+button_lclick_command = ~/.local/bin/powermenu

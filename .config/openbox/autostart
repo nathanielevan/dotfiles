@@ -16,5 +16,7 @@
 #
 #xfce-mcs-manager &
 
-$HOME/.local/bin/polybar-launch
+#$HOME/.local/bin/polybar-launch
 tint2 &
+nm-applet &
+pa-applet &
