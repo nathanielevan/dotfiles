@@ -1,0 +1,10 @@
+show_calendar = 1
+show_timezones = 1
+mark_today = 1
+close_on_unfocus = 1
+mainwindow_sticky = 1
+clock_format = %a, %d %b %Y %H:%M:%S
+clock_label = Local
+clock_tz =
+clock_label = UTC
+clock_tz = :UTC
