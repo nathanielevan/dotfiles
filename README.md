@@ -31,7 +31,7 @@ Suggestions and pull requests welcome, and if I accept yours, I'll credit you in
 ## Screenshot
 
 ### openbox
-![openbox](https://user-images.githubusercontent.com/9361126/188029780-2834e471-e583-48c6-ae59-eaddec256e60.png)
+![openbox](https://user-images.githubusercontent.com/9361126/190661778-8b154c32-f07e-4a10-bfa0-e4252e025c59.png)
 
 ### bspwm
 ![bspwm](https://user-images.githubusercontent.com/9361126/188029820-f421f7c7-dc6f-410e-848f-c02ace679876.png)
