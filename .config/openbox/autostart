@@ -19,4 +19,4 @@
 #$HOME/.local/bin/polybar-launch
 tint2 &
 nm-applet &
-pa-applet &
+pasystray --notify=all &
