@@ -946,6 +946,9 @@
   <application class="Polybar">
     <layer>below</layer>
   </application>
+  <application class="*">
+    <decor>no</decor>
+  </application>
 -->
 </applications>
 
