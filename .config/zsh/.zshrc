@@ -101,8 +101,8 @@ zstyle ':vcs_info:git:*' actionformats ' on branch %B%5F%b|%a%u%c%f%%b'
 #add-zsh-hook chpwd _vbe_vcs_chpwd
 
 # Display vim mode text -- thanks to Paweł Gościcki for this bit!
-vim_ins_mode="%6F[ins]%f %7F>>%f"
-vim_cmd_mode="%8F[cmd]%f %7F<<%f"
+vim_ins_mode="%6F ins%f %7F>>%f"
+vim_cmd_mode="%8F cmd%f %7F<<%f"
 
 function zle-line-init zle-keymap-select {
     vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
