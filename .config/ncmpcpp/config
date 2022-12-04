@@ -580,9 +580,9 @@ main_window_color = default
 #
 #color2 = green
 #
-progressbar_color = black:b
+progressbar_color = 9:b
 #
-progressbar_elapsed_color = yellow:b
+progressbar_elapsed_color = 4:b
 #
 #statusbar_color = default
 #
