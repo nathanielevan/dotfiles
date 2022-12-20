@@ -180,7 +180,10 @@ alias screenrec='ffmpeg -framerate 30 -f x11grab -i :0.0 -pix_fmt yuv420p $HOME/
 alias micrec='ffmpeg -f pulse -i default -ac 1 $HOME/audio-`date +%d%m%y-%H%M%S`.m4a'
 
 # Record screen with audio from mic
-alias screenmicrec='ffmpeg -framerate 30 -f x11grab -i :0.0 -pix_fmt yuv420p -f pulse -i default -ac 1 $HOME/screc-`date +%d%m%y-%H%M%S`.mp4'
+alias screenmicrec='ffmpeg -framerate 30 -f x11grab -i :0.0 -f pulse -i default -ac 1 -pix_fmt yuv420p $HOME/screc-`date +%d%m%y-%H%M%S`.mp4'
+
+# Show mpv window with webcam
+alias showcam='mpv av://v4l2:/dev/video0 --profile=low-latency --untimed'
 
 # Prompt config
 if [[ $EUID -ne 0 ]]; then
