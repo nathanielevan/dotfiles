@@ -1,10 +1,10 @@
 configuration {
 /*	modi: "window,run,ssh";*/
 /*	font: "FantasqueSansMono Nerd Font 10";*/
-/*	font: "CaskaydiaCove Nerd Font 9";*/
-/*	font: "VictorMono Nerd Font SemiBold 10";*/
+/*	font: "InconsolataLGC Nerd Font 9";*/
+/*	font: "VictorMono Nerd Font Medium 10";*/
 	font: "Iosevka Nerd Font 10";
-/*	font: "FuraMono Nerd Font Medium 9";*/
+/*	font: "FuraMono Nerd Font 9";*/
 /*	font: "MesloLGM Nerd Font 9";*/
 	disable-history: true;
 	scroll-method: 1;
