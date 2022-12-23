@@ -61,6 +61,7 @@ window {
 
 mainbox {
     children: [ inputbar, message, listview, mode-switcher ];
+    spacing: 8px; // 0px for css reset
 }
 
 inputbar {
@@ -89,15 +90,14 @@ num-rows, num-filtered-rows, textbox-num-sep {
 }
 
 message {
-    margin: 4px 0px 0px 0px;
     padding: 4px;
     border: 1px 0px;
     border-color: var(black2);
 }
 
 listview {
-    border: 4px 0px;
-    border-color: var(background);
+    padding: 0px; // css reset
+    border: none;
     lines: 10;
 }
 
