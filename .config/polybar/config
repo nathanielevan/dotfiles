@@ -103,7 +103,6 @@ modules-left = bspwm
 modules-center = xwindow
 modules-right =
 
-padding-left = 1
 tray-position = ${env:TRAY_POS:right}
 
 [module/xwindow]
