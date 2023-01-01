@@ -107,7 +107,7 @@ tray-position = ${env:TRAY_POS:right}
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:47:...%
+label = %title:0:50:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
