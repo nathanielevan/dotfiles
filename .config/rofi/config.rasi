@@ -1,11 +1,15 @@
 configuration {
 /*	modi: "window,run,ssh";*/
 /*	font: "FantasqueSansMono Nerd Font 10";*/
-/*	font: "InconsolataLGC Nerd Font 9";*/
-/*	font: "VictorMono Nerd Font Medium 10";*/
-	font: "Iosevka Nerd Font 10";
 /*	font: "FuraMono Nerd Font 9";*/
+/*	font: "InconsolataLGC Nerd Font 9";*/
+/*	font: "Input Nerd Font 9";*/
+	font: "Iosevka Nerd Font 10";
+/*	font: "JetBrainsMono Nerd Font 9";*/
 /*	font: "MesloLGM Nerd Font 9";*/
+/*	font: "mononoki Nerd Font 10";*/
+/*	font: "NotoSansMono Nerd Font 9";*/
+/*	font: "VictorMono Nerd Font Medium 10";*/
 	disable-history: true;
 	scroll-method: 1;
 	m: "-5";
