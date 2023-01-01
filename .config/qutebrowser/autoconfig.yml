@@ -255,9 +255,9 @@ settings:
       right: 5
       top: 3
   url.default_page:
-    global: file:///home/nate/.config/homepage/index.html
+    global: file:///home/nate/.config/startpage/index.html
   url.searchengines:
     global:
       DEFAULT: https://duckduckgo.com/?q={}
   url.start_pages:
-    global: file:///home/nate/.config/homepage/index.html
+    global: file:///home/nate/.config/startpage/index.html
