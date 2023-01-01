@@ -70,7 +70,7 @@ module-margin-right = 0
 ;font-0 = CaskaydiaCove Nerd Font:style=Regular:pixelsize=11;3
 font-0 = Iosevka Nerd Font:style=Regular:pixelsize=12;4
 
-modules-left = launcher bspwm eth wlan
+modules-left = launcher eth wlan
 modules-center = date
 modules-right = battery pulseaudio memory cpu exit
 
@@ -99,8 +99,8 @@ enable-ipc = true
 inherit = bar/top-bar
 bottom = true
 
-modules-left = xwindow
-modules-center =
+modules-left = bspwm
+modules-center = xwindow
 modules-right =
 
 padding-left = 1
