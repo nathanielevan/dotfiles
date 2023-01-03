@@ -6,7 +6,7 @@ Previous dwm rice is [here](https://www.reddit.com/r/unixporn/comments/mewpsp/dw
 Other relevant links:
 * [Gruvbox Material Theme for Openbox](https://github.com/nathanielevan/gruvbox-material-openbox)
 * [Gruvbox Material Theme for Telegram](https://github.com/nathanielevan/gruvbox-material-telegram)
-* [Homepage](https://github.com/nathanielevan/homepage)
+* [Startpage](https://github.com/nathanielevan/startpage)
 
 ## Directory
 * `.config` is where my configuration files reside.
@@ -17,6 +17,7 @@ Other relevant links:
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.
 * Does not include system-wide configurations, e.g. systemd power management config (which I use in my machine)
+* Due to the size of this repo, use `git clone --depth=1` or download the ZIP archive [here](https://github.com/nathanielevan/dotfiles/archive/refs/heads/master.zip) if you just need to get the files.
 
 ## WIP:
 * Personal bootstrapping script, if I ever feel like it.
