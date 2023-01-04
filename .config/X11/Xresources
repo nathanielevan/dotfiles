@@ -87,11 +87,11 @@ URxvt.keysym.C-question:    resize-font:show
 
 ! sxiv config
 
-! Sxiv.font: FantasqueSansMono Nerd Font:size=10
-! Sxiv.font: FuraMono Nerd Font:size=9
-! Sxiv.font: InconsolataLGC Nerd Font:size=9
-! Sxiv.font: Input Nerd Font:size=9
-Sxiv.font: Iosevka Nerd Font:size=10
-! Sxiv.font: JetBrainsMono Nerd Font:size=9
-! Sxiv.font: MesloLGM Nerd Font:size=9
-! Sxiv.font: mononoki Nerd Font:size=10
+! Sxiv.font: FantasqueSansMono Nerd Font:pixelsize=13
+! Sxiv.font: FuraMono Nerd Font:pixelsize=12
+! Sxiv.font: InconsolataLGC Nerd Font:pixelsize=12
+! Sxiv.font: Input Nerd Font:pixelsize=12
+Sxiv.font: Iosevka Nerd Font:pixelsize=13
+! Sxiv.font: JetBrainsMono Nerd Font:pixelsize=12
+! Sxiv.font: MesloLGM Nerd Font:pixelsize=12
+! Sxiv.font: mononoki Nerd Font Mono:pixelsize=13
