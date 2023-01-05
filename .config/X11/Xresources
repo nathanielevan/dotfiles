@@ -1,3 +1,6 @@
+! Set logical DPI to 96
+Xft.dpi: 96
+
 ! Gruvbox material color theme
 
 #define bg #282828
