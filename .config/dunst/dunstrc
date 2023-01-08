@@ -389,9 +389,9 @@
 #
 # Make the handling of transient notifications more strict by making them not
 # be placed in history.
-#[transient_history_ignore]
-#    match_transient = yes
-#    history_ignore = yes
+[transient_history_ignore]
+    match_transient = yes
+    history_ignore = yes
 
 # fullscreen values
 # show: show the notifications, regardless if there is a fullscreen window opened
