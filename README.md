@@ -32,13 +32,13 @@ Suggestions and pull requests welcome, and if I accept yours, I'll credit you in
 ## Screenshot
 
 ### openbox
-![openbox](https://user-images.githubusercontent.com/9361126/190661778-8b154c32-f07e-4a10-bfa0-e4252e025c59.png)
+![openbox](https://user-images.githubusercontent.com/9361126/212205066-5a6eec81-bc86-410d-bb0c-e7c400f3fcb3.png)
 
 ### bspwm
-![bspwm](https://user-images.githubusercontent.com/9361126/188029820-f421f7c7-dc6f-410e-848f-c02ace679876.png)
+![bspwm](https://user-images.githubusercontent.com/9361126/212205104-3a87139b-184c-4dd2-b034-5ae211036904.png)
 
 ### dwm
-![dwm](https://user-images.githubusercontent.com/9361126/188029836-dfdc0eb1-a2f4-4018-aaaa-2b093dcd7f9f.png)
+![dwm](https://user-images.githubusercontent.com/9361126/212205132-237c2d63-0846-4a28-ad81-68b07138c33e.png)
 
 Check out my suckless builds here:
 * [dwm](https://github.com/nathanielevan/dwm) + [dwmblocks](https://github.com/nathanielevan/dwmblocks)
