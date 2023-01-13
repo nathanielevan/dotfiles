@@ -12,6 +12,7 @@ export-glyph-names = false
     [buildPlans.iosevka-custom.variants.design]
     capital-g = "toothed-serifless-hooked"
     a = "double-storey-serifless"
+    f = "flat-hook-crossbar-at-x-height"
     g = "double-storey"
     l = "serifed"
     t = "flat-hook"
