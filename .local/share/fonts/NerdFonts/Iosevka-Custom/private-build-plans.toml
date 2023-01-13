@@ -21,6 +21,8 @@ export-glyph-names = false
     five = "vertical-upper-left-bar"
     seven = "straight-serifed"
     eight = "crossing"
+    punctuation-dot = "round"
+    diacritic-dot = "round"
 
 [buildPlans.iosevka-custom.weights.regular]
 shape = 400
