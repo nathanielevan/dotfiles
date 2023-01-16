@@ -20,7 +20,7 @@ sendnotif() {
     fi
     [ "$ismute" = "true" ] && level="muted"
 
-    notify-send "$sink ["$vol"%]" --hint=INT:value:"$vol" --icon=audio-volume-"$level"-symbolic --replace-id=555 --expire-time=3000
+    notify-send "$sink ["$vol"%]" --hint=INT:value:"$vol" --icon=audio-volume-"$level"-symbolic --replace-id=555 --expire-time=3000 --transient
 }
 
 volstatsnew="$(printf "$vol\n$sink\n$ismute")"
