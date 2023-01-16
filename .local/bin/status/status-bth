@@ -1,0 +1,3 @@
+#!/bin/sh
+
+bluetoothctl info | grep -q "Name" && printf " CON" || bluetoothctl show | grep -q "Powered: yes" && printf " DCT" || printf " OFF"

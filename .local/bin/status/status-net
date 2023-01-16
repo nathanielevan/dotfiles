@@ -1,0 +1,19 @@
+#!/bin/sh
+
+grep -h up /sys/class/net/e*/operstate > /dev/null && ethstat="E:CON" || ethstat="E:DCT"
+
+signalstrength=$(awk 'NR==3 {printf("%.0f%%", $3*10/7)}' /proc/net/wireless)
+[ -z "$signalstrength" ] && wlanstat="W:DCT" || wlanstat="W:${signalstrength}"
+cat /sys/class/net/w*/carrier > /dev/null 2>&1 || wlanstat="W:OFF"
+
+if [ "$ethstat" = "E:CON" ]; then
+    icon="ﯱ"
+elif [ "$wlanstat" = "W:OFF" ]; then
+    icon=""
+elif [ "$wlanstat" = "W:DCT" ]; then
+    icon=""
+else
+    icon=""
+fi
+
+printf "%s %s %s" "$icon" "$ethstat" "$wlanstat"
