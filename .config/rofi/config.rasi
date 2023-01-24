@@ -1,7 +1,7 @@
 configuration {
 /*	modi: "window,run,ssh";*/
 /*	font: "FantasqueSansMono Nerd Font 10";*/
-/*	font: "FuraMono Nerd Font 9";*/
+/*	font: "FiraCode Nerd Font 9";*/
 /*	font: "InconsolataLGC Nerd Font 9";*/
 /*	font: "Input Nerd Font 9";*/
 	font: "Iosevka Nerd Font 10";
