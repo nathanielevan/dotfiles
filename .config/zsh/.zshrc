@@ -174,13 +174,23 @@ alias clp='xclip -sel primary -i /dev/null'
 alias clc='xclip -sel clipboard -i /dev/null'
 
 # Screen recording at 30fps without audio
-alias screenrec='ffmpeg -framerate 30 -f x11grab -i :0.0 -pix_fmt yuv420p $HOME/screc-`date +%d%m%y-%H%M%S`.mp4'
+
+## Software rendering
+# alias screenrec='ffmpeg -framerate 30 -f x11grab -i :0.0 -pix_fmt yuv420p $HOME/screc-`date +%d%m%y-%H%M%S`.mp4'
+
+## Hardware rendering, but format conversion in CPU; higher CPU usage but (in my experience) better colours
+alias screenrec='ffmpeg -vaapi_device /dev/dri/renderD128 -f x11grab -i :0.0 -vf 'format=nv12,hwupload' -c:v h264_vaapi $HOME/screc-`date +%d%m%y-%H%M%S`.mp4'
+
+## Hardware rendering; lower CPU usage but some users have reported flickering and inaccurate colours
+# alias screenrec='ffmpeg -vaapi_device /dev/dri/renderD128 -f x11grab -i :0.0 -vf 'hwupload,scale_vaapi=format=nv12' -c:v h264_vaapi $HOME/screc-`date +%d%m%y-%H%M%S`.mp4' # Hardware
 
 # Record audio from microphone
 alias micrec='ffmpeg -f pulse -i default -ac 1 $HOME/audio-`date +%d%m%y-%H%M%S`.m4a'
 
 # Record screen with audio from mic
-alias screenmicrec='ffmpeg -framerate 30 -f x11grab -i :0.0 -f pulse -i default -ac 1 -pix_fmt yuv420p $HOME/screc-`date +%d%m%y-%H%M%S`.mp4'
+# alias screenmicrec='ffmpeg -framerate 30 -f x11grab -i :0.0 -f pulse -i default -ac 1 -pix_fmt yuv420p $HOME/screc-`date +%d%m%y-%H%M%S`.mp4'
+alias screenmicrec='ffmpeg -vaapi_device /dev/dri/renderD128 -f pulse -i default -ac 1  -f x11grab -i :0.0 -vf 'format=nv12,hwupload' -c:v h264_vaapi $HOME/screc-`date +%d%m%y-%H%M%S`.mp4'
+# alias screenmicrec='ffmpeg -vaapi_device /dev/dri/renderD128 -f pulse -i default -ac 1  -f x11grab -i :0.0 -vf 'hwupload,scale_vaapi=format=nv12' -c:v h264_vaapi $HOME/screc-`date +%d%m%y-%H%M%S`.mp4'
 
 # Show mpv window with webcam
 alias showcam='mpv av://v4l2:/dev/video0 --profile=low-latency --untimed'
