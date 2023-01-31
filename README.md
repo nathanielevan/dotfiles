@@ -13,6 +13,11 @@ Other relevant links:
     + You can find my wallpaper in `.config/wallpapers`.
 * `.local/bin` is where I store miscellaneous shell scripts for e.g. dwmblocks, power menu, monitor switching menu etc.
 * `.local/share` contains miscellaneous files e.g. desktop files, zsh plugins, custom font builds etc.
+    + Fonts included in this repository are:
+        - Fantasque Sans Mono v1.8.0, large line height, no loop K version, patched with Nerd Fonts v2.2.2
+        - Iosevka v17.0.2, patched with Nerd Fonts v2.3.0-RC, custom build (see `private-build-plans.toml` inside directory)
+        - Fira Code v1.206, patched with Nerd Fonts v2.3.0-RC
+        - JetBrains Mono v2.304 with features `zero,cv07,cv08,cv11,cv12,cv18,cv20` enabled by default, patched with Nerd Fonts v2.3.0-RC
 
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.
