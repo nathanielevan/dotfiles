@@ -8,16 +8,16 @@ for battery in $(ls -d /sys/class/power_supply/* | grep BAT); do
 	capacity=$(cat "$battery/capacity")
 	status=$(cat "$battery/status")
 	if [ "$status" = "Charging" ]; then
-		if [ "$capacity" -ge 80 ]; then
+		if [ "$capacity" -ge 90 ]; then
 			baticon="󰂅" # new codepoint
 			# baticon="" # pre-v3 codepoint
-		elif [ "$capacity" -ge 60 ]; then
+		elif [ "$capacity" -ge 70 ]; then
 			baticon="󰂊" # new codepoint
 			# baticon="" # pre-v3 codepoint
-		elif [ "$capacity" -ge 40 ]; then
+		elif [ "$capacity" -ge 50 ]; then
 			baticon="󰂉" # new codepoint
 			# baticon="" # pre-v3 codepoint
-		elif [ "$capacity" -ge 20 ]; then
+		elif [ "$capacity" -ge 25 ]; then
 			baticon="󰂈" # new codepoint
 			# baticon="" # pre-v3 codepoint
 		else
@@ -25,16 +25,16 @@ for battery in $(ls -d /sys/class/power_supply/* | grep BAT); do
 			# baticon="" # pre-v3 codepoint
 		fi
 	else
-		if [ "$capacity" -ge 80 ]; then
+		if [ "$capacity" -ge 90 ]; then
 			baticon="󰁹" # new codepoint
 			# baticon="" # pre-v3 codepoint
-		elif [ "$capacity" -ge 60 ]; then
+		elif [ "$capacity" -ge 70 ]; then
 			baticon="󰂁" # new codepoint
 			# baticon="" # pre-v3 codepoint
-		elif [ "$capacity" -ge 40 ]; then
+		elif [ "$capacity" -ge 50 ]; then
 			baticon="󰁿" # new codepoint
 			# baticon="" # pre-v3 codepoint
-		elif [ "$capacity" -ge 20 ]; then
+		elif [ "$capacity" -ge 25 ]; then
 			baticon="󰁽" # new codepoint
 			# baticon="" # pre-v3 codepoint
 		else
