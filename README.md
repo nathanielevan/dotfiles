@@ -18,6 +18,7 @@ Other relevant links:
         - Iosevka v17.1.0, patched with Nerd Fonts v2.3.3, custom build (see `private-build-plans.toml` inside directory)
         - Fira Code v1.206, patched with Nerd Fonts v2.3.3
         - JetBrains Mono v2.304 with features `zero,cv07,cv08,cv11,cv12,cv18,cv20` enabled by default, patched with Nerd Fonts v2.3.3
+    + Note that the font settings I use in various config files throughout this repository rely on these font versions.
 
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.
