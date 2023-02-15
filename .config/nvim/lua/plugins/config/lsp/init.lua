@@ -5,7 +5,7 @@ end
 
 require('plugins.config.lsp.handlers').setup()
 
-local servers = { "sumneko_lua" }
+local servers = { "lua_ls", "clangd", "dartls" }
 
 for _, server in pairs(servers) do
     local opts = {

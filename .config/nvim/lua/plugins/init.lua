@@ -81,19 +81,17 @@ return packer.startup(function(use)
     use { 'goolord/alpha-nvim',
         config = "require('plugins.config.alpha-nvim')",
     }
-    use { 'williamboman/nvim-lsp-installer',
-        opt = true,
-        setup = function()
-            lazy_load('nvim-lsp-installer')
-        end,
+    use { 'williamboman/mason.nvim',
+        config = "require('plugins.config.lsp.mason')",
+    }
+    use { 'williamboman/mason-lspconfig.nvim',
+        after = 'mason.nvim',
+        config = "require('plugins.config.lsp.mason-lspconfig')",
     }
     use { 'neovim/nvim-lspconfig',
-        after = 'nvim-lsp-installer',
+        after = 'mason-lspconfig.nvim',
         module = 'lspconfig',
-        config = function()
-            require('plugins.config.lsp.installer')
-            require('plugins.config.lsp')
-        end,
+        config = "require('plugins.config.lsp')"
     }
     use { 'rafamadriz/friendly-snippets',
         event = "InsertEnter",
