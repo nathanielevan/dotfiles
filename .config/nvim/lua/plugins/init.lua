@@ -90,7 +90,6 @@ return packer.startup(function(use)
     }
     use { 'neovim/nvim-lspconfig',
         after = 'mason-lspconfig.nvim',
-        module = 'lspconfig',
         config = "require('plugins.config.lsp')"
     }
     use { 'rafamadriz/friendly-snippets',
