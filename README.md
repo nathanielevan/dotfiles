@@ -15,8 +15,9 @@ Other relevant links:
 * `.local/share` contains miscellaneous files e.g. desktop files, zsh plugins, custom font builds etc.
     + Fonts included in this repository are:
         - Fantasque Sans Mono v1.8.0, large line height, no loop K version, patched with Nerd Fonts v2.3.3
-        - Iosevka v17.1.0, patched with Nerd Fonts v2.3.3, custom build (see `private-build-plans.toml` inside directory)
         - Fira Code v1.206, patched with Nerd Fonts v2.3.3
+        - Hack v4.000 (unreleased, latest commit [b4331b3](https://github.com/source-foundry/Hack/tree/b4331b33e163965959cc5d34a14f254bcc94bd20)) patched with Nerd Fonts v2.3.3, custom build (see `patch-hack.sh` inside directory)
+        - Iosevka v17.1.0, patched with Nerd Fonts v2.3.3, custom build (see `private-build-plans.toml` inside directory)
         - JetBrains Mono v2.304 with features `zero,cv07,cv08,cv11,cv12,cv18,cv20` enabled by default, patched with Nerd Fonts v2.3.3
     + Note that the font settings I use in various config files throughout this repository rely on these font versions.
 
