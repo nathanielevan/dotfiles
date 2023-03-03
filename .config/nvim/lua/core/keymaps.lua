@@ -20,6 +20,9 @@ vim.api.nvim_set_keymap('n', '<leader>dd', ':bp|bd #<CR>', { noremap = true, sil
 vim.api.nvim_set_keymap('n', '<F8>', ':set paste<CR>i', {})
 vim.api.nvim_set_keymap('i', '<F8>', '<ESC>:set paste<CR>i<Right>', {})
 
+-- Esc to exit terminal mode
+vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', { noremap = true })
+
 -- Toggle NERDTree
 -- vim.api.nvim_set_keymap('n', '<leader>f', ':Lexplore<CR>', { noremap = true, silent = true })
 
