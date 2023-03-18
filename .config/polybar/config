@@ -28,10 +28,10 @@ aqua = "#89b482"
 fg = "#d4be98"
 grey = "#928374"
 
-background = ${colors.black0}
-background-alt = ${colors.black1}
+background = "#00282828"
+background-alt = ${colors.black0}
 foreground = ${colors.fg}
-foreground-alt = ${colors.background}
+foreground-alt = ${colors.background-alt}
 alert = ${colors.red}
 
 [bar/top-bar]
@@ -47,20 +47,20 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-separator = " "
+separator =
 ;separator-foreground = ${colors.background}
 
 line-size = 0
 line-color = ${colors.background}
 
-border-size = 5
+border-size = 4px
+border-bottom-size = 0
 border-color = ${colors.background}
 
 padding-left = 0
 padding-right = 0
 
-module-margin-left = 0
-module-margin-right = 0
+module-margin = 2px
 
 ;font-0 = CaskaydiaCove Nerd Font:style=Regular:pixelsize=11;3
 ;font-0 = FantasqueSansMono Nerd Font:style=Regular:size=11;3
@@ -73,13 +73,13 @@ font-0 = Iosevka Nerd Font:style=Regular:size=11;3
 ;font-0 = mononoki Nerd Font:style=Regular:size=11;3
 ;font-0 = NotoSansMono Nerd Font:style=Regular:pixelsize=11;3
 
-modules-left = launcher eth wlan
+modules-left = launcher bspwm eth wlan
 modules-center = date
 modules-right = battery pulseaudio memory cpu exit
 
-tray-position = none
+tray-position = ${env:TRAY_POS:right}
 tray-padding = 0
-;tray-offset-x = 0
+tray-offset-x = 2
 ;tray-background = ${colors.green}
 
 wm-restack = bspwm
@@ -97,16 +97,6 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 enable-ipc = true
-
-[bar/bottom-bar]
-inherit = bar/top-bar
-bottom = true
-
-modules-left = bspwm
-modules-center = xwindow
-modules-right =
-
-tray-position = ${env:TRAY_POS:right}
 
 [module/xwindow]
 type = internal/xwindow
@@ -140,7 +130,7 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/launcher]
 type = custom/text
-content = " Launch"
+content = " Launch"
 
 content-background = ${colors.green}
 content-foreground = ${colors.foreground-alt}
@@ -192,7 +182,7 @@ label-focused-background = ${colors.yellow}
 label-focused-padding = 1
 
 label-occupied = %name%
-label-occupied-foreground = ${colors.yellow}
+label-occupied-foreground = ${colors.foreground}
 label-occupied-background = ${colors.background-alt}
 label-occupied-padding = 1
 
@@ -201,7 +191,7 @@ label-urgent-foreground = ${colors.foreground-alt}
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
-label-empty = %name%
+label-empty =
 label-empty-foreground = ${colors.grey}
 label-empty-background = ${colors.background-alt}
 label-empty-padding = 1
@@ -373,7 +363,8 @@ time = %H:%M:%S
 format = <label>
 ;format-prefix = " "
 ;format-prefix-foreground = ${colors.yellow}
-;format-background = ${colors.background-alt}
+format-background = ${colors.fg}
+format-foreground = ${colors.foreground-alt}
 format-padding = 0
 
 label = %{A1:gsimplecal:} %date%  %time% %{A}
@@ -471,11 +462,12 @@ label-full = %percentage_raw%%
 ; Ramp 0 covers everything <= low-at
 ; Final ramp covers everything >= full-at
 ; Range between low-at and full-at is divided between the remaining ramps
-ramp-capacity-0 = " "
-ramp-capacity-1 = " "
-ramp-capacity-2 = " "
-ramp-capacity-3 = " "
-ramp-capacity-4 = " "
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
+ramp-capacity-5 = " "
 
 ramp-capacity-0-foreground = ${colors.red}
 ramp-capacity-1-foreground = ${colors.yellow}
@@ -516,7 +508,6 @@ ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [settings]
-screenchange-reload = true
 ;compositing-background = xor
 ;compositing-background = screen
 ;compositing-foreground = source
