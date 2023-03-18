@@ -21,10 +21,10 @@ Xft.dpi: 96
 #define white0 #d4be98
 #define white1 #e2d3ba
 
-*.foreground:   white1
+*.foreground:   white0
 *.background:   bg
 ! URxvt.background: [90]bg
-*.cursorColor:  white1
+*.cursorColor:  white0
 
 *.color0: black0
 *.color1: red0

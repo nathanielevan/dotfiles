@@ -34,7 +34,7 @@ border_sides = TBLR
 background_color = #282828 100
 border_color = #d4be98 100
 background_color_hover = #32302f 100
-border_color_hover = #e2d3ba 100
+border_color_hover = #d4be98 100
 background_color_pressed = #1d2021 100
 border_color_pressed = #a89984 100
 
@@ -65,11 +65,11 @@ rounded = 0
 border_width = 0
 border_sides = TBLR
 background_color = #282828 90
-border_color = #e2d3ba 100
+border_color = #d4be98 100
 background_color_hover = #282828 90
-border_color_hover = #e2d3ba 100
+border_color_hover = #d4be98 100
 background_color_pressed = #282828 90
-border_color_pressed = #e2d3ba 100
+border_color_pressed = #d4be98 100
 
 # Background 7: Launch button
 rounded = 0
@@ -172,7 +172,7 @@ task_font = Iosevka Nerd Font 10
 # task_font = MesloLGM Nerd Font 9
 # task_font = mononoki Nerd Font 10
 task_font_color = #928374 100
-task_active_font_color = #e2d3ba 100
+task_active_font_color = #d4be98 100
 task_urgent_font_color = #282828 100
 task_background_id = 2
 task_active_background_id = 3
@@ -225,7 +225,7 @@ time1_font = Iosevka Nerd Font 10
 # time1_font = MesloLGM Nerd Font 9
 # time1_font = mononoki Nerd Font 10
 time2_font =
-clock_font_color = #e2d3ba 100
+clock_font_color = #d4be98 100
 clock_padding = 8 0
 clock_background_id = 9
 clock_tooltip = %a, %d %b %Y %I:%M:%S %p
@@ -251,7 +251,7 @@ bat1_font = Iosevka Nerd Font 10
 # bat1_font = MesloLGM Nerd Font 9
 # bat1_font = mononoki Nerd Font 10
 bat2_font =
-battery_font_color = #e2d3ba 100
+battery_font_color = #d4be98 100
 bat1_format = %s %p
 bat2_format = 
 battery_padding = 8 0
@@ -279,7 +279,7 @@ tooltip_font = Iosevka Nerd Font 10
 # tooltip_font = JetBrainsMono Nerd Font 9
 # tooltip_font = MesloLGM Nerd Font 9
 # tooltip_font = mononoki Nerd Font 10
-tooltip_font_color = #e2d3ba 100
+tooltip_font_color = #d4be98 100
 
 #-------------------------------------
 # Launch button

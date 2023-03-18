@@ -51,7 +51,7 @@ configuration {
 	alt-background: var(black1);
 	selected: var(yellow);
 	active: var(green);
-	foreground: var(white1);
+	foreground: var(white0);
 	alt-foreground: var(background);
 	urgent: var(red);
 }

@@ -193,7 +193,7 @@ colors:
   # Default colors
   primary:
     background: '#282828'
-    foreground: '#e2d3ba'
+    foreground: '#d4be98'
 
     # Bright and dim foreground colors
     #
@@ -231,14 +231,14 @@ colors:
     # Allowed values are CellForeground/CellBackground, which reference the
     # affected cell, or hexadecimal colors like #ff00ff.
     matches:
-      foreground: '#e2d3ba'
+      foreground: '#d4be98'
       background: '#45403d'
     focused_match:
       foreground: '#282828'
       background: '#d8a657'
 
     #bar:
-    #  background: '#e2d3ba'
+    #  background: '#d4be98'
     #  foreground: '#282828'
 
   # Keyboard regex hints

@@ -25,7 +25,7 @@ yellow = "#d8a657"
 blue = "#7daea3"
 purple = "#d3869b"
 aqua = "#89b482"
-fg = "#e2d3ba"
+fg = "#d4be98"
 grey = "#928374"
 
 background = ${colors.black0}
