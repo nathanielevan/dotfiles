@@ -196,14 +196,14 @@ label-empty-foreground = ${colors.grey}
 label-empty-background = ${colors.background-alt}
 label-empty-padding = 1
 
-label-locked = ""
-label-floating = ""
-label-fullscreen = ""
-label-marked = ""
-label-monocle = "ﱡ"
-label-private = ""
-label-pseudotiled = "ﬔ"
-label-sticky = ""
+label-locked = "[]"
+label-floating = "[]"
+label-fullscreen = "[]"
+label-marked = "[]"
+label-monocle = "[ﱡ]"
+label-private = "[]"
+label-pseudotiled = "[ﬔ]"
+label-sticky = "[]"
 
 ; Separator in between workspaces
 ; label-separator = |
