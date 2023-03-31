@@ -47,29 +47,32 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-separator =
+separator = 
 ;separator-foreground = ${colors.background}
 
 line-size = 0
 line-color = ${colors.background}
 
-border-size = 4px
+border-size = 6px
 border-bottom-size = 0
 border-color = ${colors.background}
 
 padding-left = 0
 padding-right = 0
 
-module-margin = 2px
+module-margin-left = 1
+module-margin-right = 0
 
 ;font-0 = CaskaydiaCove Nerd Font:style=Regular:pixelsize=11;3
+;font-0 = DMCAsansserif Nerd Font:style=Regular:size=11;3
 ;font-0 = FantasqueSansMono Nerd Font:style=Regular:size=11;3
 ;font-0 = FiraCode Nerd Font:style=Regular:pixelsize=11;3
+;font-0 = Hack Nerd Font:style=Regular:pixelsize=11;3
 ;font-0 = InconsolataLGC Nerd Font:style=Regular:pixelsize=11;3
 ;font-0 = Input Nerd Font:style=Regular:pixelsize=11;3
-font-0 = Iosevka Nerd Font:style=Regular:size=11;3
-;font-0 = JetBrainsMono Nerd Font:style=Regular:pixelsize=11;3
-;font-0 = MesloLGM Nerd Font:style=Regular:size=10;3
+;font-0 = Iosevka Nerd Font:style=Regular:size=11;3
+font-0 = JetBrainsMono Nerd Font:style=Regular:pixelsize=11;3
+;font-0 = JuliaMono Nerd Font:style=Regular:pixelsize=11;3
 ;font-0 = mononoki Nerd Font:style=Regular:size=11;3
 ;font-0 = NotoSansMono Nerd Font:style=Regular:pixelsize=11;3
 
@@ -79,7 +82,7 @@ modules-right = battery pulseaudio memory cpu exit
 
 tray-position = ${env:TRAY_POS:right}
 tray-padding = 0
-tray-offset-x = 2
+tray-offset-x = 3
 ;tray-background = ${colors.green}
 
 wm-restack = bspwm
@@ -363,7 +366,7 @@ time = %H:%M:%S
 format = <label>
 ;format-prefix = " "
 ;format-prefix-foreground = ${colors.yellow}
-format-background = ${colors.fg}
+format-background = ${colors.foreground}
 format-foreground = ${colors.foreground-alt}
 format-padding = 0
 
