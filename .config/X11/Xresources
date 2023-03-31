@@ -89,8 +89,10 @@ URxvt.keysym.C-question:    resize-font:show
 
 ! sxiv config
 
+! Sxiv.font: DMCAsansserif Nerd Font:pixelsize=13
 ! Sxiv.font: FantasqueSansMono Nerd Font:pixelsize=13
 ! Sxiv.font: FiraCode Nerd Font:pixelsize=12
+! Sxiv.font: Hack Nerd Font:pixelsize=12
 ! Sxiv.font: InconsolataLGC Nerd Font:pixelsize=12
 ! Sxiv.font: Input Nerd Font:pixelsize=12
 Sxiv.font: Iosevka Nerd Font:pixelsize=13
