@@ -3,8 +3,7 @@ Xft.dpi: 96
 
 ! Gruvbox material color theme
 
-#define bg #282828
-#define black0 #32302f
+#define black0 #282828
 #define black1 #928374
 #define red0 #ea6962
 #define red1 #ef938e
@@ -22,8 +21,8 @@ Xft.dpi: 96
 #define white1 #e2d3ba
 
 *.foreground:   white0
-*.background:   bg
-! URxvt.background: [90]bg
+*.background:   black0
+! URxvt.background: [90]black0
 *.cursorColor:  white0
 
 *.color0: black0
