@@ -284,7 +284,7 @@ tooltip_font_color = #d4be98 100
 #-------------------------------------
 # Launch button
 button = new
-button_text =  Launch
+button_text =  Launch
 button_tooltip = Application launcher
 button_padding = 8 2 6
 # button_font = FantasqueSansMono Nerd Font 10
