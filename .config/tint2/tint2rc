@@ -7,7 +7,7 @@
 # Backgrounds
 # Background 1: Panel
 rounded = 0
-border_width = 0
+border_width = 5
 border_sides = TBLR
 background_color = #282828 100
 border_color = #282828 100
@@ -103,7 +103,7 @@ border_color_pressed = #928374 100
 panel_items = PTBCSP
 panel_size = 100% 36
 panel_margin = 0 0
-panel_padding = 5 5 5
+panel_padding = 0 0 5
 panel_background_id = 1
 wm_menu = 0
 panel_dock = 0
