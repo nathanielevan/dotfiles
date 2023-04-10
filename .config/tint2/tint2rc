@@ -122,6 +122,11 @@ mouse_effects = 1
 font_shadow = 0
 mouse_hover_icon_asb = 100 0 10
 mouse_pressed_icon_asb = 100 0 0
+# A little note on scale_relative_to_dpi:
+# This setting determines the scaling of tint2
+# and the scaling is calculated by dividing tint2's
+# calculated monitor DPI by the value below.
+# scale_relative_to_dpi = 96
 
 #-------------------------------------
 # Taskbar
