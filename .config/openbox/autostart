@@ -16,7 +16,7 @@
 #
 #xfce-mcs-manager &
 
-#$HOME/.local/bin/polybar-launch
 tint2 &
 nm-applet &
 pasystray --notify=all &
+blueman-applet &
