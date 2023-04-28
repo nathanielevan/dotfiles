@@ -79,7 +79,7 @@ monitorauto() {
 monitorfallback() {
         processxrandr &&
         numofactivedisplays=$(echo "$xrandroutput" | grep '*' | wc -l) &&
-        [ "$numofactivedisplays" -le 1 ] &&
+        [ "$numofactivedisplays" -eq 0 ] &&
         fallbackmonitor=$(echo "$connmonitors" | head -n 1) &&
         xrandr --output "$fallbackmonitor" --primary --auto $(echo "$monitors" | grep -v "$fallbackmonitor" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
         # herbstclient detect_monitors &&
