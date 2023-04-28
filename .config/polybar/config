@@ -54,7 +54,6 @@ line-size = 0
 line-color = ${colors.background}
 
 border-size = 6px
-border-bottom-size = 0
 border-color = ${colors.background}
 
 padding-left = 0
@@ -76,7 +75,7 @@ font-0 = JetBrainsMono Nerd Font:style=Regular:pixelsize=11;3
 ;font-0 = mononoki Nerd Font:style=Regular:size=11;3
 ;font-0 = NotoSansMono Nerd Font:style=Regular:pixelsize=11;3
 
-modules-left = launcher bspwm eth wlan
+modules-left = launcher ewmh eth wlan
 modules-center = date
 modules-right = battery pulseaudio memory cpu exit
 
@@ -149,7 +148,7 @@ content-foreground = ${colors.foreground-alt}
 content-padding = 1
 click-left = ~/.local/bin/powermenu
 
-[module/openbox]
+[module/ewmh]
 type = internal/xworkspaces
 pin-workspaces = false
 enable-click = true
@@ -160,7 +159,7 @@ label-active-background = ${colors.yellow}
 label-active-padding = 1
 
 label-occupied = %index%
-label-occupied-foreground = ${colors.yellow}
+label-occupied-foreground = ${colors.foreground}
 label-occupied-background = ${colors.background-alt}
 label-occupied-padding = 1
 
@@ -169,7 +168,7 @@ label-urgent-foreground = ${colors.foreground-alt}
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
-label-empty = %index%
+label-empty = 
 label-empty-background = ${colors.background-alt}
 label-empty-foreground = ${colors.grey}
 label-empty-padding = 1

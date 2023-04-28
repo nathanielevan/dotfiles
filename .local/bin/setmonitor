@@ -26,7 +26,7 @@ monitorsingle() {
         chooseres=$(echo "$xrandroutput" | awk -v monitor="$monitorto" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | rofi -dmenu -p "ﬕ" -no-custom -mesg "Select your preferred resolution.") &&
         # chooseres=$(echo "$xrandroutput" | awk -v monitor="$monitorto" '/connected/{p=0} p{print $1} $0 ~ monitor{p=1}' | dmenu -r -p "select resolution:") &&
         xrandr --output "$monitorto" --primary --mode "$chooseres" $(echo "$monitors" | grep -v "$monitorto" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
-        # bspc monitor "$monitorto" -d $(seq 1 10) &&
+        # herbstclient detect_monitors &&
         # relaunchpolybar "$monitorto" &&
         feh --bg-fill --no-fehbg "$wallpaperloc"
 }
@@ -44,7 +44,7 @@ monitorduplicate() {
         chooseres=$(echo "$twores" | grep -F -x "$oneres" | rofi -dmenu -p "ﬕ" -no-custom -mesg "Select your preferred resolution.") &&
         # chooseres=$(echo "$twores" | grep -F -x "$oneres" | dmenu -r -p "select resolution:") &&
         xrandr --output "$monitorone" --primary --mode "$chooseres" --output "$monitortwo" --mode "$chooseres" --same-as "$monitorone" $(echo "$monitors" | grep -v -e "$monitorone" -e "$monitortwo" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
-        # bspc monitor "$monitorone" -d $(seq 1 10) &&
+        # herbstclient detect_monitors &&
         # relaunchpolybar "$monitorone" &&
         feh --bg-fill --no-fehbg "$wallpaperloc"
 }
@@ -64,17 +64,16 @@ monitorextend() {
         dir=$(echo -e "left\nright\nabove\nbelow" | rofi -dmenu -p " 2" -no-custom -mesg "Select the position of the 2nd monitor relative to the 1st monitor.") &&
         # dir=$(echo -e "left\nright\nabove\nbelow" | dmenu -r -p "position to 1st monitor:") &&
         xrandr --output "$monitorone" --primary --mode "$oneres" --output "$monitortwo" --mode "$twores" --"$dir"$([ "$dir" = "left" ] || [ "$dir" = "right" ] && echo "-of") "$monitorone" $(echo "$monitors" | grep -v -e "$monitorone" -e "$monitortwo" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
-        # bspc monitor "$monitorone" -d $(seq 1 5) &&
-        # bspc monitor "$monitortwo" -d $(seq 6 10) &&
+        # herbstclient detect_monitors &&
         # relaunchpolybar "$monitorone" "$monitortwo" &&
         feh --bg-fill --no-fehbg "$wallpaperloc"
 }
 
 monitorauto() {
         xrandr --auto &&
+        # herbstclient detect_monitors &&
+        # polybar-msg cmd restart &&
         feh --bg-fill --no-fehbg "$wallpaperloc"
-        # feh --bg-fill --no-fehbg "$wallpaperloc" &&
-        # polybar-msg cmd restart
 }
 
 monitorfallback() {
@@ -83,7 +82,7 @@ monitorfallback() {
         [ "$numofactivedisplays" -eq 0 ] &&
         fallbackmonitor=$(echo "$connmonitors" | head -n 1) &&
         xrandr --output "$fallbackmonitor" --primary --auto $(echo "$monitors" | grep -v "$fallbackmonitor" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -) &&
-        # bspc monitor "$fallbackmonitor" -d $(seq 1 10) &&
+        # herbstclient detect_monitors &&
         # relaunchpolybar "$fallbackmonitor" &&
         feh --bg-fill --no-fehbg "$wallpaperloc"
 }
