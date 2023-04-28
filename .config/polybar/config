@@ -102,7 +102,10 @@ enable-ipc = true
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:50:...%
+label = %title:0:30:...%
+format-background = ${colors.background-alt}
+format-padding = 1
+
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -178,6 +181,10 @@ type = internal/bspwm
 format = <label-state> <label-mode>
 format-padding = 0
 
+label-mode-padding = 1
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.background-alt}
+
 label-focused = %name%
 label-focused-foreground = ${colors.foreground-alt}
 label-focused-background = ${colors.yellow}
@@ -219,30 +226,33 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-padding = 1
+label-mode-foreground = ${colors.alert}
+label-mode-background = ${colors.background-alt}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline = #306489
+label-focused-foreground = ${colors.foreground-alt}
+label-focused-background = ${colors.yellow}
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
+label-unfocused-foreground = ${colors.foreground}
+label-unfocused-background = ${colors.background-alt}
 label-unfocused-padding = 1
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
+label-visible-foreground = ${self.label-focused-background}
+label-visible-background = ${self.label-unfocused-background}
+label-visible-padding = 1
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
+label-urgent-foreground = ${colors.foreground-alt}
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 ; Separator in between workspaces
 ; label-separator = |
