@@ -84,7 +84,7 @@ tray-padding = 0
 tray-offset-x = 3
 ;tray-background = ${colors.green}
 
-wm-restack = bspwm
+;wm-restack = bspwm
 ;wm-restack = i3
 
 override-redirect = false
