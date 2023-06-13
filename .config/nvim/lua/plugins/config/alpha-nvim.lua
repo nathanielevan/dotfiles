@@ -24,12 +24,12 @@ dashboard.section.buttons.val = {
     dashboard.button("SPC f o", "  Recently opened files", ":Telescope oldfiles<CR>"),
     dashboard.button("SPC f f", "  Find file", ":Telescope find_files<CR>"),
     dashboard.button("SPC f g", "  Find text", ":Telescope live_grep<CR>"),
-    dashboard.button("u", "  Sync plugins", ":PackerSync<CR>"),
+    dashboard.button("u", "  Sync plugins", ":Lazy sync<CR>"),
     dashboard.button("q", "  Quit", ":qa<CR>")
 }
 
 local function footer()
-    local plugins = #vim.tbl_keys(packer_plugins)
+    local plugins = require("lazy").stats().count
     local v = vim.version()
     return string.format(" %d plugins installed   NVIM v%d.%d.%d", plugins, v.major, v.minor, v.patch)
 end
