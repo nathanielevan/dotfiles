@@ -32,8 +32,10 @@ M.setup = function()
 end
 
 M.on_attach = function(client, bufnr)
-    client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
+    if client.name == "tsserver" then
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+    end
     require('core.keymaps').lspconfig(bufnr)
 end
 
