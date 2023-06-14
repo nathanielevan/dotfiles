@@ -5,7 +5,7 @@ end
 
 require('plugins.config.lsp.handlers').setup()
 
-local servers = { "lua_ls", "clangd", "dartls" }
+local servers = { "lua_ls", "clangd", "bashls", "pyright" }
 
 for _, server in pairs(servers) do
     local opts = {
