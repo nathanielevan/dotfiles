@@ -6,23 +6,33 @@ serifs = "sans"
 no-cv-ss = true
 export-glyph-names = false
 
-  [buildPlans.iosevka-custom.variants]
-  inherits = "ss06"
+[buildPlans.iosevka-custom.variants.design]
+capital-j = "serifless"
+capital-q = "crossing"
+f = "flat-hook-serifless-crossbar-at-x-height"
+g = "double-storey"
+l = "serifed"
+r = "hookless-serifless"
+t = "flat-hook"
+y = "straight-turn-serifless"
+long-s = "flat-hook-serifless"
+eszet = "longs-s-lig"
+lower-lambda = "straight-turn"
+cyrl-capital-u = "straight-turn-serifless"
+zero = "tall-slashed"
+one = "base"
+two = "straight-neck"
+three = "flat-top"
+six = "closed-contour"
+seven = "straight-serifed"
+nine = "closed-contour"
+percent = "rings-continuous-slash"
 
-    [buildPlans.iosevka-custom.variants.design]
-    capital-g = "toothed-serifless-hooked"
-    a = "double-storey-serifless"
-    f = "flat-hook-crossbar-at-x-height"
-    g = "double-storey"
-    l = "serifed"
-    t = "flat-hook"
-    zero = "slashed"
-    four = "semi-open"
-    five = "vertical-upper-left-bar"
-    seven = "straight-serifed"
-    eight = "crossing"
-    punctuation-dot = "round"
-    diacritic-dot = "round"
+[buildPlans.iosevka-custom.variants.italic]
+a = "double-storey-tailed"
+e = "flat-crossbar"
+i = "serifed"
+k = "straight-serifless"
 
 [buildPlans.iosevka-custom.weights.regular]
 shape = 400
