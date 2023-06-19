@@ -9,37 +9,27 @@ for battery in $(ls -d /sys/class/power_supply/* | grep BAT); do
 	status=$(cat "$battery/status")
 	if [ "$status" = "Charging" ]; then
 		if [ "$capacity" -ge 90 ]; then
-			baticon="󰂅" # new codepoint
-			# baticon="" # pre-v3 codepoint
+			baticon="󰂅"
 		elif [ "$capacity" -ge 70 ]; then
-			baticon="󰂊" # new codepoint
-			# baticon="" # pre-v3 codepoint
+			baticon="󰂊"
 		elif [ "$capacity" -ge 50 ]; then
-			baticon="󰂉" # new codepoint
-			# baticon="" # pre-v3 codepoint
+			baticon="󰂉"
 		elif [ "$capacity" -ge 25 ]; then
-			baticon="󰂈" # new codepoint
-			# baticon="" # pre-v3 codepoint
+			baticon="󰂈"
 		else
-			baticon="󰂆" # new codepoint
-			# baticon="" # pre-v3 codepoint
+			baticon="󰂆"
 		fi
 	else
 		if [ "$capacity" -ge 90 ]; then
-			baticon="󰁹" # new codepoint
-			# baticon="" # pre-v3 codepoint
+			baticon="󰁹"
 		elif [ "$capacity" -ge 70 ]; then
-			baticon="󰂁" # new codepoint
-			# baticon="" # pre-v3 codepoint
+			baticon="󰂁"
 		elif [ "$capacity" -ge 50 ]; then
-			baticon="󰁿" # new codepoint
-			# baticon="" # pre-v3 codepoint
+			baticon="󰁿"
 		elif [ "$capacity" -ge 25 ]; then
-			baticon="󰁽" # new codepoint
-			# baticon="" # pre-v3 codepoint
+			baticon="󰁽"
 		else
-			baticon="󰁻" # new codepoint
-			# baticon="" # pre-v3 codepoint
+			baticon="󰁻"
 		fi
 	fi
 	# Prints the info

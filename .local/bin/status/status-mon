@@ -11,11 +11,11 @@ printcpupct() {
         old=$(cat "$cache")
         currtotal=${current%% *} # exclude everything after first space in $current
         curridle=${current##* } # exclude everything up to first space
-        cpustat=$(echo "$old" | awk -v currtotal="$currtotal" -v curridle="$curridle" '{printf "C:%d%%\n", (1 - (curridle - $2) / (currtotal - $1)) * 100}')
+        cpustat=$(echo "$old" | awk -v currtotal="$currtotal" -v curridle="$curridle" '{printf "C:%d%%", (1 - (curridle - $2) / (currtotal - $1)) * 100}')
 }
 
-[ ! -f $cache ] && cpustat="C:勒" || printcpupct;
-ramstat=$(free | awk 'NR == 2 {printf "M:%d%%\n", $3/$2*100}')
-printf " %s %s" "$cpustat" "$ramstat"
+[ ! -f $cache ] && cpustat="C:󰑓" || printcpupct;
+ramstat=$(free | awk 'NR == 2 {printf "M:%d%%", $3/$2*100}')
+printf "󰄧 %s %s\n" "$cpustat" "$ramstat"
 
 echo "$current" > "$cache"
