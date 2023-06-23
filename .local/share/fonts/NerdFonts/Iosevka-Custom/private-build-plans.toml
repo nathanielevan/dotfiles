@@ -45,7 +45,7 @@ menu = 700
 css = 700
 
 [buildPlans.iosevka-custom.widths.normal]
-shape = 550
+shape = 560
 menu = 5
 css = "normal"
 
