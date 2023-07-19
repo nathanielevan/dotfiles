@@ -20,12 +20,12 @@ dashboard.section.header.val = {
 }
 
 dashboard.section.buttons.val = {
-    dashboard.button("e", "  New File ", ":enew<CR>"),
-    dashboard.button("LDR f o", "  Recently opened files", ":Telescope oldfiles<CR>"),
-    dashboard.button("LDR f f", "  Find file", ":Telescope find_files<CR>"),
-    dashboard.button("LDR f g", "  Find text", ":Telescope live_grep<CR>"),
+    dashboard.button("e", "  New File", ":enew<CR>"),
+    dashboard.button("LDR f o", "󰈢  Recently opened files", ":Telescope oldfiles<CR>"),
+    dashboard.button("LDR f f", "󰱼  Find file", ":Telescope find_files<CR>"),
+    dashboard.button("LDR f g", "󱎸  Find text", ":Telescope live_grep<CR>"),
     dashboard.button("u", "  Sync plugins", ":Lazy sync<CR>"),
-    dashboard.button("q", "  Quit", ":qa<CR>")
+    dashboard.button("q", "󰅙  Quit", ":qa<CR>")
 }
 
 local function footer()
