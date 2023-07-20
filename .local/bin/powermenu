@@ -9,8 +9,9 @@ case "$option" in
         lock) loginctl lock-session ;;
         # logout) xsetroot -name "fsignal:1" ;; # signal 1 to fsignal for quitting dwm
         # logout) bspc quit ;;
-        logout) openbox --exit ;;
         # logout) herbstclient quit ;;
+        logout) openbox --exit ;;
+        # logout) qtile cmd-obj -o cmd -f shutdown ;;
         suspend) systemctl suspend ;;
         reboot) systemctl reboot ;;
         shutdown) systemctl poweroff ;;
