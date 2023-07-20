@@ -44,13 +44,13 @@ Xft.dpi: 96
 
 !! urxvt config
 
-URxvt.font: xft:FantasqueSansMono Nerd Font Mono:style=Regular:pixelsize=15, \
+URxvt.font: xft:FantasqueSansM Nerd Font Mono:style=Regular:pixelsize=15, \
             xft:Noto Sans CJK JP:style=Regular:pixelsize=15
-URxvt.boldFont: xft:FantasqueSansMono Nerd Font Mono:style=Bold:pixelsize=15, \
+URxvt.boldFont: xft:FantasqueSansM Nerd Font Mono:style=Bold:pixelsize=15, \
                 xft:Noto Sans CJK JP:style=Bold:pixelsize=15
-URxvt.italicFont: xft:FantasqueSansMono Nerd Font Mono:style=Italic:pixelsize=15, \
+URxvt.italicFont: xft:FantasqueSansM Nerd Font Mono:style=Italic:pixelsize=15, \
                   xft:Noto Sans CJK JP:style=Regular:pixelsize=15
-URxvt.boldItalicFont: xft:FantasqueSansMono Nerd Font Mono:style=Bold Italic:pixelsize=15, \
+URxvt.boldItalicFont: xft:FantasqueSansM Nerd Font Mono:style=Bold Italic:pixelsize=15, \
                       xft:Noto Sans CJK JP:style=Bold:pixelsize=15
 
 URxvt.letterSpace: 0
@@ -89,13 +89,10 @@ URxvt.keysym.C-question:    resize-font:show
 
 ! sxiv config
 
-! Sxiv.font: DMCAsansserif Nerd Font:pixelsize=13
-! Sxiv.font: FantasqueSansMono Nerd Font:pixelsize=13
-! Sxiv.font: FiraCode Nerd Font:pixelsize=12
-! Sxiv.font: Hack Nerd Font:pixelsize=12
-! Sxiv.font: InconsolataLGC Nerd Font:pixelsize=12
-! Sxiv.font: Input Nerd Font:pixelsize=12
-Sxiv.font: Iosevka Nerd Font:pixelsize=13
-! Sxiv.font: JetBrainsMono Nerd Font:pixelsize=12
-! Sxiv.font: MesloLGM Nerd Font:pixelsize=12
-! Sxiv.font: mononoki Nerd Font Mono:pixelsize=13
+! Sxiv.font: DMCASansSerif Nerd Font Propo:pixelsize=13
+! Sxiv.font: FantasqueSansM Nerd Font Propo:pixelsize=13
+! Sxiv.font: FiraCode Nerd Font Propo:pixelsize=12
+! Sxiv.font: Hack Nerd Font Propo:pixelsize=12
+! Sxiv.font: Inconsolata LGC Nerd Font Propo:pixelsize=12
+Sxiv.font: Iosevka Nerd Font Propo:pixelsize=13
+! Sxiv.font: JetBrainsMono Nerd Font Propo:pixelsize=12

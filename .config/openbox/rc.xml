@@ -64,26 +64,22 @@
   <keepBorder>yes</keepBorder>
   <animateIconify>no</animateIconify>
   <font place="ActiveWindow">
-    <name>Iosevka Nerd Font</name>
+    <name>Iosevka Nerd Font Propo</name>
     <size>10</size>
     <!--
-    <name>FantasqueSansMono Nerd Font</name>
+    <name>FantasqueSansM Nerd Font Propo</name>
     <size>10</size>
-    <name>FiraCode Nerd Font</name>
+    <name>FiraCode Nerd Font Propo</name>
     <size>9</size>
-    <name>InconsolataLGC Nerd Font</name>
+    <name>Hack Nerd Font Propo</name>
     <size>9</size>
-    <name>Input Nerd Font</name>
+    <name>InconsolataLGC Nerd Font Propo</name>
     <size>9</size>
-    <name>Iosevka Nerd Font</name>
+    <name>Iosevka Nerd Font Propo</name>
     <size>10</size>
-    <name>JetBrainsMono Nerd Font</name>
+    <name>JetBrainsMono Nerd Font Propo</name>
     <size>9</size>
-    <name>MesloLGM Nerd Font</name>
-    <size>9</size>
-    <name>mononoki Nerd Font</name>
-    <size>10</size>
-    <name>NotoSansMono Nerd Font</name>
+    <name>NotoSansM Nerd Font Propo</name>
     <size>9</size>
     -->
     <!-- font size in points -->
@@ -93,26 +89,22 @@
     <!-- 'italic' or 'normal' -->
   </font>
   <font place="InactiveWindow">
-    <name>Iosevka Nerd Font</name>
+    <name>Iosevka Nerd Font Propo</name>
     <size>10</size>
     <!--
-    <name>FantasqueSansMono Nerd Font</name>
+    <name>FantasqueSansM Nerd Font Propo</name>
     <size>10</size>
-    <name>FiraCode Nerd Font</name>
+    <name>FiraCode Nerd Font Propo</name>
     <size>9</size>
-    <name>InconsolataLGC Nerd Font</name>
+    <name>Hack Nerd Font Propo</name>
     <size>9</size>
-    <name>Input Nerd Font</name>
+    <name>InconsolataLGC Nerd Font Propo</name>
     <size>9</size>
-    <name>Iosevka Nerd Font</name>
+    <name>Iosevka Nerd Font Propo</name>
     <size>10</size>
-    <name>JetBrainsMono Nerd Font</name>
+    <name>JetBrainsMono Nerd Font Propo</name>
     <size>9</size>
-    <name>MesloLGM Nerd Font</name>
-    <size>9</size>
-    <name>mononoki Nerd Font</name>
-    <size>10</size>
-    <name>NotoSansMono Nerd Font</name>
+    <name>NotoSansM Nerd Font Propo</name>
     <size>9</size>
     -->
     <!-- font size in points -->
@@ -122,26 +114,22 @@
     <!-- 'italic' or 'normal' -->
   </font>
   <font place="MenuHeader">
-    <name>Iosevka Nerd Font</name>
+    <name>Iosevka Nerd Font Propo</name>
     <size>10</size>
     <!--
-    <name>FantasqueSansMono Nerd Font</name>
+    <name>FantasqueSansM Nerd Font Propo</name>
     <size>10</size>
-    <name>FiraCode Nerd Font</name>
+    <name>FiraCode Nerd Font Propo</name>
     <size>9</size>
-    <name>InconsolataLGC Nerd Font</name>
+    <name>Hack Nerd Font Propo</name>
     <size>9</size>
-    <name>Input Nerd Font</name>
+    <name>InconsolataLGC Nerd Font Propo</name>
     <size>9</size>
-    <name>Iosevka Nerd Font</name>
+    <name>Iosevka Nerd Font Propo</name>
     <size>10</size>
-    <name>JetBrainsMono Nerd Font</name>
+    <name>JetBrainsMono Nerd Font Propo</name>
     <size>9</size>
-    <name>MesloLGM Nerd Font</name>
-    <size>9</size>
-    <name>mononoki Nerd Font</name>
-    <size>10</size>
-    <name>NotoSansMono Nerd Font</name>
+    <name>NotoSansM Nerd Font Propo</name>
     <size>9</size>
     -->
     <!-- font size in points -->
@@ -151,26 +139,22 @@
     <!-- 'italic' or 'normal' -->
   </font>
   <font place="MenuItem">
-    <name>Iosevka Nerd Font</name>
+    <name>Iosevka Nerd Font Propo</name>
     <size>10</size>
     <!--
-    <name>FantasqueSansMono Nerd Font</name>
+    <name>FantasqueSansM Nerd Font Propo</name>
     <size>10</size>
-    <name>FiraCode Nerd Font</name>
+    <name>FiraCode Nerd Font Propo</name>
     <size>9</size>
-    <name>InconsolataLGC Nerd Font</name>
+    <name>Hack Nerd Font Propo</name>
     <size>9</size>
-    <name>Input Nerd Font</name>
+    <name>InconsolataLGC Nerd Font Propo</name>
     <size>9</size>
-    <name>Iosevka Nerd Font</name>
+    <name>Iosevka Nerd Font Propo</name>
     <size>10</size>
-    <name>JetBrainsMono Nerd Font</name>
+    <name>JetBrainsMono Nerd Font Propo</name>
     <size>9</size>
-    <name>MesloLGM Nerd Font</name>
-    <size>9</size>
-    <name>mononoki Nerd Font</name>
-    <size>10</size>
-    <name>NotoSansMono Nerd Font</name>
+    <name>NotoSansM Nerd Font Propo</name>
     <size>9</size>
     -->
     <!-- font size in points -->
@@ -180,26 +164,22 @@
     <!-- 'italic' or 'normal' -->
   </font>
   <font place="ActiveOnScreenDisplay">
-    <name>Iosevka Nerd Font</name>
+    <name>Iosevka Nerd Font Propo</name>
     <size>10</size>
     <!--
-    <name>FantasqueSansMono Nerd Font</name>
+    <name>FantasqueSansM Nerd Font Propo</name>
     <size>10</size>
-    <name>FiraCode Nerd Font</name>
+    <name>FiraCode Nerd Font Propo</name>
     <size>9</size>
-    <name>InconsolataLGC Nerd Font</name>
+    <name>Hack Nerd Font Propo</name>
     <size>9</size>
-    <name>Input Nerd Font</name>
+    <name>InconsolataLGC Nerd Font Propo</name>
     <size>9</size>
-    <name>Iosevka Nerd Font</name>
+    <name>Iosevka Nerd Font Propo</name>
     <size>10</size>
-    <name>JetBrainsMono Nerd Font</name>
+    <name>JetBrainsMono Nerd Font Propo</name>
     <size>9</size>
-    <name>MesloLGM Nerd Font</name>
-    <size>9</size>
-    <name>mononoki Nerd Font</name>
-    <size>10</size>
-    <name>NotoSansMono Nerd Font</name>
+    <name>NotoSansM Nerd Font Propo</name>
     <size>9</size>
     -->
     <!-- font size in points -->
@@ -209,26 +189,22 @@
     <!-- 'italic' or 'normal' -->
   </font>
   <font place="InactiveOnScreenDisplay">
-    <name>Iosevka Nerd Font</name>
+    <name>Iosevka Nerd Font Propo</name>
     <size>10</size>
     <!--
-    <name>FantasqueSansMono Nerd Font</name>
+    <name>FantasqueSansM Nerd Font Propo</name>
     <size>10</size>
-    <name>FiraCode Nerd Font</name>
+    <name>FiraCode Nerd Font Propo</name>
     <size>9</size>
-    <name>InconsolataLGC Nerd Font</name>
+    <name>Hack Nerd Font Propo</name>
     <size>9</size>
-    <name>Input Nerd Font</name>
+    <name>InconsolataLGC Nerd Font Propo</name>
     <size>9</size>
-    <name>Iosevka Nerd Font</name>
+    <name>Iosevka Nerd Font Propo</name>
     <size>10</size>
-    <name>JetBrainsMono Nerd Font</name>
+    <name>JetBrainsMono Nerd Font Propo</name>
     <size>9</size>
-    <name>MesloLGM Nerd Font</name>
-    <size>9</size>
-    <name>mononoki Nerd Font</name>
-    <size>10</size>
-    <name>NotoSansMono Nerd Font</name>
+    <name>NotoSansM Nerd Font Propo</name>
     <size>9</size>
     -->
     <!-- font size in points -->

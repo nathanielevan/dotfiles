@@ -235,7 +235,7 @@ settings:
     - -p
     - '{}'
   fonts.default_family:
-    global: Iosevka Nerd Font
+    global: Iosevka Nerd Font Propo
   fonts.default_size:
     global: 10pt
   hints.border:

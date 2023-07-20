@@ -62,18 +62,14 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 0
 
-;font-0 = CaskaydiaCove Nerd Font:style=Regular:pixelsize=11;3
-;font-0 = DMCAsansserif Nerd Font:style=Regular:size=11;3
-;font-0 = FantasqueSansMono Nerd Font:style=Regular:size=11;3
-;font-0 = FiraCode Nerd Font:style=Regular:pixelsize=11;3
-;font-0 = Hack Nerd Font:style=Regular:pixelsize=11;3
-;font-0 = InconsolataLGC Nerd Font:style=Regular:pixelsize=11;3
-;font-0 = Input Nerd Font:style=Regular:pixelsize=11;3
-font-0 = Iosevka Nerd Font:style=Regular:size=11;3
-;font-0 = JetBrainsMono Nerd Font:style=Regular:pixelsize=11;3
-;font-0 = JuliaMono Nerd Font:style=Regular:pixelsize=11;3
-;font-0 = mononoki Nerd Font:style=Regular:size=11;3
-;font-0 = NotoSansMono Nerd Font:style=Regular:pixelsize=11;3
+;font-0 = DMCASansSerif Nerd Font Propo:style=Regular:size=11;3
+;font-0 = FantasqueSansM Nerd Font Propo:style=Regular:size=11;3
+;font-0 = FiraCode Nerd Font Propo:style=Regular:pixelsize=11;3
+;font-0 = Hack Nerd Font Propo:style=Regular:pixelsize=11;3
+;font-0 = Inconsolata LGC Nerd Font Propo:style=Regular:pixelsize=11;3
+font-0 = Iosevka Nerd Font Propo:style=Regular:size=11;3
+;font-0 = JetBrainsMono Nerd Font Propo:style=Regular:pixelsize=11;3
+;font-0 = NotoSansM Nerd Font Propo:style=Regular:pixelsize=11;3
 
 modules-left = launcher ewmh eth wlan
 modules-center = date
@@ -135,7 +131,7 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/launcher]
 type = custom/text
-content = " Launch"
+content = "󰌧 Launch"
 
 content-background = ${colors.green}
 content-foreground = ${colors.foreground-alt}
@@ -144,7 +140,7 @@ click-left = rofi -show drun -modi drun,run,window,ssh
 
 [module/exit]
 type = custom/text
-content = "襤 Exit"
+content = "󰐥 Exit"
 
 content-background = ${colors.red}
 content-foreground = ${colors.foreground-alt}
@@ -205,13 +201,13 @@ label-empty-foreground = ${colors.grey}
 label-empty-background = ${colors.background-alt}
 label-empty-padding = 1
 
-label-locked = "[]"
-label-floating = "[]"
-label-fullscreen = "[]"
+label-locked = "[󰌾]"
+label-floating = "[󰀽]"
+label-fullscreen = "[󰆟]"
 label-marked = "[]"
-label-monocle = "[ﱡ]"
+label-monocle = "[󰝣]"
 label-private = "[]"
-label-pseudotiled = "[ﬔ]"
+label-pseudotiled = "[󰘕]"
 label-sticky = "[]"
 
 ; Separator in between workspaces
@@ -301,7 +297,7 @@ card = intel_backlight
 type = internal/cpu
 interval = 2.0
 format = <label>
-format-prefix = "%{A1:$TERMINAL -e htop:} ﬙ "
+format-prefix = "%{A1:$TERMINAL -e htop:} 󰘚 "
 format-prefix-foreground = ${colors.yellow}
 format-padding = 0
 format-background = ${colors.background-alt}
@@ -311,7 +307,7 @@ label = "%percentage%% %{A}"
 type = internal/memory
 interval = 2.0
 format = <label>
-format-prefix = "%{A1:$TERMINAL -e htop:}  "
+format-prefix = "%{A1:$TERMINAL -e htop:} 󰍛 "
 format-prefix-foreground = ${colors.yellow}
 format-padding = 0
 format-background = ${colors.background-alt}
@@ -323,14 +319,14 @@ interface = wlp3s0
 interval = 2.0
 
 format-connected = <label-connected>
-format-connected-prefix = "%{A1:$TERMINAL -e nmtui:} 說 "
+format-connected-prefix = "%{A1:$TERMINAL -e nmtui:} 󰒢 "
 format-connected-prefix-foreground = ${colors.yellow}
 format-connected-padding = 0
 format-connected-background = ${colors.background-alt}
 label-connected = "%signal%% %{A}"
 
 format-disconnected = <label-disconnected>
-format-disconnected-prefix = "%{A1:$TERMINAL -e nmtui:} ﲁ "
+format-disconnected-prefix = "%{A1:$TERMINAL -e nmtui:} 󰞃 "
 format-disconnected-prefix-foreground = ${colors.red}
 format-disconnected-padding = 0
 format-disconnected-background = ${colors.background-alt}
@@ -349,14 +345,14 @@ interface = enp0s25
 interval = 2.0
 
 format-connected = <label-connected>
-format-connected-prefix = "%{A1:$TERMINAL -e nmtui:}  "
+format-connected-prefix = "%{A1:$TERMINAL -e nmtui:} 󰈁 "
 format-connected-prefix-foreground = ${colors.yellow}
 format-connected-background = ${colors.background-alt}
 format-connected-padding = 0
 label-connected = "CON %{A}"
 
 format-disconnected = <label-disconnected>
-format-disconnected-prefix = "%{A1:$TERMINAL -e nmtui:}  "
+format-disconnected-prefix = "%{A1:$TERMINAL -e nmtui:} 󰈂 "
 format-disconnected-prefix-foreground = ${colors.red}
 format-disconnected-background = ${colors.background-alt}
 format-disconnected-padding = 0
@@ -373,7 +369,7 @@ time = %H:%M:%S
 ;time-alt = %H:%M:%S
 
 format = <label>
-;format-prefix = " "
+;format-prefix = "󰥔 "
 ;format-prefix-foreground = ${colors.yellow}
 format-background = ${colors.foreground}
 format-foreground = ${colors.foreground-alt}
@@ -384,14 +380,14 @@ label = %{A1:gsimplecal:} %date%  %time% %{A}
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume-prefix = " 墳 "
+format-volume-prefix = " 󰕾 "
 format-volume-prefix-foreground = ${colors.yellow}
 format-volume = "<label-volume> "
 format-volume-padding = 0
 format-volume-background = ${colors.background-alt}
 label-volume = %percentage%%
 
-format-muted-prefix = " 婢 "
+format-muted-prefix = " 󰖁 "
 format-muted-prefix-foreground = ${colors.red}
 format-muted = "<label-muted> "
 format-muted-padding = 0
@@ -453,7 +449,7 @@ low-at = 10
 full-at = 90
 
 format-charging = <label-charging>
-format-charging-prefix = " "
+format-charging-prefix = "󰚥 "
 format-charging-prefix-foreground = ${colors.yellow}
 format-charging-background = ${colors.background-alt}
 format-charging-padding = 1
@@ -474,12 +470,12 @@ label-full = %percentage_raw%%
 ; Ramp 0 covers everything <= low-at
 ; Final ramp covers everything >= full-at
 ; Range between low-at and full-at is divided between the remaining ramps
-ramp-capacity-0 = " "
-ramp-capacity-1 = " "
-ramp-capacity-2 = " "
-ramp-capacity-3 = " "
-ramp-capacity-4 = " "
-ramp-capacity-5 = " "
+ramp-capacity-0 = "󰂎 "
+ramp-capacity-1 = "󰁻 "
+ramp-capacity-2 = "󰁽 "
+ramp-capacity-3 = "󰁿 "
+ramp-capacity-4 = "󰂁 "
+ramp-capacity-5 = "󰁹 "
 
 ramp-capacity-0-foreground = ${colors.red}
 ramp-capacity-1-foreground = ${colors.yellow}

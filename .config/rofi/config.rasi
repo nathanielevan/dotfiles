@@ -1,23 +1,22 @@
 configuration {
+/* Change button.padding and element.padding according to font spacing */
 /*	modi: "window,run,ssh";*/
-/*	font: "FantasqueSansMono Nerd Font 10";*/
-/*	font: "FiraCode Nerd Font 9";*/
-/*	font: "InconsolataLGC Nerd Font 9";*/
-/*	font: "Input Nerd Font 9";*/
-	font: "Iosevka Nerd Font 10";
-/*	font: "JetBrainsMono Nerd Font 9";*/
-/*	font: "MesloLGM Nerd Font 9";*/
-/*	font: "mononoki Nerd Font 10";*/
-/*	font: "NotoSansMono Nerd Font 9";*/
-/*	font: "VictorMono Nerd Font Medium 10";*/
+/*	font: "DMCASansSerif Nerd Font Propo 10";*/
+/*	font: "FantasqueSansM Nerd Font Propo 10";*/
+/*	font: "FiraCode Nerd Font Propo 9";*/
+/*	font: "Hack Nerd Font Propo 9";*/
+/*	font: "Inconsolata LGC Nerd Font Propo 9";*/
+	font: "Iosevka Nerd Font Propo 10";
+/*	font: "JetBrainsMono Nerd Font Propo 9";*/
+/*	font: "NotoSansM Nerd Font Propo 9";*/
 	disable-history: true;
 	scroll-method: 1;
 	m: "-5";
 	cycle: false;
-	display-drun: "";
+	display-drun: "󰀻";
 	display-run: "";
-	display-window: "缾";
-	display-ssh: "歷";
+	display-window: "󰖲";
+	display-ssh: "󰒍";
 	cache-dir: ".cache/rofi";
 /*	window-format: "{w}    {c}   {t}";*/
 /*	theme: ;*/
