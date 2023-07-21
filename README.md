@@ -14,15 +14,15 @@ Other relevant links:
 * `.local/bin` is where I store miscellaneous shell scripts for e.g. dwmblocks, power menu, monitor switching menu etc.
 * `.local/share` contains miscellaneous files e.g. desktop files, zsh plugins, custom font builds etc.
     + Fonts included in this repository are:
-        - Fantasque Sans Mono v1.8.0, large line height, no loop K version, patched with Nerd Fonts v2.3.3
-        - Fira Code v1.206, patched with Nerd Fonts v2.3.3
-        - Hack v4.000 (unreleased, latest commit [b4331b3](https://github.com/source-foundry/Hack/tree/b4331b33e163965959cc5d34a14f254bcc94bd20)) patched with Nerd Fonts v2.3.3, custom build (see `patch-hack.sh` inside directory)
-        - Iosevka v24.1.3, patched with Nerd Fonts v2.3.3, custom build (see `private-build-plans.toml` inside directory)
-        - JetBrains Mono v2.304 with features `zero,cv07,cv08,cv11,cv12,cv18,cv20` enabled by default, patched with Nerd Fonts v2.3.3
+        - Fantasque Sans Mono v1.8.0, large line height, no loop K version, patched with Nerd Fonts v3.0.2
+        - Fira Code v1.206, patched with Nerd Fonts v3.0.2
+        - Hack v4.000 (unreleased, latest commit [b4331b3](https://github.com/source-foundry/Hack/tree/b4331b33e163965959cc5d34a14f254bcc94bd20)) patched with Nerd Fonts v3.0.2, custom build (see `patch-hack.sh` inside directory)
+        - Iosevka v24.1.3, patched with Nerd Fonts v3.0.2, custom build (see `private-build-plans.toml` inside directory)
+        - JetBrains Mono v2.304 with features `zero,cv07,cv08,cv11,cv12,cv18,cv20` enabled by default, patched with Nerd Fonts v3.0.2
 
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.
-* Parts of this configuration make use of [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts). Make sure that you have a patched font or the symbols-only font installed.
+* Parts of this configuration make use of [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts), currently at version 3.0.2. Make sure that you have a patched font or the symbols-only font installed.
 * Does not include system-wide configurations, e.g. systemd power management config (which I use in my machine)
 * Due to the size of this repo, use `git clone --depth=1` or download the ZIP archive [here](https://github.com/nathanielevan/dotfiles/archive/refs/heads/master.zip) if you just need to get the files.
 
