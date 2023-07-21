@@ -77,8 +77,7 @@ modules-right = battery pulseaudio memory cpu exit
 
 tray-position = ${env:TRAY_POS:right}
 tray-padding = 0
-tray-offset-x = 3
-;tray-background = ${colors.green}
+tray-background = "#282828"
 
 ;wm-restack = bspwm
 ;wm-restack = i3
