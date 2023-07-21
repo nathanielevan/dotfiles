@@ -482,6 +482,7 @@ ramp-capacity-1-foreground = ${colors.yellow}
 ramp-capacity-2-foreground = ${colors.yellow}
 ramp-capacity-3-foreground = ${colors.yellow}
 ramp-capacity-4-foreground = ${colors.yellow}
+ramp-capacity-5-foreground = ${colors.yellow}
 
 ;animation-charging-0 = " "
 ;animation-charging-1 = " "
