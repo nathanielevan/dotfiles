@@ -32,11 +32,11 @@ rounded = 0
 border_width = 1
 border_sides = TBLR
 background_color = #282828 100
-border_color = #d4be98 100
+border_color = #d8a657 100
 background_color_hover = #32302f 100
-border_color_hover = #d4be98 100
+border_color_hover = #e1bb7e 100
 background_color_pressed = #1d2021 100
-border_color_pressed = #a89984 100
+border_color_pressed = #928374 100
 
 # Background 4: Active desktop
 rounded = 0
@@ -177,7 +177,7 @@ task_font = Iosevka Nerd Font Propo 10
 # task_font = JetBrainsMono Nerd Font Propo 9
 # task_font = NotoSansM Nerd Font Propo 9
 task_font_color = #928374 100
-task_active_font_color = #d4be98 100
+task_active_font_color = #d8a657 100
 task_urgent_font_color = #282828 100
 task_background_id = 2
 task_active_background_id = 3
