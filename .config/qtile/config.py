@@ -160,14 +160,16 @@ screens = [
                     other_screen_border='d4be98',
                     this_current_screen_border='d8a657',
                     this_screen_border='d8a657',
+                    urgent_border='ea6962',
+                    urgent_color='282828',
                 ),
                 widget.WindowName(
                     foreground='d8a657',
                     for_current_screen=True
                 ),
-                widget.Net(format="↓{down}↑{up}"),
+                widget.Net(format="󰁅 {down} 󰁝 {up}"),
                 widget_sep,
-                widget.PulseVolume(fmt="󰕾 {}"),
+                widget.Volume(fmt="󰕾 {}"),
                 widget_sep,
                 widget.Memory(format="󰄧 M:{MemPercent}%"),
                 widget.CPU(format="C:{load_percent}%"),
