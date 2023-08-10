@@ -73,7 +73,9 @@ keys = [
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on focused window"),
     # Miscellaneous keybinds for menu, audio, screenshot etc
     Key([mod], "d", lazy.spawn("rofi -show drun -modi drun,run,window,ssh"), desc="Launch application with rofi"),
+    # Key([mod], "d", lazy.spawn("j4-dmenu-desktop --dmenu \"dmenu -i -r -p \"drun:\"\" --term st --no-generic"), desc="Launch application with rofi"),
     Key([mod, "shift"], "d", lazy.spawn("rofi -show run -modi drun,run,window,ssh"), desc="Launch executable with rofi"),
+    # Key([mod, "shift"], "d", lazy.spawn("dmenu_run -p \"run:\""), desc="Launch executable with rofi"),
     Key([mod], "Escape", lazy.spawn("rofi -show window -modi drun,run,window,ssh"), desc="Select an open window with rofi"),
     Key([mod, "shift"], "e", lazy.spawn("powermenu"), desc="Launch power menu"),
     Key([mod, "shift"], "m", lazy.spawn("setmonitor"), desc="Launch monitor switching menu"),
@@ -147,9 +149,8 @@ widget_sep = widget.Sep(
 )
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
-                widget.CurrentLayout(),
                 widget.GroupBox(
                     active='d4be98',
                     block_highlight_text_color='282828',
@@ -163,16 +164,21 @@ screens = [
                     urgent_border='ea6962',
                     urgent_color='282828',
                 ),
+                widget_sep,
+                widget.CurrentLayout(),
+                widget_sep,
                 widget.WindowName(
                     foreground='d8a657',
                     for_current_screen=True
                 ),
-                widget.Net(format="󰁅 {down} 󰁝 {up}"),
                 widget_sep,
                 widget.Volume(fmt="󰕾 {}"),
                 widget_sep,
-                widget.Memory(format="󰄧 M:{MemPercent}%"),
-                widget.CPU(format="C:{load_percent}%"),
+                widget.Memory(fmt="󰍛 {}", format="{MemPercent}%"),
+                widget_sep,
+                widget.CPU(fmt="󰘚 {}", format="{load_percent}%"),
+                widget_sep,
+                widget.Net(fmt="󰛳 {}", format="󰁅 {down} 󰁝 {up}"),
                 widget_sep,
                 widget.Battery(
                     charge_char="󰂄",
