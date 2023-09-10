@@ -4,4 +4,4 @@ trackData=$(mpc --format '%title%\n%artist%\n%album%' current)
 trackTitle=$(echo "$trackData" | head -1)
 trackArtist=$(echo "$trackData" | tail -2 | head -1)
 trackAlbum=$(echo "$trackData" | tail -1)
-notify-send "ncmpcpp" " <b>$trackTitle</b>"'\n'" $trackArtist"'\n'" $trackAlbum"
+notify-send "ncmpcpp" "󰎈 <b>$trackTitle</b>"'\n'" $trackArtist"'\n'"󰀥 $trackAlbum"
