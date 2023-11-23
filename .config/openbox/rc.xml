@@ -511,7 +511,7 @@
   </keybind>
   <keybind key="W-d">
     <action name="Execute">
-      <command>rofi -show drun -modi drun,run,window,ssh</command>
+      <command>rofi -show drun -modi drun,run,window,ssh -show-icons</command>
     </action>
   </keybind>
   <keybind key="W-S-d">
