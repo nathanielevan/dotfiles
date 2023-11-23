@@ -2,13 +2,20 @@
 
 fmtout='{{ title }}
 {{ artist }}
-{{ album }}'
+{{ album }}
+{{ mpris:artUrl }}'
+
+SPOTIFYD_TMP="/tmp/spotifyd"
+mkdir -p "${SPOTIFYD_TMP}"
 
 if [ "$PLAYER_EVENT" = "start" ] || [ "$PLAYER_EVENT" = "change" ];
 then
         trackData=$(playerctl -p spotifyd metadata --format "${fmtout}" | sed 's/\&/\&amp;/g; s/</\&lt;/g')
         trackTitle=$(echo "${trackData}" | head -1)
-        trackArtist=$(echo "${trackData}" | tail -2 | head -1)
-        trackAlbum=$(echo "${trackData}" | tail -1)
-        notify-send "spotifyd" " <b>$trackTitle</b>"'\n'" $trackArtist"'\n'" $trackAlbum"
+        trackArtist=$(echo "${trackData}" | head -2 | tail -1)
+        trackAlbum=$(echo "${trackData}" | tail -2 | head -1)
+        trackArtUrl=$(echo "${trackData}" | tail -1)
+
+        rm -f "${SPOTIFYD_TMP}/spotify-playing.jpg" && curl -sS -o "${SPOTIFYD_TMP}/spotify-playing.jpg" -m 5 ${trackArtUrl} 2>${SPOTIFYD_TMP}/spotifyd-notif.log
+        notify-send "spotifyd" "󰎈 $trackTitle"'\n'" $trackArtist"'\n'"󰀥 $trackAlbum"
 fi
