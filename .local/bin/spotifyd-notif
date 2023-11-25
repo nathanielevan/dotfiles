@@ -6,6 +6,7 @@ fmtout='{{ title }}
 {{ mpris:artUrl }}'
 
 SPOTIFYD_TMP="/tmp/spotifyd"
+SPOTIFYD_COVER_IMG"${SPOTIFYD_TMP}/spotify-playing.jpg"
 mkdir -p "${SPOTIFYD_TMP}"
 
 if [ "$PLAYER_EVENT" = "start" ] || [ "$PLAYER_EVENT" = "change" ];
@@ -16,6 +17,7 @@ then
         trackAlbum=$(echo "${trackData}" | tail -2 | head -1)
         trackArtUrl=$(echo "${trackData}" | tail -1)
 
-        rm -f "${SPOTIFYD_TMP}/spotify-playing.jpg" && curl -sS -o "${SPOTIFYD_TMP}/spotify-playing.jpg" -m 5 ${trackArtUrl} 2>${SPOTIFYD_TMP}/spotifyd-notif.log
-        notify-send "spotifyd" "󰎈 $trackTitle"'\n'" $trackArtist"'\n'"󰀥 $trackAlbum"
+        rm -f "${SPOTIFYD_COVER_IMG}"
+        curl -sS -o "${SPOTIFYD_COVER_IMG}" -m 5 ${trackArtUrl} 2>${SPOTIFYD_TMP}/spotifyd-notif.log && ICON_NOTIF="${SPOTIFYD_COVER_IMG}" || ICON_NOTIF="${HOME}/.config/dunst/spotify.png"
+        notify-send "spotifyd" "󰎈 $trackTitle"'\n'" $trackArtist"'\n'"󰀥 $trackAlbum" --icon="${ICON_NOTIF}"
 fi
