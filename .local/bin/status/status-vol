@@ -8,28 +8,33 @@ vol="$(pamixer --get-volume)"
 sink="$(pamixer --get-default-sink | tail -n 1 | cut -d '"' -f4)"
 ismute="$(pamixer --get-mute)"
 
-volstatsnew="$(printf "$vol\n$sink\n$ismute")"
+# volstatsnew="$(printf "$vol\n$sink\n$ismute")"
 
 if [ "$ismute" = "true" ]; then
     level="muted"
-    icon="󰖁"
-elif [ "$vol" -gt 100 ]; then
-    level="overamplified"
-    icon="󰕾"
-elif [ "$vol" -ge 67 ]; then
-    level="high"
-    icon="󰕾"
-elif [ "$vol" -ge 33 ]; then
-    level="medium"
-    icon="󰖀"
-elif [ "$vol" -ge 0 ]; then
-    level="low"
-    icon="󰕿"
+    [ "$1" = "--nficons" ] && volicon="󰖁" || volicon="MUTE"
+else
+    volicon="VOL"
+    if [ "$vol" -gt 100 ]; then
+        level="overamplified"
+        [ "$1" = "--nficons" ] && volicon="󰕾"
+    elif [ "$vol" -ge 67 ]; then
+        level="high"
+        [ "$1" = "--nficons" ] && volicon="󰕾"
+    elif [ "$vol" -ge 33 ]; then
+        level="medium"
+        [ "$1" = "--nficons" ] && volicon="󰖀"
+    elif [ "$vol" -ge 0 ]; then
+        level="low"
+        [ "$1" = "--nficons" ] && volicon="󰕿"
+    fi
 fi
 
-[ -f "$cachefile" ] && volstatscache="$(cat "$cachefile")" && [ "$volstatscache" != "$volstatsnew" ] && \
-    notify-send "$sink ["$vol"%]" --hint=INT:value:"$vol" --icon=audio-volume-"$level"-symbolic --replace-id=555 --expire-time=3000 --transient
+[ "$1" = "--nficons" ] && loadingicon="󰑓" || loadingicon="?"
 
-[ -z "$vol" ] && echo "󰕾 󰑓"|| echo "$icon $vol%"
+# [ -f "$cachefile" ] && volstatscache="$(cat "$cachefile")" && [ "$volstatscache" != "$volstatsnew" ] && \
+#     notify-send "$sink ["$vol"%]" --hint=INT:value:"$vol" --icon=audio-volume-"$level"-symbolic --replace-id=555 --expire-time=3000 --transient
 
-printf "$volstatsnew" > "$cachefile"
+[ -z "$vol" ] && printf "%s %s\n" "$volicon" "$loadingicon" || printf "%s %s%%\n" "$volicon" "$vol"
+
+# printf "$volstatsnew" > "$cachefile"

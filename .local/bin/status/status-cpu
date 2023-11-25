@@ -3,17 +3,20 @@
 # cache to store previous reading
 cache="/tmp/cpustatscache"
 
+[ "$1" = "--nficons" ] && cpuicon="󰘚" && loadingicon="󰑓" || { cpuicon="CPU" && loadingicon="?"; }
+
 # id total idle
 # total = user + nice + system + idle
 current=$(awk '$1 == "cpu" {printf "%d %d\n", ($2 + $3 + $4 + $5), $5 }' /proc/stat)
 
-printcpupct() {
+getcpupct() {
         old=$(cat "$cache")
         currtotal=${current%% *} # exclude everything after first space in $current
         curridle=${current##* } # exclude everything up to first space
-        echo "$old" | awk -v currtotal="$currtotal" -v curridle="$curridle" '{printf "󰘚 %d%%\n", (1 - (curridle - $2) / (currtotal - $1)) * 100}'
+        cpustat=$(echo "$old" | awk -v currtotal="$currtotal" -v curridle="$curridle" '{printf "%d%%\n", (1 - (curridle - $2) / (currtotal - $1)) * 100}')
 }
         
-[ ! -f $cache ] && printf "󰘚 󰑓\n" || printcpupct;
+[ ! -f $cache ] && cpustat="$loadingicon" || getcpupct
+printf "%s %s\n" "$cpuicon" "$cpustat"
 
 echo "$current" > "$cache"

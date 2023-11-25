@@ -1,5 +1,6 @@
 #!/bin/sh
 
-signalstrength=$(awk 'NR==3 {printf("%.0f%%", $3*10/7)}' /proc/net/wireless)
-[ -z "$signalstrength" ] && printf "󰞃 DCT" || printf "󰒢 %s" "$signalstrength"
+[ "$1" = "--nficons" ] && wlanconicon="󰒢" && wlandcticon="󰞃" || { wlanconicon="WLAN" && wlandcticon="$wlanconicon"; }
 
+signalstrength=$(awk 'NR==3 {printf("%.0f%%", $3*10/7)}' /proc/net/wireless)
+[ -z "$signalstrength" ] && printf "%s DCT\n" "$wlandcticon" || printf "%s %s\n" "$wlanconicon" "$signalstrength"

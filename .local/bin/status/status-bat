@@ -2,36 +2,44 @@
 
 # Loop through all attached batteries and format the info
 for battery in $(ls -d /sys/class/power_supply/* | grep BAT); do
-	# If non-first battery, print a space separator.
-	[ -n "${capacity+x}" ] && printf " "
-	# Sets up the status and capacity
-	capacity=$(cat "$battery/capacity")
-	status=$(cat "$battery/status")
-	if [ "$status" = "Charging" ]; then
-		if [ "$capacity" -ge 90 ]; then
-			baticon="󰂅"
-		elif [ "$capacity" -ge 70 ]; then
-			baticon="󰂊"
-		elif [ "$capacity" -ge 50 ]; then
-			baticon="󰂉"
-		elif [ "$capacity" -ge 25 ]; then
-			baticon="󰂈"
-		else
-			baticon="󰂆"
-		fi
-	else
-		if [ "$capacity" -ge 90 ]; then
-			baticon="󰁹"
-		elif [ "$capacity" -ge 70 ]; then
-			baticon="󰂁"
-		elif [ "$capacity" -ge 50 ]; then
-			baticon="󰁿"
-		elif [ "$capacity" -ge 25 ]; then
-			baticon="󰁽"
-		else
-			baticon="󰁻"
-		fi
-	fi
-	# Prints the info
-	printf "%s %d%%" "$baticon" "$capacity"
+    # If non-first battery, print a space separator.
+    [ -n "${capacity+x}" ] && printf " "
+    # Sets up the status and capacity
+    capacity=$(cat "$battery/capacity")
+    status=$(cat "$battery/status")
+    if [ "$status" = "Charging" ]; then
+        if [ "$1" = "--nficons" ]; then
+            if [ "$capacity" -ge 90 ]; then
+                batstat="󰂅"
+            elif [ "$capacity" -ge 70 ]; then
+                batstat="󰂊"
+            elif [ "$capacity" -ge 50 ]; then
+                batstat="󰂉"
+            elif [ "$capacity" -ge 25 ]; then
+                batstat="󰂈"
+            else
+                batstat="󰂆"
+            fi
+        else
+            batstat="CHG"
+        fi
+    else
+        if [ "$1" = "--nficons" ]; then
+            if [ "$capacity" -ge 90 ]; then
+                batstat="󰁹"
+            elif [ "$capacity" -ge 70 ]; then
+                batstat="󰂁"
+            elif [ "$capacity" -ge 50 ]; then
+                batstat="󰁿"
+            elif [ "$capacity" -ge 25 ]; then
+                batstat="󰁽"
+            else
+                batstat="󰁻"
+            fi
+        else
+            batstat="BAT"
+        fi
+    fi
+    # Prints the info
+    printf "%s %d%%\n" "$batstat" "$capacity"
 done

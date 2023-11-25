@@ -1,3 +1,4 @@
 #!/bin/sh
 
-free | awk 'NR == 2 {printf "󰍛 %d%%\n", $3/$2*100}'
+[ "$1" = "--nficons" ] && ramicon="󰍛" || ramicon="RAM"
+free | awk -v ramicon="$ramicon" 'NR == 2 {printf "%s %d%%\n", ramicon, $3/$2*100}'

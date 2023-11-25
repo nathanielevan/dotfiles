@@ -1,3 +1,4 @@
 #!/bin/sh
 
-echo "$(date "+%a, %d %b %H:%M")"
+[ "$1" = "--nficons" ] && clockicon="󰅐"
+echo "${clockicon} $(date "+%a, %d %b %H:%M")"

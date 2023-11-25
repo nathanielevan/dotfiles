@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# cache to store previous cpu reading
+cache="/tmp/cpustatscache"
+
+[ "$1" = "--nficons" ] && sysicon="󰄧" && loadingicon="󰑓" || { sysicon="SYS" && loadingicon="?"; }
+
+# id total idle
+# total = user + nice + system + idle
+current=$(awk '$1 == "cpu" {printf "%d %d\n", ($2 + $3 + $4 + $5), $5 }' /proc/stat)
+
+getcpupct() {
+        old=$(cat "$cache")
+        currtotal=${current%% *} # exclude everything after first space in $current
+        curridle=${current##* } # exclude everything up to first space
+        cpustat=$(echo "$old" | awk -v currtotal="$currtotal" -v curridle="$curridle" '{printf "C:%d%%", (1 - (curridle - $2) / (currtotal - $1)) * 100}')
+}
+
+[ ! -f $cache ] && cpustat="C:$loadingicon" || getcpupct
+
+ramstat=$(free | awk 'NR == 2 {printf "M:%d%%", $3/$2*100}')
+
+printf "%s %s %s\n" "$sysicon" "$cpustat" "$ramstat"
+
+echo "$current" > "$cache"

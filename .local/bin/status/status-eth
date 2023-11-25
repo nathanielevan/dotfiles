@@ -1,3 +1,5 @@
 #!/bin/sh
 
-grep -h up /sys/class/net/e*/operstate > /dev/null && printf "󰈁 CON" || printf "󰈂 DCT"
+[ "$1" = "--nficons" ] && ethconicon="󰈁" && ethdcticon="󰈂" || { ethconicon="ETH" && ethdcticon="$ethconicon"; }
+
+grep -h up /sys/class/net/e*/operstate > /dev/null && printf "%s CON\n" "$ethconicon" || printf "%s DCT\n" "$ethdcticon"

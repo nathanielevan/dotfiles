@@ -1,3 +1,17 @@
 #!/bin/sh
 
-bluetoothctl info | grep -q "Name" && printf "󰂱 CON" || { bluetoothctl show | grep -q "Powered: yes" && printf "󰂯 DCT" || printf "󰂲 OFF"; }
+bluetoothctl info | grep -q "Name" && bthstat="CON" || { bluetoothctl show | grep -q "Powered: yes" && bthstat="DCT" || bthstat="OFF"; }
+
+if [ "$1" = "--nficons" ]; then
+    if [ "$bthstat" = "CON" ]; then
+        bthicon="󰂱"
+    elif [ "$bthstat" = "DCT" ]; then
+        bthicon="󰂯"
+    elif [ "$bthstat" = "OFF" ]; then
+        bthicon="󰂲"
+    fi
+else
+    bthicon="BTH"
+fi
+
+printf "%s %s\n" "$bthicon" "$bthstat"

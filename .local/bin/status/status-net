@@ -6,14 +6,18 @@ signalstrength=$(awk 'NR==3 {printf("%.0f%%", $3*10/7)}' /proc/net/wireless)
 [ -z "$signalstrength" ] && wlanstat="W:DCT" || wlanstat="W:${signalstrength}"
 cat /sys/class/net/w*/carrier > /dev/null 2>&1 || wlanstat="W:OFF"
 
-if [ "$ethstat" = "E:CON" ]; then
-    icon="󰛳"
-elif [ "$wlanstat" = "W:OFF" ]; then
-    icon="󰅛"
-elif [ "$wlanstat" = "W:DCT" ]; then
-    icon="󰀃"
+if [ "$1" = "--nficons" ]; then
+    if [ "$ethstat" = "E:CON" ]; then
+        neticon="󰛳"
+    elif [ "$wlanstat" = "W:OFF" ]; then
+        neticon="󰅛"
+    elif [ "$wlanstat" = "W:DCT" ]; then
+        neticon="󰀃"
+    else
+        neticon="󰀂"
+    fi
 else
-    icon="󰀂"
+    neticon="NET"
 fi
 
-printf "%s %s %s" "$icon" "$ethstat" "$wlanstat"
+printf "%s %s %s\n" "$neticon" "$ethstat" "$wlanstat"
