@@ -5,7 +5,7 @@ cachefile="/tmp/volstatscache"
 ! [ -x "$(command -v pamixer)" ] && exit 1
 
 vol="$(pamixer --get-volume)"
-sink="$(pamixer --get-default-sink | tail -n 1 | cut -d '"' -f4)"
+sink="$(pamixer --get-default-sink | tail -n 1 | cut -d '\"' -f4)"
 ismute="$(pamixer --get-mute)"
 
 # volstatsnew="$(printf "$vol\n$sink\n$ismute")"
