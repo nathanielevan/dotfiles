@@ -14,7 +14,7 @@ if [ "$ismute" = "true" ]; then
     level="muted"
     [ "$1" = "--nficons" ] && volicon="󰖁" || volicon="MUTE"
 else
-    volicon="VOL"
+    [ "$1" = "--nficons" ] && volicon="󰕿" || volicon="VOL"
     if [ "$vol" -gt 100 ]; then
         level="overamplified"
         [ "$1" = "--nficons" ] && volicon="󰕾"
