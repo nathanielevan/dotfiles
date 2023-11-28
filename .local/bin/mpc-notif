@@ -2,13 +2,24 @@
 
 MPD_LIBRARY="${HOME}/Music"
 MPC_TEMP="/tmp/ncmpcpp"
+MPC_COVER_IMG="${MPC_TEMP}/mpc-playing.jpg"
 mkdir -p "$MPC_TEMP"
 
-trackData=$(mpc --format '%file%\n%title%\n%artist%\n%album%' current)
-trackFile=$(echo "$trackData" | head -1)
-trackTitle=$(echo "$trackData" | head -2 | tail -1)
-trackArtist=$(echo "$trackData" | tail -2 | head -1)
-trackAlbum=$(echo "$trackData" | tail -1)
+trackData=$(mpc --format 'File: %file%\nTitle: %title%\nArtist: %artist%\nAlbum: %album%' current)
+trackFile="${trackData#*File: }"
+trackFile="${trackFile%%
+*}"
+trackTitle="${trackData#*Title: }"
+trackTitle="${trackTitle%%
+*}"
+trackArtist="${trackData#*Artist: }"
+trackArtist="${trackArtist%%
+*}"
+trackAlbum="${trackData#*Album: }"
 
-rm -f "${MPC_TEMP}/mpc-playing.jpg" && ffmpeg -y -i "${MPD_LIBRARY}/${trackFile}" -an -c:v copy "${MPC_TEMP}/mpc-playing.jpg" 2>${MPC_TEMP}/mpc-notif.log
-notify-send "ncmpcpp" "󰎈 $trackTitle"'\n'" $trackArtist"'\n'"󰀥 $trackAlbum"
+[ -z "$trackTitle" ] && trackTitle="${trackFile}"
+
+rm -f "${MPC_COVER_IMG}"
+ffmpeg -y -i "${MPD_LIBRARY}/${trackFile}" -an -c:v copy "${MPC_COVER_IMG}" 2>${MPC_TEMP}/mpc-notif.log && ICON_NOTIF="${MPC_COVER_IMG}" || ICON_NOTIF="library-music"
+notify-send "ncmpcpp" "󰎈 $trackTitle"'\n'" $trackArtist"'\n'"󰀥 $trackAlbum" --icon="${ICON_NOTIF}"
+
