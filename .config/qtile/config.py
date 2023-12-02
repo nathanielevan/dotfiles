@@ -72,7 +72,7 @@ keys = [
     Key([mod], "comma", lazy.prev_screen(), desc="Switch to prev monitor"),
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on focused window"),
     # Miscellaneous keybinds for menu, audio, screenshot etc
-    Key([mod], "d", lazy.spawn("rofi -show drun -modi drun,run,window,ssh"), desc="Launch application with rofi"),
+    Key([mod], "d", lazy.spawn("rofi -show drun -modi drun,run,window,ssh -show-icons"), desc="Launch application with rofi"),
     # Key([mod], "d", lazy.spawn("j4-dmenu-desktop --dmenu \"dmenu -i -r -p \"drun:\"\" --term st --no-generic"), desc="Launch application with rofi"),
     Key([mod, "shift"], "d", lazy.spawn("rofi -show run -modi drun,run,window,ssh"), desc="Launch executable with rofi"),
     # Key([mod, "shift"], "d", lazy.spawn("dmenu_run -p \"run:\""), desc="Launch executable with rofi"),
