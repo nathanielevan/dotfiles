@@ -115,8 +115,8 @@ for i in groups:
 
 layouts = [
     layout.MonadTall(
-        border_normal='#45403d',
-        border_focus='#d8a657',
+        border_normal="#45403d",
+        border_focus="#d8a657",
         border_width=2,
         margin=12
     ),
@@ -139,38 +139,38 @@ widget_defaults = dict(
     font="monospace",
     fontsize=13,
     padding=3,
-    foreground='d4be98'
+    foreground="#d4be98"
 )
 extension_defaults = widget_defaults.copy()
-
 widget_sep = widget.Sep(
-    foreground='928374',
+    foreground="#928374",
     linewidth=1,
     padding=8,
     size_percent=70
 )
+
 screens = [
     Screen(
         top=bar.Bar(
             [
                 widget.GroupBox(
-                    active='d4be98',
-                    block_highlight_text_color='282828',
-                    highlight_method='block',
-                    # highlight_color=['282828','504945'],
-                    inactive='504945',
-                    other_current_screen_border='d4be98',
-                    other_screen_border='d4be98',
-                    this_current_screen_border='d8a657',
-                    this_screen_border='d8a657',
-                    urgent_border='ea6962',
-                    urgent_color='282828',
+                    active="#d4be98",
+                    block_highlight_text_color="#282828",
+                    highlight_method="block",
+                    # highlight_color=["#282828","#504945"],
+                    inactive="#504945",
+                    other_current_screen_border="#d4be98",
+                    other_screen_border="#d4be98",
+                    this_current_screen_border="#d8a657",
+                    this_screen_border="#d8a657",
+                    urgent_border="#ea6962",
+                    urgent_color="#282828",
                 ),
                 widget_sep,
                 widget.CurrentLayout(),
                 widget_sep,
                 widget.WindowName(
-                    foreground='d8a657',
+                    foreground="#d8a657",
                     for_current_screen=True
                 ),
                 widget_sep,
@@ -206,9 +206,9 @@ screens = [
                 widget.Systray(),
             ],
             24,
-            background='#282828',
+            background="#282828",
             border_width=[0, 4, 0, 4],
-            border_color='#282828'
+            border_color="#282828"
         ),
     ),
 ]
@@ -236,8 +236,8 @@ floating_layout = layout.Floating(
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
     ],
-    border_normal='#45403d',
-    border_focus='#d8a657',
+    border_normal="#45403d",
+    border_focus="#d8a657",
     border_width=2,
 )
 auto_fullscreen = True
