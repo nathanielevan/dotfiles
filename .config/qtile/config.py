@@ -67,10 +67,12 @@ keys = [
     # Toggle between different layouts as defined below
     Key([mod], "space", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on focused window"),
+    Key([mod, "shift"], "space", lazy.window.toggle_floating(), desc="Toggle floating on focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod], "period", lazy.next_screen(), desc="Switch to next monitor"),
     Key([mod], "comma", lazy.prev_screen(), desc="Switch to prev monitor"),
-    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on focused window"),
+
     # Miscellaneous keybinds for menu, audio, screenshot etc
     Key([mod], "d", lazy.spawn("rofi -show drun -modi drun,run,window,ssh -show-icons"), desc="Launch application with rofi"),
     # Key([mod], "d", lazy.spawn("j4-dmenu-desktop --dmenu \"dmenu -i -r -p \"drun:\"\" --term st --no-generic"), desc="Launch application with rofi"),
