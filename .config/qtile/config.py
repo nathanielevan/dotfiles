@@ -195,6 +195,7 @@ screens = [
                     empty_char="EMP",
                     # unknown_char="󰂑",
                     unknown_char="UNK",
+                    low_foreground="#ea6962",
                     # format="{char} {percent:2.0%} {hour:02d}:{min:02d}"
                     format="{char} {percent:2.0%} {hour:02d}:{min:02d}"
                 ),
