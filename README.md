@@ -18,7 +18,7 @@ Other relevant links:
         - Fira Code v1.206, patched with Nerd Fonts v3.0.2
         - Hack v4.000 (unreleased, latest commit [b4331b3](https://github.com/source-foundry/Hack/tree/b4331b33e163965959cc5d34a14f254bcc94bd20)) patched with Nerd Fonts v3.0.2, custom build (see `patch-hack.sh` inside directory)
         - Iosevka v24.1.3, patched with Nerd Fonts v3.0.2, custom build (see `private-build-plans.toml` inside directory)
-        - JetBrains Mono v2.304 with features `zero,cv07,cv08,cv11,cv12,cv18,cv20` enabled by default, patched with Nerd Fonts v3.0.2
+        - JetBrains Mono v2.304 with features `cv03,cv07,cv08,cv12,zero` enabled by default, patched with Nerd Fonts v3.0.2
 
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.
