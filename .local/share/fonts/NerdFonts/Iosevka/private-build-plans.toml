@@ -1,38 +1,19 @@
 [buildPlans.iosevka]
 family = "Iosevka"
-spacing = "normal"
-# spacing = "fontconfig-mono"
+spacing = "fontconfig-mono"
 serifs = "sans"
 no-cv-ss = true
 export-glyph-names = false
 
 [buildPlans.iosevka.variants.design]
-capital-j = "serifless"
-capital-q = "crossing"
-f = "flat-hook-serifless-crossbar-at-x-height"
 g = "double-storey"
-l = "serifed"
-r = "hookless-serifless"
-t = "flat-hook"
-y = "straight-turn-serifless"
-long-s = "flat-hook-serifless"
-eszet = "longs-s-lig"
-lower-lambda = "straight-turn"
-cyrl-capital-u = "straight-turn-serifless"
+eszet = "longs-s-lig-serifless"
 zero = "tall-slashed"
-one = "base"
 two = "straight-neck"
-three = "flat-top"
+four = "closed"
 six = "closed-contour"
-seven = "straight-serifed"
 nine = "closed-contour"
-percent = "rings-continuous-slash"
-
-[buildPlans.iosevka.variants.italic]
-a = "double-storey-tailed"
-e = "flat-crossbar"
-i = "serifed"
-k = "straight-serifless"
+percent = "dots"
 
 [buildPlans.iosevka.weights.regular]
 shape = 400
@@ -45,7 +26,7 @@ menu = 700
 css = 700
 
 [buildPlans.iosevka.widths.normal]
-shape = 547
+shape = 548
 menu = 5
 css = "normal"
 
