@@ -6,7 +6,7 @@ fmtout='{{ title }}
 {{ mpris:artUrl }}'
 
 SPOTIFYD_TMP="/tmp/spotifyd"
-SPOTIFYD_COVER_IMG"${SPOTIFYD_TMP}/spotify-playing.jpg"
+SPOTIFYD_COVER_IMG="${SPOTIFYD_TMP}/spotify-playing.jpg"
 mkdir -p "${SPOTIFYD_TMP}"
 
 if [ "$PLAYER_EVENT" = "start" ] || [ "$PLAYER_EVENT" = "change" ];
