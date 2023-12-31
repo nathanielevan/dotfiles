@@ -1,0 +1,91 @@
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[colors.bright]
+black = "#928374"
+blue = "#9dc2ba"
+cyan = "#a7c7a2"
+green = "#bbc585"
+magenta = "#e1acbb"
+red = "#ef938e"
+white = "#e2d3ba"
+yellow = "#e1bb7e"
+
+[colors.hints.end]
+background = "#45403d"
+foreground = "#d8a657"
+
+[colors.hints.start]
+background = "#d8a657"
+foreground = "#282828"
+
+[colors.normal]
+black = "#282828"
+blue = "#7daea3"
+cyan = "#89b482"
+green = "#a9b665"
+magenta = "#d3869b"
+red = "#ea6962"
+white = "#d4be98"
+yellow = "#d8a657"
+
+[colors.primary]
+background = "#282828"
+foreground = "#d4be98"
+
+[colors.search.focused_match]
+background = "#d8a657"
+foreground = "#282828"
+
+[colors.search.matches]
+background = "#45403d"
+foreground = "#d4be98"
+
+[cursor.style]
+blinking = "On"
+shape = "Underline"
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1"
+
+[font]
+builtin_box_drawing = true
+size = 11
+
+[font.bold]
+style = "Bold"
+
+[font.bold_italic]
+style = "Bold Italic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "Iosevka Nerd Font Mono"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[mouse]
+hide_when_typing = true
+
+[window]
+decorations = "full"
+dynamic_title = true
+startup_mode = "Windowed"
+title = "Alacritty"
+
+[window.dimensions]
+columns = 80
+lines = 22
+
+[window.padding]
+x = 12
+y = 12
