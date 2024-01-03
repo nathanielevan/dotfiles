@@ -10,10 +10,11 @@ g = "double-storey"
 eszet = "longs-s-lig-serifless"
 zero = "tall-slashed"
 two = "straight-neck"
-four = "closed"
+three = "flat-top"
+five = "upright-flat"
 six = "closed-contour"
 nine = "closed-contour"
-percent = "dots"
+percent = "rings-continuous-slash"
 
 [buildPlans.iosevka.weights.regular]
 shape = 400
@@ -26,7 +27,7 @@ menu = 700
 css = 700
 
 [buildPlans.iosevka.widths.normal]
-shape = 548
+shape = 560
 menu = 5
 css = "normal"
 
