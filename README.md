@@ -16,8 +16,8 @@ Other relevant links:
     + Fonts included in this repository are:
         - Fantasque Sans Mono v1.8.0, large line height, no loop K version, patched with Nerd Fonts v3.0.2
         - Fira Code v1.206, patched with Nerd Fonts v3.0.2
-        - Hack v3.000 commit [706b2b2](https://github.com/source-foundry/Hack/tree/706b2b23b0f35d8db5800a6d8c4b02d9e54bee4c) patched with Nerd Fonts v3.0.2, custom build (see `patch-hack.sh` inside directory), 30% UPM
-        - Iosevka v27.3.5, patched with Nerd Fonts v3.0.2, custom build (see `private-build-plans.toml` inside directory)
+        - Hack v3.000 commit [706b2b2](https://github.com/source-foundry/Hack/tree/706b2b23b0f35d8db5800a6d8c4b02d9e54bee4c) patched with Nerd Fonts v3.0.2, custom build (see [patch-hack.sh](.local/share/fonts/NerdFonts/Hack/patch-hack.sh)), 30% UPM
+        - Iosevka v27.3.5, patched with Nerd Fonts v3.0.2, custom build (see [private-build-plans.toml](.local/share/fonts/NerdFonts/Iosevka/private-build-plans.toml))
         - JetBrains Mono v2.304 with features `cv03,cv07,cv08,cv12,zero` enabled by default, patched with Nerd Fonts v3.0.2
 
 ## Notes
