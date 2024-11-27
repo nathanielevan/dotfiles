@@ -21,9 +21,9 @@ if not status_ok then
 end
 
 lazy.setup({
-    { 'sainnhe/gruvbox-material',
+    { 'ellisonleao/gruvbox.nvim',
         config = function()
-            require('plugins.config.gruvbox-material')
+            require('plugins.config.gruvbox')
         end,
     },
     { 'nvim-tree/nvim-web-devicons',
