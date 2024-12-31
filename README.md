@@ -14,12 +14,9 @@ Other relevant links:
 * `.local/bin` is where I store miscellaneous shell scripts for e.g. dwmblocks, power menu, monitor switching menu etc.
 * `.local/share` contains miscellaneous files e.g. desktop files, zsh plugins, custom font builds etc.
     + Fonts included in this repository are:
-        - Fantasque Sans Mono v1.8.0, large line height, no loop K version, patched with Nerd Fonts v3.0.2
-        - Fira Code v1.206, patched with Nerd Fonts v3.0.2
-        - Hack v3.000 commit [706b2b2](https://github.com/source-foundry/Hack/tree/706b2b23b0f35d8db5800a6d8c4b02d9e54bee4c) patched with Nerd Fonts v3.0.2, custom build (see [patch-hack.sh](.local/share/fonts/NerdFonts/Hack/patch-hack.sh)), 30% UPM
-        - Inconsolata LGC v1.5.1, patched with Nerd Fonts v3.0.2, 30% UPM
-        - Iosevka v28.1.0, patched with Nerd Fonts v3.0.2, custom build (see [private-build-plans.toml](.local/share/fonts/NerdFonts/Iosevka/private-build-plans.toml))
-        - JetBrains Mono v2.304 with features `cv07,cv08,cv12,zero` enabled by default, patched with Nerd Fonts v3.0.2
+        - Hack v3.000 commit [706b2b2](https://github.com/source-foundry/Hack/tree/706b2b23b0f35d8db5800a6d8c4b02d9e54bee4c), custom build (see [patch-hack.sh](.local/share/fonts/NerdFonts/Hack/patch-hack.sh)), 30% UPM
+        - Iosevka v32.1.0, custom build (see [private-build-plans.toml](.local/share/fonts/NerdFonts/Iosevka/private-build-plans.toml))
+        - JetBrains Mono NL (no ligatures) v2.304 with features `cv07,cv08,cv12,cv20,zero` enabled by default
 
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.

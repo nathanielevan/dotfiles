@@ -1,0 +1,65 @@
+feature zero {
+    substitute zero by zero.zero;
+} zero;
+
+feature cv07 {
+    substitute W by W.cv07;
+    substitute w by w.cv07;
+    substitute Wacute by Wacute.cv07;
+    substitute wacute by wacute.cv07;
+    substitute Wcircumflex by Wcircumflex.cv07;
+    substitute wcircumflex by wcircumflex.cv07;
+    substitute Wdieresis by Wdieresis.cv07;
+    substitute wdieresis by wdieresis.cv07;
+    substitute Wgrave by Wgrave.cv07;
+    substitute wgrave by wgrave.cv07;
+} cv07;
+
+feature cv08 {
+    substitute uni040C by uni040C.cv08;
+    substitute uni0416 by uni0416.cv08;
+    substitute uni041A by uni041A.cv08;
+    substitute uni0436 by uni0436.cv08;
+    substitute uni043A by uni043A.cv08;
+    substitute uni045C by uni045C.cv08;
+    substitute uni049A by uni049A.cv08;
+    substitute uni049B by uni049B.cv08;
+    substitute uni03CF by uni03CF.cv08;
+    substitute uni0136 by uni0136.cv08;
+    substitute uni0137 by uni0137.cv08;
+    substitute K by K.cv08;
+    substitute k by k.cv08;
+    substitute Kappa by Kappa.cv08;
+    substitute kappa by kappa.cv08;
+    substitute kgreenlandic by kgreenlandic.cv08;
+} cv08;
+
+feature cv12 {
+    substitute uni1EE5 by uni1EE5.cv12;
+    substitute uni1EE7 by uni1EE7.cv12;
+    substitute uni1EE9 by uni1EE9.cv12;
+    substitute uni1EEB by uni1EEB.cv12;
+    substitute uni1EED by uni1EED.cv12;
+    substitute uni1EEF by uni1EEF.cv12;
+    substitute uni1EF1 by uni1EF1.cv12;
+    substitute u by u.cv12;
+    substitute uacute by uacute.cv12;
+    substitute ubreve by ubreve.cv12;
+    substitute ucircumflex by ucircumflex.cv12;
+    substitute udieresis by udieresis.cv12;
+    substitute ugrave by ugrave.cv12;
+    substitute uhorn by uhorn.cv12;
+    substitute uhungarumlaut by uhungarumlaut.cv12;
+    substitute umacron by umacron.cv12;
+    substitute uogonek by uogonek.cv12;
+    substitute uring by uring.cv12;
+    substitute utilde by utilde.cv12;
+} cv12;
+
+feature cv20 {
+    substitute five by five.cv20;
+    substitute five.dnom by five.dnom.cv20;
+    substitute five.numr by five.numr.cv20;
+    substitute uni2075 by uni2075.cv20;
+    substitute uni2085 by uni2085.cv20;
+} cv20;
