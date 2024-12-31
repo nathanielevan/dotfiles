@@ -14,8 +14,8 @@ Other relevant links:
 * `.local/bin` is where I store miscellaneous shell scripts for e.g. dwmblocks, power menu, monitor switching menu etc.
 * `.local/share` contains miscellaneous files e.g. desktop files, zsh plugins, custom font builds etc.
     + Fonts included in this repository are:
-        - Hack v3.000 commit [706b2b2](https://github.com/source-foundry/Hack/tree/706b2b23b0f35d8db5800a6d8c4b02d9e54bee4c), custom build (see [patch-hack.sh](.local/share/fonts/NerdFonts/Hack/patch-hack.sh)), 30% UPM
-        - Iosevka v32.1.0, custom build (see [private-build-plans.toml](.local/share/fonts/NerdFonts/Iosevka/private-build-plans.toml))
+        - Hack v3.000 commit [706b2b2](https://github.com/source-foundry/Hack/tree/706b2b23b0f35d8db5800a6d8c4b02d9e54bee4c), custom build (see [patch-hack.sh](.local/share/fonts/Hack/patch-hack.sh)), 30% UPM
+        - Iosevka v32.1.0, custom build (see [private-build-plans.toml](.local/share/fonts/IosevkaCustom/private-build-plans.toml))
         - JetBrains Mono NL (no ligatures) v2.304 with features `cv07,cv08,cv12,cv20,zero` enabled by default
 
 ## Notes
