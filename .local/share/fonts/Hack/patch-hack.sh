@@ -7,13 +7,11 @@
 # ---------------------------------------------------
 
 # 1. Set the path to the downloaded Hack repo here first
-HACK_PATH="${HOME}/Downloads/fonts/Hack-3.000"
+HACK_PATH="${HOME}/Downloads/fonts/Hack"
 
 # 2. List your alternate glyphs here
 declare -a alternates=(
     "u0030-forwardslash"
-    "u003C-wider"
-    "u003E-wider"
     "u0069-slab"
     "u00EC-slab"
     "u00ED-slab"
