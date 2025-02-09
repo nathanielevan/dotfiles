@@ -43,10 +43,10 @@ Xft.dpi: 96
 
 ! sxiv config
 
-! Sxiv.font: DMCASansSerif Nerd Font Propo:pixelsize=13
-! Sxiv.font: FantasqueSansM Nerd Font Propo:pixelsize=13
-! Sxiv.font: FiraCode Nerd Font Propo:pixelsize=12
-! Sxiv.font: Hack Nerd Font Propo:pixelsize=12
-! Sxiv.font: Inconsolata LGC Nerd Font Propo:pixelsize=12
-Sxiv.font: Iosevka Nerd Font Propo:pixelsize=13
-! Sxiv.font: JetBrainsMono Nerd Font Propo:pixelsize=12
+! Sxiv.font: DMCA Sans Serif:pixelsize=13
+! Sxiv.font: Fantasque Sans Mono:pixelsize=13
+! Sxiv.font: Fira Code:pixelsize=12
+! Sxiv.font: Hack:pixelsize=12
+! Sxiv.font: Inconsolata LGC:pixelsize=12
+Sxiv.font: Iosevka Custom:pixelsize=13
+! Sxiv.font: JetBrains Mono:pixelsize=12
