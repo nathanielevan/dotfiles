@@ -6,5 +6,5 @@ udiskie -s &
 picom -b
 xsetroot -cursor_name left_ptr &
 feh --bg-fill --no-fehbg ~/.config/wallpapers/wallpaper.jpg
+# nitrogen --set-zoom-fill ~/.config/wallpapers/wallpaper.jpg
 xss-lock --transfer-sleep-lock -- slock &
-srandrd setmonitor
