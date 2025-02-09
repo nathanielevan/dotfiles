@@ -1,7 +1,7 @@
 ! Set logical DPI to 96
 Xft.dpi: 96
 
-! Gruvbox material color theme
+! Gruvbox color theme
 
 #define black0 #282828
 #define black1 #928374
