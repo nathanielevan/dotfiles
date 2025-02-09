@@ -22,7 +22,6 @@ Xft.dpi: 96
 
 *.foreground:   white1
 *.background:   black0
-! URxvt.background: [90]black0
 *.cursorColor:  white1
 
 *.color0: black0
@@ -41,51 +40,6 @@ Xft.dpi: 96
 *.color13: magenta1
 *.color14: cyan1
 *.color15: white1
-
-!! urxvt config
-
-URxvt.font: xft:FantasqueSansM Nerd Font Mono:style=Regular:pixelsize=15, \
-            xft:Noto Sans CJK JP:style=Regular:pixelsize=15
-URxvt.boldFont: xft:FantasqueSansM Nerd Font Mono:style=Bold:pixelsize=15, \
-                xft:Noto Sans CJK JP:style=Bold:pixelsize=15
-URxvt.italicFont: xft:FantasqueSansM Nerd Font Mono:style=Italic:pixelsize=15, \
-                  xft:Noto Sans CJK JP:style=Regular:pixelsize=15
-URxvt.boldItalicFont: xft:FantasqueSansM Nerd Font Mono:style=Bold Italic:pixelsize=15, \
-                      xft:Noto Sans CJK JP:style=Bold:pixelsize=15
-
-URxvt.letterSpace: 0
-URxvt.skipBuiltinGlyphs: 1
-URxvt.scrollBar: false
-URxvt.depth: 32
-URxvt.internalBorder: 15
-URxvt.cursorUnderline: true
-URxvt.cursorBlink: true
-URxvt.iso14755: false
-
-! see arch linux wiki on urxvt
-
-URxvt.scrollTtyOutput: false
-URxvt.scrollWithBuffer: true
-URxvt.scrollTtyKeypress: true
-URxvt.secondaryScreen: 1
-URxvt.secondaryScroll: 0
-URxvt.loginShell: true
-
-! plugins
-! keyboard-select uses vim keybindings
-! by default urxvt supports Ctrl-Alt-c/v for copy/pasting to clipboard respectively
-
-URxvt.perl-ext-common:      default,url-select,keyboard-select,resize-font
-URxvt.url-select.launcher:  firefox
-URxvt.url-select.underline: true
-URxvt.url-select.button:    2
-URxvt.keysym.M-u:           perl:url-select:select_next
-URxvt.keysym.M-Escape:      perl:keyboard-select:activate
-URxvt.keysym.M-s:           perl:keyboard-select:search
-URxvt.keysym.C-minus:       resize-font:smaller
-URxvt.keysym.C-plus:        resize-font:bigger
-URxvt.keysym.C-equal:       resize-font:reset
-URxvt.keysym.C-question:    resize-font:show
 
 ! sxiv config
 
