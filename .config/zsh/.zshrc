@@ -212,6 +212,3 @@ fi
 # source $XDG_DATA_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Refer to zsh-users/zsh-syntax-highlighting#510
 # ZSH_HIGHLIGHT_STYLES[comment]='none'
-
-## Load powerlevel10k
-# source $XDG_DATA_HOME/zsh/plugins/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
