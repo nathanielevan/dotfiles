@@ -7,12 +7,11 @@ set font "Iosevka Custom 10"
 # set font "JetBrains Mono 9"
 # set font "Noto Sans Mono 9"
 set sandbox none
-set first-page-column "1:1"
 set guioptions "s"
 set window-title-basename "true"
 set window-title-page "true"
 set scroll-page-aware "true"
-set statusbar-v-padding 2
+set statusbar-v-padding 0
 
 set default-bg "#282828"
 set default-fg "#ebdbb2"
