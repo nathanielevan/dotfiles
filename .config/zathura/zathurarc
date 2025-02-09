@@ -15,35 +15,36 @@ set scroll-page-aware "true"
 set statusbar-v-padding 2
 
 set default-bg "#282828"
-set default-fg "#d4be98"
+set default-fg "#ebdbb2"
 
-set recolor-darkcolor "#d4be98"
+set recolor-darkcolor "#ebdbb2"
 set recolor-lightcolor "#282828"
 
-set statusbar-bg "#d4be98"
+set statusbar-bg "#ebdbb2"
 set statusbar-fg "#282828"
 
 set inputbar-bg "#282828"
-set inputbar-fg "#d4be98"
+set inputbar-fg "#ebdbb2"
 
 set index-bg "#282828"
-set index-fg "#d4be98"
-set index-active-bg "#d8a657"
+set index-fg "#ebdbb2"
+set index-active-bg "#d79921"
 set index-active-fg "#282828"
 
 set notification-bg "#282828"
-set notification-fg "#d4be98"
-set notification-error-bg "#ea6962"
+set notification-fg "#ebdbb2"
+set notification-error-bg "#cc241d"
 set notification-error-fg "#282828"
 set notification-warning-bg "#282828"
-set notification-warning-fg "#d8a657"
+set notification-warning-fg "#d79921"
 
 set completion-bg "#282828"
-set completion-fg "#d4be98"
+set completion-fg "#ebdbb2"
 set completion-group-bg "#282828"
-set completion-group-fg "#d4be98"
-set completion-highlight-bg "#d8a657"
+set completion-group-fg "#ebdbb2"
+set completion-highlight-bg "#d79921"
 set completion-highlight-fg "#282828"
 
-set highlight-color "#a9b665"
-set highlight-active-color "#d8a657"
+set highlight-color "rgba(184,187,38,0.5)" #b8bb26, 0.5 alpha
+set highlight-active-color "rgba(250,189,47,0.5)" #fabd2f, 0.5 alpha
+set highlight-fg "#282828"
