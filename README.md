@@ -12,7 +12,7 @@ Other relevant links:
 * `.config` is where my configuration files reside.
     + You can find my wallpaper in `.config/wallpapers`.
 * `.local/bin` is where I store shell scripts for dwmblocks, power menu, monitor switching menu etc.
-* `.local/share` contains miscellaneous files e.g. .desktop files, zsh plugins, custom font builds etc.\
+* `.local/share` contains miscellaneous files e.g. `.desktop` files, zsh plugins, custom font builds etc.\
 Feel free to grab my custom font builds:
     + Hack v4.000 (unreleased, commit [b4331b3](https://github.com/source-foundry/Hack/tree/b4331b33e163965959cc5d34a14f254bcc94bd20))
         - Forward-slash zero and slab lower-case i, see [patch-hack.sh](.local/share/fonts/Hack/patch-hack.sh)
