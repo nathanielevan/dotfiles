@@ -24,7 +24,6 @@ Feel free to grab my custom font builds:
 
 ## Notes
 * These configuration files assume that the target system is running Arch Linux.
-* Parts of this configuration make use of [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts), currently at version 3.0.2. Make sure that you have a patched font or the symbols-only font installed.
 * Does not include system-wide configurations, e.g. systemd power management config (which I use in my machine)
 * Due to the size of this repo, use `git clone --depth=1` or download the ZIP archive [here](https://github.com/nathanielevan/dotfiles/archive/refs/heads/master.zip) if you just need to get the files.
 
