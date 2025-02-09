@@ -5,25 +5,25 @@ Xft.dpi: 96
 
 #define black0 #282828
 #define black1 #928374
-#define red0 #ea6962
-#define red1 #ef938e
-#define green0 #a9b665
-#define green1 #bbc585
-#define yellow0 #d8a657
-#define yellow1 #e1bb7e
-#define blue0 #7daea3
-#define blue1 #9dc2ba
-#define magenta0 #d3869b
-#define magenta1 #e1acbb
-#define cyan0 #89b482
-#define cyan1 #a7c7a2
-#define white0 #d4be98
-#define white1 #e2d3ba
+#define red0 #cc241d
+#define red1 #fb4934
+#define green0 #98971a
+#define green1 #b8bb26
+#define yellow0 #d79921
+#define yellow1 #fabd2f
+#define blue0 #458588
+#define blue1 #83a598
+#define magenta0 #b16286
+#define magenta1 #d3869b
+#define cyan0 #689d6a
+#define cyan1 #8ec07c
+#define white0 #a89984
+#define white1 #ebdbb2
 
-*.foreground:   white0
+*.foreground:   white1
 *.background:   black0
 ! URxvt.background: [90]black0
-*.cursorColor:  white0
+*.cursorColor:  white1
 
 *.color0: black0
 *.color1: red0
