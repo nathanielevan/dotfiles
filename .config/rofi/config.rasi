@@ -34,16 +34,15 @@ configuration {
 
 * {
     black0: #282828;
-    black1: #32302f;
-    black2: #45403d;
-    red: #ea6962;
-    green: #a9b665;
-    yellow: #d8a657;
-    blue: #7daea3;
-    magenta: #d3869b;
-    cyan: #89b482;
-    white0: #d4be98;
-    white1: #e2d3ba;
+    black1: #3c3836;
+    black2: #504945;
+    red: #cc241d;
+    green: #98971a;
+    yellow: #d79921;
+    blue: #458588;
+    magenta: #b16286;
+    cyan: #689d6a;
+    white0: #ebdbb2;
     grey0: #a89984;
     grey1: #928374;
 
