@@ -516,12 +516,12 @@
   </keybind>
   <keybind key="W-S-d">
     <action name="Execute">
-      <command>rofi -show run -modi drun,run,window,ssh</command>
+      <command>rofi -show run -modi drun,run,window,ssh -show-icons</command>
     </action>
   </keybind>
   <keybind key="W-Escape">
     <action name="Execute">
-      <command>rofi -show window -modi drun,run,window,ssh</command>
+      <command>rofi -show window -modi drun,run,window,ssh -show-icons</command>
     </action>
   </keybind>
   <keybind key="W-S-e">
