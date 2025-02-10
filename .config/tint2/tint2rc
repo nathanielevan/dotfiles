@@ -303,7 +303,7 @@ button_font = Iosevka Custom 10
 button_font_color = #282828 100
 button_centered = 1
 button_background_id = 7
-button_lclick_command = rofi -show drun -modi drun,run,window,ssh
+button_lclick_command = rofi -show drun -modi drun,run,window,ssh -show-icons
 
 #-------------------------------------
 # Exit button
