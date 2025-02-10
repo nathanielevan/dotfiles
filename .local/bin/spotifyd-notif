@@ -19,5 +19,5 @@ then
 
         rm -f "${SPOTIFYD_COVER_IMG}"
         curl -sS -o "${SPOTIFYD_COVER_IMG}" -m 5 ${trackArtUrl} 2>${SPOTIFYD_TMP}/spotifyd-notif.log && ICON_NOTIF="${SPOTIFYD_COVER_IMG}" || ICON_NOTIF="${HOME}/.config/dunst/spotify.png"
-        notify-send "spotifyd" "󰎈 $trackTitle"'\n'" $trackArtist"'\n'"󰀥 $trackAlbum" --icon="${ICON_NOTIF}"
+        notify-send "spotifyd" "▶ <b>$trackTitle</b>"'\n'"<i>by</i> <b>$trackArtist</b>"'\n'"<i>on</i> <b>$trackAlbum</b>" --icon="${ICON_NOTIF}"
 fi

@@ -21,5 +21,4 @@ trackAlbum="${trackData#*Album: }"
 
 rm -f "${MPC_COVER_IMG}"
 ffmpeg -y -i "${MPD_LIBRARY}/${trackFile}" -an -c:v copy "${MPC_COVER_IMG}" 2>${MPC_TEMP}/mpc-notif.log && ICON_NOTIF="${MPC_COVER_IMG}" || ICON_NOTIF="library-music"
-notify-send "ncmpcpp" "󰎈 $trackTitle"'\n'" $trackArtist"'\n'"󰀥 $trackAlbum" --icon="${ICON_NOTIF}"
-
+notify-send "ncmpcpp" "▶ <b>$trackTitle</b>"'\n'"<i>by</i> <b>$trackArtist</b>"'\n'"<i>on</i> <b>$trackAlbum</b>" --icon="${ICON_NOTIF}"
