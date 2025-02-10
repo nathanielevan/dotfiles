@@ -14,10 +14,6 @@ configuration {
 	scroll-method: 1;
 	m: "-5";
 	cycle: false;
-	display-drun: "󰀻";
-	display-run: "";
-	display-window: "󰖲";
-	display-ssh: "󰒍";
 	cache-dir: ".cache/rofi";
 /*	window-format: "{w}    {c}   {t}";*/
 /*	theme: ;*/
