@@ -289,7 +289,7 @@ tooltip_font_color = #d4be98 100
 #-------------------------------------
 # Launch button
 button = new
-button_text = 󰌧 Launch
+button_text = Launch
 button_tooltip = Application launcher
 button_padding = 8 0 6
 # button_font = DMCA Sans Serif 10
@@ -308,7 +308,7 @@ button_lclick_command = rofi -show drun -modi drun,run,window,ssh -show-icons
 #-------------------------------------
 # Exit button
 button = new
-button_text = 󰐥 Exit
+button_text = Exit
 button_tooltip = Power menu
 button_padding = 8 0 6
 # button_font = DMCA Sans Serif 10
