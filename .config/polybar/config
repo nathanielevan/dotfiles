@@ -62,14 +62,14 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 0
 
-;font-0 = DMCASansSerif Nerd Font Propo:style=Regular:size=11;3
-;font-0 = FantasqueSansM Nerd Font Propo:style=Regular:size=11;3
-;font-0 = FiraCode Nerd Font Propo:style=Regular:pixelsize=11;3
-;font-0 = Hack Nerd Font Propo:style=Regular:pixelsize=11;3
-;font-0 = Inconsolata LGC Nerd Font Propo:style=Regular:pixelsize=11;3
-font-0 = Iosevka Nerd Font Propo:style=Regular:size=11;3
-;font-0 = JetBrainsMono Nerd Font Propo:style=Regular:pixelsize=11;3
-;font-0 = NotoSansM Nerd Font Propo:style=Regular:pixelsize=11;3
+;font-0 = DMCA Sans Serif:style=Regular:size=11;3
+;font-0 = Fantasque Sans Mono:style=Regular:size=11;3
+;font-0 = Fira Code:style=Regular:pixelsize=11;3
+;font-0 = Hack:style=Regular:pixelsize=11;3
+;font-0 = Inconsolata LGC:style=Regular:pixelsize=11;3
+font-0 = Iosevka Custom:style=Regular:size=11;3
+;font-0 = JetBrains Mono NL:style=Regular:pixelsize=11;3
+;font-0 = Noto Sans Mono:style=Regular:pixelsize=11;3
 
 modules-left = launcher ewmh eth wlan
 modules-center = date

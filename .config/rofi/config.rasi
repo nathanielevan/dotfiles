@@ -1,14 +1,15 @@
 configuration {
 /* Change button.padding and element.padding according to font spacing */
 /*	modi: "window,run,ssh";*/
-/*	font: "DMCASansSerif Nerd Font Propo 10";*/
-/*	font: "FantasqueSansM Nerd Font Propo 10";*/
-/*	font: "FiraCode Nerd Font Propo 9";*/
-/*	font: "Hack Nerd Font Propo 9";*/
-/*	font: "Inconsolata LGC Nerd Font Propo 9";*/
-	font: "Iosevka Nerd Font Propo 10";
-/*	font: "JetBrainsMono Nerd Font Propo 9";*/
-/*	font: "NotoSansM Nerd Font Propo 9";*/
+/*	font: "DMCA Sans Serif 10";*/
+/*	font: "Fantasque Sans Mono 10";*/
+/*	font: "Fira Code 9";*/
+/*	font: "Hack 9";
+/*	font: "Inconsolata LGC 9";*/
+	font: "Iosevka Custom 10";
+/*	font: "JetBrains Mono NL 9";*/
+/*	font: "Noto Sans Mono 9";*/
+/*	font: "UnifontExMono 12";*/
 	disable-history: true;
 	scroll-method: 1;
 	m: "-5";
