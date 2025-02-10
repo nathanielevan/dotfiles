@@ -1,5 +1,8 @@
 directory: ~/Music            # The default library root directory.
-plugins: fetchart embedart fromfilename lastgenre
+plugins: fetchart embedart fromfilename discogs info
 
 fetchart:
-  sources: itunes amazon coverart albumart
+  sources: itunes filesystem *
+
+discogs:
+  source_weight: 0.0
