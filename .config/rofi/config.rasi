@@ -42,125 +42,146 @@ configuration {
     grey0: #a89984;
     grey1: #928374;
 
-	background: var(black0);
-	alt-background: var(black1);
+	bg: var(black0);
+	alt-bg: var(black1);
 	selected: var(yellow);
 	active: var(green);
-	foreground: var(white0);
-	alt-foreground: var(background);
+	fg: var(white0);
+	alt-fg: var(bg);
 	urgent: var(red);
 }
 
 window {
-    border: 0px;
+    border: 2px;
+    border-color: var(alt-bg);
+    background-color: var(bg);
     padding: 8px;
     location: center;
     width: 600px;
 }
 
 mainbox {
-    children: [ inputbar, message, listview, mode-switcher ];
-    spacing: 8px; // 0px for css reset
+    children: [ promptbox, inputbar, message, listview, mode-switcher ];
+    spacing: 8px;
 }
 
-inputbar {
-    padding: 6px;
-    background-color: var(alt-background);
-    text-color: var(foreground);
-    children: [ prompt, textbox-prompt-colon, entry, num-filtered-rows, textbox-num-sep, num-rows ];
+promptbox {
+    orientation: horizontal;
+    children: [ prompt, num-filtered-rows, textbox-num-sep, num-rows ];
+    expand: false;
+    padding: 0px;
 }
 
 prompt {
-    padding: 0px 4px 0px 2px;
-    text-color: var(foreground);
+    text-color: var(grey0);
+    expand: true;
 }
 
 textbox-prompt-colon {
-	str: "";
-}
-
-entry {
-    placeholder-color: var(grey1);
-    text-color: var(foreground);
+    enabled: false;
 }
 
 num-rows, num-filtered-rows, textbox-num-sep {
     text-color: var(yellow);
 }
 
+inputbar {
+    padding: 6px;
+    background-color: var(alt-bg);
+    text-color: var(fg);
+    children: [ entry ];
+    expand: false;
+}
+
+entry {
+    placeholder-color: var(grey1);
+    text-color: var(fg);
+}
+
 message {
-    padding: 4px;
+    padding: 4px 0px;
     border: 1px 0px;
     border-color: var(black2);
 }
 
-listview {
-    padding: 0px; // css reset
-    border: none;
-    lines: 10;
+textbox {
+    text-color: var(fg);
 }
 
-scrollbar {
-    padding: 0px 0px 0px 4px;
-    handle-color: var(grey1);
-    handle-width: 8px;
+listview {
+    padding: 0px;
+    border: none;
+    lines: 10;
+    spacing: 0px; // set to 0px for css reset
 }
 
 element {
-    padding: 3px 4px;
+    padding: 4px;
+    margin: 0px;
 }
 
 element normal.normal {
-	background-color: var(background);
-	text-color: var(foreground);
+	background-color: var(bg);
+	text-color: var(fg);
 }
 
 element normal.urgent {
-	background-color: var(background);
+	background-color: var(bg);
 	text-color: var(urgent);
 }
 
 element normal.active {
-	background-color: var(background);
+	background-color: var(bg);
 	text-color: var(active);
 }
 
 element selected.normal {
 	background-color: var(selected);
-	text-color: var(alt-foreground);
+	text-color: var(alt-fg);
 }
 
 element selected.urgent {
 	background-color: var(urgent);
-	text-color: var(alt-foreground);
+	text-color: var(alt-fg);
 }
 
 element selected.active {
 	background-color: var(active);
-	text-color: var(alt-foreground);
+	text-color: var(alt-fg);
 }
 
 element alternate.normal {
-	background-color: var(background);
-	text-color: var(foreground);
+	background-color: var(bg);
+	text-color: var(fg);
 }
 
 element alternate.urgent {
-	background-color: var(background);
+	background-color: var(bg);
 	text-color: var(urgent);
 }
 
 element alternate.active {
-	background-color: var(background);
+	background-color: var(bg);
 	text-color: var(active);
 }
 
+scrollbar {
+    padding: 0px 0px 0px 6px;
+    handle-color: var(grey0);
+    handle-width: 8px;
+    border: 0px;
+}
+
 button {
-    text-color: var(foreground);
+    text-color: var(fg);
     padding: 2px;
 }
 
 button selected {
     background-color: var(grey0);
-    text-color: var(alt-foreground);
+    text-color: var(alt-fg);
+}
+
+error-message {
+    padding: 2px;
 }
