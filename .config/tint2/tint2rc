@@ -32,9 +32,9 @@ rounded = 0
 border_width = 1
 border_sides = TBLR
 background_color = #282828 100
-border_color = #d8a657 100
+border_color = #d79921 100
 background_color_hover = #32302f 100
-border_color_hover = #e1bb7e 100
+border_color_hover = #fabd2f 100
 background_color_pressed = #1d2021 100
 border_color_pressed = #928374 100
 
@@ -42,22 +42,22 @@ border_color_pressed = #928374 100
 rounded = 0
 border_width = 0
 border_sides = TBLR
-background_color = #d8a657 100
-border_color = #d8a657 100
-background_color_hover = #d8a657 100
-border_color_hover = #d8a657 100
-background_color_pressed = #d8a657 100
-border_color_pressed = #d8a657 100
+background_color = #d79921 100
+border_color = #d79921 100
+background_color_hover = #d79921 100
+border_color_hover = #d79921 100
+background_color_pressed = #d79921 100
+border_color_pressed = #d79921 100
 
 # Background 5: Urgent task
 rounded = 0
 border_width = 0
 border_sides = TBLR
-background_color = #ea6962 100
+background_color = #cc241d 100
 border_color = #282828 100
-background_color_hover = #ef938e 100
+background_color_hover = #fb4934 100
 border_color_hover = #282828 100
-background_color_pressed = #c14a4a 100
+background_color_pressed = #9d0006 100
 border_color_pressed = #282828 100
 
 # Background 6: Tooltip
@@ -75,17 +75,17 @@ border_color_pressed = #d4be98 100
 rounded = 0
 border_width = 0
 border_sides = TBLR
-background_color = #a9b665 100
-background_color_hover = #bbc585 100
-background_color_pressed = #6f8352 100
+background_color = #98971a 100
+background_color_hover = #b8bb26 100
+background_color_pressed = #79740e 100
 
 # Background 8: Exit button
 rounded = 0
 border_width = 0
 border_sides = TBLR
-background_color = #ea6962 100
-background_color_hover = #ef938e 100
-background_color_pressed = #ae5858 100
+background_color = #cc241d 100
+background_color_hover = #fb4934 100
+background_color_pressed = #9d0006 100
 
 # Background 9: System info
 rounded = 0
@@ -151,7 +151,7 @@ taskbar_name_active_background_id = 4
 taskbar_name_font = Iosevka Custom 10
 # taskbar_name_font = JetBrains Mono NL 9
 # taskbar_name_font = Noto Sans Mono 9
-taskbar_name_font_color = #d8a657 100
+taskbar_name_font_color = #d79921 100
 taskbar_name_active_font_color = #282828 100
 taskbar_distribute_size = 0
 taskbar_sort_order = none
@@ -177,7 +177,7 @@ task_font = Iosevka Custom 10
 # task_font = JetBrains Mono NL 9
 # task_font = Noto Sans Mono 9
 task_font_color = #928374 100
-task_active_font_color = #d8a657 100
+task_active_font_color = #d79921 100
 task_urgent_font_color = #282828 100
 task_background_id = 2
 task_active_background_id = 3
