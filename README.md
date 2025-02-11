@@ -4,7 +4,7 @@ Linux configuration files by Nathaniel Evan. Inspired by various sources. As see
 Previous dwm rice is [here](https://www.reddit.com/r/unixporn/comments/mewpsp/dwm_still_lovin_nord/).
 
 Other relevant links:
-* [Gruvbox Material Theme for Openbox](https://github.com/nathanielevan/gruvbox-material-openbox)
+* [Gruvbox Theme for Openbox](https://github.com/nathanielevan/gruvbox-openbox)
 * [Gruvbox Material Theme for Telegram](https://github.com/nathanielevan/gruvbox-material-telegram)
 * [Startpage](https://github.com/nathanielevan/startpage)
 
