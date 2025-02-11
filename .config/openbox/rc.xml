@@ -49,7 +49,7 @@
 </placement>
 
 <theme>
-  <name>gruvbox-material-dark</name>
+  <name>gruvbox-dark</name>
   <titleLayout>NLIMC</titleLayout>
   <!--
       available characters are NDSLIMC, each can occur at most once.
