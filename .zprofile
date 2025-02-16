@@ -38,6 +38,7 @@ export N_PREFIX="$HOME/.local/n"
 export N_PRESERVE_NPM=1
 # export RXVT_SOCKET="$XDG_RUNTIME_DIR/urxvtd"
 # export URXVT_PERL_LIB="$XDG_DATA_HOME/urxvt/perl"
+export TEXDIR="$HOME/.local/texlive/2024"
 
 # Flutter/Android default directories
 export FLUTTER_ROOT="$HOME/.flutter"
@@ -73,6 +74,9 @@ export PATH="$ANDROID_SDK_ROOT/tools:$PATH"
 export PATH="$ANDROID_SDK_ROOT/tools/bin:$PATH"
 export PATH="$ANDROID_SDK_ROOT/emulator:$PATH"
 export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/:$PATH"
+export PATH="$TEXDIR/bin/x86_64-linux:$PATH"
+export MANPATH="$TEXDIR/texmf-dist/doc/man:$MANPATH"
+export INFOPATH="$TEXDIR/texmf-dist/doc/info:$INFOPATH"
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && "$(tty)" = "/dev/tty1" ]]; then
 	exec startx "$XINITRC"
