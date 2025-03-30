@@ -19,7 +19,7 @@ Feel free to grab my custom font builds:
     + Hack v4.000 (unreleased, commit [b4331b3](https://github.com/source-foundry/Hack/tree/b4331b33e163965959cc5d34a14f254bcc94bd20))
         - Forward-slash zero and slab lower-case i, see [patch-hack.sh](.local/share/fonts/Hack/patch-hack.sh)
         - Added 400 to typoLineGap and 200 to ascender and descender values of both Hhea and Win metrics, replicating the vertical metrics of [Meslo LG M](https://github.com/andreberg/Meslo-Font)
-    + Iosevka v32.1.0
+    + Iosevka v33.1.0
         - Semi-extended width, FontConfig mono spacing and many alternate character variants used, see [private-build-plans.toml](.local/share/fonts/IosevkaCustom/private-build-plans.toml)
     + JetBrains Mono NL (no ligatures) v2.304
         - Features `cv07,cv08,cv12,cv20,zero` enabled by default
