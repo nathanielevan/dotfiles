@@ -16,6 +16,9 @@ Other relevant links:
 Feel free to grab my custom font builds:
     + Fantasque Sans Mono v1.8.0
         - Added 200 to ascender and descender values of Typo metric, made all metrics uniform and removed all line gap values
+    + Fira Mono v3.206
+        - Forward-slash zero by default
+        - Added 50 to all ascender and descender values for 30% UPM line spacing
     + Hack v4.000 (unreleased, commit [b4331b3](https://github.com/source-foundry/Hack/tree/b4331b33e163965959cc5d34a14f254bcc94bd20))
         - Forward-slash zero and slab lower-case i, see [patch-hack.sh](.local/share/fonts/Hack/patch-hack.sh)
         - Added 400 to typoLineGap and 200 to ascender and descender values of both Hhea and Win metrics, replicating the vertical metrics of [Meslo LG M](https://github.com/andreberg/Meslo-Font)
