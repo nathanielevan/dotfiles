@@ -11,8 +11,6 @@ HACK_PATH="${HOME}/Downloads/fonts/Hack"
 
 # 2. List your alternate glyphs here
 declare -a alternates=(
-    "u0030-forwardslash"
-    "u0069-slab"
     "u00EC-slab"
     "u00ED-slab"
     "u00EE-slab"
@@ -20,9 +18,26 @@ declare -a alternates=(
     "u012B-slab"
     "u012D-slab"
     "u012F-slab"
+    "u0030-forwardslash"
+    "u0069-slab"
     "u0129-slab"
+    "u0131-slab"
     "u0456-slab"
     "u0457-slab"
+    "u0061-straightspur"
+    "u00AA-straightspur"
+    "u00E0-straightspur"
+    "u00E1-straightspur"
+    "u00E2-straightspur"
+    "u00E3-straightspur"
+    "u00E4-straightspur"
+    "u00E5-straightspur"
+    "u0101-straightspur"
+    "u0103-straightspur"
+    "u0105-straightspur"
+    "u0430-straightspur"
+    "u04D1-straightspur"
+    "u04D3-straightspur"
 )
 
 # 3. Run this script and enjoy!
