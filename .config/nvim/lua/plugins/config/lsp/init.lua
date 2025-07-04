@@ -1,20 +1,62 @@
-local status_ok, lspconfig = pcall(require, "lspconfig")
-if not status_ok then
-    return
-end
+return {
+  {
+    'neovim/nvim-lspconfig',
+    opts = {
+      virtual_text = {
+        prefix = "▪",
+      },
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = "x",
+          [vim.diagnostic.severity.HINT] = "*",
+          [vim.diagnostic.severity.INFO] = "i",
+          [vim.diagnostic.severity.WARN] = "!",
+        },
+      },
+      underline = true,
+      update_in_insert = false,
+      severity_sort = false,
+      float = {
+        border = "rounded",
+      }
+    },
+    config = function(_, opts)
+      vim.diagnostic.config(opts)
 
-require('plugins.config.lsp.handlers').setup()
+      -- See :help event-args for description of contents of
+      -- the argument the callback function receives
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function(args)
+          require('core.keymaps').lspconfig(args.buf)
+        end,
+      })
+      -- local capabilities = require('blink.cmp').get_lsp_capabilities()
+      local capabilities = vim.tbl_deep_extend("force",
+        {},
+        vim.lsp.protocol.make_client_capabilities(),
+        -- Personal note: apparently cmp_nvim_lsp does not immediately call
+        -- require('cmp') on load, only loading it after InsertEnter. This
+        -- behaviour allows us to retrieve the client capabilities table from
+        -- cmp_nvim_lsp without loading nvim-cmp as well
+        require('cmp_nvim_lsp.init').default_capabilities()
+      )
+      local servers = { "lua_ls", "clangd", "bashls", "pyright" }
+      for _, server in pairs(servers) do
+        local has_server_opts, server_opts = pcall(require, "plugins.config.lsp.servers." .. server)
+        if not has_server_opts then
+          server_opts = {}
+        end
 
-local servers = { "lua_ls", "clangd", "bashls", "pyright" }
+        -- User-defined capabilities should override default capabilities if conflicting
+        server_opts = vim.tbl_deep_extend("force",
+          { capabilities = vim.deepcopy(capabilities) },
+          server_opts)
 
-for _, server in pairs(servers) do
-    local opts = {
-        on_attach = require('plugins.config.lsp.handlers').on_attach,
-        capabilities = require('plugins.config.lsp.handlers').capabilities(),
-    }
-    local has_server_opts, server_opts = pcall(require, "plugins.config.lsp.servers." .. server)
-    if has_server_opts then
-        opts = vim.tbl_deep_extend("force", server_opts, opts)
-    end
-    lspconfig[server].setup(opts)
-end
+        -- require("lspconfig")[server].setup(server_opts) -- for nvim 0.10 and prior
+        vim.lsp.config(server, server_opts)
+        vim.lsp.enable(server)
+      end
+    end,
+  },
+  { import = "plugins.config.lsp.mason" }
+}
