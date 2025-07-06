@@ -1,5 +1,6 @@
 # Define default applications
 export TERMINAL="st"
+# export TERMINAL="foot"
 export EDITOR="nvim"
 export BROWSER="firefox"
 export READER="zathura"
@@ -32,12 +33,11 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NPM_CONFIG_PREFIX="$HOME/.local/node_modules"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export N_PREFIX="$HOME/.local/n"
 export N_PRESERVE_NPM=1
-# export RXVT_SOCKET="$XDG_RUNTIME_DIR/urxvtd"
-# export URXVT_PERL_LIB="$XDG_DATA_HOME/urxvt/perl"
 export TEXDIR="$HOME/.local/texlive/2024"
 
 # Flutter/Android default directories
@@ -66,7 +66,8 @@ export CHROME_EXECUTABLE="/usr/bin/chromium"
 
 # Define PATH
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/bin/dwmblocks:$PATH"
+export PATH="$HOME/.local/bin/status:$PATH"
+export PATH="$HOME/.local/node_modules/bin:$PATH"
 export PATH="$N_PREFIX/bin:$PATH"
 export PATH="$FLUTTER_ROOT/bin:$PATH"
 export PATH="$ANDROID_SDK_ROOT/platform-tools:$PATH"
@@ -80,4 +81,6 @@ export INFOPATH="$TEXDIR/texmf-dist/doc/info:$INFOPATH"
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && "$(tty)" = "/dev/tty1" ]]; then
 	exec startx "$XINITRC"
+	# exec labwc
+	# exec Hyprland
 fi
