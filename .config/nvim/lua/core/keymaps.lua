@@ -137,8 +137,6 @@ M.lspconfig = function(bufnr)
   map('n', '<space>rn', vim.lsp.buf.rename, { desc = "LSP: Rename all references" })
   map('n', '<space>ca', vim.lsp.buf.code_action, { desc = "LSP: Select available code action" })
   map('n', 'gr', vim.lsp.buf.references, { desc = "LSP: List all references" })
-  map('n', '<space>f', function() vim.lsp.buf.format({ async = true }) end,
-    { desc = "LSP: Format buffer using attached LSP client" })
 end
 
 M.nvimcmp = function()
@@ -200,6 +198,14 @@ M.luasnip = function()
       ls.change_choice(1)
     end
   end, { silent = true })
+end
+
+M.conform = function()
+  -- Will fallback to LSP formatting if dedicated formatter not found
+  -- See default_format_opts table in plugins/config/conform.lua
+  vim.keymap.set({ 'n', 'v' }, '<space>f', function()
+    require('conform').format({ timeout_ms = 1000 })
+  end, { silent = true, desc = 'conform.nvim: Format file' })
 end
 
 return M
