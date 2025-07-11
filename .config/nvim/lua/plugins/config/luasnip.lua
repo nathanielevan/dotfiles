@@ -2,6 +2,7 @@ return {
   'L3MON4D3/LuaSnip',
   lazy = true,
   dependencies = 'rafamadriz/friendly-snippets',
+  init = require('core.keymaps').luasnip,
   opts = {
     history = true,
     -- Update more often, :h events for more info.
