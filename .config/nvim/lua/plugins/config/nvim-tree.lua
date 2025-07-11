@@ -1,9 +1,7 @@
 return {
   'nvim-tree/nvim-tree.lua',
   cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-  init = function()
-    require('core.keymaps').nvimtree()
-  end,
+  init = require('core.keymaps').nvimtree,
   opts = {
     -- these options and more are documented in `:help nvim-tree.OPTION_NAME`
     -- nested options are documented by accessing them with `.` (eg: `:help nvim-tree.view.mappings.list`).

@@ -1,9 +1,7 @@
 return {
   'nvim-telescope/telescope.nvim',
   cmd = "Telescope",
-  init = function()
-    require('core.keymaps').telescope()
-  end,
+  init = require('core.keymaps').telescope,
   opts = {
     defaults = {
       -- Default configuration for telescope goes here:
