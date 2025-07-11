@@ -32,7 +32,7 @@ return {
       })
       -- local capabilities = require('blink.cmp').get_lsp_capabilities()
       local capabilities = require('cmp_nvim_lsp.init').default_capabilities()
-      local servers = { "lua_ls", "clangd", "bashls", "pyright" }
+      local servers = { "lua_ls", "clangd", "bashls", "pyright", "ts_ls" }
       for _, server in pairs(servers) do
         local has_server_opts, server_opts = pcall(require, "plugins.config.lsp.servers." .. server)
         if not has_server_opts then
