@@ -2,6 +2,13 @@ return {
   {
     'hrsh7th/nvim-cmp',
     lazy = true,
+    dependencies = {
+      'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-nvim-lua',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+    },
     opts = function()
       local cmp = require('cmp')
       return {
@@ -29,9 +36,4 @@ return {
       }
     end,
   },
-  { 'saadparwaiz1/cmp_luasnip', event = "InsertEnter" },
-  { 'hrsh7th/cmp-nvim-lua', event = "InsertEnter" },
-  { 'hrsh7th/cmp-nvim-lsp', event = "InsertEnter" },
-  { 'hrsh7th/cmp-buffer', event = "InsertEnter" },
-  { 'hrsh7th/cmp-path', event = "InsertEnter" },
 }
