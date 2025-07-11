@@ -208,4 +208,10 @@ M.conform = function()
   end, { silent = true, desc = 'conform.nvim: Format file' })
 end
 
+M.nvimlint = function()
+  vim.keymap.set({ 'n', 'v' }, '<space>l', function()
+    require('lint').try_lint()
+  end, { silent = true, desc = 'nvim-lint: Trigger linting' })
+end
+
 return M
