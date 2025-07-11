@@ -17,9 +17,7 @@ return {
       changedelete = { text = '~' },
       untracked    = { text = '┆' },
     },
-    on_attach                    = function(bufnr)
-      require('core.keymaps').gitsigns(bufnr)
-    end,
+    on_attach                    = require('core.keymaps').gitsigns,
     signs_staged_enable          = true,
     signcolumn                   = true, -- Toggle with `:Gitsigns toggle_signs`
     numhl                        = false, -- Toggle with `:Gitsigns toggle_numhl`
