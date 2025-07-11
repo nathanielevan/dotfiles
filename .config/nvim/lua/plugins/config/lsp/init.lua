@@ -31,15 +31,7 @@ return {
         end,
       })
       -- local capabilities = require('blink.cmp').get_lsp_capabilities()
-      local capabilities = vim.tbl_deep_extend("force",
-        {},
-        vim.lsp.protocol.make_client_capabilities(),
-        -- Personal note: apparently cmp_nvim_lsp does not immediately call
-        -- require('cmp') on load, only loading it after InsertEnter. This
-        -- behaviour allows us to retrieve the client capabilities table from
-        -- cmp_nvim_lsp without loading nvim-cmp as well
-        require('cmp_nvim_lsp.init').default_capabilities()
-      )
+      local capabilities = require('cmp_nvim_lsp.init').default_capabilities()
       local servers = { "lua_ls", "clangd", "bashls", "pyright" }
       for _, server in pairs(servers) do
         local has_server_opts, server_opts = pcall(require, "plugins.config.lsp.servers." .. server)
