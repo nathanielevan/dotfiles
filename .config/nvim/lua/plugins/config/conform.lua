@@ -9,6 +9,9 @@ return {
       lua = { "stylua" },
       javascript = { "prettierd", "prettier", stop_after_first = true },
     },
+    -- Override built-in formatters or define custom formatters here
+    -- formatters = {
+    -- },
     default_format_opts = {
       lsp_format = "fallback",
     },
