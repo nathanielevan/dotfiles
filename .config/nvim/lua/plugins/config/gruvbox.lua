@@ -1,6 +1,7 @@
 return {
   'ellisonleao/gruvbox.nvim',
   main = 'gruvbox',
+  priority = 1000, -- load this plugin before all the other start plugins
   opts = {
     terminal_colors = true,     -- add neovim terminal colors
     undercurl = true,
