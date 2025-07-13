@@ -1,6 +1,5 @@
 return {
   'ellisonleao/gruvbox.nvim',
-  main = 'gruvbox',
   priority = 1000, -- load this plugin before all the other start plugins
   opts = {
     terminal_colors = true,     -- add neovim terminal colors
@@ -26,9 +25,10 @@ return {
       StatusLine = { fg = "#282828", bg = "#a89984" },
     },
     dim_inactive = false,
-    transparent_mode = true,     -- default to true
+    transparent_mode = true,
   },
-  init = function()
+  config = function(_, opts)
+    require('gruvbox').setup(opts)
     vim.o.background = "dark"
     vim.cmd("colorscheme gruvbox")
   end,
