@@ -113,7 +113,8 @@ M.nvimtree = function()
   -- we bind these keys to commands because nvim-tree
   -- is lazy-loaded to trigger through these commands
   vim.keymap.set('n', '<leader>tt', ':NvimTreeToggle<CR>', { silent = true, desc = "nvim-tree: Toggle open/close" })
-  vim.keymap.set('n', '<leader>tf', ':NvimTreeFocus<CR>', { silent = true, desc = "nvim-tree: Focus window" })
+  vim.keymap.set('n', '<leader>tg', ':NvimTreeFocus<CR>', { silent = true, desc = "nvim-tree: Go to window" })
+  vim.keymap.set('n', '<leader>tf', ':NvimTreeFindFile<CR>', { silent = true, desc = "nvim-tree: Find file in tree" })
   -- 'g?' to show default mappings for nvim-tree
 end
 

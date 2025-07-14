@@ -1,6 +1,6 @@
 return {
   'nvim-tree/nvim-tree.lua',
-  cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+  cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile" },
   init = require('core.keymaps').nvimtree,
   opts = {
     -- these options and more are documented in `:help nvim-tree.OPTION_NAME`
