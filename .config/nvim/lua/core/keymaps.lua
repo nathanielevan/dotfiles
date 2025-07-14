@@ -203,7 +203,7 @@ M.conform = function()
   -- Will fallback to LSP formatting if dedicated formatter not found
   -- See default_format_opts table in plugins/config/conform.lua
   vim.keymap.set({ 'n', 'v' }, '<space>f', function()
-    require('conform').format({ timeout_ms = 1000 })
+    require('conform').format({ timeout_ms = 5000 })
   end, { silent = true, desc = 'conform.nvim: Format file' })
 end
 
