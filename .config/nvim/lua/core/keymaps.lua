@@ -62,51 +62,51 @@ M.gitsigns = function(bufnr)
     else
       gitsigns.nav_hunk('next')
     end
-  end)
+  end, { desc = "gitsigns: Jump to next hunk" })
   map('n', '[c', function()
     if vim.wo.diff then
       vim.cmd.normal({ '[c', bang = true })
     else
       gitsigns.nav_hunk('prev')
     end
-  end)
+  end, { desc = "gitsigns: Jump to previous hunk" })
 
   -- Actions
-  map('n', '<leader>hs', gitsigns.stage_hunk)
-  map('n', '<leader>hr', gitsigns.reset_hunk)
+  map('n', '<leader>hs', gitsigns.stage_hunk, { desc = "gitsigns: Stage hunk" })
+  map('n', '<leader>hr', gitsigns.reset_hunk, { desc = "gitsigns: Reset hunk" })
 
   map('v', '<leader>hs', function()
     gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
-  end)
+  end, { desc = "gitsigns: Stage hunk (visual mode)" })
 
   map('v', '<leader>hr', function()
     gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
-  end)
+  end, { desc = "gitsigns: Reset hunk (visual mode)" })
 
-  map('n', '<leader>hS', gitsigns.stage_buffer)
-  map('n', '<leader>hR', gitsigns.reset_buffer)
-  map('n', '<leader>hp', gitsigns.preview_hunk)
-  map('n', '<leader>hi', gitsigns.preview_hunk_inline)
+  map('n', '<leader>hS', gitsigns.stage_buffer, { desc = "gitsigns: Stage buffer" })
+  map('n', '<leader>hR', gitsigns.reset_buffer, { desc = "gitsigns: Reset buffer " })
+  map('n', '<leader>hp', gitsigns.preview_hunk, { desc = "gitsigns: Preview hunk " })
+  map('n', '<leader>hi', gitsigns.preview_hunk_inline, { desc = "gitsigns: Preview hunk (inline)" })
 
   map('n', '<leader>hb', function()
     gitsigns.blame_line({ full = true })
-  end)
+  end, { desc = "gitsigns: View git blame" })
 
-  map('n', '<leader>hd', gitsigns.diffthis)
+  map('n', '<leader>hd', gitsigns.diffthis, { desc = "gitsigns: Diff against index" })
 
   map('n', '<leader>hD', function()
-    gitsigns.diffthis('~')
-  end)
+    gitsigns.diffthis('@')
+  end, { desc = "gitsigns: Diff against latest commit" })
 
-  map('n', '<leader>hQ', function() gitsigns.setqflist('all') end)
-  map('n', '<leader>hq', gitsigns.setqflist)
+  map('n', '<leader>hQ', function() gitsigns.setqflist('all') end, { desc = "gitsigns: List hunks in quickfix list (target: all)" })
+  map('n', '<leader>hq', gitsigns.setqflist, { desc = "gitsigns: List hunks in quickfix list" })
 
   -- Toggles
-  map('n', '<leader>tb', gitsigns.toggle_current_line_blame)
-  map('n', '<leader>tw', gitsigns.toggle_word_diff)
+  map('n', '<leader>htb', gitsigns.toggle_current_line_blame, { desc = "gitsigns: Toggle current line blame" })
+  map('n', '<leader>htw', gitsigns.toggle_word_diff, { desc = "gitsigns: Toggle highlighting word differences" })
 
   -- Text object
-  map({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
+  map({ 'o', 'x' }, 'ih', gitsigns.select_hunk, { desc = "gitsigns: Select hunks as a text object" })
 end
 
 M.nvimtree = function()
@@ -189,15 +189,15 @@ M.mason = function()
 end
 
 M.luasnip = function()
-  vim.keymap.set({ "i" }, "<C-k>", function() require('luasnip').expand() end, { silent = true })
-  vim.keymap.set({ "i", "s" }, "<C-l>", function() require('luasnip').jump(1) end, { silent = true })
-  vim.keymap.set({ "i", "s" }, "<C-j>", function() require('luasnip').jump(-1) end, { silent = true })
+  vim.keymap.set({ "i" }, "<C-k>", function() require('luasnip').expand() end, { silent = true, desc = "LuaSnip: Expand snippet" })
+  vim.keymap.set({ "i", "s" }, "<C-l>", function() require('luasnip').jump(1) end, { silent = true, desc = "LuaSnip: Jump forward in snippet" })
+  vim.keymap.set({ "i", "s" }, "<C-j>", function() require('luasnip').jump(-1) end, { silent = true, desc = "LuaSnip: Jump backward in snippet" })
 
   vim.keymap.set({ "i", "s" }, "<C-e>", function()
     if require('luasnip').choice_active() then
       require('luasnip').change_choice(1)
     end
-  end, { silent = true })
+  end, { silent = true, desc = "LuaSnip: Change choice in choiceNode" })
 end
 
 M.conform = function()
