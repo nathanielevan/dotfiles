@@ -19,7 +19,7 @@ Feel free to grab my custom font builds:
     + Fira Mono v3.206
         - Forward-slash zero by default
         - Added 50 to all ascender and descender values for 30% UPM line spacing
-    + Hack v4.000 (unreleased, commit [b4331b3](https://github.com/source-foundry/Hack/tree/b4331b33e163965959cc5d34a14f254bcc94bd20))
+    + Hack v4.000 (unreleased, commit [17083f1](https://github.com/nathanielevan/Hack/commit/17083f146008bc7483fc871c5efd1402b6bf2390))
         - Forward-slash zero, slab lower-case i, straight-spur lower-case a, see [patch-hack.sh](.local/share/fonts/Hack/patch-hack.sh) and [source-foundry/alt-hack#55](https://github.com/source-foundry/alt-hack/pull/55)
         - Added 400 to typoLineGap and 200 to ascender and descender values of both Hhea and Win metrics, replicating the vertical metrics of [Meslo LG M](https://github.com/andreberg/Meslo-Font)
     + Iosevka v33.2.6
