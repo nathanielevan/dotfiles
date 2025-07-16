@@ -8,8 +8,10 @@ export KEYTIMEOUT=1
 autoload -Uz colors
 colors
 
+# See these options at `man zshoptions`
 setopt histignorealldups sharehistory
 setopt prompt_subst
+unsetopt flow_control
 
 # Use modern completion system
 autoload -Uz compinit
