@@ -11,8 +11,6 @@ HACK_PATH="${HOME}/Downloads/fonts/Hack-git"
 
 # 2. List your alternate glyphs here
 declare -a alternates=(
-    "u005B-oldv3"
-    "u005D-oldv3"
     "u00EC-slab"
     "u00ED-slab"
     "u00EE-slab"
