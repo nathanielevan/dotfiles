@@ -115,23 +115,35 @@ macro index \Ca "<limit>all\n" "undo limit and show all messages"
 
 # Default index colors:
 color index blue default '.*'
-color index_author yellow default '.*'
-color index_subject magenta default '.*'
+color index_number lightblack default '.*'
+color index_flags red default '.*'
+color index_date blue default '.*'
+color index_author magenta default '.*'
+color index_subject yellow default '.*'
 
 # New mail is boldened:
-color index brightblue default "~N"
-color index_author brightyellow default "~N"
-color index_subject brightmagenta default "~N"
+color index bold blue default "~N"
+color index_number bold lightblack default '~N'
+color index_flags bold red default '~N'
+color index_date bold blue default '~N'
+color index_author bold magenta default "~N"
+color index_subject bold yellow default "~N"
 
 # Tagged mails will appear yellow:
-color index brightyellow default "~T"
-color index_author brightyellow default "~T"
-color index_subject brightyellow default "~T"
+color index bold yellow default "~T"
+color index_number bold yellow default '~T'
+color index_flags bold yellow default '~T'
+color index_date bold yellow default '~T'
+color index_author bold yellow default "~T"
+color index_subject bold yellow default "~T"
 
 # Mails marked as deleted will appear red:
-color index brightred default "~D"
-color index_author brightred default "~D"
-color index_subject brightred default "~D"
+color index bold red default "~D"
+color index_number bold red default "~D"
+color index_flags bold red default "~D"
+color index_date bold red default "~D"
+color index_author bold red default "~D"
+color index_subject bold red default "~D"
 
 # Other colors and aesthetic settings:
 mono bold bold
@@ -139,7 +151,7 @@ mono underline underline
 mono indicator reverse
 mono error bold
 color normal default default
-color indicator brightblack yellow
+color indicator bold reverse yellow default
 color sidebar_highlight red default
 color sidebar_divider black default
 color sidebar_flagged yellow default
@@ -149,40 +161,41 @@ color tilde black default
 color message yellow default
 color markers red white
 color attachment green default
-color search brightmagenta default
-color status brightdefault default
-color hdrdefault brightgreen default
+color search bold magenta default
+color status bold default default
+color hdrdefault bold default default
 color quoted yellow default
 color quoted1 green default
 color quoted2 cyan default
 color quoted3 blue default
 color quoted4 magenta default
 color quoted5 red default
-color signature brightyellow default
+color signature bold yellow default
 color bold black default
 color underline black default
 
 # Regex highlighting:
-color header brightwhite default ".*"
-color header brightyellow default "^(From)"
-color header brightblue default "^(Date)"
-color header brightmagenta default "^(Subject)"
-color header brightwhite default "^(CC|BCC)"
-color body brightmagenta default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" # Email addresses
-color body brightblue default "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" # URL
+color header bold default default ".*"
+color header bold magenta default "^(From)"
+color header bold lightblack default "^(To)"
+color header bold blue default "^(Date)"
+color header bold yellow default "^(Subject)"
+color header bold default default "^(CC|BCC)"
+color body bold magenta default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" # Email addresses
+color body bold blue default "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" # URL
 color body green default "\`[^\`]*\`" # Green text between ` and `
-color body brightblue default "^# \.*" # Headings as bold blue
-color body brightcyan default "^## \.*" # Subheadings as bold cyan
-color body brightgreen default "^### \.*" # Subsubheadings as bold green
+color body bold blue default "^# \.*" # Headings as bold blue
+color body bold cyan default "^## \.*" # Subheadings as bold cyan
+color body bold green default "^### \.*" # Subsubheadings as bold green
 color body yellow default "^(\t| )*(-|\\*) \.*" # List items as yellow
-color body brightcyan default "[;:][-o][)/(|]" # emoticons
-color body brightcyan default "[;:][)(|]" # emoticons
-color body brightcyan default "[ ][*][^*]*[*][ ]?" # more emoticon?
-color body brightcyan default "[ ]?[*][^*]*[*][ ]" # more emoticon?
+color body bold cyan default "[;:][-o][)/(|]" # emoticons
+color body bold cyan default "[;:][)(|]" # emoticons
+color body bold cyan default "[ ][*][^*]*[*][ ]?" # more emoticon?
+color body bold cyan default "[ ]?[*][^*]*[*][ ]" # more emoticon?
 color body red default "(BAD signature)"
 color body cyan default "(Good signature)"
-color body brightblack default "^gpg: Good signature .*"
-color body brightyellow default "^gpg: "
-color body brightyellow red "^gpg: BAD signature from.*"
+color body bold black default "^gpg: Good signature .*"
+color body bold yellow default "^gpg: "
+color body bold yellow red "^gpg: BAD signature from.*"
 mono body bold "^gpg: Good signature"
 mono body bold "^gpg: BAD signature from.*"
