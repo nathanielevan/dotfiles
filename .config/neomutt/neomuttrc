@@ -161,7 +161,6 @@ color quoted5 red default
 color signature brightyellow default
 color bold black default
 color underline black default
-color normal default default
 
 # Regex highlighting:
 color header brightwhite default ".*"
