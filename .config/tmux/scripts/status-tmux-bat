@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# Loop through all attached batteries and format the info
+for bat in $(ls -d /sys/class/power_supply/* | grep BAT); do
+    # If non-first battery, print a space separator.
+    [ -n "${bat_format+x}" ] && bat_status="${bat_status} "
+    # Get battery percentage and state
+    bat_percent=$(cat "$bat/capacity")
+    bat_state=$(cat "$bat/status")
+    # Get the battery name from the bat filepath
+    bat_name="${bat##*/}"
+    if [ "$bat_state" = "Charging" ]; then
+        bat_format="#[fg=green]"
+    else
+        if [ "$bat_percent" -lt 10 ]; then
+            bat_format="#[fg=red]"
+        elif [ "$bat_percent" -lt 20 ]; then
+            bat_format="#[fg=yellow]"
+        else
+            bat_format="#[fg=terminal]"
+        fi
+    fi
+    # Prints the info
+    bat_status="${bat_status}#[fg=default]${bat_name} ${bat_format}${bat_percent}%"
+done
+
+bat_status="${bat_status}#[fg=default]"
+printf "%s" "$bat_status"

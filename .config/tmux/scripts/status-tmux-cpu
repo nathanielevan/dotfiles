@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# cache to store previous reading
+cache=".cpu-status-cache"
+cache_timeout_secs=10
+
+# id total idle
+# total = user + nice + system + idle
+current=$(awk '$1 == "cpu" {printf "%d %d\n", ($2 + $3 + $4 + $5), $5 }' /proc/stat)
+
+get_cpu_percent() {
+    old=$(cat "$cache")
+    # These are called shell parameter expansion, see:
+    # https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+    current_total=${current%% *} # exclude everything from and including first space in $current
+    current_idle=${current##* } # exclude everything up to and including last space
+    cpu_percent=$(echo "$old" | awk -v current_total="$current_total" -v current_idle="$current_idle" '{printf "%d", (1 - (current_idle - $2) / (current_total - $1)) * 100}')
+}
+
+is_cache_obsolete() {
+    last_modify_time=$(stat -c %Y "$cache")
+    current_time=$(date +%s)
+    cache_age="$((current_time - last_modify_time))"
+    if [ "$cache_age" -gt "$cache_timeout_secs" ]; then
+        return 0
+    else
+        return 1
+    fi
+}
+        
+[ ! -f $cache ] || is_cache_obsolete && cpu_percent="?" || get_cpu_percent
+
+if [ "$cpu_percent" = "?" ]; then
+    printf "#[fg=brightblack]%s#[fg=default]" "$cpu_percent"
+elif [ "$cpu_percent" -lt 50 ]; then
+    printf "#[fg=terminal]%s%%#[fg=default]" "$cpu_percent"
+elif [ "$cpu_percent" -lt 80 ]; then
+    printf "#[fg=yellow]%s%%#[fg=default]" "$cpu_percent"
+else
+    printf "#[fg=red]%s%%#[fg=default]" "$cpu_percent"
+fi
+
+echo "$current" > "$cache"

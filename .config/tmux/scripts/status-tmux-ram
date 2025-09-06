@@ -1,0 +1,12 @@
+#!/bin/sh
+
+ram_percent=$(free | awk 'NR == 2 {printf "%d", $3/$2*100}')
+
+
+if [ "$ram_percent" -lt 50 ]; then
+    printf "#[fg=terminal]%s%%#[fg=default]" "$ram_percent"
+elif [ "$ram_percent" -lt 80 ]; then
+    printf "#[fg=yellow]%s%%#[fg=default]" "$ram_percent"
+else
+    printf "#[fg=red]%s%%#[fg=default]" "$ram_percent"
+fi
