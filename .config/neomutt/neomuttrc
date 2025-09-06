@@ -1,50 +1,52 @@
+# Documentation is also available online with the entry numbers at https://neomutt.org/guide/reference
+
 # Inspired by Steffen Rademacker and Luke Smith, with personal modifications
 # General account and mailbox settings
-set realname = "Nathaniel Evan"
+set real_name = "Nathaniel Evan"
 set from = "nathanielevan@zohomail.com"
 set sendmail = "msmtp -a zoho"
 alias me Nathaniel Evan <nathanielevan@zohomail.com>
 set folder = /home/nate/.local/share/mail/zoho
 set header_cache = /home/nate/.cache/neomutt/zoho/headers
-set message_cachedir = /home/nate/.cache/neomutt/zoho/bodies
-set tmpdir = /home/nate/.cache/neomutt/zoho/temp
+set message_cache_dir = /home/nate/.cache/neomutt/zoho/bodies
+set tmp_dir = /home/nate/.cache/neomutt/zoho/temp
 set mbox_type = Maildir
-set spoolfile = "+Inbox"
+set spool_file = "+Inbox"
 set postponed = "+Drafts"
 set record = "+Sent"
 set trash = "+Trash"
 mailboxes "=Inbox" "=Drafts" "=NewsLetter" "=Notification" "=Sent" "=Spam" "=Templates" "=Trash"
 
 # Basic Mutt behavior options
-set delete		# automatically act on messages marked for deletion (3.79)
-set quit		# actually quit from neomutt without having to confirm (3.305)
-set thorough_search	# decode header and body of messages before searching (3.426)
-set sleep_time = 0	# disable pause while displaying informational messages (3.367)
-set mail_check_stats	# calculate message stats of a mailbox while polling (3.177)
-unset wait_key		# shut your trap, mutt, just do what i say, will you? (3.449)
-unset confirmappend	# don't ask for confirm when moving mails into a mailbox (3.51)
-unset mark_old		# don't mark unread messages as old if i don't read them (3.185)
-unset copy		# don't save sent emails, zoho takes care of this already (3.55)
+set delete		# automatically act on messages marked for deletion (3.110)
+set quit		# actually quit from neomutt without having to confirm (3.387)
+set thorough_search	# decode header and body of messages before searching (3.517)
+set sleep_time = 0	# disable pause while displaying informational messages (3.453)
+set mail_check_stats	# calculate message stats of a mailbox while polling (3.225)
+unset wait_key		# shut your trap, mutt, just do what i say, will you? (3.546)
+unset confirm_append	# don't ask for confirm when moving mails into a mailbox (3.68)
+unset mark_old		# don't mark unread messages as old if i don't read them (3.235)
+unset copy		# don't save sent emails, zoho takes care of this already (3.74)
 
 # Compose/view options
-set date_format = "%d-%b-%y"				# change date format (3.75)
-set index_format="%4C %Z %?X?A& ? %D %-15.15F %s (%c)"	# define index format (3.170)
-set sort = "reverse-date"				# sort by date in descending order (3.397)
-set include						# include original message in reply (3.167)
-set forward_quote					# include original message when forwarding (3.112)
-set forward_format = "Fwd: %s"				# format of subject when forwarding (3.111)
-set mime_forward					# forward attachments with mail (3.202)
-set fast_reply						# don't ask for recipient and subject when replying (3.94)
-set reverse_name					# reply as whomever it was originally to (3.324)
-set reply_to						# reply to address set in Reply-to: header (3.318)
-set edit_headers					# allows editing the header of outgoing message (3.86)
-set askcc						# prompt for cc recipients before editing message (3.17)
-unset markers						# don't display + at the beginning of warped lines (3.186)
-set editor = "nvim"					# set editor to nvim (3.87)
-set pager_context = 5					# display last N lines from prev page into next page (3.240)
-set tilde						# display tildes at the end of a mail (3.428)
-set pager_stop						# don't move to next msg upon reaching end of msg (3.243)
-set menu_scroll						# don't redraw the entire menu when scrolling (3.192)
+set date_format = "%d-%b-%y"				# change date format (3.106)
+set index_format="%4C %Z %?X?A& ? %D %-15.15F %s (%c)"	# define index format (3.218)
+set sort = "reverse-date"				# sort by date in descending order (3.486)
+set include						# include original message in reply (3.212)
+set forward_quote					# include original message when forwarding (3.150)
+set forward_format = "Fwd: %s"				# format of subject when forwarding (3.149)
+set mime_forward					# forward attachments with mail (3.254)
+set fast_reply						# don't ask for recipient and subject when replying (3.128)
+set reverse_name					# reply as whomever it was originally to (3.408)
+set reply_to						# reply to address set in Reply-to: header (3.402)
+set edit_headers					# allows editing the header of outgoing message (3.119)
+set ask_cc						# prompt for cc recipients before editing message (3.18)
+unset markers						# don't display + at the beginning of warped lines (3.236)
+set editor = "nvim"					# set editor to nvim (3.120)
+set pager_context = 5					# display last N lines from prev page into next page (3.299)
+set tilde						# display tildes at the end of a mail (3.519)
+set pager_stop						# don't move to next msg upon reaching end of msg (3.304)
+set menu_scroll					# don't redraw the entire menu when scrolling (3.243)
 
 # Viewing attachments + those pesky HTML e-mails
 set mailcap_path = /home/nate/.config/neomutt/mailcap
@@ -52,17 +54,17 @@ alternative_order text/plain text/enriched text/html
 auto_view text/html
 
 # E-mail headers
-ignore *					# ignore all headers... (11.2)
-unignore from: to: cc: bcc: date: subject:	# ...except these headers (11.2)
-unhdr_order *					# clear all previous header orders, if exists (11.3)
-hdr_order from: to: cc: bcc: date: subject: 	# and use this header order instead (11.3)
+ignore *					# ignore all headers... (12.2)
+unignore from: to: cc: bcc: date: subject:	# ...except these headers (12.2)
+unhdr_order *					# clear all previous header orders, if exists (12.3)
+hdr_order from: to: cc: bcc: date: subject: 	# and use this header order instead (12.3)
 
 # Sidebar
-set sidebar_visible				# show sidebar (3.356)
-set sidebar_width = 22				# sidebar width in screen columns (3.357)
-set sidebar_short_path				# only display the name of the mailbox (3.354)
-set sidebar_divider_char = ""			# define divider character for sidebar (3.347)
-set sidebar_format = '%B%* [%?N?%N/?%S]'	# define sidebar format (3.348)
+set sidebar_visible				# show sidebar (3.442)
+set sidebar_width = 22				# sidebar width in screen columns (3.443)
+set sidebar_short_path				# only display the name of the mailbox (3.439)
+set sidebar_divider_char = " "			# define divider character for sidebar (3.431)
+set sidebar_format = '%B%* [%?N?%N/?%S]'	# define sidebar format (3.433)
 
 # Keybinds and macros
 # Additional note: Ctrl-G will quit most prompts (Getting Started 4.1)
