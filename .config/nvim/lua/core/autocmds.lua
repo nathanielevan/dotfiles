@@ -17,8 +17,8 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 vim.api.nvim_create_autocmd("TermOpen", {
   pattern = "term://*",
   callback = function()
-    vim.bo.number = false
-    vim.bo.relativenumber = false
+    vim.wo.number = false
+    vim.wo.relativenumber = false
     vim.cmd.startinsert()
   end,
 })
