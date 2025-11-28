@@ -172,7 +172,7 @@ M.mason = function()
     -- Keymap to install the package under the current cursor position
     install_package = "i",
     -- Keymap to reinstall/update the package under the current cursor position
-    update_package = "<C-u>",
+    update_package = "u",
     -- Keymap to check for new version for the package under the current cursor position
     check_package_version = "c",
     -- Keymap to update all installed packages
