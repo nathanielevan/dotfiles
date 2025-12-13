@@ -1,6 +1,6 @@
 [buildPlans.IosevkaCustomCurly]
 family = "Iosevka Custom Curly"
-spacing = "fontconfig-mono"
+spacing = "fixed"
 serifs = "sans"
 noCvSs = true
 exportGlyphNames = false
@@ -10,6 +10,7 @@ inherits = "ss20"
 
 [buildPlans.IosevkaCustomCurly.variants.design]
 g = "double-storey"
+capital-eszet = "rounded-serifless"
 eszet = "longs-s-lig-serifless"
 three = "flat-top-serifless"
 six = "closed-contour"

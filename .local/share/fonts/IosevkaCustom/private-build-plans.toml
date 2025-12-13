@@ -1,12 +1,13 @@
 [buildPlans.IosevkaCustom]
 family = "Iosevka Custom"
-spacing = "fontconfig-mono"
+spacing = "fixed"
 serifs = "sans"
 noCvSs = true
 exportGlyphNames = false
 
 [buildPlans.IosevkaCustom.variants.design]
 g = "double-storey"
+capital-eszet = "rounded-serifless"
 eszet = "longs-s-lig-serifless"
 three = "flat-top-serifless"
 six = "closed-contour"

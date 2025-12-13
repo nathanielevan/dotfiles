@@ -1,6 +1,6 @@
 [buildPlans.IosevkaCustomFlat]
 family = "Iosevka Custom Flat"
-spacing = "fontconfig-mono"
+spacing = "fixed"
 serifs = "sans"
 noCvSs = true
 exportGlyphNames = false
@@ -13,13 +13,10 @@ r = "hookless-serifless"
 t = "flat-hook"
 y = "straight-turn-serifless"
 long-s = "flat-hook-serifless"
-eszet = "longs-s-lig-serifless"
 lower-lambda = "straight-turn"
 cyrl-capital-u = "straight-turn-serifless"
 cyrl-u = "straight-turn-serifless"
 three = "flat-top-serifless"
-six = "closed-contour"
-nine = "closed-contour"
 guillemet = "straight"
 percent = "rings-continuous-slash"
 
@@ -31,7 +28,6 @@ r = "serifless"
 t = "bent-hook"
 y = "cursive-serifless"
 long-s = "flat-hook-tailed"
-eszet = "longs-s-lig-tailed-serifless"
 cyrl-u = "cursive-serifless"
 
 [buildPlans.IosevkaCustomFlat.weights.regular]
